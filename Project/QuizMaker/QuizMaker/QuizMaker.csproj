@@ -54,17 +54,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
     <Compile Include="LoginControl.cs">
-=======
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="QuizHandler\Answer.cs" />
     <Compile Include="QuizHandler\FeelLucky.cs" />
     <Compile Include="QuizHandler\Question.cs" />
     <Compile Include="QuizHandler\Quiz.cs" />
-    <Compile Include="StartControl.cs">
->>>>>>> ce28cabcd61da894d59027582e85142208d6ac55
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="StartControl.cs" />
     <Compile Include="LoginControl.Designer.cs">
       <DependentUpon>LoginControl.cs</DependentUpon>
     </Compile>
