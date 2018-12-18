@@ -15,14 +15,13 @@ namespace QuizMaker
         public MainForm()
         {
             InitializeComponent();
-            changePanel();
-            changePanel();
-
         }
 
-        public void changePanel()
+
+        private void loginBtn_Click(object sender, EventArgs e)
         {
-            mainPanel.Controls.Add(new StartControl(mainPanel.Size));
+            mainPanel.Controls.Clear();
+            mainPanel.Controls.Add(new LoginControl(mainPanel.Size));
         }
     }
 }

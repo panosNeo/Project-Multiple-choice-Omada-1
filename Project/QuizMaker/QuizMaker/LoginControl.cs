@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuizMaker
 {
-    public partial class StartControl : UserControl
+    public partial class LoginControl : UserControl
     {
-        public StartControl(Size s)
+        public LoginControl(Size s)
         {
             InitializeComponent();
             this.Size = s;
