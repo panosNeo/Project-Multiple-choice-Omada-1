@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuizMaker.QuizHandler;
 
 namespace QuizMaker
 {
@@ -17,7 +18,6 @@ namespace QuizMaker
             InitializeComponent();
             changePanel();
             changePanel();
-
         }
 
         public void changePanel()

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WindowsFormsApp3.QuizHandler
+namespace QuizMaker.QuizHandler
 {
     class Question
     {
