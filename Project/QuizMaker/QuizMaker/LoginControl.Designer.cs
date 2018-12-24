@@ -42,7 +42,7 @@
             this.topLabel.AutoSize = true;
             this.topLabel.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.topLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.topLabel.Location = new System.Drawing.Point(166, 51);
+            this.topLabel.Location = new System.Drawing.Point(271, 55);
             this.topLabel.Name = "topLabel";
             this.topLabel.Size = new System.Drawing.Size(317, 36);
             this.topLabel.TabIndex = 0;
@@ -53,7 +53,7 @@
             this.usernameLabel.AutoSize = true;
             this.usernameLabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.usernameLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.usernameLabel.Location = new System.Drawing.Point(113, 126);
+            this.usernameLabel.Location = new System.Drawing.Point(218, 130);
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(111, 24);
             this.usernameLabel.TabIndex = 1;
@@ -64,7 +64,7 @@
             this.passwordLabel.AutoSize = true;
             this.passwordLabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.passwordLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.passwordLabel.Location = new System.Drawing.Point(115, 170);
+            this.passwordLabel.Location = new System.Drawing.Point(220, 174);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(109, 24);
             this.passwordLabel.TabIndex = 2;
@@ -72,14 +72,14 @@
             // 
             // usernameText
             // 
-            this.usernameText.Location = new System.Drawing.Point(248, 130);
+            this.usernameText.Location = new System.Drawing.Point(353, 134);
             this.usernameText.Name = "usernameText";
             this.usernameText.Size = new System.Drawing.Size(201, 20);
             this.usernameText.TabIndex = 3;
             // 
             // passwordText
             // 
-            this.passwordText.Location = new System.Drawing.Point(248, 170);
+            this.passwordText.Location = new System.Drawing.Point(353, 174);
             this.passwordText.Name = "passwordText";
             this.passwordText.Size = new System.Drawing.Size(201, 20);
             this.passwordText.TabIndex = 4;
@@ -96,7 +96,7 @@
             this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginBtn.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.loginBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.loginBtn.Location = new System.Drawing.Point(289, 223);
+            this.loginBtn.Location = new System.Drawing.Point(394, 227);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.Size = new System.Drawing.Size(107, 38);
             this.loginBtn.TabIndex = 5;
@@ -115,7 +115,7 @@
             this.createAccountBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.createAccountBtn.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.createAccountBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.createAccountBtn.Location = new System.Drawing.Point(258, 267);
+            this.createAccountBtn.Location = new System.Drawing.Point(363, 271);
             this.createAccountBtn.Name = "createAccountBtn";
             this.createAccountBtn.Size = new System.Drawing.Size(168, 38);
             this.createAccountBtn.TabIndex = 6;
@@ -135,7 +135,7 @@
             this.Controls.Add(this.usernameLabel);
             this.Controls.Add(this.topLabel);
             this.Name = "LoginControl";
-            this.Size = new System.Drawing.Size(664, 381);
+            this.Size = new System.Drawing.Size(771, 381);
             this.ResumeLayout(false);
             this.PerformLayout();
 

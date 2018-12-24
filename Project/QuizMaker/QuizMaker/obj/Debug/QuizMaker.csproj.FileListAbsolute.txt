@@ -20,3 +20,6 @@ C:\Users\Veteran Slayer\Desktop\test\Project-Multiple-choice-Omada-1\Project\Qui
 C:\Users\Veteran Slayer\Desktop\test\Project-Multiple-choice-Omada-1\Project\QuizMaker\QuizMaker\bin\Debug\QuizMaker.exe.config
 C:\Users\Veteran Slayer\Desktop\test\Project-Multiple-choice-Omada-1\Project\QuizMaker\QuizMaker\bin\Debug\QuizMaker.exe
 C:\Users\Veteran Slayer\Desktop\test\Project-Multiple-choice-Omada-1\Project\QuizMaker\QuizMaker\bin\Debug\QuizMaker.pdb
+C:\Users\Veteran Slayer\Desktop\test\Project-Multiple-choice-Omada-1\Project\QuizMaker\QuizMaker\obj\Debug\QuizMaker.CategoriesControl.resources
+C:\Users\Veteran Slayer\Desktop\test\Project-Multiple-choice-Omada-1\Project\QuizMaker\QuizMaker\obj\Debug\QuizMaker.CreateQuizControl.resources
+C:\Users\Veteran Slayer\Desktop\test\Project-Multiple-choice-Omada-1\Project\QuizMaker\QuizMaker\obj\Debug\QuizMaker.FeelLuckyControl.resources

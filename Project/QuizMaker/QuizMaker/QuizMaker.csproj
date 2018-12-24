@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoriesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CategoriesControl.Designer.cs">
+      <DependentUpon>CategoriesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateQuizControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CreateQuizControl.Designer.cs">
+      <DependentUpon>CreateQuizControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FeelLuckyControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FeelLuckyControl.Designer.cs">
+      <DependentUpon>FeelLuckyControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +82,15 @@
     <Compile Include="LoginControl.Designer.cs">
       <DependentUpon>LoginControl.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CategoriesControl.resx">
+      <DependentUpon>CategoriesControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateQuizControl.resx">
+      <DependentUpon>CreateQuizControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FeelLuckyControl.resx">
+      <DependentUpon>FeelLuckyControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -75,6 +102,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="LoginControl.resx">
       <DependentUpon>LoginControl.cs</DependentUpon>
@@ -92,6 +120,17 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\createQuizIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
