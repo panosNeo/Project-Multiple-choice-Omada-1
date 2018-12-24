@@ -23,3 +23,17 @@ C:\Users\Veteran Slayer\Desktop\test\Project-Multiple-choice-Omada-1\Project\Qui
 C:\Users\Veteran Slayer\Desktop\test\Project-Multiple-choice-Omada-1\Project\QuizMaker\QuizMaker\obj\Debug\QuizMaker.CategoriesControl.resources
 C:\Users\Veteran Slayer\Desktop\test\Project-Multiple-choice-Omada-1\Project\QuizMaker\QuizMaker\obj\Debug\QuizMaker.CreateQuizControl.resources
 C:\Users\Veteran Slayer\Desktop\test\Project-Multiple-choice-Omada-1\Project\QuizMaker\QuizMaker\obj\Debug\QuizMaker.FeelLuckyControl.resources
+C:\Users\Vladimiros\Desktop\test\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\bin\Debug\QuizMaker.exe.config
+C:\Users\Vladimiros\Desktop\test\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\bin\Debug\QuizMaker.exe
+C:\Users\Vladimiros\Desktop\test\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\bin\Debug\QuizMaker.pdb
+C:\Users\Vladimiros\Desktop\test\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.csprojAssemblyReference.cache
+C:\Users\Vladimiros\Desktop\test\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.CategoriesControl.resources
+C:\Users\Vladimiros\Desktop\test\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.CreateQuizControl.resources
+C:\Users\Vladimiros\Desktop\test\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.FeelLuckyControl.resources
+C:\Users\Vladimiros\Desktop\test\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.MainForm.resources
+C:\Users\Vladimiros\Desktop\test\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.Properties.Resources.resources
+C:\Users\Vladimiros\Desktop\test\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.LoginControl.resources
+C:\Users\Vladimiros\Desktop\test\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.csproj.GenerateResource.cache
+C:\Users\Vladimiros\Desktop\test\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.csproj.CoreCompileInputs.cache
+C:\Users\Vladimiros\Desktop\test\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.exe
+C:\Users\Vladimiros\Desktop\test\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.pdb

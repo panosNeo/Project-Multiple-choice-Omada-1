@@ -150,11 +150,11 @@
             // logoLabel
             // 
             this.logoLabel.AutoSize = true;
-            this.logoLabel.Font = new System.Drawing.Font("Algerian", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logoLabel.ForeColor = System.Drawing.Color.White;
             this.logoLabel.Location = new System.Drawing.Point(3, 14);
             this.logoLabel.Name = "logoLabel";
-            this.logoLabel.Size = new System.Drawing.Size(170, 30);
+            this.logoLabel.Size = new System.Drawing.Size(152, 31);
             this.logoLabel.TabIndex = 1;
             this.logoLabel.Text = "Quiz Maker";
             // 
