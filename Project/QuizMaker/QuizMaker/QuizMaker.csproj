@@ -75,10 +75,6 @@
     <Compile Include="LoginControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="QuizHandler\Answer.cs" />
-    <Compile Include="QuizHandler\FeelLucky.cs" />
-    <Compile Include="QuizHandler\Question.cs" />
-    <Compile Include="QuizHandler\Quiz.cs" />
     <Compile Include="LoginControl.Designer.cs">
       <DependentUpon>LoginControl.cs</DependentUpon>
     </Compile>
