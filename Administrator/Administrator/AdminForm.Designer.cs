@@ -103,6 +103,7 @@
             // Feedback
             // 
             this.Feedback.FlatAppearance.BorderSize = 0;
+            this.Feedback.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(39)))));
             this.Feedback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Feedback.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.Feedback.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -121,6 +122,7 @@
             // Report
             // 
             this.Report.FlatAppearance.BorderSize = 0;
+            this.Report.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(39)))));
             this.Report.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Report.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.Report.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -139,6 +141,7 @@
             // Question
             // 
             this.Question.FlatAppearance.BorderSize = 0;
+            this.Question.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(39)))));
             this.Question.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Question.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.Question.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -157,6 +160,7 @@
             // User
             // 
             this.User.FlatAppearance.BorderSize = 0;
+            this.User.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(39)))));
             this.User.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.User.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.User.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -175,6 +179,7 @@
             // Subject
             // 
             this.Subject.FlatAppearance.BorderSize = 0;
+            this.Subject.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(39)))));
             this.Subject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Subject.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.Subject.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -192,7 +197,9 @@
             // 
             // Account
             // 
+            this.Account.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.Account.FlatAppearance.BorderSize = 0;
+            this.Account.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(39)))));
             this.Account.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Account.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.Account.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
