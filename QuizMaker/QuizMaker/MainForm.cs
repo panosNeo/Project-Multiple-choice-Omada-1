@@ -23,7 +23,9 @@ namespace QuizMaker
         private void loginBtn_Click(object sender, EventArgs e)
         {
             mainPanel.Controls.Clear();
-            mainPanel.Controls.Add(new LoginControl(mainPanel.Size));
+            LoginControl l = new LoginControl();
+            l.Dock = DockStyle.Fill;
+            mainPanel.Controls.Add(l);
         }
 
         private void menuVisibleBtn_Click(object sender, EventArgs e)
@@ -89,9 +91,13 @@ namespace QuizMaker
                     mainPanel.Controls.Add(c);
                     break;
                 case "categories":
-                    mainPanel.Controls.Add(new CategoriesControl());
+                    CategoriesControl d = new CategoriesControl();
+                    d.Dock = DockStyle.Fill;
+                    mainPanel.Controls.Add(d);
                     break;
                 case "feelLucky":
+                    FeelLuckyControl e = new FeelLuckyControl();
+                    e.Dock = DockStyle.Fill;
                     mainPanel.Controls.Add(new FeelLuckyControl());
                     break;
                 default:

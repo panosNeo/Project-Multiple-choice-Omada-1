@@ -39,10 +39,11 @@
             // 
             // topLabel
             // 
+            this.topLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.topLabel.AutoSize = true;
             this.topLabel.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.topLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.topLabel.Location = new System.Drawing.Point(271, 55);
+            this.topLabel.Location = new System.Drawing.Point(242, 110);
             this.topLabel.Name = "topLabel";
             this.topLabel.Size = new System.Drawing.Size(317, 36);
             this.topLabel.TabIndex = 0;
@@ -50,10 +51,11 @@
             // 
             // usernameLabel
             // 
+            this.usernameLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.usernameLabel.AutoSize = true;
             this.usernameLabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.usernameLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.usernameLabel.Location = new System.Drawing.Point(218, 130);
+            this.usernameLabel.Location = new System.Drawing.Point(189, 185);
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(111, 24);
             this.usernameLabel.TabIndex = 1;
@@ -61,10 +63,11 @@
             // 
             // passwordLabel
             // 
+            this.passwordLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.passwordLabel.AutoSize = true;
             this.passwordLabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.passwordLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.passwordLabel.Location = new System.Drawing.Point(220, 174);
+            this.passwordLabel.Location = new System.Drawing.Point(191, 229);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(109, 24);
             this.passwordLabel.TabIndex = 2;
@@ -72,20 +75,23 @@
             // 
             // usernameText
             // 
-            this.usernameText.Location = new System.Drawing.Point(353, 134);
+            this.usernameText.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.usernameText.Location = new System.Drawing.Point(324, 189);
             this.usernameText.Name = "usernameText";
             this.usernameText.Size = new System.Drawing.Size(201, 20);
             this.usernameText.TabIndex = 3;
             // 
             // passwordText
             // 
-            this.passwordText.Location = new System.Drawing.Point(353, 174);
+            this.passwordText.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.passwordText.Location = new System.Drawing.Point(324, 229);
             this.passwordText.Name = "passwordText";
             this.passwordText.Size = new System.Drawing.Size(201, 20);
             this.passwordText.TabIndex = 4;
             // 
             // loginBtn
             // 
+            this.loginBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.loginBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.loginBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.loginBtn.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -96,7 +102,7 @@
             this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginBtn.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.loginBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.loginBtn.Location = new System.Drawing.Point(394, 227);
+            this.loginBtn.Location = new System.Drawing.Point(365, 282);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.Size = new System.Drawing.Size(107, 38);
             this.loginBtn.TabIndex = 5;
@@ -105,6 +111,7 @@
             // 
             // createAccountBtn
             // 
+            this.createAccountBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.createAccountBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.createAccountBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.createAccountBtn.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -115,7 +122,7 @@
             this.createAccountBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.createAccountBtn.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.createAccountBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.createAccountBtn.Location = new System.Drawing.Point(363, 271);
+            this.createAccountBtn.Location = new System.Drawing.Point(334, 326);
             this.createAccountBtn.Name = "createAccountBtn";
             this.createAccountBtn.Size = new System.Drawing.Size(168, 38);
             this.createAccountBtn.TabIndex = 6;
