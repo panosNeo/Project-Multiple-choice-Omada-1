@@ -12,6 +12,7 @@ namespace QuizMaker
 {
     public partial class MainForm : Form
     {
+        //Η μεταβλητή menuVisible ελέγχεται για το αν το leftPanel είναι σε κατάσταση κλειστή ή ανοιχτή(false/true αντίστοιχα)
         private bool menuVisible;
         public MainForm()
         {
@@ -22,34 +23,36 @@ namespace QuizMaker
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
+            //γίνεται clear του mainPanel για να μην μπουκώνει την μνήμη
             mainPanel.Controls.Clear();
             LoginControl l = new LoginControl();
+            //δίνουμε dock fill για να αλλάζει το μέγεθος του user control ανάλογα με το μέγεθος του mainPanel
             l.Dock = DockStyle.Fill;
             mainPanel.Controls.Add(l);
         }
 
         private void menuVisibleBtn_Click(object sender, EventArgs e)
         {
-            
+            // αλλάζουμε την τιμή menuVisible από true σε not true(false) ώστε να ξέρει την κατάσταση του leftMenu
+            //η μέθοδος timer1_tick
             menuVisible = !menuVisible;
             timer1.Start();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            //παίρνουμε σε κάθε tick το size του leftPanel ώστε να αλλάξουμε τον άξονα Χ κατά 5 κάθε φορά
             Size leftPanelSize = leftPanel.Size;
-            Size mainPanelSize = mainPanel.Size;
+            
             Point mainPanelLocation = mainPanel.Location;
             if (!menuVisible)
             {
                 if (leftPanelSize.Width >= 32)
                 {
                     leftPanelSize.Width = leftPanelSize.Width - 5;
-                   // mainPanelSize.Width = mainPanelSize.Width + 5;
-                    //mainPanelLocation.X = mainPanelLocation.X - 5;
+                   
                     leftPanel.Size = leftPanelSize;
-                    //mainPanel.Size = mainPanelSize;
-                    //mainPanel.Location = mainPanelLocation;
+                    
                 }
                 else timer1.Stop();
             }
@@ -58,25 +61,17 @@ namespace QuizMaker
                 if (leftPanelSize.Width <= 165)
                 {
                     leftPanelSize.Width = leftPanelSize.Width + 5;
-                    //mainPanelSize.Width = mainPanelSize.Width - 5;
-                    //mainPanelLocation.X = mainPanelLocation.X + 5;
+                    
                     leftPanel.Size = leftPanelSize;
-                    //mainPanel.Size = mainPanelSize;
-                    //mainPanel.Location = mainPanelLocation;
+                    
                 }
                 else timer1.Stop();
             }
         }
 
-        private void setButtonsVisible(bool v)
-        {
-            categoriesBtn.Visible = v;
-            feelLuckyBtn.Visible = v;
-            createQuizBtn.Visible = v;
-        }
-
         private void LeftMenuButtons_Click(object sender, EventArgs e)
         {
+            //στο tag των τριών button ορίζεται το panel που ανοίγουν
             string panelName = ((Button)sender).Tag.ToString();
             ChangePanel(panelName);
         }

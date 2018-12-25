@@ -17,11 +17,15 @@ namespace QuizMaker
             InitializeComponent();
             
         }
+        //ορίζουμε την μεταβλητή panelPos ώστε να θέσουμε κίνηση προς τα αριστερά ή δεξιά
         private int panelPos = 0;
+        //ορίζουμε την παρακάτω μέθοδο που καλείται όταν πατηθεί ένα από τα κουμπιά που μετακινούν τα panel
         private void movePanelsBtn_Click(object sender, EventArgs e)
         {
+            //ως tag ορίζουμε την κίνηση των panel που θα γίνει(τιμές που παίρνει: -5,5)
             panelPos = Convert.ToInt32(((Button)sender).Tag);
             createQuizTimer.Start();
+            //ξεχωρίζουμε τα button που κάλεσαν το event για περαιτέρω επεξεργασία(αποθήκευση τιμών κλπ)
             string name = ((Button)sender).Name;
             if (name.Equals("stepOneNextBtn"))
             {
@@ -34,6 +38,8 @@ namespace QuizMaker
                 SetEnabledPanels(2);
             }
         }
+
+        //το movePanelsPivot θέτεται ώστε να σταματήσει την λούπα των tick μόλις φτάσει την τιμή 350 
         private int movePanelsPivot = 0;
         private void createQuizTimer_Tick(object sender, EventArgs e)
         {
