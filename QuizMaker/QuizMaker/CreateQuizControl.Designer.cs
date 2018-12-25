@@ -62,6 +62,7 @@
             // 
             // firstPanel
             // 
+            this.firstPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.firstPanel.BackColor = System.Drawing.Color.White;
             this.firstPanel.Controls.Add(this.stepOneNextBtn);
             this.firstPanel.Controls.Add(this.comboBox1);
@@ -69,7 +70,7 @@
             this.firstPanel.Controls.Add(this.textBox1);
             this.firstPanel.Controls.Add(this.label1);
             this.firstPanel.Controls.Add(this.stepOneLabel);
-            this.firstPanel.Location = new System.Drawing.Point(270, 22);
+            this.firstPanel.Location = new System.Drawing.Point(370, 105);
             this.firstPanel.Name = "firstPanel";
             this.firstPanel.Size = new System.Drawing.Size(260, 325);
             this.firstPanel.TabIndex = 0;
@@ -143,13 +144,14 @@
             // 
             // secondPanel
             // 
+            this.secondPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.secondPanel.BackColor = System.Drawing.Color.White;
             this.secondPanel.Controls.Add(this.backBtn);
             this.secondPanel.Controls.Add(this.innerQuestionPanel);
             this.secondPanel.Controls.Add(this.nextQuestionBtn);
             this.secondPanel.Controls.Add(this.finishQuestionsBtn);
             this.secondPanel.Enabled = false;
-            this.secondPanel.Location = new System.Drawing.Point(575, 22);
+            this.secondPanel.Location = new System.Drawing.Point(720, 105);
             this.secondPanel.Name = "secondPanel";
             this.secondPanel.Size = new System.Drawing.Size(260, 391);
             this.secondPanel.TabIndex = 1;
@@ -310,12 +312,13 @@
             // 
             // thirdPanel
             // 
+            this.thirdPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.thirdPanel.BackColor = System.Drawing.Color.White;
             this.thirdPanel.Controls.Add(this.finishQuizBtn);
             this.thirdPanel.Controls.Add(this.reviewLabel);
             this.thirdPanel.Controls.Add(this.stepThreeLabel);
             this.thirdPanel.Enabled = false;
-            this.thirdPanel.Location = new System.Drawing.Point(877, 22);
+            this.thirdPanel.Location = new System.Drawing.Point(1070, 105);
             this.thirdPanel.Name = "thirdPanel";
             this.thirdPanel.Size = new System.Drawing.Size(260, 325);
             this.thirdPanel.TabIndex = 2;
@@ -374,7 +377,7 @@
             this.Controls.Add(this.secondPanel);
             this.Controls.Add(this.firstPanel);
             this.Name = "CreateQuizControl";
-            this.Size = new System.Drawing.Size(967, 539);
+            this.Size = new System.Drawing.Size(1000, 500);
             this.firstPanel.ResumeLayout(false);
             this.firstPanel.PerformLayout();
             this.secondPanel.ResumeLayout(false);

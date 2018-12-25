@@ -12,10 +12,10 @@ namespace QuizMaker
 {
     public partial class CreateQuizControl : UserControl
     {
-        public CreateQuizControl(Size s)
+        public CreateQuizControl()
         {
             InitializeComponent();
-            this.Size = s;
+            
         }
         private int panelPos = 0;
         private void movePanelsBtn_Click(object sender, EventArgs e)
@@ -37,7 +37,7 @@ namespace QuizMaker
         private int movePanelsPivot = 0;
         private void createQuizTimer_Tick(object sender, EventArgs e)
         {
-            if(movePanelsPivot < 305)
+            if(movePanelsPivot < 350)
             {
                 movePanels(panelPos);
                 movePanelsPivot += Math.Abs(panelPos);

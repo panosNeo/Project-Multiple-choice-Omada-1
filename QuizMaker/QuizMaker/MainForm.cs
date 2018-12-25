@@ -84,13 +84,15 @@ namespace QuizMaker
             switch (name)
             {
                 case "createQuiz":
-                    mainPanel.Controls.Add(new CreateQuizControl(mainPanel.Size));
+                    CreateQuizControl c = new CreateQuizControl();
+                    c.Dock = DockStyle.Fill;
+                    mainPanel.Controls.Add(c);
                     break;
                 case "categories":
-                    mainPanel.Controls.Add(new CategoriesControl(mainPanel.Size));
+                    mainPanel.Controls.Add(new CategoriesControl());
                     break;
                 case "feelLucky":
-                    mainPanel.Controls.Add(new FeelLuckyControl(mainPanel.Size));
+                    mainPanel.Controls.Add(new FeelLuckyControl());
                     break;
                 default:
                     Console.WriteLine("No control selected");
