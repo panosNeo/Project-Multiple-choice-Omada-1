@@ -93,7 +93,7 @@ namespace QuizMaker
                 case "feelLucky":
                     FeelLuckyControl e = new FeelLuckyControl();
                     e.Dock = DockStyle.Fill;
-                    mainPanel.Controls.Add(new FeelLuckyControl());
+                    mainPanel.Controls.Add(e);
                     break;
                 default:
                     Console.WriteLine("No control selected");
