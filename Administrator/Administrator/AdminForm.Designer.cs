@@ -31,15 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminForm));
             this.TopPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.Close = new System.Windows.Forms.Button();
             this.MenuPanel = new System.Windows.Forms.Panel();
+            this.MainPanel = new System.Windows.Forms.Panel();
             this.Feedback = new System.Windows.Forms.Button();
             this.Report = new System.Windows.Forms.Button();
             this.Question = new System.Windows.Forms.Button();
             this.User = new System.Windows.Forms.Button();
             this.Subject = new System.Windows.Forms.Button();
             this.Account = new System.Windows.Forms.Button();
-            this.MainPanel = new System.Windows.Forms.Panel();
+            this.Close = new System.Windows.Forms.Button();
             this.TopPanel.SuspendLayout();
             this.MenuPanel.SuspendLayout();
             this.SuspendLayout();
@@ -68,22 +68,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Administrator App";
             // 
-            // Close
-            // 
-            this.Close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Close.FlatAppearance.BorderSize = 0;
-            this.Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Close.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.Close.Image = ((System.Drawing.Image)(resources.GetObject("Close.Image")));
-            this.Close.Location = new System.Drawing.Point(881, 12);
-            this.Close.Name = "Close";
-            this.Close.Size = new System.Drawing.Size(42, 28);
-            this.Close.TabIndex = 0;
-            this.Close.UseVisualStyleBackColor = false;
-            this.Close.Click += new System.EventHandler(this.Close_Click);
-            this.Close.MouseEnter += new System.EventHandler(this.Close_MouseEnter);
-            this.Close.MouseLeave += new System.EventHandler(this.Close_MouseLeave);
-            // 
             // MenuPanel
             // 
             this.MenuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(39)))));
@@ -100,6 +84,15 @@
             this.MenuPanel.Size = new System.Drawing.Size(200, 423);
             this.MenuPanel.TabIndex = 1;
             // 
+            // MainPanel
+            // 
+            this.MainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(184)))), ((int)(((byte)(185)))));
+            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainPanel.Location = new System.Drawing.Point(200, 47);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(736, 423);
+            this.MainPanel.TabIndex = 2;
+            // 
             // Feedback
             // 
             this.Feedback.FlatAppearance.BorderSize = 0;
@@ -107,7 +100,7 @@
             this.Feedback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Feedback.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.Feedback.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.Feedback.Image = ((System.Drawing.Image)(resources.GetObject("Feedback.Image")));
+            this.Feedback.Image = global::Administrator.Properties.Resources.feedback1;
             this.Feedback.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Feedback.Location = new System.Drawing.Point(-1, 223);
             this.Feedback.Name = "Feedback";
@@ -126,7 +119,7 @@
             this.Report.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Report.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.Report.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.Report.Image = ((System.Drawing.Image)(resources.GetObject("Report.Image")));
+            this.Report.Image = global::Administrator.Properties.Resources.report;
             this.Report.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Report.Location = new System.Drawing.Point(-1, 179);
             this.Report.Name = "Report";
@@ -145,7 +138,7 @@
             this.Question.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Question.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.Question.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.Question.Image = ((System.Drawing.Image)(resources.GetObject("Question.Image")));
+            this.Question.Image = global::Administrator.Properties.Resources.test_quiz;
             this.Question.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Question.Location = new System.Drawing.Point(-1, 135);
             this.Question.Name = "Question";
@@ -164,7 +157,7 @@
             this.User.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.User.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.User.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.User.Image = ((System.Drawing.Image)(resources.GetObject("User.Image")));
+            this.User.Image = global::Administrator.Properties.Resources.user;
             this.User.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.User.Location = new System.Drawing.Point(-1, 91);
             this.User.Name = "User";
@@ -183,7 +176,7 @@
             this.Subject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Subject.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.Subject.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.Subject.Image = ((System.Drawing.Image)(resources.GetObject("Subject.Image")));
+            this.Subject.Image = global::Administrator.Properties.Resources.subject;
             this.Subject.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Subject.Location = new System.Drawing.Point(-1, 47);
             this.Subject.Name = "Subject";
@@ -203,7 +196,7 @@
             this.Account.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Account.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.Account.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.Account.Image = ((System.Drawing.Image)(resources.GetObject("Account.Image")));
+            this.Account.Image = global::Administrator.Properties.Resources.Account1;
             this.Account.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Account.Location = new System.Drawing.Point(-1, 334);
             this.Account.Name = "Account";
@@ -215,14 +208,21 @@
             this.Account.MouseEnter += new System.EventHandler(this.Account_MouseEnter);
             this.Account.MouseLeave += new System.EventHandler(this.Account_MouseLeave);
             // 
-            // MainPanel
+            // Close
             // 
-            this.MainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(184)))), ((int)(((byte)(185)))));
-            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainPanel.Location = new System.Drawing.Point(200, 47);
-            this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(736, 423);
-            this.MainPanel.TabIndex = 2;
+            this.Close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Close.FlatAppearance.BorderSize = 0;
+            this.Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Close.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.Close.Image = ((System.Drawing.Image)(resources.GetObject("Close.Image")));
+            this.Close.Location = new System.Drawing.Point(881, 12);
+            this.Close.Name = "Close";
+            this.Close.Size = new System.Drawing.Size(42, 28);
+            this.Close.TabIndex = 0;
+            this.Close.UseVisualStyleBackColor = false;
+            this.Close.Click += new System.EventHandler(this.Close_Click);
+            this.Close.MouseEnter += new System.EventHandler(this.Close_MouseEnter);
+            this.Close.MouseLeave += new System.EventHandler(this.Close_MouseLeave);
             // 
             // AdminForm
             // 
