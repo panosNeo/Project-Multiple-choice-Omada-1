@@ -30,10 +30,15 @@
         {
             this.TopPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.Close = new System.Windows.Forms.Button();
             this.MenuPanel = new System.Windows.Forms.Panel();
-            this.Account = new System.Windows.Forms.Button();
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.Feedback = new System.Windows.Forms.Button();
+            this.Report = new System.Windows.Forms.Button();
+            this.Question = new System.Windows.Forms.Button();
+            this.User = new System.Windows.Forms.Button();
+            this.Subject = new System.Windows.Forms.Button();
+            this.Account = new System.Windows.Forms.Button();
+            this.Close = new System.Windows.Forms.Button();
             this.TopPanel.SuspendLayout();
             this.MenuPanel.SuspendLayout();
             this.SuspendLayout();
@@ -62,48 +67,21 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Administrator App";
             // 
-            // Close
-            // 
-            this.Close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Close.FlatAppearance.BorderSize = 0;
-            this.Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Close.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.Close.Image = global::Administrator.Properties.Resources.close;
-            this.Close.Location = new System.Drawing.Point(901, 12);
-            this.Close.Name = "Close";
-            this.Close.Size = new System.Drawing.Size(22, 22);
-            this.Close.TabIndex = 0;
-            this.Close.UseVisualStyleBackColor = false;
-            this.Close.Click += new System.EventHandler(this.Close_Click);
-            // 
             // MenuPanel
             // 
             this.MenuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(39)))));
             this.MenuPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.MenuPanel.Controls.Add(this.Feedback);
+            this.MenuPanel.Controls.Add(this.Report);
+            this.MenuPanel.Controls.Add(this.Question);
+            this.MenuPanel.Controls.Add(this.User);
+            this.MenuPanel.Controls.Add(this.Subject);
             this.MenuPanel.Controls.Add(this.Account);
             this.MenuPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuPanel.Location = new System.Drawing.Point(0, 47);
             this.MenuPanel.Name = "MenuPanel";
             this.MenuPanel.Size = new System.Drawing.Size(200, 423);
             this.MenuPanel.TabIndex = 1;
-            // 
-            // Account
-            // 
-            this.Account.FlatAppearance.BorderSize = 0;
-            this.Account.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Account.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.Account.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.Account.Image = global::Administrator.Properties.Resources.login;
-            this.Account.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Account.Location = new System.Drawing.Point(-1, 334);
-            this.Account.Name = "Account";
-            this.Account.Size = new System.Drawing.Size(200, 38);
-            this.Account.TabIndex = 0;
-            this.Account.Text = "Account Settings";
-            this.Account.UseVisualStyleBackColor = false;
-            this.Account.Click += new System.EventHandler(this.Account_Click);
-            this.Account.MouseEnter += new System.EventHandler(this.Account_MouseEnter);
-            this.Account.MouseLeave += new System.EventHandler(this.Account_MouseLeave);
             // 
             // MainPanel
             // 
@@ -113,6 +91,123 @@
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(736, 423);
             this.MainPanel.TabIndex = 2;
+            // 
+            // Feedback
+            // 
+            this.Feedback.FlatAppearance.BorderSize = 0;
+            this.Feedback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Feedback.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.Feedback.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.Feedback.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Feedback.Location = new System.Drawing.Point(-1, 223);
+            this.Feedback.Name = "Feedback";
+            this.Feedback.Size = new System.Drawing.Size(200, 38);
+            this.Feedback.TabIndex = 5;
+            this.Feedback.Text = "Feedbacks";
+            this.Feedback.UseVisualStyleBackColor = false;
+            this.Feedback.Click += new System.EventHandler(this.Feedback_Click);
+            this.Feedback.MouseEnter += new System.EventHandler(this.Feedback_MouseEnter);
+            this.Feedback.MouseLeave += new System.EventHandler(this.Feedback_MouseLeave);
+            // 
+            // Report
+            // 
+            this.Report.FlatAppearance.BorderSize = 0;
+            this.Report.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Report.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.Report.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.Report.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Report.Location = new System.Drawing.Point(-1, 179);
+            this.Report.Name = "Report";
+            this.Report.Size = new System.Drawing.Size(200, 38);
+            this.Report.TabIndex = 4;
+            this.Report.Text = "Reports";
+            this.Report.UseVisualStyleBackColor = false;
+            this.Report.Click += new System.EventHandler(this.Report_Click);
+            this.Report.MouseEnter += new System.EventHandler(this.Report_MouseEnter);
+            this.Report.MouseLeave += new System.EventHandler(this.Report_MouseLeave);
+            // 
+            // Question
+            // 
+            this.Question.FlatAppearance.BorderSize = 0;
+            this.Question.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Question.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.Question.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.Question.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Question.Location = new System.Drawing.Point(-1, 135);
+            this.Question.Name = "Question";
+            this.Question.Size = new System.Drawing.Size(200, 38);
+            this.Question.TabIndex = 3;
+            this.Question.Text = "Question Settings";
+            this.Question.UseVisualStyleBackColor = false;
+            this.Question.Click += new System.EventHandler(this.Question_Click);
+            this.Question.MouseEnter += new System.EventHandler(this.Question_MouseEnter);
+            this.Question.MouseLeave += new System.EventHandler(this.Question_MouseLeave);
+            // 
+            // User
+            // 
+            this.User.FlatAppearance.BorderSize = 0;
+            this.User.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.User.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.User.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.User.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.User.Location = new System.Drawing.Point(-1, 91);
+            this.User.Name = "User";
+            this.User.Size = new System.Drawing.Size(200, 38);
+            this.User.TabIndex = 2;
+            this.User.Text = "User Settings";
+            this.User.UseVisualStyleBackColor = false;
+            this.User.Click += new System.EventHandler(this.User_Click);
+            this.User.MouseEnter += new System.EventHandler(this.User_MouseEnter);
+            this.User.MouseLeave += new System.EventHandler(this.User_MouseLeave);
+            // 
+            // Subject
+            // 
+            this.Subject.FlatAppearance.BorderSize = 0;
+            this.Subject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Subject.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.Subject.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.Subject.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Subject.Location = new System.Drawing.Point(-1, 47);
+            this.Subject.Name = "Subject";
+            this.Subject.Size = new System.Drawing.Size(200, 38);
+            this.Subject.TabIndex = 1;
+            this.Subject.Text = "Subject Settings";
+            this.Subject.UseVisualStyleBackColor = false;
+            this.Subject.Click += new System.EventHandler(this.Subject_Click);
+            this.Subject.MouseEnter += new System.EventHandler(this.Subject_MouseEnter);
+            this.Subject.MouseLeave += new System.EventHandler(this.Subject_MouseLeave);
+            // 
+            // Account
+            // 
+            this.Account.FlatAppearance.BorderSize = 0;
+            this.Account.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Account.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.Account.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.Account.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Account.Location = new System.Drawing.Point(-1, 334);
+            this.Account.Name = "Account";
+            this.Account.Size = new System.Drawing.Size(200, 38);
+            this.Account.TabIndex = 0;
+            this.Account.Text = "My Account";
+            this.Account.UseVisualStyleBackColor = false;
+            this.Account.Click += new System.EventHandler(this.Account_Click);
+            this.Account.MouseEnter += new System.EventHandler(this.Account_MouseEnter);
+            this.Account.MouseLeave += new System.EventHandler(this.Account_MouseLeave);
+            // 
+            // Close
+            // 
+            this.Close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Close.FlatAppearance.BorderSize = 0;
+            this.Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Close.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.Close.Location = new System.Drawing.Point(881, 12);
+            this.Close.Name = "Close";
+            this.Close.Size = new System.Drawing.Size(42, 28);
+            this.Close.TabIndex = 0;
+            this.Close.UseVisualStyleBackColor = false;
+            this.Close.Click += new System.EventHandler(this.Close_Click);
+            this.Close.MouseEnter += new System.EventHandler(this.Close_MouseEnter);
+            this.Close.MouseLeave += new System.EventHandler(this.Close_MouseLeave);
             // 
             // AdminForm
             // 
@@ -126,6 +221,7 @@
             this.Name = "AdminForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
+            this.Load += new System.EventHandler(this.AdminForm_Load);
             this.TopPanel.ResumeLayout(false);
             this.TopPanel.PerformLayout();
             this.MenuPanel.ResumeLayout(false);
@@ -141,6 +237,11 @@
         private System.Windows.Forms.Button Close;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Account;
+        private System.Windows.Forms.Button Subject;
+        private System.Windows.Forms.Button User;
+        private System.Windows.Forms.Button Feedback;
+        private System.Windows.Forms.Button Report;
+        private System.Windows.Forms.Button Question;
     }
 }
 
