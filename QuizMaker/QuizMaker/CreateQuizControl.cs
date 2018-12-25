@@ -22,25 +22,38 @@ namespace QuizMaker
         {
             panelPos = Convert.ToInt32(((Button)sender).Tag);
             createQuizTimer.Start();
-        }
-
-        private void createQuizTimer_Tick(object sender, EventArgs e)
-        {
-            switch (panelPos)
+            string name = ((Button)sender).Name;
+            if (name.Equals("stepOneNextBtn"))
             {
-                case 0:
-                    break;
-                case 1:
-                    if(secondPanel.Location.X > 270)
-                    {
-                        secondPanel.Location = new Point(secondPanel.Location.X - 1, secondPanel.Location.Y);
-                    }
-                    break;
-                case 2:
-                    break;
+                SetEnabledPanels(1);
+            }else if (name.Equals("backBtn"))
+            {
+                SetEnabledPanels(0);
+            }else if (name.Equals("finishQuestionsBtn"))
+            {
+                SetEnabledPanels(2);
             }
         }
-        
+        private int movePanelsPivot = 0;
+        private void createQuizTimer_Tick(object sender, EventArgs e)
+        {
+            if(movePanelsPivot < 305)
+            {
+                movePanels(panelPos);
+                movePanelsPivot += Math.Abs(panelPos);
+            }
+            else
+            {
+                movePanelsPivot = 0;
+                createQuizTimer.Stop();
+            }
+        }
+        private void movePanels(int pivot)
+        {
+            firstPanel.Location = new Point(firstPanel.Location.X + pivot, firstPanel.Location.Y);
+            secondPanel.Location = new Point(secondPanel.Location.X + pivot, secondPanel.Location.Y);
+            thirdPanel.Location = new Point(thirdPanel.Location.X + pivot, thirdPanel.Location.Y);
+        }
         private void SetEnabledPanels(int panel)
         {
             firstPanel.Enabled = false;
