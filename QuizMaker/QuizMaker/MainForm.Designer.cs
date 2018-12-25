@@ -53,7 +53,7 @@
             this.leftPanel.Controls.Add(this.createQuizBtn);
             this.leftPanel.Location = new System.Drawing.Point(0, 70);
             this.leftPanel.Name = "leftPanel";
-            this.leftPanel.Size = new System.Drawing.Size(165, 381);
+            this.leftPanel.Size = new System.Drawing.Size(165, 429);
             this.leftPanel.TabIndex = 0;
             // 
             // menuVisibleBtn
@@ -185,7 +185,7 @@
             this.mainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.mainPanel.Location = new System.Drawing.Point(30, 70);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(771, 381);
+            this.mainPanel.Size = new System.Drawing.Size(771, 432);
             this.mainPanel.TabIndex = 4;
             // 
             // timer1
@@ -197,7 +197,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 495);
             this.Controls.Add(this.topPanel);
             this.Controls.Add(this.leftPanel);
             this.Controls.Add(this.mainPanel);
