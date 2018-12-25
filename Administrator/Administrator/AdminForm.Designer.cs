@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminForm));
             this.TopPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.MenuPanel = new System.Windows.Forms.Panel();
@@ -211,13 +210,14 @@
             // Close
             // 
             this.Close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Close.Dock = System.Windows.Forms.DockStyle.Right;
             this.Close.FlatAppearance.BorderSize = 0;
             this.Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Close.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.Close.Image = ((System.Drawing.Image)(resources.GetObject("Close.Image")));
-            this.Close.Location = new System.Drawing.Point(881, 12);
+            this.Close.Image = global::Administrator.Properties.Resources.close;
+            this.Close.Location = new System.Drawing.Point(892, 0);
             this.Close.Name = "Close";
-            this.Close.Size = new System.Drawing.Size(42, 28);
+            this.Close.Size = new System.Drawing.Size(42, 45);
             this.Close.TabIndex = 0;
             this.Close.UseVisualStyleBackColor = false;
             this.Close.Click += new System.EventHandler(this.Close_Click);
