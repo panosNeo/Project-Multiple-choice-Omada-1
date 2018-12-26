@@ -1,0 +1,97 @@
+CREATE TABLE IF NOT EXISTS User(
+  user_id INT NOT NULL,
+  username VARCHAR(16) NOT NULL,
+  password VARCHAR(32) NOT NULL,
+  role VARCHAR(16) NULL,
+  email VARCHAR(255) NOT NULL,
+  first_name VARCHAR(45) NOT NULL,
+  last_name VARCHAR(45) NOT NULL,
+  PRIMARY KEY (user_id));
+  
+CREATE TABLE IF NOT EXISTS Subject(
+  subject_id INT NOT NULL,
+  root_id INT NOT NULL,
+  s_name VARCHAR(45) NOT NULL,
+  PRIMARY KEY (subject_id));
+
+CREATE TABLE IF NOT EXISTS Question(
+ q_id INT NOT NULL,
+ question VARCHAR(255) NOT NULL,
+ rating INT NULL,
+ cr_date DATETIME NOT NULL,
+ by_user INT NOT NULL,
+ subject INT NOT NULL,
+ PRIMARY KEY (q_id));
+
+ALTER TABLE Question
+ADD FOREIGN KEY (by_user) REFERENCES User(user_id);  
+ 
+ALTER TABLE Question
+ADD FOREIGN KEY (subject) REFERENCES Subject(subject_id); 
+
+CREATE TABLE IF NOT EXISTS Quiz(
+  quiz_id INT NOT NULL,
+  subject INT NOT NULL,
+  by_user INT NOT NULL,
+  cr_date DATE NOT NULL,
+  title VARCHAR(100) NULL,
+  PRIMARY KEY (quiz_id),
+  FOREIGN KEY (subject)
+  REFERENCES Subject(subject_id),
+  FOREIGN KEY (by_user)
+  REFERENCES User(user_id));
+  
+CREATE TABLE IF NOT EXISTS Answer(
+  answer_id INT NOT NULL,
+  answer VARCHAR(255) NOT NULL,
+  correct TINYINT(1) NOT NULL,
+  question INT NOT NULL,
+  PRIMARY KEY (answer_id),
+  FOREIGN KEY (question)
+  REFERENCES Question(q_id));
+  
+CREATE TABLE IF NOT EXISTS Quiz_Questions(
+  q_id INT NOT NULL,
+  quiz_id INT NOT NULL,
+  PRIMARY KEY (q_id,quiz_id),
+  FOREIGN KEY (q_id)
+  REFERENCES Question(q_id),
+  FOREIGN KEY (quiz_id)
+  REFERENCES Quiz(quiz_id));
+
+CREATE TABLE IF NOT EXISTS Rating(
+  user_id INT NOT NULL,
+  q_id INT NOT NULL,
+  liked TINYINT(1) NOT NULL,
+  PRIMARY KEY (user_id, q_id),
+  FOREIGN KEY (user_id)
+  REFERENCES User(user_id),
+  FOREIGN KEY (q_id)
+  REFERENCES Question(q_id));
+  
+CREATE TABLE IF NOT EXISTS Report(
+  user_id INT NOT NULL,
+  report VARCHAR(255) NOT NULL,
+  question INT NOT NULL,
+  PRIMARY KEY (user_id),
+  CONSTRAINT user_id
+  FOREIGN KEY (user_id)
+  REFERENCES User(user_id));
+  
+CREATE TABLE IF NOT EXISTS Feedback(
+  user_id INT NOT NULL,
+  feedback VARCHAR(255) NOT NULL,
+  adminRating TINYINT(1) NULL,
+  PRIMARY KEY (user_id),
+  FOREIGN KEY (user_id)
+  REFERENCES User(user_id));
+  
+CREATE TABLE IF NOT EXISTS Blocked(
+  blocked_id INT NOT NULL,
+  user_id INT NOT NULL,
+  reason VARCHAR(255) NOT NULL,
+  days INT NOT NULL,
+  blocked TINYINT(1) NOT NULL,
+  PRIMARY KEY (blocked_id),
+  FOREIGN KEY (user_id)
+  REFERENCES User(user_id));
