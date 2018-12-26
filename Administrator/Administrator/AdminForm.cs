@@ -12,7 +12,8 @@ namespace Administrator
 {
     public partial class AdminForm : Form
     {
-        private ProfileControl profile = new ProfileControl();  //profileControl object
+        private ProfileControl profileControl = new ProfileControl();   //profileControl object
+        private SubjectControl subjectControl = new SubjectControl();   //subjectControl object
 
         public AdminForm()
         {
@@ -23,7 +24,7 @@ namespace Administrator
         private void AdminForm_Load(object sender, EventArgs e)
         {
             //me to load allaxe to profile button xrwma kai kane switch UserControl
-            setDesign(Profile,profile);
+            setDesign(Profile,profileControl);
         }
         
         //move from TopPanel
@@ -33,7 +34,6 @@ namespace Administrator
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
-
         private void TopPanel_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -45,7 +45,7 @@ namespace Administrator
 
         //Design se buttons kai switch se user controls
         private void setDesign(Button button,UserControl userControl) {
-            MainPanel.Controls.Clear();                     //kane clear ola ta controls tou mainpanel
+            MainPanel.Controls.Clear();                         //kane clear ola ta controls tou mainpanel
             userControl.Dock = DockStyle.Fill;                  //kane fill to profileControl
             MainPanel.Controls.Add(userControl);                //pare sto mainPanel to profileControl
 
@@ -59,9 +59,7 @@ namespace Administrator
             button.BackColor = Color.FromArgb(3, 56, 73);
         }
 
-
-
-
+        
         //sta Mouse-enter -- Mouse-leave events
         //allazoun ta xrwmata twn grammatwn sta buttons
         //sta Click events allazei to background color gia ta buttons
@@ -69,7 +67,8 @@ namespace Administrator
         //Account button events
         private void Profile_Click(object sender, EventArgs e)
         {
-            setDesign(Profile,profile);                       //allaxe background color
+            //kalese methodo gia xrwma kai switch Control
+            setDesign(Profile,profileControl);
         }
         private void Profile_MouseEnter(object sender, EventArgs e)
         {
@@ -83,7 +82,8 @@ namespace Administrator
         //subject button events
         private void Subject_Click(object sender, EventArgs e)
         {
-            setDesign(Subject,profile);
+            //kalese methodo gia xrwma kai switch Control
+            setDesign(Subject,subjectControl);
         }
         private void Subject_MouseEnter(object sender, EventArgs e)
         {
@@ -97,7 +97,8 @@ namespace Administrator
         //User button events
         private void User_Click(object sender, EventArgs e)
         {
-            setDesign(User,profile);
+            //kalese methodo gia xrwma kai switch Control
+            setDesign(User,profileControl);
         }
         private void User_MouseEnter(object sender, EventArgs e)
         {
@@ -111,7 +112,8 @@ namespace Administrator
         //question button events
         private void Question_Click(object sender, EventArgs e)
         {
-            setDesign(Question,profile);
+            //kalese methodo gia xrwma kai switch Control
+            setDesign(Question,profileControl);
         }
         private void Question_MouseEnter(object sender, EventArgs e)
         {
@@ -125,7 +127,8 @@ namespace Administrator
         //report button events
         private void Report_Click(object sender, EventArgs e)
         {
-            setDesign(Report,profile);
+            //kalese methodo gia xrwma kai switch Control
+            setDesign(Report,profileControl);
         }
         private void Report_MouseEnter(object sender, EventArgs e)
         {
@@ -139,7 +142,8 @@ namespace Administrator
         //Feedback button events
         private void Feedback_Click(object sender, EventArgs e)
         {
-            setDesign(Feedback,profile);
+            //kalese methodo gia xrwma kai switch Control
+            setDesign(Feedback,profileControl);
         }
         private void Feedback_MouseEnter(object sender, EventArgs e)
         {
@@ -163,7 +167,6 @@ namespace Administrator
         {
             Close.BackColor = Color.FromArgb(3,56,73);
         }
-
         
     }
 }

@@ -42,13 +42,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.profileSettingsButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.NotesflowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.profileSettingsButton = new System.Windows.Forms.Button();
             this.dataGroupbox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // welcomeLabel
@@ -93,7 +93,7 @@
             this.dataGroupbox.Enabled = false;
             this.dataGroupbox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.dataGroupbox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            this.dataGroupbox.Location = new System.Drawing.Point(19, 83);
+            this.dataGroupbox.Location = new System.Drawing.Point(50, 83);
             this.dataGroupbox.Name = "dataGroupbox";
             this.dataGroupbox.Size = new System.Drawing.Size(372, 181);
             this.dataGroupbox.TabIndex = 3;
@@ -197,6 +197,28 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Name :";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.NotesflowLayoutPanel);
+            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            this.groupBox1.Location = new System.Drawing.Point(50, 298);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(538, 100);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Notes";
+            // 
+            // NotesflowLayoutPanel
+            // 
+            this.NotesflowLayoutPanel.AutoScroll = true;
+            this.NotesflowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.NotesflowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.NotesflowLayoutPanel.Location = new System.Drawing.Point(3, 19);
+            this.NotesflowLayoutPanel.Name = "NotesflowLayoutPanel";
+            this.NotesflowLayoutPanel.Size = new System.Drawing.Size(532, 78);
+            this.NotesflowLayoutPanel.TabIndex = 0;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Administrator.Properties.Resources.adminProfile;
@@ -219,28 +241,6 @@
             this.profileSettingsButton.UseVisualStyleBackColor = false;
             this.profileSettingsButton.Click += new System.EventHandler(this.profileSettingsButton_Click);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.NotesflowLayoutPanel);
-            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            this.groupBox1.Location = new System.Drawing.Point(19, 308);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(538, 100);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Notes";
-            // 
-            // NotesflowLayoutPanel
-            // 
-            this.NotesflowLayoutPanel.AutoScroll = true;
-            this.NotesflowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.NotesflowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.NotesflowLayoutPanel.Location = new System.Drawing.Point(3, 19);
-            this.NotesflowLayoutPanel.Name = "NotesflowLayoutPanel";
-            this.NotesflowLayoutPanel.Size = new System.Drawing.Size(532, 78);
-            this.NotesflowLayoutPanel.TabIndex = 0;
-            // 
             // ProfileControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -257,8 +257,8 @@
             this.Load += new System.EventHandler(this.ProfileControl_Load);
             this.dataGroupbox.ResumeLayout(false);
             this.dataGroupbox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

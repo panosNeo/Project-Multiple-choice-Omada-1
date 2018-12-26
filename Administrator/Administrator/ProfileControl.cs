@@ -60,6 +60,7 @@ namespace Administrator
                 PasswordBox.PasswordChar = '*';
         }
 
+        //
         private void CheckForNotes()
         {
             //under construction
@@ -68,6 +69,7 @@ namespace Administrator
             //kai tha ftiaxnei labels sto Notes group box
         }
 
+        //kanei fill ta textboxes me ta data tou admin
         private void FillProfileData()
         {
             //under construction
@@ -76,6 +78,9 @@ namespace Administrator
             EmailBox.Text = "test@it.teithe.gr";
             UsernameBox.Text = "test123";
             PasswordBox.Text = "testing123";
+
+            //dwse to name tou user sto label
+            welcomeLabel.Text = "Welcome "+NameBox.Text;
         }
     }
 }
