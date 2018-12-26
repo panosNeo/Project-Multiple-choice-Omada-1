@@ -43,7 +43,7 @@ namespace Administrator
 
         //buttons design
         private void setButtonDesign(Button button) {
-            Account.BackColor = Color.FromArgb(0,29,39);
+            Profile.BackColor = Color.FromArgb(0,29,39);
             Subject.BackColor = Color.FromArgb(0, 29, 39);
             User.BackColor = Color.FromArgb(0, 29, 39);
             Question.BackColor = Color.FromArgb(0, 29, 39);
@@ -61,17 +61,22 @@ namespace Administrator
         //sta Click events allazei to background color gia ta buttons
 
         //Account button events
-        private void Account_Click(object sender, EventArgs e)
+        private void Profile_Click(object sender, EventArgs e)
         {
-            setButtonDesign(Account);
+            MainPanel.Controls.Clear();                     //kane clear ola ta controls tou mainpanel
+            ProfileControl profile = new ProfileControl();  //profileControl object
+            profile.Dock = DockStyle.Fill;                  //kane fill to profileControl
+            MainPanel.Controls.Add(profile);                //pare sto mainPanel to profileControl
+
+            setButtonDesign(Profile);                       //allaxe background color
         }
-        private void Account_MouseEnter(object sender, EventArgs e)
+        private void Profile_MouseEnter(object sender, EventArgs e)
         {
-            Account.ForeColor = Color.White;
+            Profile.ForeColor = Color.White;
         }
-        private void Account_MouseLeave(object sender, EventArgs e)
+        private void Profile_MouseLeave(object sender, EventArgs e)
         {
-            Account.ForeColor = Color.FromName("GradientActiveCaption");
+            Profile.ForeColor = Color.FromName("GradientActiveCaption");
         }
 
         //subject button events
