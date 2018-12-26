@@ -12,6 +12,8 @@ namespace Administrator
 {
     public partial class AdminForm : Form
     {
+        private ProfileControl profile = new ProfileControl();  //profileControl object
+
         public AdminForm()
         {
             InitializeComponent();
@@ -20,10 +22,10 @@ namespace Administrator
         //leitourgies gia to onLoad
         private void AdminForm_Load(object sender, EventArgs e)
         {
-           
+            //me to load allaxe to profile button xrwma kai kane switch UserControl
+            setDesign(Profile,profile);
         }
-
-
+        
         //move from TopPanel
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
@@ -41,8 +43,12 @@ namespace Administrator
             }
         }//move from TopPanel
 
-        //buttons design
-        private void setButtonDesign(Button button) {
+        //Design se buttons kai switch se user controls
+        private void setDesign(Button button,UserControl userControl) {
+            MainPanel.Controls.Clear();                     //kane clear ola ta controls tou mainpanel
+            userControl.Dock = DockStyle.Fill;                  //kane fill to profileControl
+            MainPanel.Controls.Add(userControl);                //pare sto mainPanel to profileControl
+
             Profile.BackColor = Color.FromArgb(0,29,39);
             Subject.BackColor = Color.FromArgb(0, 29, 39);
             User.BackColor = Color.FromArgb(0, 29, 39);
@@ -63,12 +69,7 @@ namespace Administrator
         //Account button events
         private void Profile_Click(object sender, EventArgs e)
         {
-            MainPanel.Controls.Clear();                     //kane clear ola ta controls tou mainpanel
-            ProfileControl profile = new ProfileControl();  //profileControl object
-            profile.Dock = DockStyle.Fill;                  //kane fill to profileControl
-            MainPanel.Controls.Add(profile);                //pare sto mainPanel to profileControl
-
-            setButtonDesign(Profile);                       //allaxe background color
+            setDesign(Profile,profile);                       //allaxe background color
         }
         private void Profile_MouseEnter(object sender, EventArgs e)
         {
@@ -82,7 +83,7 @@ namespace Administrator
         //subject button events
         private void Subject_Click(object sender, EventArgs e)
         {
-            setButtonDesign(Subject);
+            setDesign(Subject,profile);
         }
         private void Subject_MouseEnter(object sender, EventArgs e)
         {
@@ -96,7 +97,7 @@ namespace Administrator
         //User button events
         private void User_Click(object sender, EventArgs e)
         {
-            setButtonDesign(User);
+            setDesign(User,profile);
         }
         private void User_MouseEnter(object sender, EventArgs e)
         {
@@ -110,7 +111,7 @@ namespace Administrator
         //question button events
         private void Question_Click(object sender, EventArgs e)
         {
-            setButtonDesign(Question);
+            setDesign(Question,profile);
         }
         private void Question_MouseEnter(object sender, EventArgs e)
         {
@@ -124,7 +125,7 @@ namespace Administrator
         //report button events
         private void Report_Click(object sender, EventArgs e)
         {
-            setButtonDesign(Report);
+            setDesign(Report,profile);
         }
         private void Report_MouseEnter(object sender, EventArgs e)
         {
@@ -138,7 +139,7 @@ namespace Administrator
         //Feedback button events
         private void Feedback_Click(object sender, EventArgs e)
         {
-            setButtonDesign(Feedback);
+            setDesign(Feedback,profile);
         }
         private void Feedback_MouseEnter(object sender, EventArgs e)
         {

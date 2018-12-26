@@ -31,17 +31,17 @@
             this.welcomeLabel = new System.Windows.Forms.Label();
             this.profileLogoutButton = new System.Windows.Forms.Button();
             this.dataGroupbox = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.NameBox = new System.Windows.Forms.TextBox();
-            this.LastNameBox = new System.Windows.Forms.TextBox();
-            this.EmailBox = new System.Windows.Forms.TextBox();
-            this.UsernameBox = new System.Windows.Forms.TextBox();
-            this.PasswordBox = new System.Windows.Forms.TextBox();
             this.ShowPassword = new System.Windows.Forms.CheckBox();
+            this.PasswordBox = new System.Windows.Forms.TextBox();
+            this.UsernameBox = new System.Windows.Forms.TextBox();
+            this.EmailBox = new System.Windows.Forms.TextBox();
+            this.LastNameBox = new System.Windows.Forms.TextBox();
+            this.NameBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.profileSettingsButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -69,9 +69,9 @@
             this.profileLogoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.profileLogoutButton.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.profileLogoutButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            this.profileLogoutButton.Location = new System.Drawing.Point(654, 55);
+            this.profileLogoutButton.Location = new System.Drawing.Point(642, 55);
             this.profileLogoutButton.Name = "profileLogoutButton";
-            this.profileLogoutButton.Size = new System.Drawing.Size(60, 23);
+            this.profileLogoutButton.Size = new System.Drawing.Size(72, 30);
             this.profileLogoutButton.TabIndex = 2;
             this.profileLogoutButton.Text = "Logout";
             this.profileLogoutButton.UseVisualStyleBackColor = false;
@@ -100,92 +100,6 @@
             this.dataGroupbox.TabStop = false;
             this.dataGroupbox.Text = "Account Data";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Name :";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 61);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Last Name :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(44, 90);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 16);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Email :";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 119);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 16);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Username :";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(20, 148);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 16);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Password :";
-            // 
-            // NameBox
-            // 
-            this.NameBox.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.NameBox.Location = new System.Drawing.Point(114, 25);
-            this.NameBox.Name = "NameBox";
-            this.NameBox.Size = new System.Drawing.Size(186, 26);
-            this.NameBox.TabIndex = 5;
-            // 
-            // LastNameBox
-            // 
-            this.LastNameBox.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.LastNameBox.Location = new System.Drawing.Point(114, 54);
-            this.LastNameBox.Name = "LastNameBox";
-            this.LastNameBox.Size = new System.Drawing.Size(186, 26);
-            this.LastNameBox.TabIndex = 6;
-            // 
-            // EmailBox
-            // 
-            this.EmailBox.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.EmailBox.Location = new System.Drawing.Point(114, 83);
-            this.EmailBox.Name = "EmailBox";
-            this.EmailBox.Size = new System.Drawing.Size(186, 26);
-            this.EmailBox.TabIndex = 7;
-            // 
-            // UsernameBox
-            // 
-            this.UsernameBox.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.UsernameBox.Location = new System.Drawing.Point(114, 112);
-            this.UsernameBox.Name = "UsernameBox";
-            this.UsernameBox.Size = new System.Drawing.Size(186, 26);
-            this.UsernameBox.TabIndex = 8;
-            // 
-            // PasswordBox
-            // 
-            this.PasswordBox.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.PasswordBox.Location = new System.Drawing.Point(114, 141);
-            this.PasswordBox.Name = "PasswordBox";
-            this.PasswordBox.PasswordChar = '*';
-            this.PasswordBox.Size = new System.Drawing.Size(186, 26);
-            this.PasswordBox.TabIndex = 9;
-            // 
             // ShowPassword
             // 
             this.ShowPassword.AutoSize = true;
@@ -196,6 +110,92 @@
             this.ShowPassword.Text = "Show";
             this.ShowPassword.UseVisualStyleBackColor = true;
             this.ShowPassword.CheckedChanged += new System.EventHandler(this.ShowPassword_CheckedChanged);
+            // 
+            // PasswordBox
+            // 
+            this.PasswordBox.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.PasswordBox.Location = new System.Drawing.Point(114, 141);
+            this.PasswordBox.Name = "PasswordBox";
+            this.PasswordBox.PasswordChar = '*';
+            this.PasswordBox.Size = new System.Drawing.Size(186, 26);
+            this.PasswordBox.TabIndex = 9;
+            // 
+            // UsernameBox
+            // 
+            this.UsernameBox.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.UsernameBox.Location = new System.Drawing.Point(114, 112);
+            this.UsernameBox.Name = "UsernameBox";
+            this.UsernameBox.Size = new System.Drawing.Size(186, 26);
+            this.UsernameBox.TabIndex = 8;
+            // 
+            // EmailBox
+            // 
+            this.EmailBox.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.EmailBox.Location = new System.Drawing.Point(114, 83);
+            this.EmailBox.Name = "EmailBox";
+            this.EmailBox.Size = new System.Drawing.Size(186, 26);
+            this.EmailBox.TabIndex = 7;
+            // 
+            // LastNameBox
+            // 
+            this.LastNameBox.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.LastNameBox.Location = new System.Drawing.Point(114, 54);
+            this.LastNameBox.Name = "LastNameBox";
+            this.LastNameBox.Size = new System.Drawing.Size(186, 26);
+            this.LastNameBox.TabIndex = 6;
+            // 
+            // NameBox
+            // 
+            this.NameBox.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.NameBox.Location = new System.Drawing.Point(114, 25);
+            this.NameBox.Name = "NameBox";
+            this.NameBox.Size = new System.Drawing.Size(186, 26);
+            this.NameBox.TabIndex = 5;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(20, 148);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(76, 16);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Password :";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(16, 119);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(80, 16);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Username :";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(44, 90);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 16);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Email :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 61);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(84, 16);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Last Name :";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(41, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Name :";
             // 
             // pictureBox1
             // 

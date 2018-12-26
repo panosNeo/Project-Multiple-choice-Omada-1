@@ -197,7 +197,7 @@
             // 
             // Profile
             // 
-            this.Profile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            this.Profile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(39)))));
             this.Profile.FlatAppearance.BorderSize = 0;
             this.Profile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(39)))));
             this.Profile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
