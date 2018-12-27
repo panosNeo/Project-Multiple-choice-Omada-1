@@ -15,6 +15,8 @@ namespace Administrator
         private ProfileControl profileControl = new ProfileControl();   //profileControl object
         private SubjectControl subjectControl = new SubjectControl();   //subjectControl object
         private QuestionControl questionControl = new QuestionControl();//questionControl object
+        private UserControl1 userControl1 = new UserControl1();         //userControl object
+
 
         public AdminForm()
         {
@@ -99,7 +101,7 @@ namespace Administrator
         private void User_Click(object sender, EventArgs e)
         {
             //kalese methodo gia xrwma kai switch Control
-            setDesign(User,profileControl);
+            setDesign(User,userControl1);
         }
         private void User_MouseEnter(object sender, EventArgs e)
         {

@@ -30,7 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.SearchIDBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.QuestionGroupbox = new System.Windows.Forms.GroupBox();
             this.warningLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,10 +46,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.AnswerIDList = new System.Windows.Forms.ListBox();
             this.CorrectCheckbox = new System.Windows.Forms.CheckBox();
-            this.QuestionSettingsButton = new System.Windows.Forms.Button();
             this.UpdateButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.AddButton = new System.Windows.Forms.Button();
+            this.QuestionSettingsButton = new System.Windows.Forms.Button();
+            this.SearchBox = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.QuestionIDBox = new System.Windows.Forms.TextBox();
             this.QuestionGroupbox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,20 +75,10 @@
             this.SearchIDBox.Size = new System.Drawing.Size(152, 27);
             this.SearchIDBox.TabIndex = 0;
             // 
-            // button1
-            // 
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::Administrator.Properties.Resources.search;
-            this.button1.Location = new System.Drawing.Point(450, 50);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(57, 27);
-            this.button1.TabIndex = 1;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // QuestionGroupbox
             // 
+            this.QuestionGroupbox.Controls.Add(this.QuestionIDBox);
+            this.QuestionGroupbox.Controls.Add(this.label8);
             this.QuestionGroupbox.Controls.Add(this.UpdateButton);
             this.QuestionGroupbox.Controls.Add(this.DeleteButton);
             this.QuestionGroupbox.Controls.Add(this.AddButton);
@@ -129,7 +121,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 42);
+            this.label2.Location = new System.Drawing.Point(36, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 16);
             this.label2.TabIndex = 0;
@@ -138,7 +130,7 @@
             // UserIDBox
             // 
             this.UserIDBox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.UserIDBox.Location = new System.Drawing.Point(99, 39);
+            this.UserIDBox.Location = new System.Drawing.Point(102, 68);
             this.UserIDBox.Name = "UserIDBox";
             this.UserIDBox.ReadOnly = true;
             this.UserIDBox.Size = new System.Drawing.Size(113, 23);
@@ -147,7 +139,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 71);
+            this.label3.Location = new System.Drawing.Point(13, 100);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 16);
             this.label3.TabIndex = 2;
@@ -156,7 +148,7 @@
             // SubjectIDBox
             // 
             this.SubjectIDBox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.SubjectIDBox.Location = new System.Drawing.Point(99, 68);
+            this.SubjectIDBox.Location = new System.Drawing.Point(102, 97);
             this.SubjectIDBox.Name = "SubjectIDBox";
             this.SubjectIDBox.ReadOnly = true;
             this.SubjectIDBox.Size = new System.Drawing.Size(113, 23);
@@ -265,19 +257,6 @@
             this.CorrectCheckbox.Text = "Correct";
             this.CorrectCheckbox.UseVisualStyleBackColor = true;
             // 
-            // QuestionSettingsButton
-            // 
-            this.QuestionSettingsButton.FlatAppearance.BorderSize = 0;
-            this.QuestionSettingsButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            this.QuestionSettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.QuestionSettingsButton.Image = global::Administrator.Properties.Resources.settings;
-            this.QuestionSettingsButton.Location = new System.Drawing.Point(612, 22);
-            this.QuestionSettingsButton.Name = "QuestionSettingsButton";
-            this.QuestionSettingsButton.Size = new System.Drawing.Size(35, 35);
-            this.QuestionSettingsButton.TabIndex = 12;
-            this.QuestionSettingsButton.UseVisualStyleBackColor = false;
-            this.QuestionSettingsButton.Click += new System.EventHandler(this.QuestionSettingsButton_Click);
-            // 
             // UpdateButton
             // 
             this.UpdateButton.Enabled = false;
@@ -317,6 +296,49 @@
             this.AddButton.Text = "Add";
             this.AddButton.UseVisualStyleBackColor = false;
             // 
+            // QuestionSettingsButton
+            // 
+            this.QuestionSettingsButton.FlatAppearance.BorderSize = 0;
+            this.QuestionSettingsButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            this.QuestionSettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.QuestionSettingsButton.Image = global::Administrator.Properties.Resources.settings;
+            this.QuestionSettingsButton.Location = new System.Drawing.Point(612, 22);
+            this.QuestionSettingsButton.Name = "QuestionSettingsButton";
+            this.QuestionSettingsButton.Size = new System.Drawing.Size(35, 35);
+            this.QuestionSettingsButton.TabIndex = 12;
+            this.QuestionSettingsButton.UseVisualStyleBackColor = false;
+            this.QuestionSettingsButton.Click += new System.EventHandler(this.QuestionSettingsButton_Click);
+            // 
+            // SearchBox
+            // 
+            this.SearchBox.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            this.SearchBox.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            this.SearchBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SearchBox.Image = global::Administrator.Properties.Resources.search;
+            this.SearchBox.Location = new System.Drawing.Point(450, 50);
+            this.SearchBox.Name = "SearchBox";
+            this.SearchBox.Size = new System.Drawing.Size(57, 27);
+            this.SearchBox.TabIndex = 1;
+            this.SearchBox.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 42);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(90, 16);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Question ID :";
+            // 
+            // QuestionIDBox
+            // 
+            this.QuestionIDBox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.QuestionIDBox.Location = new System.Drawing.Point(102, 39);
+            this.QuestionIDBox.Name = "QuestionIDBox";
+            this.QuestionIDBox.ReadOnly = true;
+            this.QuestionIDBox.Size = new System.Drawing.Size(113, 23);
+            this.QuestionIDBox.TabIndex = 2;
+            // 
             // QuestionControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -324,7 +346,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(184)))), ((int)(((byte)(185)))));
             this.Controls.Add(this.warningLabel);
             this.Controls.Add(this.QuestionGroupbox);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.SearchBox);
             this.Controls.Add(this.SearchIDBox);
             this.Controls.Add(this.label1);
             this.Name = "QuestionControl";
@@ -340,7 +362,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox SearchIDBox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button SearchBox;
         private System.Windows.Forms.GroupBox QuestionGroupbox;
         private System.Windows.Forms.Label warningLabel;
         private System.Windows.Forms.Label label2;
@@ -361,5 +383,7 @@
         private System.Windows.Forms.Button UpdateButton;
         private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.Button AddButton;
+        private System.Windows.Forms.TextBox QuestionIDBox;
+        private System.Windows.Forms.Label label8;
     }
 }

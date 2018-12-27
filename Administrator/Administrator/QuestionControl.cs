@@ -28,6 +28,7 @@ namespace Administrator
                 RatingBox.ReadOnly = false;
                 DateBox.ReadOnly = false;
                 AnswerBox.ReadOnly = false;
+                QuestionIDBox.ReadOnly = false;
 
                 CorrectCheckbox.Enabled = true;
                 AddButton.Enabled = true;
@@ -42,6 +43,7 @@ namespace Administrator
                 RatingBox.ReadOnly = true;
                 DateBox.ReadOnly = true;
                 AnswerBox.ReadOnly = true;
+                QuestionIDBox.ReadOnly = true;
 
                 CorrectCheckbox.Enabled = false;
                 AddButton.Enabled = false;
