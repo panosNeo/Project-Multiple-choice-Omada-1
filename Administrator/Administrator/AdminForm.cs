@@ -14,6 +14,7 @@ namespace Administrator
     {
         private ProfileControl profileControl = new ProfileControl();   //profileControl object
         private SubjectControl subjectControl = new SubjectControl();   //subjectControl object
+        private QuestionControl questionControl = new QuestionControl();//questionControl object
 
         public AdminForm()
         {
@@ -113,7 +114,7 @@ namespace Administrator
         private void Question_Click(object sender, EventArgs e)
         {
             //kalese methodo gia xrwma kai switch Control
-            setDesign(Question,profileControl);
+            setDesign(Question,questionControl);
         }
         private void Question_MouseEnter(object sender, EventArgs e)
         {

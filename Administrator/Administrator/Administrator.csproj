@@ -59,6 +59,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuestionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QuestionControl.Designer.cs">
+      <DependentUpon>QuestionControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="SubjectControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -75,6 +81,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuestionControl.resx">
+      <DependentUpon>QuestionControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubjectControl.resx">
       <DependentUpon>SubjectControl.cs</DependentUpon>
@@ -126,6 +135,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\reset.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
