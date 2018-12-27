@@ -51,10 +51,11 @@
             this.leftPanel.Controls.Add(this.feelLuckyBtn);
             this.leftPanel.Controls.Add(this.categoriesBtn);
             this.leftPanel.Controls.Add(this.createQuizBtn);
+            this.leftPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.leftPanel.Location = new System.Drawing.Point(0, 70);
             this.leftPanel.Name = "leftPanel";
-            this.leftPanel.Size = new System.Drawing.Size(165, 381);
-            this.leftPanel.TabIndex = 0;
+            this.leftPanel.Size = new System.Drawing.Size(165, 425);
+            this.leftPanel.TabIndex = 1;
             // 
             // menuVisibleBtn
             // 
@@ -142,10 +143,11 @@
             this.topPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.topPanel.Controls.Add(this.logoLabel);
             this.topPanel.Controls.Add(this.loginBtn);
+            this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.topPanel.Location = new System.Drawing.Point(0, 0);
             this.topPanel.Name = "topPanel";
-            this.topPanel.Size = new System.Drawing.Size(801, 70);
-            this.topPanel.TabIndex = 3;
+            this.topPanel.Size = new System.Drawing.Size(800, 70);
+            this.topPanel.TabIndex = 0;
             // 
             // logoLabel
             // 
@@ -163,6 +165,7 @@
             this.loginBtn.BackColor = System.Drawing.Color.Transparent;
             this.loginBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.loginBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.loginBtn.Dock = System.Windows.Forms.DockStyle.Right;
             this.loginBtn.FlatAppearance.BorderSize = 0;
             this.loginBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(150)))));
             this.loginBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
@@ -172,9 +175,9 @@
             this.loginBtn.ForeColor = System.Drawing.Color.Transparent;
             this.loginBtn.Image = global::QuizMaker.Properties.Resources.login;
             this.loginBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.loginBtn.Location = new System.Drawing.Point(667, -1);
+            this.loginBtn.Location = new System.Drawing.Point(665, 0);
             this.loginBtn.Name = "loginBtn";
-            this.loginBtn.Size = new System.Drawing.Size(133, 70);
+            this.loginBtn.Size = new System.Drawing.Size(133, 68);
             this.loginBtn.TabIndex = 0;
             this.loginBtn.Text = "Login";
             this.loginBtn.UseVisualStyleBackColor = false;
@@ -183,9 +186,10 @@
             // mainPanel
             // 
             this.mainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.mainPanel.Location = new System.Drawing.Point(30, 70);
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.Location = new System.Drawing.Point(0, 0);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(771, 381);
+            this.mainPanel.Size = new System.Drawing.Size(800, 495);
             this.mainPanel.TabIndex = 4;
             // 
             // timer1
@@ -197,9 +201,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.topPanel);
+            this.ClientSize = new System.Drawing.Size(800, 495);
             this.Controls.Add(this.leftPanel);
+            this.Controls.Add(this.topPanel);
             this.Controls.Add(this.mainPanel);
             this.Name = "MainForm";
             this.Text = "Form1";

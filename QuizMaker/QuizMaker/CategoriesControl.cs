@@ -12,10 +12,9 @@ namespace QuizMaker
 {
     public partial class CategoriesControl : UserControl
     {
-        public CategoriesControl(Size s)
+        public CategoriesControl()
         {
             InitializeComponent();
-            this.Size = s;
         }
     }
 }

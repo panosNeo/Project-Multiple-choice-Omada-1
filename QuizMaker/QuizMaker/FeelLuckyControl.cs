@@ -12,10 +12,9 @@ namespace QuizMaker
 {
     public partial class FeelLuckyControl : UserControl
     {
-        public FeelLuckyControl(Size s)
+        public FeelLuckyControl()
         {
             InitializeComponent();
-            this.Size = s;
         }
     }
 }
