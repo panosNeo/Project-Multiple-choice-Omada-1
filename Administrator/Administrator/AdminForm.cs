@@ -17,6 +17,7 @@ namespace Administrator
         private QuestionControl questionControl = new QuestionControl();//questionControl object
         private UserControl1 userControl1 = new UserControl1();         //userControl object
         private ReportControl reportControl = new ReportControl();      //reportControl object
+        private FeedbackControl feedbackControl = new FeedbackControl();//feedbackControl object
 
         public AdminForm()
         {
@@ -146,7 +147,7 @@ namespace Administrator
         private void Feedback_Click(object sender, EventArgs e)
         {
             //kalese methodo gia xrwma kai switch Control
-            setDesign(Feedback,profileControl);
+            setDesign(Feedback,feedbackControl);
         }
         private void Feedback_MouseEnter(object sender, EventArgs e)
         {
