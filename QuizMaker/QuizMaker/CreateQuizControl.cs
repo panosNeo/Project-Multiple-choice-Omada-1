@@ -15,7 +15,6 @@ namespace QuizMaker
         public CreateQuizControl()
         {
             InitializeComponent();
-            
         }
         //ορίζουμε την μεταβλητή panelPos ώστε να θέσουμε κίνηση προς τα αριστερά ή δεξιά
         private int panelPos = 0;
@@ -79,5 +78,35 @@ namespace QuizMaker
 
             }
         }
+        private void nextAnswerBtn_Click(object sender, EventArgs e)
+        {
+            AnswerPanel ap = new AnswerPanel();
+            ap.Location = ((Button)sender).Location;
+
+            nextAnswerBtn.Location = new Point(nextAnswerBtn.Location.X, nextAnswerBtn.Location.Y + 33);
+            delAnswerBtn.Location = new Point(delAnswerBtn.Location.X, delAnswerBtn.Location.Y + 33);
+            AnswersPanel.Controls.Add(ap);
+
+        }
+
+        private void delAnswerBtn_Click(object sender, EventArgs e)
+        {
+            AnswerPanel ap = new AnswerPanel();
+            ap = null;
+            foreach (Control p in AnswersPanel.Controls)
+            {
+                if (p.GetType().ToString() == "QuizMaker.AnswerPanel")
+                {
+                    ap = (AnswerPanel)p;
+                }
+            }
+            if (ap != null)
+            {
+                ap.Dispose();
+                nextAnswerBtn.Location = new Point(nextAnswerBtn.Location.X, nextAnswerBtn.Location.Y - 33);
+                delAnswerBtn.Location = new Point(delAnswerBtn.Location.X, delAnswerBtn.Location.Y - 33);
+            }
+        }
     }
+
 }
