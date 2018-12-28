@@ -16,7 +16,7 @@ namespace Administrator
         private SubjectControl subjectControl = new SubjectControl();   //subjectControl object
         private QuestionControl questionControl = new QuestionControl();//questionControl object
         private UserControl1 userControl1 = new UserControl1();         //userControl object
-
+        private ReportControl reportControl = new ReportControl();      //reportControl object
 
         public AdminForm()
         {
@@ -131,7 +131,7 @@ namespace Administrator
         private void Report_Click(object sender, EventArgs e)
         {
             //kalese methodo gia xrwma kai switch Control
-            setDesign(Report,profileControl);
+            setDesign(Report,reportControl);
         }
         private void Report_MouseEnter(object sender, EventArgs e)
         {
