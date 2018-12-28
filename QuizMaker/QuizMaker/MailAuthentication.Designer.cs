@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.logoLabel = new System.Windows.Forms.Label();
-            this.usernameText = new System.Windows.Forms.TextBox();
+            this.codeText = new System.Windows.Forms.TextBox();
             this.codeLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -39,19 +39,19 @@
             this.logoLabel.AutoSize = true;
             this.logoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logoLabel.ForeColor = System.Drawing.Color.White;
-            this.logoLabel.Location = new System.Drawing.Point(256, 13);
+            this.logoLabel.Location = new System.Drawing.Point(375, 10);
             this.logoLabel.Name = "logoLabel";
             this.logoLabel.Size = new System.Drawing.Size(243, 31);
             this.logoLabel.TabIndex = 2;
             this.logoLabel.Text = "Mail Authentication";
             // 
-            // usernameText
+            // codeText
             // 
-            this.usernameText.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.usernameText.Location = new System.Drawing.Point(332, 201);
-            this.usernameText.Name = "usernameText";
-            this.usernameText.Size = new System.Drawing.Size(201, 20);
-            this.usernameText.TabIndex = 5;
+            this.codeText.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.codeText.Location = new System.Drawing.Point(451, 198);
+            this.codeText.Name = "codeText";
+            this.codeText.Size = new System.Drawing.Size(167, 20);
+            this.codeText.TabIndex = 5;
             // 
             // codeLabel
             // 
@@ -59,7 +59,7 @@
             this.codeLabel.AutoSize = true;
             this.codeLabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.codeLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.codeLabel.Location = new System.Drawing.Point(104, 201);
+            this.codeLabel.Location = new System.Drawing.Point(223, 198);
             this.codeLabel.Name = "codeLabel";
             this.codeLabel.Size = new System.Drawing.Size(204, 24);
             this.codeLabel.TabIndex = 4;
@@ -70,7 +70,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.Controls.Add(this.usernameText);
+            this.Controls.Add(this.codeText);
             this.Controls.Add(this.codeLabel);
             this.Controls.Add(this.logoLabel);
             this.Name = "MailAuthentication";
@@ -83,7 +83,7 @@
         #endregion
 
         private System.Windows.Forms.Label logoLabel;
-        private System.Windows.Forms.TextBox usernameText;
+        private System.Windows.Forms.TextBox codeText;
         private System.Windows.Forms.Label codeLabel;
     }
 }

@@ -34,14 +34,17 @@ namespace QuizMaker
             ln = lastNameText.Text;
             Register.Register re = new Register.Register( user,  pass,  email,  fn,  ln);
 
+            //ελενχος των πεδίων 
             re.IsRegistered(user, pass, email, fn, ln);
 
+            //e-mail verification
             SendMailController.SendVerificationMail(email);
 
-            /*RegisterControl re = new RegisterControl();
-            re.Dock = DockStyle.Fill;
+            //αλλαγη σε πανε οπου ο χρηστης θα δωσει τον κωδικο που του στάλθηκε
+            MailAuthentication m = new MailAuthentication();
+            m.Dock = DockStyle.Fill;
             this.Controls.Clear();
-            this.Controls.Add(re);*/
+            this.Controls.Add(m);
 
 
         }
