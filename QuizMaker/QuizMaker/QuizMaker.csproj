@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.10.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,18 +47,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnswerPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="AnswerPanel.Designer.cs">
-      <DependentUpon>AnswerPanel.cs</DependentUpon>
-    </Compile>
     <Compile Include="CategoriesControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="CategoriesControl.Designer.cs">
       <DependentUpon>CategoriesControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConnectDB.cs" />
     <Compile Include="CreateQuizControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -70,6 +66,7 @@
     <Compile Include="FeelLuckyControl.Designer.cs">
       <DependentUpon>FeelLuckyControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="MailHandler\Mail.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,9 +85,6 @@
     <Compile Include="QuizHandler\FeelLucky.cs" />
     <Compile Include="QuizHandler\Question.cs" />
     <Compile Include="QuizHandler\Quiz.cs" />
-    <EmbeddedResource Include="AnswerPanel.resx">
-      <DependentUpon>AnswerPanel.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CategoriesControl.resx">
       <DependentUpon>CategoriesControl.cs</DependentUpon>
     </EmbeddedResource>
