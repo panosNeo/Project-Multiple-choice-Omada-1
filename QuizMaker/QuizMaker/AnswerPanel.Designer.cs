@@ -34,6 +34,7 @@
             // 
             // AnswerText
             // 
+            this.AnswerText.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.AnswerText.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.AnswerText.Location = new System.Drawing.Point(0, 3);
             this.AnswerText.Name = "AnswerText";
@@ -42,6 +43,7 @@
             // 
             // correctCheckBox
             // 
+            this.correctCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.correctCheckBox.AutoSize = true;
             this.correctCheckBox.Font = new System.Drawing.Font("Century", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.correctCheckBox.Location = new System.Drawing.Point(172, 9);

@@ -13,10 +13,12 @@ namespace QuizMaker
 {
     public partial class CreateQuizControl : UserControl
     {
+        
         public CreateQuizControl()
         {
             InitializeComponent();
         }
+
         //ορίζουμε την μεταβλητή panelPos ώστε να θέσουμε κίνηση προς τα αριστερά ή δεξιά
         private int panelPos = 0;
         //ορίζουμε την παρακάτω μέθοδο που καλείται όταν πατηθεί ένα από τα κουμπιά που μετακινούν τα panel
@@ -84,6 +86,33 @@ namespace QuizMaker
             }
         }
 
+        List<Question> questions = new List<Question>();
+        private int currentQuestion = 0;
+        private void questionsBtn_Click(object sender, EventArgs e)
+        {
+            string name = ((Button)sender).Name;
+            if(name== "prevQuBtn")
+            {
+
+            }
+            else if(name== "nextQuBtn")
+            {
+
+            }
+            else if(name== "nextQuestionBtn")
+            {
+                List<Answer> ans = getAnswers();
+                if(ans.Count==0 || !ListIsCompleted(getAnswers()))
+                {
+                    Console.WriteLine("adio");
+                }
+                else
+                {
+                    Console.WriteLine("exeis");
+                }
+            }
+        }
+
         private void nextAnswerBtn_Click(object sender, EventArgs e)
         {
             AnswerPanel ap = new AnswerPanel();
@@ -131,6 +160,18 @@ namespace QuizMaker
                 }
             }
             return ans;
+        }
+
+        private bool ListIsCompleted(List<Answer> lis)
+        {
+            foreach(Answer a in lis)
+            {
+                if(a.GetAnswer()=="")
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 
