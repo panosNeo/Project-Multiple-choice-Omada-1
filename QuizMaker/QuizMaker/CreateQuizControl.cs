@@ -114,6 +114,24 @@ namespace QuizMaker
                 delAnswerBtn.Location = new Point(delAnswerBtn.Location.X, delAnswerBtn.Location.Y - 33);
             }
         }
+
+        private List<Answer> getAnswers()
+        {
+            List<Answer> ans = new List<Answer>();
+
+            AnswerPanel ap = new AnswerPanel();
+            ap = null;
+            foreach (Control p in AnswersPanel.Controls)
+            {
+                if (p.GetType().ToString() == "QuizMaker.AnswerPanel")
+                {
+                    ap = (AnswerPanel)p;
+                    Answer an = new Answer(ap.GetAnswerName(), ap.GetCorrection());
+                    ans.Add(an);
+                }
+            }
+            return ans;
+        }
     }
 
 }
