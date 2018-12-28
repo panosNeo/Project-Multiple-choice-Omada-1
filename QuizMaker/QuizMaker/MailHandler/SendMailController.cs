@@ -12,12 +12,12 @@ namespace QuizMaker.MailHandler
         private static string verificationCode = "NaN";
         private static string passwordCode = "NaN";
 
-        public string getVerificationCode()
+        public static string getVerificationCode()
         {
             return verificationCode;
         }
 
-        public string getPasswordCode()
+        public static string getPasswordCode()
         {
             return passwordCode;
         }

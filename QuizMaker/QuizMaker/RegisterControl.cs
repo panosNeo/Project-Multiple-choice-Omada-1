@@ -35,7 +35,7 @@ namespace QuizMaker
 
             re.IsRegistered(user, pass, email, fn, ln);
 
-            //SendMailController.SendVerificationMail(email);
+            SendMailController.SendVerificationMail(email);
 
             MailAuthenticationControl m = new MailAuthenticationControl();
             m.Dock = DockStyle.Fill;

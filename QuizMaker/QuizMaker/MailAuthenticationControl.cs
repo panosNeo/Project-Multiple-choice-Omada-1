@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuizMaker.MailHandler;
 
 namespace QuizMaker
 {
@@ -15,6 +16,14 @@ namespace QuizMaker
         public MailAuthenticationControl()
         {
             InitializeComponent();
+        }
+
+        private void verifyBtn_Click(object sender, EventArgs e)
+        {
+            if (vCodeText.Text == SendMailController.getVerificationCode())
+            {
+                MessageBox.Show("Your email has been verified");
+            }
         }
     }
 }

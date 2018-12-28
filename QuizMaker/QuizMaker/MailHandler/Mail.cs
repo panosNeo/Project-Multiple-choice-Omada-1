@@ -44,7 +44,7 @@ namespace QuizMaker.MailHandler
 
         public string generateCode()
         {
-            Random r = new Random(10);
+            Random r = new Random();
             code = "" + r.Next(10) + r.Next(10) + r.Next(10) + r.Next(10) + r.Next(10) + r.Next(10);
             return code;
         }

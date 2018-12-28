@@ -103,3 +103,23 @@ C:\Users\Giorgos\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\Quiz
 C:\Users\Giorgos\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.PlayQuizTemplates.QuizSwap.resources
 C:\Users\Giorgos\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.QuizPanel.resources
 C:\Users\Giorgos\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.MailAuthenticationControl.resources
+C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\bin\Debug\QuizMaker.exe.config
+C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\bin\Debug\QuizMaker.exe
+C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\bin\Debug\QuizMaker.pdb
+C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.csprojAssemblyReference.cache
+C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.AnswerPanel.resources
+C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.CategoriesControl.resources
+C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.CreateQuizControl.resources
+C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.FeelLuckyControl.resources
+C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.MailAuthenticationControl.resources
+C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.MainForm.resources
+C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.PlayQuizTemplates.QuizAnswers.resources
+C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.PlayQuizTemplates.QuizQuestion.resources
+C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.PlayQuizTemplates.QuizSwap.resources
+C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.Properties.Resources.resources
+C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.LoginControl.resources
+C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.QuizPanel.resources
+C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.csproj.GenerateResource.cache
+C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.csproj.CoreCompileInputs.cache
+C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.exe
+C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.pdb

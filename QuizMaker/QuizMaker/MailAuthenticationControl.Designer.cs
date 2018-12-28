@@ -85,6 +85,7 @@
             this.verifyBtn.TabIndex = 7;
             this.verifyBtn.Text = "Verify";
             this.verifyBtn.UseVisualStyleBackColor = false;
+            this.verifyBtn.Click += new System.EventHandler(this.verifyBtn_Click);
             // 
             // MailAuthenticationControl
             // 
