@@ -71,6 +71,12 @@
       <DependentUpon>FeelLuckyControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Login\Login.cs" />
+    <Compile Include="MailAuthentication.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MailAuthentication.Designer.cs">
+      <DependentUpon>MailAuthentication.cs</DependentUpon>
+    </Compile>
     <Compile Include="MailHandler\Mail.cs" />
     <Compile Include="MailHandler\SendMailController.cs" />
     <Compile Include="MainForm.cs">
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FeelLuckyControl.resx">
       <DependentUpon>FeelLuckyControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MailAuthentication.resx">
+      <DependentUpon>MailAuthentication.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
