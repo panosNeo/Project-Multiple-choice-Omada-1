@@ -72,6 +72,7 @@
     </Compile>
     <Compile Include="Login\Login.cs" />
     <Compile Include="MailHandler\Mail.cs" />
+    <Compile Include="MailHandler\SendMailController.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
