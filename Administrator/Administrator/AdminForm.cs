@@ -18,6 +18,7 @@ namespace Administrator
         private UserControl1 userControl1 = new UserControl1();         //userControl object
         private ReportControl reportControl = new ReportControl();      //reportControl object
         private FeedbackControl feedbackControl = new FeedbackControl();//feedbackControl object
+        private LoginControl loginControl = new LoginControl();         //loginControl object
 
         public AdminForm()
         {
@@ -28,7 +29,7 @@ namespace Administrator
         private void AdminForm_Load(object sender, EventArgs e)
         {
             //me to load allaxe to profile button xrwma kai kane switch UserControl
-            setDesign(Profile,profileControl);
+            setDesign(Profile,loginControl);
         }
         
         //move from TopPanel
@@ -63,6 +64,18 @@ namespace Administrator
             button.BackColor = Color.FromArgb(3, 56, 73);
         }
 
+        //an ginei to login me epituxia tote kaleitai h methodos 
+        //kai diamorfwnei to design 
+        public void LoginDesign() {
+            setDesign(Profile,profileControl);
+            MenuPanel.Visible = true;
+        }
+
+        //me to logout kaleitai h methodos gia allagh design
+        public void LogoutDesign() {
+            setDesign(Profile,loginControl);
+            MenuPanel.Visible = false;
+        }
         
         //sta Mouse-enter -- Mouse-leave events
         //allazoun ta xrwmata twn grammatwn sta buttons

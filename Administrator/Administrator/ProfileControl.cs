@@ -45,9 +45,11 @@ namespace Administrator
                 dataGroupbox.Enabled = true;
         }
 
+        //logout button
         private void profileLogoutButton_Click(object sender, EventArgs e)
         {
-            //leipei to logout
+            AdminForm adminForm = (AdminForm)this.FindForm();
+            adminForm.LogoutDesign();
         }
 
 

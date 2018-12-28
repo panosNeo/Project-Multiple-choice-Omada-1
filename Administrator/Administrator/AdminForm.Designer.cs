@@ -30,15 +30,15 @@
         {
             this.TopPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.Close = new System.Windows.Forms.Button();
             this.MenuPanel = new System.Windows.Forms.Panel();
-            this.MainPanel = new System.Windows.Forms.Panel();
             this.Feedback = new System.Windows.Forms.Button();
             this.Report = new System.Windows.Forms.Button();
             this.Question = new System.Windows.Forms.Button();
             this.User = new System.Windows.Forms.Button();
             this.Subject = new System.Windows.Forms.Button();
             this.Profile = new System.Windows.Forms.Button();
-            this.Close = new System.Windows.Forms.Button();
+            this.MainPanel = new System.Windows.Forms.Panel();
             this.TopPanel.SuspendLayout();
             this.MenuPanel.SuspendLayout();
             this.SuspendLayout();
@@ -67,6 +67,23 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Administrator App";
             // 
+            // Close
+            // 
+            this.Close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Close.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Close.FlatAppearance.BorderSize = 0;
+            this.Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Close.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.Close.Image = global::Administrator.Properties.Resources.close;
+            this.Close.Location = new System.Drawing.Point(892, 0);
+            this.Close.Name = "Close";
+            this.Close.Size = new System.Drawing.Size(42, 45);
+            this.Close.TabIndex = 0;
+            this.Close.UseVisualStyleBackColor = false;
+            this.Close.Click += new System.EventHandler(this.Close_Click);
+            this.Close.MouseEnter += new System.EventHandler(this.Close_MouseEnter);
+            this.Close.MouseLeave += new System.EventHandler(this.Close_MouseLeave);
+            // 
             // MenuPanel
             // 
             this.MenuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(39)))));
@@ -82,15 +99,7 @@
             this.MenuPanel.Name = "MenuPanel";
             this.MenuPanel.Size = new System.Drawing.Size(200, 423);
             this.MenuPanel.TabIndex = 1;
-            // 
-            // MainPanel
-            // 
-            this.MainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(184)))), ((int)(((byte)(185)))));
-            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainPanel.Location = new System.Drawing.Point(200, 47);
-            this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(736, 423);
-            this.MainPanel.TabIndex = 2;
+            this.MenuPanel.Visible = false;
             // 
             // Feedback
             // 
@@ -207,22 +216,14 @@
             this.Profile.MouseEnter += new System.EventHandler(this.Profile_MouseEnter);
             this.Profile.MouseLeave += new System.EventHandler(this.Profile_MouseLeave);
             // 
-            // Close
+            // MainPanel
             // 
-            this.Close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Close.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Close.FlatAppearance.BorderSize = 0;
-            this.Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Close.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.Close.Image = global::Administrator.Properties.Resources.close;
-            this.Close.Location = new System.Drawing.Point(892, 0);
-            this.Close.Name = "Close";
-            this.Close.Size = new System.Drawing.Size(42, 45);
-            this.Close.TabIndex = 0;
-            this.Close.UseVisualStyleBackColor = false;
-            this.Close.Click += new System.EventHandler(this.Close_Click);
-            this.Close.MouseEnter += new System.EventHandler(this.Close_MouseEnter);
-            this.Close.MouseLeave += new System.EventHandler(this.Close_MouseLeave);
+            this.MainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(184)))), ((int)(((byte)(185)))));
+            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainPanel.Location = new System.Drawing.Point(200, 47);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(736, 423);
+            this.MainPanel.TabIndex = 2;
             // 
             // AdminForm
             // 
