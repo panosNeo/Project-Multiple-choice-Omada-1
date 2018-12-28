@@ -86,6 +86,7 @@
             this.passwordText.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.passwordText.Location = new System.Drawing.Point(324, 229);
             this.passwordText.Name = "passwordText";
+            this.passwordText.PasswordChar = '*';
             this.passwordText.Size = new System.Drawing.Size(201, 20);
             this.passwordText.TabIndex = 4;
             // 
@@ -129,6 +130,7 @@
             this.createAccountBtn.TabIndex = 6;
             this.createAccountBtn.Text = "Create account";
             this.createAccountBtn.UseVisualStyleBackColor = false;
+            this.createAccountBtn.Click += new System.EventHandler(this.createAccountBtn_Click);
             // 
             // LoginControl
             // 
