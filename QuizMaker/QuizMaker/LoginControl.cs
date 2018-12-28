@@ -18,10 +18,11 @@ namespace QuizMaker
             InitializeComponent();
         }
 
+        //prosorina stoixeia gia testing
         Login.Login login = new Login.Login("admin", "1234");
        
         
-
+        //log in button
         private void loginBtn_Click(object sender, EventArgs e)
         {
             string user = usernameText.Text;
@@ -35,6 +36,15 @@ namespace QuizMaker
             {
                 MessageBox.Show("Login Error!");
             }
+        }
+
+        private void createAccountBtn_Click(object sender, EventArgs e)
+        {
+
+            RegisterControl re = new RegisterControl();
+            re.Dock = DockStyle.Fill;
+            this.Controls.Clear();
+            this.Controls.Add(re);
         }
     }
 }

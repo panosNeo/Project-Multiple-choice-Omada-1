@@ -54,6 +54,7 @@
             this.reviewLabel = new System.Windows.Forms.Label();
             this.stepThreeLabel = new System.Windows.Forms.Label();
             this.createQuizTimer = new System.Windows.Forms.Timer(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.firstPanel.SuspendLayout();
             this.secondPanel.SuspendLayout();
             this.innerQuestionPanel.SuspendLayout();
@@ -147,6 +148,7 @@
             // 
             this.secondPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.secondPanel.BackColor = System.Drawing.Color.White;
+            this.secondPanel.Controls.Add(this.button1);
             this.secondPanel.Controls.Add(this.backBtn);
             this.secondPanel.Controls.Add(this.innerQuestionPanel);
             this.secondPanel.Controls.Add(this.nextQuestionBtn);
@@ -370,6 +372,14 @@
             this.createQuizTimer.Interval = 1;
             this.createQuizTimer.Tick += new System.EventHandler(this.createQuizTimer_Tick);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(27, 297);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(33, 33);
+            this.button1.TabIndex = 13;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // CreateQuizControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -419,5 +429,6 @@
         private System.Windows.Forms.Panel AnswersPanel;
         private System.Windows.Forms.Button delAnswerBtn;
         private System.Windows.Forms.Button nextAnswerBtn;
+        private System.Windows.Forms.Button button1;
     }
 }

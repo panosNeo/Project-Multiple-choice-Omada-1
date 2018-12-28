@@ -39,6 +39,10 @@ namespace QuizMaker.QuizHandler
             this.isCorrect = isC;
         }
 
+        public string GetAnswer()
+        {
+            return this.answer;
+        }
         //Get if the answer is true or false//
         public bool IsCorrect()
         {
