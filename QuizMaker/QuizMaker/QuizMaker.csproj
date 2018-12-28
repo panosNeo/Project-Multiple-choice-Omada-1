@@ -70,6 +70,7 @@
     <Compile Include="FeelLuckyControl.Designer.cs">
       <DependentUpon>FeelLuckyControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login\Login.cs" />
     <Compile Include="MailHandler\Mail.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
