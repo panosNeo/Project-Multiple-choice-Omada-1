@@ -79,6 +79,24 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PlayQuizTemplates\QuizAnswers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PlayQuizTemplates\QuizAnswers.Designer.cs">
+      <DependentUpon>QuizAnswers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlayQuizTemplates\QuizQuestion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PlayQuizTemplates\QuizQuestion.Designer.cs">
+      <DependentUpon>QuizQuestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlayQuizTemplates\QuizSwap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PlayQuizTemplates\QuizSwap.Designer.cs">
+      <DependentUpon>QuizSwap.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LoginControl.cs">
@@ -92,6 +110,12 @@
     <Compile Include="QuizHandler\FeelLucky.cs" />
     <Compile Include="QuizHandler\Question.cs" />
     <Compile Include="QuizHandler\Quiz.cs" />
+    <Compile Include="QuizPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QuizPanel.Designer.cs">
+      <DependentUpon>QuizPanel.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AnswerPanel.resx">
       <DependentUpon>AnswerPanel.cs</DependentUpon>
     </EmbeddedResource>
@@ -107,6 +131,15 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PlayQuizTemplates\QuizAnswers.resx">
+      <DependentUpon>QuizAnswers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayQuizTemplates\QuizQuestion.resx">
+      <DependentUpon>QuizQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayQuizTemplates\QuizSwap.resx">
+      <DependentUpon>QuizSwap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -119,6 +152,9 @@
     </Compile>
     <EmbeddedResource Include="LoginControl.resx">
       <DependentUpon>LoginControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuizPanel.resx">
+      <DependentUpon>QuizPanel.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
