@@ -21,6 +21,7 @@ namespace QuizMaker.QuizHandler
             this.subject_id = subject;
             this.by_user_id = user;
             this.creationDate = DateTime.Now;
+            this.questions = new List<Question>();
         }
 
         //SETTERS//

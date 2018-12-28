@@ -29,6 +29,7 @@ namespace QuizMaker.QuizHandler
             this.subject_id = subject;
             this.creationDate = date;
             this.rating = 0;
+            this.answers = new List<Answer>();
         }
 
         //SETTERS, change variables//

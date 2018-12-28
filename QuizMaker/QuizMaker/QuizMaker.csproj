@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnswerPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AnswerPanel.Designer.cs">
+      <DependentUpon>AnswerPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="CategoriesControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -82,6 +88,9 @@
     <Compile Include="QuizHandler\FeelLucky.cs" />
     <Compile Include="QuizHandler\Question.cs" />
     <Compile Include="QuizHandler\Quiz.cs" />
+    <EmbeddedResource Include="AnswerPanel.resx">
+      <DependentUpon>AnswerPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CategoriesControl.resx">
       <DependentUpon>CategoriesControl.cs</DependentUpon>
     </EmbeddedResource>
