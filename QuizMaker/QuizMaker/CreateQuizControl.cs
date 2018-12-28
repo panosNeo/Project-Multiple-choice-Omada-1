@@ -102,7 +102,7 @@ namespace QuizMaker
             else if(name== "nextQuestionBtn")
             {
                 List<Answer> ans = getAnswers();
-                if(ans.Count==0 || !ListIsCompleted(getAnswers()))
+                if(ans.Count==0 || !ListIsCompleted(getAnswers()) || questionNameTextBox.Text=="")
                 {
                     Console.WriteLine("adio");
                 }
