@@ -33,16 +33,19 @@
             this.stepOneNextBtn = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tagsLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.quizNameTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.stepOneLabel = new System.Windows.Forms.Label();
             this.secondPanel = new System.Windows.Forms.Panel();
             this.backBtn = new System.Windows.Forms.Button();
             this.innerQuestionPanel = new System.Windows.Forms.Panel();
+            this.AnswersPanel = new System.Windows.Forms.Panel();
+            this.delAnswerBtn = new System.Windows.Forms.Button();
+            this.nextAnswerBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.questionSetLabel = new System.Windows.Forms.Label();
             this.setAnswerLabel = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.questionNameTextBox = new System.Windows.Forms.TextBox();
             this.stepToLabel = new System.Windows.Forms.Label();
             this.nextQuestionBtn = new System.Windows.Forms.Button();
             this.finishQuestionsBtn = new System.Windows.Forms.Button();
@@ -51,14 +54,11 @@
             this.reviewLabel = new System.Windows.Forms.Label();
             this.stepThreeLabel = new System.Windows.Forms.Label();
             this.createQuizTimer = new System.Windows.Forms.Timer(this.components);
-            this.AnswersPanel = new System.Windows.Forms.Panel();
-            this.delAnswerBtn = new System.Windows.Forms.Button();
-            this.nextAnswerBtn = new System.Windows.Forms.Button();
             this.firstPanel.SuspendLayout();
             this.secondPanel.SuspendLayout();
             this.innerQuestionPanel.SuspendLayout();
-            this.thirdPanel.SuspendLayout();
             this.AnswersPanel.SuspendLayout();
+            this.thirdPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // firstPanel
@@ -68,10 +68,10 @@
             this.firstPanel.Controls.Add(this.stepOneNextBtn);
             this.firstPanel.Controls.Add(this.comboBox1);
             this.firstPanel.Controls.Add(this.tagsLabel);
-            this.firstPanel.Controls.Add(this.textBox1);
+            this.firstPanel.Controls.Add(this.quizNameTextBox);
             this.firstPanel.Controls.Add(this.label1);
             this.firstPanel.Controls.Add(this.stepOneLabel);
-            this.firstPanel.Location = new System.Drawing.Point(750, 105);
+            this.firstPanel.Location = new System.Drawing.Point(794, 105);
             this.firstPanel.Name = "firstPanel";
             this.firstPanel.Size = new System.Drawing.Size(260, 325);
             this.firstPanel.TabIndex = 0;
@@ -115,13 +115,13 @@
             this.tagsLabel.TabIndex = 3;
             this.tagsLabel.Text = "Set tags for quiz";
             // 
-            // textBox1
+            // quizNameTextBox
             // 
-            this.textBox1.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.textBox1.Location = new System.Drawing.Point(7, 83);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(166, 27);
-            this.textBox1.TabIndex = 2;
+            this.quizNameTextBox.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.quizNameTextBox.Location = new System.Drawing.Point(7, 83);
+            this.quizNameTextBox.Name = "quizNameTextBox";
+            this.quizNameTextBox.Size = new System.Drawing.Size(166, 27);
+            this.quizNameTextBox.TabIndex = 2;
             // 
             // label1
             // 
@@ -152,7 +152,7 @@
             this.secondPanel.Controls.Add(this.nextQuestionBtn);
             this.secondPanel.Controls.Add(this.finishQuestionsBtn);
             this.secondPanel.Enabled = false;
-            this.secondPanel.Location = new System.Drawing.Point(1100, 105);
+            this.secondPanel.Location = new System.Drawing.Point(1144, 105);
             this.secondPanel.Name = "secondPanel";
             this.secondPanel.Size = new System.Drawing.Size(272, 391);
             this.secondPanel.TabIndex = 1;
@@ -185,12 +185,44 @@
             this.innerQuestionPanel.Controls.Add(this.label2);
             this.innerQuestionPanel.Controls.Add(this.questionSetLabel);
             this.innerQuestionPanel.Controls.Add(this.setAnswerLabel);
-            this.innerQuestionPanel.Controls.Add(this.textBox2);
+            this.innerQuestionPanel.Controls.Add(this.questionNameTextBox);
             this.innerQuestionPanel.Controls.Add(this.stepToLabel);
             this.innerQuestionPanel.Location = new System.Drawing.Point(0, 0);
             this.innerQuestionPanel.Name = "innerQuestionPanel";
             this.innerQuestionPanel.Size = new System.Drawing.Size(272, 293);
             this.innerQuestionPanel.TabIndex = 11;
+            // 
+            // AnswersPanel
+            // 
+            this.AnswersPanel.AutoScroll = true;
+            this.AnswersPanel.Controls.Add(this.delAnswerBtn);
+            this.AnswersPanel.Controls.Add(this.nextAnswerBtn);
+            this.AnswersPanel.Location = new System.Drawing.Point(0, 149);
+            this.AnswersPanel.Name = "AnswersPanel";
+            this.AnswersPanel.Size = new System.Drawing.Size(272, 144);
+            this.AnswersPanel.TabIndex = 13;
+            // 
+            // delAnswerBtn
+            // 
+            this.delAnswerBtn.Font = new System.Drawing.Font("Century", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.delAnswerBtn.Location = new System.Drawing.Point(66, 3);
+            this.delAnswerBtn.Name = "delAnswerBtn";
+            this.delAnswerBtn.Size = new System.Drawing.Size(31, 30);
+            this.delAnswerBtn.TabIndex = 13;
+            this.delAnswerBtn.Text = "-";
+            this.delAnswerBtn.UseVisualStyleBackColor = true;
+            this.delAnswerBtn.Click += new System.EventHandler(this.delAnswerBtn_Click);
+            // 
+            // nextAnswerBtn
+            // 
+            this.nextAnswerBtn.Font = new System.Drawing.Font("Century", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.nextAnswerBtn.Location = new System.Drawing.Point(16, 3);
+            this.nextAnswerBtn.Name = "nextAnswerBtn";
+            this.nextAnswerBtn.Size = new System.Drawing.Size(31, 30);
+            this.nextAnswerBtn.TabIndex = 12;
+            this.nextAnswerBtn.Text = "+";
+            this.nextAnswerBtn.UseVisualStyleBackColor = true;
+            this.nextAnswerBtn.Click += new System.EventHandler(this.nextAnswerBtn_Click);
             // 
             // label2
             // 
@@ -222,13 +254,13 @@
             this.setAnswerLabel.TabIndex = 3;
             this.setAnswerLabel.Text = "Set answer/s";
             // 
-            // textBox2
+            // questionNameTextBox
             // 
-            this.textBox2.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.textBox2.Location = new System.Drawing.Point(16, 83);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(166, 27);
-            this.textBox2.TabIndex = 2;
+            this.questionNameTextBox.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.questionNameTextBox.Location = new System.Drawing.Point(16, 83);
+            this.questionNameTextBox.Name = "questionNameTextBox";
+            this.questionNameTextBox.Size = new System.Drawing.Size(235, 27);
+            this.questionNameTextBox.TabIndex = 2;
             // 
             // stepToLabel
             // 
@@ -288,7 +320,7 @@
             this.thirdPanel.Controls.Add(this.reviewLabel);
             this.thirdPanel.Controls.Add(this.stepThreeLabel);
             this.thirdPanel.Enabled = false;
-            this.thirdPanel.Location = new System.Drawing.Point(1450, 105);
+            this.thirdPanel.Location = new System.Drawing.Point(1494, 105);
             this.thirdPanel.Name = "thirdPanel";
             this.thirdPanel.Size = new System.Drawing.Size(260, 325);
             this.thirdPanel.TabIndex = 2;
@@ -338,38 +370,6 @@
             this.createQuizTimer.Interval = 1;
             this.createQuizTimer.Tick += new System.EventHandler(this.createQuizTimer_Tick);
             // 
-            // AnswersPanel
-            // 
-            this.AnswersPanel.AutoScroll = true;
-            this.AnswersPanel.Controls.Add(this.delAnswerBtn);
-            this.AnswersPanel.Controls.Add(this.nextAnswerBtn);
-            this.AnswersPanel.Location = new System.Drawing.Point(0, 149);
-            this.AnswersPanel.Name = "AnswersPanel";
-            this.AnswersPanel.Size = new System.Drawing.Size(272, 144);
-            this.AnswersPanel.TabIndex = 13;
-            // 
-            // delAnswerBtn
-            // 
-            this.delAnswerBtn.Font = new System.Drawing.Font("Century", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.delAnswerBtn.Location = new System.Drawing.Point(66, 3);
-            this.delAnswerBtn.Name = "delAnswerBtn";
-            this.delAnswerBtn.Size = new System.Drawing.Size(31, 30);
-            this.delAnswerBtn.TabIndex = 13;
-            this.delAnswerBtn.Text = "-";
-            this.delAnswerBtn.UseVisualStyleBackColor = true;
-            this.delAnswerBtn.Click += new System.EventHandler(this.delAnswerBtn_Click);
-            // 
-            // nextAnswerBtn
-            // 
-            this.nextAnswerBtn.Font = new System.Drawing.Font("Century", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.nextAnswerBtn.Location = new System.Drawing.Point(16, 3);
-            this.nextAnswerBtn.Name = "nextAnswerBtn";
-            this.nextAnswerBtn.Size = new System.Drawing.Size(31, 30);
-            this.nextAnswerBtn.TabIndex = 12;
-            this.nextAnswerBtn.Text = "+";
-            this.nextAnswerBtn.UseVisualStyleBackColor = true;
-            this.nextAnswerBtn.Click += new System.EventHandler(this.nextAnswerBtn_Click);
-            // 
             // CreateQuizControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -379,15 +379,15 @@
             this.Controls.Add(this.secondPanel);
             this.Controls.Add(this.firstPanel);
             this.Name = "CreateQuizControl";
-            this.Size = new System.Drawing.Size(1760, 509);
+            this.Size = new System.Drawing.Size(1849, 509);
             this.firstPanel.ResumeLayout(false);
             this.firstPanel.PerformLayout();
             this.secondPanel.ResumeLayout(false);
             this.innerQuestionPanel.ResumeLayout(false);
             this.innerQuestionPanel.PerformLayout();
+            this.AnswersPanel.ResumeLayout(false);
             this.thirdPanel.ResumeLayout(false);
             this.thirdPanel.PerformLayout();
-            this.AnswersPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -397,7 +397,7 @@
         private System.Windows.Forms.Panel firstPanel;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label tagsLabel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox quizNameTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label stepOneLabel;
         private System.Windows.Forms.Button stepOneNextBtn;
@@ -407,7 +407,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label questionSetLabel;
         private System.Windows.Forms.Label setAnswerLabel;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox questionNameTextBox;
         private System.Windows.Forms.Label stepToLabel;
         private System.Windows.Forms.Button nextQuestionBtn;
         private System.Windows.Forms.Button finishQuestionsBtn;

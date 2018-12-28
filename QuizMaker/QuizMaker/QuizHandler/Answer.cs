@@ -16,6 +16,9 @@ namespace QuizMaker.QuizHandler
         */
 
         //CONSTRUCTOR, create Answer object//
+        public Answer()
+        {
+        }
         public Answer(string an, bool isC)
         {
             this.answer = an;

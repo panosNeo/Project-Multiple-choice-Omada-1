@@ -15,6 +15,11 @@ namespace QuizMaker.QuizHandler
         private DateTime creationDate;
         private List<Question> questions;
 
+        public Quiz()
+        {
+            this.questions = new List<Question>();
+        }
+
         public Quiz(string title, int subject, int user)
         {
             this.quizTitle = title;
@@ -57,9 +62,9 @@ namespace QuizMaker.QuizHandler
         }
 
         //Handle question list//
-        public void AddQuestion(string question, int subject)
+        public void AddQuestion(Question question, int subject)
         {
-            questions.Add(new Question(question, by_user_id, subject_id, creationDate));
+            questions.Add(question);
         }
 
         public bool RemoveQuestion(int position)

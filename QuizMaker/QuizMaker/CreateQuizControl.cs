@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuizMaker.QuizHandler;
 
 namespace QuizMaker
 {
@@ -23,12 +24,16 @@ namespace QuizMaker
         {
             //ως tag ορίζουμε την κίνηση των panel που θα γίνει(τιμές που παίρνει: -5,5)
             panelPos = Convert.ToInt32(((Button)sender).Tag);
-            createQuizTimer.Start();
             //ξεχωρίζουμε τα button που κάλεσαν το event για περαιτέρω επεξεργασία(αποθήκευση τιμών κλπ)
             string name = ((Button)sender).Name;
             if (name.Equals("stepOneNextBtn"))
             {
-                SetEnabledPanels(1);
+                if(quizNameTextBox.Text!="")
+                {
+                    //αν είναι κενό το όνομα δεν συνεχίζεται 
+                    CreateQuizControlHandler.SetQuiz(quizNameTextBox.Text, 0, 0);
+                    SetEnabledPanels(1);
+                }
             }else if (name.Equals("backBtn"))
             {
                 SetEnabledPanels(0);
@@ -61,6 +66,7 @@ namespace QuizMaker
         }
         private void SetEnabledPanels(int panel)
         {
+            createQuizTimer.Start(); // timer για το animation
             firstPanel.Enabled = false;
             secondPanel.Enabled = false;
             thirdPanel.Enabled = false;
@@ -75,18 +81,18 @@ namespace QuizMaker
                 case 2:
                     thirdPanel.Enabled = true;
                     break;
-
             }
         }
+
         private void nextAnswerBtn_Click(object sender, EventArgs e)
         {
             AnswerPanel ap = new AnswerPanel();
             ap.Location = ((Button)sender).Location;
 
+            //μετακινηση των κουμπιών + και - προς τα κατω
             nextAnswerBtn.Location = new Point(nextAnswerBtn.Location.X, nextAnswerBtn.Location.Y + 33);
             delAnswerBtn.Location = new Point(delAnswerBtn.Location.X, delAnswerBtn.Location.Y + 33);
             AnswersPanel.Controls.Add(ap);
-
         }
 
         private void delAnswerBtn_Click(object sender, EventArgs e)
@@ -103,6 +109,7 @@ namespace QuizMaker
             if (ap != null)
             {
                 ap.Dispose();
+                //μετακινηση των κουμπιών + και - προς τα πανω
                 nextAnswerBtn.Location = new Point(nextAnswerBtn.Location.X, nextAnswerBtn.Location.Y - 33);
                 delAnswerBtn.Location = new Point(delAnswerBtn.Location.X, delAnswerBtn.Location.Y - 33);
             }

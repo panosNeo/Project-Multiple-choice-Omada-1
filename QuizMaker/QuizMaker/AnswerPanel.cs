@@ -16,5 +16,15 @@ namespace QuizMaker
         {
             InitializeComponent();
         }
+
+        public string GetAnswerName()
+        {
+            return AnswerText.Text;
+        }
+
+        public bool GetCorrection()
+        {
+            return correctCheckBox.Checked;
+        }
     }
 }

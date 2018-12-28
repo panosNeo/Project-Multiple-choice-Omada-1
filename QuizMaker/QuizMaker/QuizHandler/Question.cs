@@ -22,6 +22,12 @@ namespace QuizMaker.QuizHandler
         */
 
         //CONSTRUCTOR, create Question object//
+
+        public Question()
+        {
+            this.answers = new List<Answer>();
+        }
+
         public Question(string question, int user, int subject, DateTime date)
         {
             this.question = question;
@@ -72,9 +78,9 @@ namespace QuizMaker.QuizHandler
             return creationDate;
         }
 
-        public void AddAnswer(string answer, bool isCorrect)
+        public void AddAnswer(Answer answer)
         {
-            answers.Add(new Answer(answer, isCorrect));
+            answers.Add(answer);
         }
 
         public bool RemoveAnswer(int position)
