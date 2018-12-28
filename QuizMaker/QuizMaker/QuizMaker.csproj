@@ -116,8 +116,8 @@
     <Compile Include="QuizHandler\FeelLucky.cs" />
     <Compile Include="QuizHandler\Question.cs" />
     <Compile Include="QuizHandler\Quiz.cs" />
-    <Compile Include="QuizPanel.cs">
 	<Compile Include="Register\Register.cs" />
+    <Compile Include="QuizPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="QuizPanel.Designer.cs">
