@@ -15,7 +15,6 @@ namespace QuizMaker
         public CreateQuizControl()
         {
             InitializeComponent();
-            
         }
         //ορίζουμε την μεταβλητή panelPos ώστε να θέσουμε κίνηση προς τα αριστερά ή δεξιά
         private int panelPos = 0;
