@@ -64,7 +64,7 @@
             this.menuVisibleBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
             this.menuVisibleBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(150)))));
             this.menuVisibleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.menuVisibleBtn.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.menuVisibleBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.menuVisibleBtn.ForeColor = System.Drawing.Color.White;
             this.menuVisibleBtn.Image = global::QuizMaker.Properties.Resources.menu2;
             this.menuVisibleBtn.Location = new System.Drawing.Point(-1, -1);
@@ -82,7 +82,7 @@
             this.feelLuckyBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
             this.feelLuckyBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(150)))));
             this.feelLuckyBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.feelLuckyBtn.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.feelLuckyBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.feelLuckyBtn.ForeColor = System.Drawing.Color.White;
             this.feelLuckyBtn.Image = global::QuizMaker.Properties.Resources.list;
             this.feelLuckyBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -103,7 +103,7 @@
             this.categoriesBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
             this.categoriesBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(150)))));
             this.categoriesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.categoriesBtn.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.categoriesBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.categoriesBtn.ForeColor = System.Drawing.Color.White;
             this.categoriesBtn.Image = global::QuizMaker.Properties.Resources.list;
             this.categoriesBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -124,7 +124,7 @@
             this.createQuizBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
             this.createQuizBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(150)))));
             this.createQuizBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.createQuizBtn.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.createQuizBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.createQuizBtn.ForeColor = System.Drawing.Color.White;
             this.createQuizBtn.Image = global::QuizMaker.Properties.Resources.list;
             this.createQuizBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -191,6 +191,7 @@
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(800, 495);
             this.mainPanel.TabIndex = 4;
+            this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
             // 
             // timer1
             // 
