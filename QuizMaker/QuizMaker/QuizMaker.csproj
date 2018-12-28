@@ -71,6 +71,12 @@
       <DependentUpon>FeelLuckyControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Login\Login.cs" />
+    <Compile Include="MailAuthenticationControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MailAuthenticationControl.Designer.cs">
+      <DependentUpon>MailAuthenticationControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="MailHandler\Mail.cs" />
     <Compile Include="MailHandler\SendMailController.cs" />
     <Compile Include="MainForm.cs">
@@ -97,7 +103,7 @@
     <Compile Include="PlayQuizTemplates\QuizSwap.Designer.cs">
       <DependentUpon>QuizSwap.cs</DependentUpon>
     </Compile>
-	<Compile Include="RegisterControl.cs">
+    <Compile Include="RegisterControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="RegisterControl.Designer.cs">
@@ -116,7 +122,7 @@
     <Compile Include="QuizHandler\FeelLucky.cs" />
     <Compile Include="QuizHandler\Question.cs" />
     <Compile Include="QuizHandler\Quiz.cs" />
-	<Compile Include="Register\Register.cs" />
+    <Compile Include="Register\Register.cs" />
     <Compile Include="QuizPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FeelLuckyControl.resx">
       <DependentUpon>FeelLuckyControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MailAuthenticationControl.resx">
+      <DependentUpon>MailAuthenticationControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

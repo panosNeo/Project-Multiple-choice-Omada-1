@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuizMaker.Register;
-
+using QuizMaker.MailHandler;
 namespace QuizMaker
 {
     public partial class RegisterControl : UserControl
@@ -34,6 +34,13 @@ namespace QuizMaker
             Register.Register re = new Register.Register( user,  pass,  email,  fn,  ln);
 
             re.IsRegistered(user, pass, email, fn, ln);
+
+            //SendMailController.SendVerificationMail(email);
+
+            MailAuthenticationControl m = new MailAuthenticationControl();
+            m.Dock = DockStyle.Fill;
+            this.Controls.Clear();
+            this.Controls.Add(m);
         }
     }
 }
