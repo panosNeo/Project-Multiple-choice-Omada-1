@@ -127,3 +127,9 @@ C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMak
 C:\Users\Giorgos\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.QuizPlayScore.resources
 C:\Users\Giorgos\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\bin\Debug\MultipleChoice.accdb
 C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\bin\Debug\MultipleChoice.accdb
+C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\bin\Debug\Lucene.Net.dll
+C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\bin\Debug\Lucene.Net.pdb
+C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\bin\Debug\Lucene.Net.xml
+C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.SearchControl.resources
+C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.csproj.CopyComplete
