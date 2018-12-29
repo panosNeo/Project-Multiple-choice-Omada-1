@@ -141,15 +141,12 @@
     <Compile Include="QuizPanel.Designer.cs">
       <DependentUpon>QuizPanel.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-=======
     <Compile Include="SearchControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="SearchControl.Designer.cs">
       <DependentUpon>SearchControl.cs</DependentUpon>
     </Compile>
->>>>>>> parent of 7e158e7... Merge branch 'master' of https://github.com/panosNeo/Project-Multiple-choice-Omada-1
     <EmbeddedResource Include="AnswerPanel.resx">
       <DependentUpon>AnswerPanel.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,12 +196,13 @@
     <EmbeddedResource Include="SearchControl.resx">
       <DependentUpon>SearchControl.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
-=======
     <None Include="MultipleChoiceDataSet.xsc">
       <DependentUpon>MultipleChoiceDataSet.xsd</DependentUpon>
     </None>
->>>>>>> parent of 7e158e7... Merge branch 'master' of https://github.com/panosNeo/Project-Multiple-choice-Omada-1
+	</None>
+    <EmbeddedResource Include="TempPrintControl.resx">
+      <DependentUpon>TempPrintControl.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="MultipleChoiceDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>MultipleChoiceDataSet.Designer.cs</LastGenOutput>
@@ -246,13 +244,18 @@
     <None Include="Resources\fast-forward.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MultipleChoice.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+	<ItemGroup>
     <None Include="Resources\iconfinder_search_285651.png" />
-<<<<<<< HEAD
   </ItemGroup>
   <ItemGroup>
     <Content Include="MultipleChoice.accdb" />
-=======
->>>>>>> parent of 7e158e7... Merge branch 'master' of https://github.com/panosNeo/Project-Multiple-choice-Omada-1
   </ItemGroup>
   <ItemGroup>
     <Content Include="MultipleChoice.accdb" />
