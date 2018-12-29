@@ -12,6 +12,8 @@ namespace QuizMaker
 {
     public partial class MainForm : Form
     {
+        
+
         //Η μεταβλητή menuVisible ελέγχεται για το αν το leftPanel είναι σε κατάσταση κλειστή ή ανοιχτή(false/true αντίστοιχα)
         private bool menuVisible;
         public MainForm()
@@ -102,9 +104,6 @@ namespace QuizMaker
 
         }
 
-        private void mainPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+       
     }
 }
