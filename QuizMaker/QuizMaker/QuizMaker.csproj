@@ -187,11 +187,9 @@
     <EmbeddedResource Include="QuizPlayScore.resx">
       <DependentUpon>QuizPlayScore.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
     <EmbeddedResource Include="SearchControl.resx">
       <DependentUpon>SearchControl.cs</DependentUpon>
     </EmbeddedResource>
-    </None>
     <None Include="MultipleChoiceDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>MultipleChoiceDataSet.Designer.cs</LastGenOutput>
@@ -201,8 +199,6 @@
       <DependentUpon>MultipleChoiceDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
-=======
->>>>>>> parent of 4726ff4... 1
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -235,19 +231,14 @@
     <None Include="Resources\fast-forward.png" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-
     <None Include="Resources\iconfinder_search_285651.png" />
-
   </ItemGroup>
   <ItemGroup>
     <Content Include="MultipleChoice.accdb" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="MultipleChoice.accdb" />
-=======
     <None Include="Resources\delete.png" />
->>>>>>> parent of 4726ff4... 1
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
