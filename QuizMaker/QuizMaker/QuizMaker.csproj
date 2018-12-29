@@ -115,6 +115,12 @@
     <Compile Include="PlayQuizTemplates\QuizSwap.Designer.cs">
       <DependentUpon>QuizSwap.cs</DependentUpon>
     </Compile>
+    <Compile Include="PrintQuestion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PrintQuestion.Designer.cs">
+      <DependentUpon>PrintQuestion.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuizPlayerController.cs" />
     <Compile Include="QuizPlayScore.cs">
       <SubType>UserControl</SubType>
@@ -187,6 +193,9 @@
     <EmbeddedResource Include="PlayQuizTemplates\QuizSwap.resx">
       <DependentUpon>QuizSwap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PrintQuestion.resx">
+      <DependentUpon>PrintQuestion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -209,10 +218,9 @@
     <EmbeddedResource Include="SearchControl.resx">
       <DependentUpon>SearchControl.cs</DependentUpon>
     </EmbeddedResource>
-
     <None Include="MultipleChoiceDataSet.xsc">
       <DependentUpon>MultipleChoiceDataSet.xsd</DependentUpon>
-	</None>
+    </None>
     <EmbeddedResource Include="TempPrintControl.resx">
       <DependentUpon>TempPrintControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -264,9 +272,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-	<ItemGroup>
+  <ItemGroup>
     <None Include="Resources\iconfinder_search_285651.png" />
-
   </ItemGroup>
   <ItemGroup>
     <Content Include="MultipleChoice.accdb" />
