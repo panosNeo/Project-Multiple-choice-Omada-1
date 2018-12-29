@@ -12,17 +12,18 @@ namespace QuizMaker.PlayQuizTemplates
 {
     public partial class QuizSwap : UserControl
     {
-        private int positionCounter;
-        public int PositionCounter
+        public int PositionCounter { get; set; }
+        public QuizSwap(int pos)
         {
-            get => positionCounter;
-            set => positionCounter = value;
-        }
-        public QuizSwap()
-        {
+            
             InitializeComponent();
+            PositionCounter = pos;
+            SetButtonTag();
         }
-
+        private void SetButtonTag()
+        {
+            questionBtn.Tag = PositionCounter;
+        }
         public void SetButtonColor(Color c)
         {
             questionBtn.BackColor = c;

@@ -33,6 +33,7 @@
             // 
             // questionBtn
             // 
+            this.questionBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.questionBtn.Location = new System.Drawing.Point(0, 0);
             this.questionBtn.Name = "questionBtn";
             this.questionBtn.Size = new System.Drawing.Size(50, 50);

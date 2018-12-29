@@ -91,7 +91,7 @@ namespace QuizMaker
                     mainPanel.Controls.Add(d);
                     break;
                 case "feelLucky":
-                    FeelLuckyControl e = new FeelLuckyControl();
+                    QuizPanel e = new QuizPanel();
                     e.Dock = DockStyle.Fill;
                     mainPanel.Controls.Add(e);
                     break;

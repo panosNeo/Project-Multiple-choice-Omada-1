@@ -103,6 +103,12 @@
     <Compile Include="PlayQuizTemplates\QuizSwap.Designer.cs">
       <DependentUpon>QuizSwap.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuizPlayScore.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QuizPlayScore.Designer.cs">
+      <DependentUpon>QuizPlayScore.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegisterControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -171,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuizPanel.resx">
       <DependentUpon>QuizPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuizPlayScore.resx">
+      <DependentUpon>QuizPlayScore.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
