@@ -86,145 +86,30 @@ namespace QuizMaker
             }
         }
 
-        private Question lastQuestion = new Question();
-        private bool lastQuestionBool = false;
-        private int currentQuestion = 1;
-        private void newQuestionsBtn_Click(object sender, EventArgs e)
+        List<Question> questions = new List<Question>();
+        private int currentQuestion = 0;
+        private void questionsBtn_Click(object sender, EventArgs e)
         {
-            List<Answer> ans = getAnswers();
-            if(ans.Count==0 || !ListIsCompleted(getAnswers()) || questionNameTextBox.Text=="")
+            string name = ((Button)sender).Name;
+            if(name== "prevQuBtn")
             {
-                Console.WriteLine("adio");
-            }
-            else
-            {
-                currentQuestion += 1;
-                CreateQuizControlHandler.AddNewQuestion(questionNameTextBox.Text, ans);
-                List<Answer> nullAns = new List<Answer>();
-                SetQuestionPanelVar("", nullAns,currentQuestion);
-            }
-            CheckQuestionNum();
-        }
 
-        public void nextQBtn_Click(object sender, EventArgs e)
-        {
-            int allQ = CreateQuizControlHandler.CountQuests();
-            currentQuestion += 1;
-            CheckQuestionNum();
-            Console.WriteLine(lastQuestionBool);
-            if (currentQuestion>allQ)
-            {
-                SetQuestionPanelVar(lastQuestion.GetQuestion(), lastQuestion.GetAnswers(), currentQuestion );
             }
-            else
+            else if(name== "nextQuBtn")
             {
-                SetQuestionPanelVar(CreateQuizControlHandler.GetQuestion(currentQuestion-1).GetQuestion(), CreateQuizControlHandler.GetQuestion(currentQuestion - 1).GetAnswers(), currentQuestion );
+
             }
-            
-        }
-        public void prevQBtn_click(object sender, EventArgs e)
-        {
-            if(currentQuestion > CreateQuizControlHandler.CountQuests())
+            else if(name== "nextQuestionBtn")
             {
-                lastQuestionBool = true;
                 List<Answer> ans = getAnswers();
-                Quiz myq = CreateQuizControlHandler.GetQuiz();
-                lastQuestion = new Question(questionNameTextBox.Text, myq.GetUser_id(), myq.GetSubject_id(), myq.GetCreationDate());
-                foreach(Answer an in ans)
+                if(ans.Count==0 || !ListIsCompleted(getAnswers()) || questionNameTextBox.Text=="")
                 {
-                    lastQuestion.AddAnswer(an);
-                }
-            }
-            currentQuestion -= 1;
-            CheckQuestionNum();
-            SetQuestionPanelVar(CreateQuizControlHandler.GetQuestion(currentQuestion-1).GetQuestion(), CreateQuizControlHandler.GetQuestion(currentQuestion - 1).GetAnswers(), currentQuestion);
-        }
-        public void deleteQBtn_Click(object sender, EventArgs e)
-        {
-            int allQ = CreateQuizControlHandler.CountQuests();
-            
-            if(allQ != 0)
-            {
-                if (allQ < currentQuestion)
-                {
-                    lastQuestionBool = false;
-                    lastQuestion = new Question();
-                    currentQuestion -= 1;
+                    Console.WriteLine("adio");
                 }
                 else
                 {
-                    
-                    CreateQuizControlHandler.RemoveQuestion(currentQuestion);
+                    Console.WriteLine("exeis");
                 }
-                SetQuestionPanelVar(CreateQuizControlHandler.GetQuestion(currentQuestion-1).GetQuestion(), CreateQuizControlHandler.GetQuestion(currentQuestion-1).GetAnswers(), currentQuestion);
-                CheckQuestionNum();
-            }
-        }
-
-        private void SetQuestionPanelVar(string questionName, List<Answer> ans,int questionNum)
-        {
-            questionNameTextBox.Text = questionName;
-            questionNumber.Text = questionNum + "";
-            List<AnswerPanel> ap = new List<AnswerPanel>();
-
-            foreach (Control p in AnswersPanel.Controls)
-            {
-                if (p.GetType().ToString() == "QuizMaker.AnswerPanel")
-                {
-                    ap.Add((AnswerPanel)p);
-                }
-            }
-
-            ResetAnswers(ap);
-    
-            foreach(Answer a in ans)
-            {
-                AnswerPanel aP = new AnswerPanel();
-                aP.SetAnswerName(a.GetAnswer());
-                aP.SetCorrection(a.IsCorrect());
-                aP.Location = nextAnswerBtn.Location;
-
-                //μετακινηση των κουμπιών + και - προς τα κατω
-                nextAnswerBtn.Location = new Point(nextAnswerBtn.Location.X, nextAnswerBtn.Location.Y + 33);
-                delAnswerBtn.Location = new Point(delAnswerBtn.Location.X, delAnswerBtn.Location.Y + 33);
-                AnswersPanel.Controls.Add(aP);
-            }
-        }
-        private void ResetAnswers(List<AnswerPanel> ap)
-        {
-            foreach (AnswerPanel a in ap)
-            {
-                a.Dispose();
-                //μετακινηση των κουμπιών + και - προς τα πανω
-                nextAnswerBtn.Location = new Point(nextAnswerBtn.Location.X, nextAnswerBtn.Location.Y - 33);
-                delAnswerBtn.Location = new Point(delAnswerBtn.Location.X, delAnswerBtn.Location.Y - 33);
-            }
-        }
-
-        private void CheckQuestionNum()
-        {
-            int allQ = CreateQuizControlHandler.CountQuests();
-            Console.WriteLine(allQ + " " + currentQuestion);
-            if(allQ==0)
-            {
-                prevQuBtn.Enabled = false;
-                nextQuBtn.Enabled = false;
-            }
-            else if(currentQuestion>allQ)
-            {
-                prevQuBtn.Enabled = true;
-                nextQuBtn.Enabled = false;
-            }
-            else
-            {
-                if(currentQuestion==1)
-                {
-                    prevQuBtn.Enabled = false;
-                }else
-                {
-                    prevQuBtn.Enabled = true;
-                }
-                nextQuBtn.Enabled = lastQuestionBool;
             }
         }
 
