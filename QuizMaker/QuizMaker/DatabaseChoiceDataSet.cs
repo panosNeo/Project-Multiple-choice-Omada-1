@@ -4,5 +4,8 @@
 
     partial class DatabaseChoiceDataSet
     {
+        partial class UserDataTable
+        {
+        }
     }
 }
