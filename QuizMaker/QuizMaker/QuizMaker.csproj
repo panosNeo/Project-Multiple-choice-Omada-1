@@ -111,6 +111,7 @@
     <Compile Include="PlayQuizTemplates\QuizSwap.Designer.cs">
       <DependentUpon>QuizSwap.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuizPlayerController.cs" />
     <Compile Include="QuizPlayScore.cs">
       <SubType>UserControl</SubType>
     </Compile>
