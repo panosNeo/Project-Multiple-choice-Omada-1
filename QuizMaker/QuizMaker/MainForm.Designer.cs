@@ -54,7 +54,7 @@
             this.leftPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.leftPanel.Location = new System.Drawing.Point(0, 70);
             this.leftPanel.Name = "leftPanel";
-            this.leftPanel.Size = new System.Drawing.Size(165, 425);
+            this.leftPanel.Size = new System.Drawing.Size(165, 485);
             this.leftPanel.TabIndex = 1;
             // 
             // menuVisibleBtn
@@ -146,7 +146,7 @@
             this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.topPanel.Location = new System.Drawing.Point(0, 0);
             this.topPanel.Name = "topPanel";
-            this.topPanel.Size = new System.Drawing.Size(800, 70);
+            this.topPanel.Size = new System.Drawing.Size(950, 70);
             this.topPanel.TabIndex = 0;
             // 
             // logoLabel
@@ -175,7 +175,7 @@
             this.loginBtn.ForeColor = System.Drawing.Color.Transparent;
             this.loginBtn.Image = global::QuizMaker.Properties.Resources.login;
             this.loginBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.loginBtn.Location = new System.Drawing.Point(665, 0);
+            this.loginBtn.Location = new System.Drawing.Point(815, 0);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.Size = new System.Drawing.Size(133, 68);
             this.loginBtn.TabIndex = 0;
@@ -189,9 +189,8 @@
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(0, 0);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(800, 495);
+            this.mainPanel.Size = new System.Drawing.Size(950, 555);
             this.mainPanel.TabIndex = 4;
-            this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
             // 
             // timer1
             // 
@@ -202,11 +201,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 495);
+            this.ClientSize = new System.Drawing.Size(950, 555);
             this.Controls.Add(this.leftPanel);
             this.Controls.Add(this.topPanel);
             this.Controls.Add(this.mainPanel);
+            this.MinimumSize = new System.Drawing.Size(966, 594);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.leftPanel.ResumeLayout(false);
             this.topPanel.ResumeLayout(false);

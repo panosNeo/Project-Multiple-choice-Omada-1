@@ -12,6 +12,8 @@ namespace QuizMaker
 {
     public partial class MainForm : Form
     {
+        
+
         //Η μεταβλητή menuVisible ελέγχεται για το αν το leftPanel είναι σε κατάσταση κλειστή ή ανοιχτή(false/true αντίστοιχα)
         private bool menuVisible;
         public MainForm()
@@ -86,8 +88,10 @@ namespace QuizMaker
                     mainPanel.Controls.Add(c);
                     break;
                 case "categories":
-                    CategoriesControl d = new CategoriesControl();
-                    d.Dock = DockStyle.Fill;
+                    SearchControl d = new SearchControl
+                    {
+                        Dock = DockStyle.Fill
+                    };
                     mainPanel.Controls.Add(d);
                     break;
                 case "feelLucky":
@@ -102,9 +106,6 @@ namespace QuizMaker
 
         }
 
-        private void mainPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+       
     }
 }

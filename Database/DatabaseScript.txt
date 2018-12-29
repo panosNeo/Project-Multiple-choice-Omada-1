@@ -74,7 +74,6 @@ CREATE TABLE IF NOT EXISTS Report(
   report VARCHAR(255) NOT NULL,
   question INT NOT NULL,
   PRIMARY KEY (user_id),
-  CONSTRAINT user_id
   FOREIGN KEY (user_id)
   REFERENCES User(user_id));
   

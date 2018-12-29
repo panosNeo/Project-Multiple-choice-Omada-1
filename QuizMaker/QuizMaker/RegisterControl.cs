@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuizMaker.Register;
 using QuizMaker.MailHandler;
+using System.Data.OleDb;
+
 namespace QuizMaker
 {
     public partial class RegisterControl : UserControl
@@ -31,16 +33,36 @@ namespace QuizMaker
             email = emailText.Text;
             fn = firstNameText.Text;
             ln = lastNameText.Text;
-            Register.Register re = new Register.Register( user,  pass,  email,  fn,  ln);
+            Register.Register re = new Register.Register(user, pass, email, fn, ln);
 
-            re.IsRegistered(user, pass, email, fn, ln);
+            if (re.IsRegistered(user, pass, email, fn, ln) == true)
+            {
+                
+               
+                DatabaseChoiceDataSetTableAdapters.UserTableAdapter userTableAdapter = new DatabaseChoiceDataSetTableAdapters.UserTableAdapter();
+                userTableAdapter.Insert(user, pass,"none", email, fn, ln);
 
-            SendMailController.SendVerificationMail(email);
+                /*SendMailController.SendVerificationMail(email);
 
-            MailAuthenticationControl m = new MailAuthenticationControl();
-            m.Dock = DockStyle.Fill;
-            this.Controls.Clear();
-            this.Controls.Add(m);
+                MailAuthenticationControl m = new MailAuthenticationControl();
+                m.Dock = DockStyle.Fill;
+                this.Controls.Clear();
+                this.Controls.Add(m);*/
+
+
+            }
+            else
+            {
+                MessageBox.Show("Register Failed");
+            }
+
+
         }
-    }
+            
+
+            
+
+           
+        }
 }
+
