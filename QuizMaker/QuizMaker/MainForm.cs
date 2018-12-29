@@ -88,8 +88,10 @@ namespace QuizMaker
                     mainPanel.Controls.Add(c);
                     break;
                 case "categories":
-                    SearchControl d = new SearchControl();
-                    d.Dock = DockStyle.Fill;
+                    SearchControl d = new SearchControl
+                    {
+                        Dock = DockStyle.Fill
+                    };
                     mainPanel.Controls.Add(d);
                     break;
                 case "feelLucky":

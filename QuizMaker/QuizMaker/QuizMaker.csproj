@@ -70,13 +70,13 @@
     <Compile Include="CreateQuizControl.Designer.cs">
       <DependentUpon>CreateQuizControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="DatabaseDataSet.cs">
-      <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
+    <Compile Include="DatabaseChoiceDataSet.cs">
+      <DependentUpon>DatabaseChoiceDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DatabaseDataSet.Designer.cs">
+    <Compile Include="DatabaseChoiceDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
+      <DependentUpon>DatabaseChoiceDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="FeelLuckyControl.cs">
       <SubType>UserControl</SubType>
@@ -205,16 +205,16 @@
     <EmbeddedResource Include="SearchControl.resx">
       <DependentUpon>SearchControl.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DatabaseDataSet.xsc">
-      <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
+    <None Include="DatabaseChoiceDataSet.xsc">
+      <DependentUpon>DatabaseChoiceDataSet.xsd</DependentUpon>
     </None>
-    <None Include="DatabaseDataSet.xsd">
+    <None Include="DatabaseChoiceDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DatabaseDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>DatabaseChoiceDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DatabaseDataSet.xss">
-      <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
+    <None Include="DatabaseChoiceDataSet.xss">
+      <DependentUpon>DatabaseChoiceDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
