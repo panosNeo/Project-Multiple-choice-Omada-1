@@ -14,32 +14,47 @@ namespace QuizMaker
 {
     public partial class QuizPanel : UserControl
     {
-        private QuizPlayerController quiz;
+        private QuizHandler.Quiz quiz;
         private int questionCount;
         private List<QuizAnswers> userAnswers;
         public QuizPanel()
         {
             InitializeComponent();
             questionCount = 0;
-            quiz = new QuizPlayerController();
+            quiz = new Quiz();
             userAnswers = new List<QuizAnswers>();
+            setATestQuiz();
             SetInitialQuizPanel();
         }
-        
+        private void setATestQuiz()
+        {
+            quiz = new Quiz("My test quiz", 0, 0);
+            for(int i = 0; i < 10; i++)
+            {
+                Question q = new Question("test question"+i, i, i, DateTime.Now);
+                q.AddAnswer(new Answer("test"+i, true));
+                q.AddAnswer(new Answer("test" + i, false));
+                q.AddAnswer(new Answer("test" + i, false));
+                q.AddAnswer(new Answer("test" + i, false));
+                quiz.AddQuestion(q, 1);
+            }
+        }
         private void SetInitialQuizPanel()
         {
             string title = quiz.GetQuizTitle();
             Point p = new Point(0,0);
             QuizSwap temp;
-            for(int i = 0; i < quiz.GetQuestionLength(); i++)
+            int counter = 0;
+            foreach(Question q in quiz.getQuestions())
             {
-                temp = new QuizSwap(i);
+                temp = new QuizSwap(counter);
                 temp.Location = p;
-                temp.PositionCounter = i;
+                temp.PositionCounter = counter;
                 temp.Controls.Find("questionBtn", true)[0].Click += swap_Click;
                 questionSwapHolder.Controls.Add(temp);
                 
                 p.X += 50;
+                counter++;
             }
             quizTitleLabel.Text = title;
             SetNextQuestion(0);
@@ -51,15 +66,18 @@ namespace QuizMaker
             questionHolder.Controls.Clear();
             QuizAnswers answer;
             Point p = new Point(30, 0);
-            for(int i = 0; i < quiz.GetQuestionAnswersLength(pos); i++)
+            int counter = 1;
+            int answerCounter = 0;
+            foreach(Answer a in quiz.getQuestions().ElementAt<Question>(pos).GetAnswers())
             {
-                answer = new QuizAnswers(pos, i);
+                answer = new QuizAnswers(counter-1, answerCounter);
+                answerCounter++;
                 answer.Location = p;
-                answer.setAnswer(""+pos, quiz.GetAnswerTitle(pos, i));
+                answer.setAnswer(""+counter, a.GetAnswer());
                 answersHolder.Controls.Add(answer);
                 p.Y += 50;
             }
-            string q = quiz.GetQuestionTitle(pos);
+            string q = quiz.getQuestions().ElementAt<Question>(pos).GetQuestion();
             QuizQuestion qu = new QuizQuestion();
             qu.setQuestion("" + pos, q);
             questionHolder.Controls.Add(qu);
@@ -68,28 +86,23 @@ namespace QuizMaker
 
         private void answerBtn_Click(object sender, EventArgs e)
         {
-            List<QuizAnswers> temp = new List<QuizAnswers>();
-            //Αν υπαρχει εγγραφη απαντησεων για την συγκεκριμενη ερωτηση την αποθηκευουμε για να την διαγραψουμε   
-            foreach(QuizAnswers listq in userAnswers)
+            bool equal = false;
+            foreach(QuizAnswers q in answersHolder.Controls)
             {
-                if(listq.getQuestionNum() == questionCount-1)
+                foreach(QuizAnswers listq in userAnswers)
                 {
-                    temp.Add(listq);
+                    if(q.Equals(listq))
+                    {
+                        equal = true;
+                        break;
+                    }
+                }
+                if (!equal)
+                {
+                    userAnswers.Add(q);
                 }
             }
-            foreach (QuizAnswers deleted in temp)
-            {
-                
-                userAnswers.Remove(deleted);
-                
-            }
-            foreach (QuizAnswers q in answersHolder.Controls)
-            {
-                userAnswers.Add(q);
-            }
-            
-            
-            if(questionCount >= quiz.GetQuestionLength())
+            if(questionCount >= quiz.getQuestions().Count)
             {
                 Finish();
             }
@@ -99,7 +112,13 @@ namespace QuizMaker
             }
             
         }
-        
+        private void CheckCorrect(int i)
+        {
+            foreach(Answer an in quiz.getQuestions().ElementAt<Question>(i).GetAnswers())
+            {
+                
+            }
+        }
         private void swap_Click(object sender, EventArgs e)
         {
             questionCount = Convert.ToInt32(((Button)sender).Tag.ToString());
@@ -119,27 +138,22 @@ namespace QuizMaker
 
         private void Finish()
         {
-            
+            int question;
+            int answer;
             double sum = 0;
             double correctsum = 0;
-            for(int i = 0; i < quiz.GetQuestionLength(); i++)
+            foreach(QuizAnswers uAnswers in userAnswers)
             {
-                for(int k = 0; k < quiz.GetQuestionAnswersLength(i); k++)
+                question = uAnswers.getQuestionNum();
+                answer = uAnswers.getAnswerNum();
+                bool cor = quiz.getQuestions().ElementAt<Question>(question).GetAnswers().ElementAt(answer).IsCorrect();
+                if (cor)
                 {
-                    if (quiz.IsCorrect(i, k))
-                    {
-                        sum++;
-                        foreach(QuizAnswers ans in userAnswers)
-                        {
-                            if(ans.getQuestionNum() == i && ans.getAnswerNum() == k)
-                            {
-                                if (ans.getAnswer())
-                                {
-                                    correctsum++;
-                                }
-                            }
-                        }
-                    }
+                    sum++;
+                }
+                if(uAnswers.getAnswer().Equals(cor) && cor)
+                {
+                    correctsum++;
                 }
             }
             double success = correctsum / sum;
