@@ -258,14 +258,14 @@
     <None Include="Resources\fast-forward.png" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
+
     <None Include="Resources\delete.png" />
-=======
+
     <Content Include="MultipleChoice.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\iconfinder_search_285651.png" />
->>>>>>> fa08ef54c03e4bbe7ddddb9d2080dd9e762c9ee2
+
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
