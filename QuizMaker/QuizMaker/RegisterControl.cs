@@ -25,24 +25,28 @@ namespace QuizMaker
         private string email;
         private string fn;
         private string ln;
+        
 
         private void createAccountBtn_Click(object sender, EventArgs e)
         {
+           
             user = usernameText.Text;
             pass = passwordText.Text;
             email = emailText.Text;
             fn = firstNameText.Text;
             ln = lastNameText.Text;
             Register.Register re = new Register.Register(user, pass, email, fn, ln);
+           
 
             if (re.IsRegistered(user, pass, email, fn, ln) == true)
             {
+                MultipleChoiceDataSetTableAdapters.UserTableAdapter userTableAdapter = new MultipleChoiceDataSetTableAdapters.UserTableAdapter();
+                userTableAdapter.RegisterQuery(user, pass, email, fn, ln);
+                int u = userTableAdapter.Update(new MultipleChoiceDataSet.UserDataTable());
+                /*
                 
-               
-                DatabaseChoiceDataSetTableAdapters.UserTableAdapter userTableAdapter = new DatabaseChoiceDataSetTableAdapters.UserTableAdapter();
-                userTableAdapter.Insert(user, pass,"none", email, fn, ln);
-
-                /*SendMailController.SendVerificationMail(email);
+                
+                SendMailController.SendVerificationMail(email);
 
                 MailAuthenticationControl m = new MailAuthenticationControl();
                 m.Dock = DockStyle.Fill;

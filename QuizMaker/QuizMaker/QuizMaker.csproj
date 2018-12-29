@@ -64,19 +64,12 @@
     <Compile Include="CategoriesControl.Designer.cs">
       <DependentUpon>CategoriesControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConnectDb.cs" />
     <Compile Include="CreateQuizControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="CreateQuizControl.Designer.cs">
       <DependentUpon>CreateQuizControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DatabaseChoiceDataSet.cs">
-      <DependentUpon>DatabaseChoiceDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DatabaseChoiceDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DatabaseChoiceDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="FeelLuckyControl.cs">
       <SubType>UserControl</SubType>
@@ -98,6 +91,11 @@
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MultipleChoiceDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MultipleChoiceDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="PlayQuizTemplates\QuizAnswers.cs">
       <SubType>UserControl</SubType>
@@ -205,16 +203,16 @@
     <EmbeddedResource Include="SearchControl.resx">
       <DependentUpon>SearchControl.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DatabaseChoiceDataSet.xsc">
-      <DependentUpon>DatabaseChoiceDataSet.xsd</DependentUpon>
+    <None Include="MultipleChoiceDataSet.xsc">
+      <DependentUpon>MultipleChoiceDataSet.xsd</DependentUpon>
     </None>
-    <None Include="DatabaseChoiceDataSet.xsd">
+    <None Include="MultipleChoiceDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DatabaseChoiceDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>MultipleChoiceDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DatabaseChoiceDataSet.xss">
-      <DependentUpon>DatabaseChoiceDataSet.xsd</DependentUpon>
+    <None Include="MultipleChoiceDataSet.xss">
+      <DependentUpon>MultipleChoiceDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -249,10 +247,10 @@
     <None Include="Resources\fast-forward.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="MultipleChoice.accdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Include="Resources\iconfinder_search_285651.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MultipleChoice.accdb" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
