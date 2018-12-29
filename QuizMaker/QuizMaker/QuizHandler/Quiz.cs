@@ -67,14 +67,12 @@ namespace QuizMaker.QuizHandler
             questions.Add(question);
         }
 
-        public bool RemoveQuestion(int position)
+        public void RemoveQuestion(int position)
         {
-            if (questions.Count <= position)
-                return false;
-            else
+            if (questions.Count < position)
             {
                 questions.RemoveAt(position);
-                return true;
+                
             }
         }
     }
