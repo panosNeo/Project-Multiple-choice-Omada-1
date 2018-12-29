@@ -209,16 +209,16 @@
     <EmbeddedResource Include="SearchControl.resx">
       <DependentUpon>SearchControl.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
+
     <None Include="MultipleChoiceDataSet.xsc">
       <DependentUpon>MultipleChoiceDataSet.xsd</DependentUpon>
-=======
+
     <EmbeddedResource Include="TempPrintControl.resx">
       <DependentUpon>TempPrintControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DatabaseChoiceDataSet.xsc">
       <DependentUpon>DatabaseChoiceDataSet.xsd</DependentUpon>
->>>>>>> f644cf16c3073acfc50fd9717c8e3bb99575795e
+
     </None>
     <None Include="MultipleChoiceDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
@@ -261,15 +261,13 @@
     <None Include="Resources\fast-forward.png" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-=======
+
 
     <None Include="Resources\delete.png" />
 
     <Content Include="MultipleChoice.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
->>>>>>> f644cf16c3073acfc50fd9717c8e3bb99575795e
     <None Include="Resources\iconfinder_search_285651.png" />
 
   </ItemGroup>
