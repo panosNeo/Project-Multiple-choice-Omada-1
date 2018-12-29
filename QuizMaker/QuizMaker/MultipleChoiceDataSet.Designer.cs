@@ -20,9 +20,9 @@ namespace QuizMaker {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DatabaseChoiceDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("MultipleChoiceDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DatabaseChoiceDataSet : global::System.Data.DataSet {
+    public partial class MultipleChoiceDataSet : global::System.Data.DataSet {
         
         private AnswerDataTable tableAnswer;
         
@@ -74,7 +74,7 @@ namespace QuizMaker {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public DatabaseChoiceDataSet() {
+        public MultipleChoiceDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -85,7 +85,7 @@ namespace QuizMaker {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected DatabaseChoiceDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected MultipleChoiceDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -288,7 +288,7 @@ namespace QuizMaker {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DatabaseChoiceDataSet cln = ((DatabaseChoiceDataSet)(base.Clone()));
+            MultipleChoiceDataSet cln = ((MultipleChoiceDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -454,9 +454,9 @@ namespace QuizMaker {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DatabaseChoiceDataSet";
+            this.DataSetName = "MultipleChoiceDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DatabaseChoiceDataSet.xsd";
+            this.Namespace = "http://tempuri.org/MultipleChoiceDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableAnswer = new AnswerDataTable();
@@ -604,7 +604,7 @@ namespace QuizMaker {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DatabaseChoiceDataSet ds = new DatabaseChoiceDataSet();
+            MultipleChoiceDataSet ds = new MultipleChoiceDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -926,7 +926,7 @@ namespace QuizMaker {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DatabaseChoiceDataSet ds = new DatabaseChoiceDataSet();
+                MultipleChoiceDataSet ds = new MultipleChoiceDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1247,7 +1247,7 @@ namespace QuizMaker {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DatabaseChoiceDataSet ds = new DatabaseChoiceDataSet();
+                MultipleChoiceDataSet ds = new MultipleChoiceDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1537,7 +1537,7 @@ namespace QuizMaker {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DatabaseChoiceDataSet ds = new DatabaseChoiceDataSet();
+                MultipleChoiceDataSet ds = new MultipleChoiceDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1875,7 +1875,7 @@ namespace QuizMaker {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DatabaseChoiceDataSet ds = new DatabaseChoiceDataSet();
+                MultipleChoiceDataSet ds = new MultipleChoiceDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2199,7 +2199,7 @@ namespace QuizMaker {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DatabaseChoiceDataSet ds = new DatabaseChoiceDataSet();
+                MultipleChoiceDataSet ds = new MultipleChoiceDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2477,7 +2477,7 @@ namespace QuizMaker {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DatabaseChoiceDataSet ds = new DatabaseChoiceDataSet();
+                MultipleChoiceDataSet ds = new MultipleChoiceDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2769,7 +2769,7 @@ namespace QuizMaker {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DatabaseChoiceDataSet ds = new DatabaseChoiceDataSet();
+                MultipleChoiceDataSet ds = new MultipleChoiceDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3062,7 +3062,7 @@ namespace QuizMaker {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DatabaseChoiceDataSet ds = new DatabaseChoiceDataSet();
+                MultipleChoiceDataSet ds = new MultipleChoiceDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3352,7 +3352,7 @@ namespace QuizMaker {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DatabaseChoiceDataSet ds = new DatabaseChoiceDataSet();
+                MultipleChoiceDataSet ds = new MultipleChoiceDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3703,7 +3703,7 @@ namespace QuizMaker {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DatabaseChoiceDataSet ds = new DatabaseChoiceDataSet();
+                MultipleChoiceDataSet ds = new MultipleChoiceDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -5517,7 +5517,7 @@ namespace QuizMaker {
         }
     }
 }
-namespace QuizMaker.DatabaseChoiceDataSetTableAdapters {
+namespace QuizMaker.MultipleChoiceDataSetTableAdapters {
     
     
     /// <summary>
@@ -5703,7 +5703,7 @@ namespace QuizMaker.DatabaseChoiceDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DatabaseChoiceDataSet.AnswerDataTable dataTable) {
+        public virtual int Fill(MultipleChoiceDataSet.AnswerDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5716,9 +5716,9 @@ namespace QuizMaker.DatabaseChoiceDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DatabaseChoiceDataSet.AnswerDataTable GetData() {
+        public virtual MultipleChoiceDataSet.AnswerDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DatabaseChoiceDataSet.AnswerDataTable dataTable = new DatabaseChoiceDataSet.AnswerDataTable();
+            MultipleChoiceDataSet.AnswerDataTable dataTable = new MultipleChoiceDataSet.AnswerDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5726,14 +5726,14 @@ namespace QuizMaker.DatabaseChoiceDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DatabaseChoiceDataSet.AnswerDataTable dataTable) {
+        public virtual int Update(MultipleChoiceDataSet.AnswerDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DatabaseChoiceDataSet dataSet) {
+        public virtual int Update(MultipleChoiceDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Answer");
         }
         
@@ -6072,7 +6072,7 @@ namespace QuizMaker.DatabaseChoiceDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DatabaseChoiceDataSet.BlockedDataTable dataTable) {
+        public virtual int Fill(MultipleChoiceDataSet.BlockedDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -6085,9 +6085,9 @@ namespace QuizMaker.DatabaseChoiceDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DatabaseChoiceDataSet.BlockedDataTable GetData() {
+        public virtual MultipleChoiceDataSet.BlockedDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DatabaseChoiceDataSet.BlockedDataTable dataTable = new DatabaseChoiceDataSet.BlockedDataTable();
+            MultipleChoiceDataSet.BlockedDataTable dataTable = new MultipleChoiceDataSet.BlockedDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -6095,14 +6095,14 @@ namespace QuizMaker.DatabaseChoiceDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DatabaseChoiceDataSet.BlockedDataTable dataTable) {
+        public virtual int Update(MultipleChoiceDataSet.BlockedDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DatabaseChoiceDataSet dataSet) {
+        public virtual int Update(MultipleChoiceDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Blocked");
         }
         
@@ -6457,7 +6457,7 @@ namespace QuizMaker.DatabaseChoiceDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DatabaseChoiceDataSet.FeedbackDataTable dataTable) {
+        public virtual int Fill(MultipleChoiceDataSet.FeedbackDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -6470,9 +6470,9 @@ namespace QuizMaker.DatabaseChoiceDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DatabaseChoiceDataSet.FeedbackDataTable GetData() {
+        public virtual MultipleChoiceDataSet.FeedbackDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DatabaseChoiceDataSet.FeedbackDataTable dataTable = new DatabaseChoiceDataSet.FeedbackDataTable();
+            MultipleChoiceDataSet.FeedbackDataTable dataTable = new MultipleChoiceDataSet.FeedbackDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -6480,14 +6480,14 @@ namespace QuizMaker.DatabaseChoiceDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DatabaseChoiceDataSet.FeedbackDataTable dataTable) {
+        public virtual int Update(MultipleChoiceDataSet.FeedbackDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DatabaseChoiceDataSet dataSet) {
+        public virtual int Update(MultipleChoiceDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Feedback");
         }
         
@@ -6808,7 +6808,7 @@ namespace QuizMaker.DatabaseChoiceDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DatabaseChoiceDataSet.QuestionDataTable dataTable) {
+        public virtual int Fill(MultipleChoiceDataSet.QuestionDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -6821,9 +6821,9 @@ namespace QuizMaker.DatabaseChoiceDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DatabaseChoiceDataSet.QuestionDataTable GetData() {
+        public virtual MultipleChoiceDataSet.QuestionDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DatabaseChoiceDataSet.QuestionDataTable dataTable = new DatabaseChoiceDataSet.QuestionDataTable();
+            MultipleChoiceDataSet.QuestionDataTable dataTable = new MultipleChoiceDataSet.QuestionDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -6831,14 +6831,14 @@ namespace QuizMaker.DatabaseChoiceDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DatabaseChoiceDataSet.QuestionDataTable dataTable) {
+        public virtual int Update(MultipleChoiceDataSet.QuestionDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DatabaseChoiceDataSet dataSet) {
+        public virtual int Update(MultipleChoiceDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Question");
         }
         
@@ -7236,7 +7236,7 @@ namespace QuizMaker.DatabaseChoiceDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DatabaseChoiceDataSet.QuizDataTable dataTable) {
+        public virtual int Fill(MultipleChoiceDataSet.QuizDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7249,9 +7249,9 @@ namespace QuizMaker.DatabaseChoiceDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DatabaseChoiceDataSet.QuizDataTable GetData() {
+        public virtual MultipleChoiceDataSet.QuizDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DatabaseChoiceDataSet.QuizDataTable dataTable = new DatabaseChoiceDataSet.QuizDataTable();
+            MultipleChoiceDataSet.QuizDataTable dataTable = new MultipleChoiceDataSet.QuizDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -7259,14 +7259,14 @@ namespace QuizMaker.DatabaseChoiceDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DatabaseChoiceDataSet.QuizDataTable dataTable) {
+        public virtual int Update(MultipleChoiceDataSet.QuizDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DatabaseChoiceDataSet dataSet) {
+        public virtual int Update(MultipleChoiceDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Quiz");
         }
         
@@ -7634,7 +7634,7 @@ namespace QuizMaker.DatabaseChoiceDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DatabaseChoiceDataSet.Quiz_QuestionsDataTable dataTable) {
+        public virtual int Fill(MultipleChoiceDataSet.Quiz_QuestionsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7647,9 +7647,9 @@ namespace QuizMaker.DatabaseChoiceDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DatabaseChoiceDataSet.Quiz_QuestionsDataTable GetData() {
+        public virtual MultipleChoiceDataSet.Quiz_QuestionsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DatabaseChoiceDataSet.Quiz_QuestionsDataTable dataTable = new DatabaseChoiceDataSet.Quiz_QuestionsDataTable();
+            MultipleChoiceDataSet.Quiz_QuestionsDataTable dataTable = new MultipleChoiceDataSet.Quiz_QuestionsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -7657,14 +7657,14 @@ namespace QuizMaker.DatabaseChoiceDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DatabaseChoiceDataSet.Quiz_QuestionsDataTable dataTable) {
+        public virtual int Update(MultipleChoiceDataSet.Quiz_QuestionsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DatabaseChoiceDataSet dataSet) {
+        public virtual int Update(MultipleChoiceDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Quiz_Questions");
         }
         
@@ -7966,7 +7966,7 @@ namespace QuizMaker.DatabaseChoiceDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DatabaseChoiceDataSet.RatingDataTable dataTable) {
+        public virtual int Fill(MultipleChoiceDataSet.RatingDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7979,9 +7979,9 @@ namespace QuizMaker.DatabaseChoiceDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DatabaseChoiceDataSet.RatingDataTable GetData() {
+        public virtual MultipleChoiceDataSet.RatingDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DatabaseChoiceDataSet.RatingDataTable dataTable = new DatabaseChoiceDataSet.RatingDataTable();
+            MultipleChoiceDataSet.RatingDataTable dataTable = new MultipleChoiceDataSet.RatingDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -7989,14 +7989,14 @@ namespace QuizMaker.DatabaseChoiceDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DatabaseChoiceDataSet.RatingDataTable dataTable) {
+        public virtual int Update(MultipleChoiceDataSet.RatingDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DatabaseChoiceDataSet dataSet) {
+        public virtual int Update(MultipleChoiceDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Rating");
         }
         
@@ -8304,7 +8304,7 @@ namespace QuizMaker.DatabaseChoiceDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DatabaseChoiceDataSet.ReportDataTable dataTable) {
+        public virtual int Fill(MultipleChoiceDataSet.ReportDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -8317,9 +8317,9 @@ namespace QuizMaker.DatabaseChoiceDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DatabaseChoiceDataSet.ReportDataTable GetData() {
+        public virtual MultipleChoiceDataSet.ReportDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DatabaseChoiceDataSet.ReportDataTable dataTable = new DatabaseChoiceDataSet.ReportDataTable();
+            MultipleChoiceDataSet.ReportDataTable dataTable = new MultipleChoiceDataSet.ReportDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -8327,14 +8327,14 @@ namespace QuizMaker.DatabaseChoiceDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DatabaseChoiceDataSet.ReportDataTable dataTable) {
+        public virtual int Update(MultipleChoiceDataSet.ReportDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DatabaseChoiceDataSet dataSet) {
+        public virtual int Update(MultipleChoiceDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Report");
         }
         
@@ -8662,7 +8662,7 @@ namespace QuizMaker.DatabaseChoiceDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DatabaseChoiceDataSet.SubjectDataTable dataTable) {
+        public virtual int Fill(MultipleChoiceDataSet.SubjectDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -8675,9 +8675,9 @@ namespace QuizMaker.DatabaseChoiceDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DatabaseChoiceDataSet.SubjectDataTable GetData() {
+        public virtual MultipleChoiceDataSet.SubjectDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DatabaseChoiceDataSet.SubjectDataTable dataTable = new DatabaseChoiceDataSet.SubjectDataTable();
+            MultipleChoiceDataSet.SubjectDataTable dataTable = new MultipleChoiceDataSet.SubjectDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -8685,14 +8685,14 @@ namespace QuizMaker.DatabaseChoiceDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DatabaseChoiceDataSet.SubjectDataTable dataTable) {
+        public virtual int Update(MultipleChoiceDataSet.SubjectDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DatabaseChoiceDataSet dataSet) {
+        public virtual int Update(MultipleChoiceDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Subject");
         }
         
@@ -9047,7 +9047,7 @@ namespace QuizMaker.DatabaseChoiceDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DatabaseChoiceDataSet.UserDataTable dataTable) {
+        public virtual int Fill(MultipleChoiceDataSet.UserDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -9060,9 +9060,9 @@ namespace QuizMaker.DatabaseChoiceDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DatabaseChoiceDataSet.UserDataTable GetData() {
+        public virtual MultipleChoiceDataSet.UserDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DatabaseChoiceDataSet.UserDataTable dataTable = new DatabaseChoiceDataSet.UserDataTable();
+            MultipleChoiceDataSet.UserDataTable dataTable = new MultipleChoiceDataSet.UserDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -9070,14 +9070,14 @@ namespace QuizMaker.DatabaseChoiceDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DatabaseChoiceDataSet.UserDataTable dataTable) {
+        public virtual int Update(MultipleChoiceDataSet.UserDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DatabaseChoiceDataSet dataSet) {
+        public virtual int Update(MultipleChoiceDataSet dataSet) {
             return this.Adapter.Update(dataSet, "User");
         }
         
@@ -9681,7 +9681,7 @@ namespace QuizMaker.DatabaseChoiceDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateUpdatedRows(DatabaseChoiceDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(MultipleChoiceDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._subjectTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Subject.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -9781,7 +9781,7 @@ namespace QuizMaker.DatabaseChoiceDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateInsertedRows(DatabaseChoiceDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(MultipleChoiceDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._subjectTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Subject.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -9871,7 +9871,7 @@ namespace QuizMaker.DatabaseChoiceDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateDeletedRows(DatabaseChoiceDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(MultipleChoiceDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._reportTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Report.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -9985,7 +9985,7 @@ namespace QuizMaker.DatabaseChoiceDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public virtual int UpdateAll(DatabaseChoiceDataSet dataSet) {
+        public virtual int UpdateAll(MultipleChoiceDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
