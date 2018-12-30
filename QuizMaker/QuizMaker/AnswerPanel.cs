@@ -26,5 +26,14 @@ namespace QuizMaker
         {
             return correctCheckBox.Checked;
         }
+
+        public void SetAnswerName(string answerName)
+        {
+            AnswerText.Text = answerName;
+        }
+        public void SetCorrection(bool check)
+        {
+            correctCheckBox.Checked = check;
+        }
     }
 }

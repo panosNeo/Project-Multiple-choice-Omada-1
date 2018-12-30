@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuizMaker.Register;
 using QuizMaker.MailHandler;
+using System.Data.OleDb;
+
 namespace QuizMaker
 {
     public partial class RegisterControl : UserControl
@@ -33,7 +35,6 @@ namespace QuizMaker
             email = emailText.Text;
             fn = firstNameText.Text;
             ln = lastNameText.Text;
-<<<<<<< HEAD
             Register.Register re = new Register.Register(user, pass, email, fn, ln);
            
 
@@ -52,18 +53,20 @@ namespace QuizMaker
                 this.Controls.Clear();
                 this.Controls.Add(m);*/
 
-=======
-            Register.Register re = new Register.Register( user,  pass,  email,  fn,  ln);
->>>>>>> parent of 4726ff4... 1
 
-            re.IsRegistered(user, pass, email, fn, ln);
+            }
+            else
+            {
+                MessageBox.Show("Register Failed");
+            }
 
-            SendMailController.SendVerificationMail(email);
 
-            MailAuthenticationControl m = new MailAuthenticationControl();
-            m.Dock = DockStyle.Fill;
-            this.Controls.Clear();
-            this.Controls.Add(m);
         }
-    }
+            
+
+            
+
+           
+        }
 }
+

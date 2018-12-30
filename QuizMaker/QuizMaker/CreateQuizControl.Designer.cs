@@ -37,25 +37,26 @@
             this.label1 = new System.Windows.Forms.Label();
             this.stepOneLabel = new System.Windows.Forms.Label();
             this.secondPanel = new System.Windows.Forms.Panel();
+            this.nextQuBtn = new System.Windows.Forms.Button();
+            this.prevQuBtn = new System.Windows.Forms.Button();
             this.backBtn = new System.Windows.Forms.Button();
             this.innerQuestionPanel = new System.Windows.Forms.Panel();
+            this.deleteBtn = new System.Windows.Forms.Button();
             this.AnswersPanel = new System.Windows.Forms.Panel();
             this.delAnswerBtn = new System.Windows.Forms.Button();
             this.nextAnswerBtn = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.questionNumber = new System.Windows.Forms.Label();
             this.questionSetLabel = new System.Windows.Forms.Label();
             this.setAnswerLabel = new System.Windows.Forms.Label();
             this.questionNameTextBox = new System.Windows.Forms.TextBox();
             this.stepToLabel = new System.Windows.Forms.Label();
-            this.nextQuestionBtn = new System.Windows.Forms.Button();
+            this.newQuestionBtn = new System.Windows.Forms.Button();
             this.finishQuestionsBtn = new System.Windows.Forms.Button();
             this.thirdPanel = new System.Windows.Forms.Panel();
             this.finishQuizBtn = new System.Windows.Forms.Button();
             this.reviewLabel = new System.Windows.Forms.Label();
             this.stepThreeLabel = new System.Windows.Forms.Label();
             this.createQuizTimer = new System.Windows.Forms.Timer(this.components);
-            this.nextQuBtn = new System.Windows.Forms.Button();
-            this.prevQuBtn = new System.Windows.Forms.Button();
             this.firstPanel.SuspendLayout();
             this.secondPanel.SuspendLayout();
             this.innerQuestionPanel.SuspendLayout();
@@ -153,13 +154,35 @@
             this.secondPanel.Controls.Add(this.prevQuBtn);
             this.secondPanel.Controls.Add(this.backBtn);
             this.secondPanel.Controls.Add(this.innerQuestionPanel);
-            this.secondPanel.Controls.Add(this.nextQuestionBtn);
+            this.secondPanel.Controls.Add(this.newQuestionBtn);
             this.secondPanel.Controls.Add(this.finishQuestionsBtn);
             this.secondPanel.Enabled = false;
             this.secondPanel.Location = new System.Drawing.Point(1144, 105);
             this.secondPanel.Name = "secondPanel";
             this.secondPanel.Size = new System.Drawing.Size(272, 391);
             this.secondPanel.TabIndex = 1;
+            // 
+            // nextQuBtn
+            // 
+            this.nextQuBtn.Enabled = false;
+            this.nextQuBtn.Image = global::QuizMaker.Properties.Resources.fast_forward;
+            this.nextQuBtn.Location = new System.Drawing.Point(213, 301);
+            this.nextQuBtn.Name = "nextQuBtn";
+            this.nextQuBtn.Size = new System.Drawing.Size(24, 24);
+            this.nextQuBtn.TabIndex = 14;
+            this.nextQuBtn.UseVisualStyleBackColor = true;
+            this.nextQuBtn.Click += new System.EventHandler(this.nextQBtn_Click);
+            // 
+            // prevQuBtn
+            // 
+            this.prevQuBtn.Enabled = false;
+            this.prevQuBtn.Image = global::QuizMaker.Properties.Resources.rewind;
+            this.prevQuBtn.Location = new System.Drawing.Point(36, 301);
+            this.prevQuBtn.Name = "prevQuBtn";
+            this.prevQuBtn.Size = new System.Drawing.Size(24, 24);
+            this.prevQuBtn.TabIndex = 13;
+            this.prevQuBtn.UseVisualStyleBackColor = true;
+            this.prevQuBtn.Click += new System.EventHandler(this.prevQBtn_click);
             // 
             // backBtn
             // 
@@ -185,8 +208,9 @@
             // innerQuestionPanel
             // 
             this.innerQuestionPanel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.innerQuestionPanel.Controls.Add(this.deleteBtn);
             this.innerQuestionPanel.Controls.Add(this.AnswersPanel);
-            this.innerQuestionPanel.Controls.Add(this.label2);
+            this.innerQuestionPanel.Controls.Add(this.questionNumber);
             this.innerQuestionPanel.Controls.Add(this.questionSetLabel);
             this.innerQuestionPanel.Controls.Add(this.setAnswerLabel);
             this.innerQuestionPanel.Controls.Add(this.questionNameTextBox);
@@ -195,6 +219,17 @@
             this.innerQuestionPanel.Name = "innerQuestionPanel";
             this.innerQuestionPanel.Size = new System.Drawing.Size(272, 293);
             this.innerQuestionPanel.TabIndex = 11;
+            // 
+            // deleteBtn
+            // 
+            this.deleteBtn.Font = new System.Drawing.Font("Century", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.deleteBtn.Image = global::QuizMaker.Properties.Resources.delete;
+            this.deleteBtn.Location = new System.Drawing.Point(223, 52);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(28, 28);
+            this.deleteBtn.TabIndex = 14;
+            this.deleteBtn.UseVisualStyleBackColor = true;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteQBtn_Click);
             // 
             // AnswersPanel
             // 
@@ -228,15 +263,15 @@
             this.nextAnswerBtn.UseVisualStyleBackColor = true;
             this.nextAnswerBtn.Click += new System.EventHandler(this.nextAnswerBtn_Click);
             // 
-            // label2
+            // questionNumber
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label2.Location = new System.Drawing.Point(185, 57);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(22, 23);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "1";
+            this.questionNumber.AutoSize = true;
+            this.questionNumber.Font = new System.Drawing.Font("Century", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.questionNumber.Location = new System.Drawing.Point(185, 57);
+            this.questionNumber.Name = "questionNumber";
+            this.questionNumber.Size = new System.Drawing.Size(22, 23);
+            this.questionNumber.TabIndex = 11;
+            this.questionNumber.Text = "1";
             // 
             // questionSetLabel
             // 
@@ -276,25 +311,25 @@
             this.stepToLabel.TabIndex = 0;
             this.stepToLabel.Text = "Step 2";
             // 
-            // nextQuestionBtn
+            // newQuestionBtn
             // 
-            this.nextQuestionBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.nextQuestionBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.nextQuestionBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.nextQuestionBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.nextQuestionBtn.FlatAppearance.BorderSize = 0;
-            this.nextQuestionBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.nextQuestionBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGreen;
-            this.nextQuestionBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.nextQuestionBtn.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.nextQuestionBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.nextQuestionBtn.Location = new System.Drawing.Point(66, 299);
-            this.nextQuestionBtn.Name = "nextQuestionBtn";
-            this.nextQuestionBtn.Size = new System.Drawing.Size(141, 26);
-            this.nextQuestionBtn.TabIndex = 10;
-            this.nextQuestionBtn.Text = "Set next question";
-            this.nextQuestionBtn.UseVisualStyleBackColor = false;
-            this.nextQuestionBtn.Click += new System.EventHandler(this.questionsBtn_Click);
+            this.newQuestionBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.newQuestionBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.newQuestionBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.newQuestionBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.newQuestionBtn.FlatAppearance.BorderSize = 0;
+            this.newQuestionBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.newQuestionBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGreen;
+            this.newQuestionBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.newQuestionBtn.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.newQuestionBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.newQuestionBtn.Location = new System.Drawing.Point(66, 299);
+            this.newQuestionBtn.Name = "newQuestionBtn";
+            this.newQuestionBtn.Size = new System.Drawing.Size(141, 26);
+            this.newQuestionBtn.TabIndex = 10;
+            this.newQuestionBtn.Text = "Set next question";
+            this.newQuestionBtn.UseVisualStyleBackColor = false;
+            this.newQuestionBtn.Click += new System.EventHandler(this.newQuestionsBtn_Click);
             // 
             // finishQuestionsBtn
             // 
@@ -375,28 +410,6 @@
             this.createQuizTimer.Interval = 1;
             this.createQuizTimer.Tick += new System.EventHandler(this.createQuizTimer_Tick);
             // 
-            // nextQuBtn
-            // 
-            this.nextQuBtn.Enabled = false;
-            this.nextQuBtn.Image = global::QuizMaker.Properties.Resources.fast_forward;
-            this.nextQuBtn.Location = new System.Drawing.Point(213, 301);
-            this.nextQuBtn.Name = "nextQuBtn";
-            this.nextQuBtn.Size = new System.Drawing.Size(24, 24);
-            this.nextQuBtn.TabIndex = 14;
-            this.nextQuBtn.UseVisualStyleBackColor = true;
-            this.nextQuBtn.Click += new System.EventHandler(this.questionsBtn_Click);
-            // 
-            // prevQuBtn
-            // 
-            this.prevQuBtn.Enabled = false;
-            this.prevQuBtn.Image = global::QuizMaker.Properties.Resources.rewind;
-            this.prevQuBtn.Location = new System.Drawing.Point(36, 301);
-            this.prevQuBtn.Name = "prevQuBtn";
-            this.prevQuBtn.Size = new System.Drawing.Size(24, 24);
-            this.prevQuBtn.TabIndex = 13;
-            this.prevQuBtn.UseVisualStyleBackColor = true;
-            this.prevQuBtn.Click += new System.EventHandler(this.questionsBtn_Click);
-            // 
             // CreateQuizControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -431,12 +444,12 @@
         private System.Windows.Forms.Panel secondPanel;
         private System.Windows.Forms.Button backBtn;
         private System.Windows.Forms.Panel innerQuestionPanel;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label questionNumber;
         private System.Windows.Forms.Label questionSetLabel;
         private System.Windows.Forms.Label setAnswerLabel;
         private System.Windows.Forms.TextBox questionNameTextBox;
         private System.Windows.Forms.Label stepToLabel;
-        private System.Windows.Forms.Button nextQuestionBtn;
+        private System.Windows.Forms.Button newQuestionBtn;
         private System.Windows.Forms.Button finishQuestionsBtn;
         private System.Windows.Forms.Panel thirdPanel;
         private System.Windows.Forms.Button finishQuizBtn;
@@ -448,5 +461,6 @@
         private System.Windows.Forms.Button nextAnswerBtn;
         private System.Windows.Forms.Button prevQuBtn;
         private System.Windows.Forms.Button nextQuBtn;
+        private System.Windows.Forms.Button deleteBtn;
     }
 }
