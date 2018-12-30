@@ -165,3 +165,9 @@ C:\Users\Vladimiros\Desktop\QuizMaker\QuizMaker\obj\Debug\QuizMaker.csproj.Gener
 C:\Users\Vladimiros\Desktop\QuizMaker\QuizMaker\obj\Debug\QuizMaker.csproj.CoreCompileInputs.cache
 C:\Users\Vladimiros\Desktop\QuizMaker\QuizMaker\obj\Debug\QuizMaker.exe
 C:\Users\Vladimiros\Desktop\QuizMaker\QuizMaker\obj\Debug\QuizMaker.pdb
+C:\Users\Vladimiros\Desktop\test\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\bin\Debug\MultipleChoice.accdb
+C:\Users\Vladimiros\Desktop\test\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.MailAuthenticationControl.resources
+C:\Users\Vladimiros\Desktop\test\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.PrintQuestion.resources
+C:\Users\Vladimiros\Desktop\test\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.QuizPlayScore.resources
+C:\Users\Vladimiros\Desktop\test\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.SearchControl.resources
+C:\Users\Vladimiros\Desktop\test\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.TempPrintControl.resources

@@ -275,8 +275,5 @@
   <ItemGroup>
     <None Include="Resources\iconfinder_search_285651.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="MultipleChoice.accdb" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
