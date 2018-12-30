@@ -212,9 +212,6 @@
         <DependentUpon>TempPrintControl.cs</DependentUpon>
       </EmbeddedResource>
     </None>
-    <None Include="DatabaseChoiceDataSet.xsc">
-      <DependentUpon>DatabaseChoiceDataSet.xsd</DependentUpon>
-    </None>
     <None Include="MultipleChoiceDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>MultipleChoiceDataSet.Designer.cs</LastGenOutput>
@@ -263,7 +260,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-	<ItemGroup>
+  <ItemGroup>
     <None Include="Resources\iconfinder_search_285651.png" />
   </ItemGroup>
   <ItemGroup>
