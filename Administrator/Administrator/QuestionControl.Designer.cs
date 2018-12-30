@@ -31,28 +31,29 @@
             this.label1 = new System.Windows.Forms.Label();
             this.SearchIDBox = new System.Windows.Forms.TextBox();
             this.QuestionGroupbox = new System.Windows.Forms.GroupBox();
-            this.warningLabel = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.UserIDBox = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.SubjectIDBox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.QuestionBox = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.RatingBox = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.DateBox = new System.Windows.Forms.TextBox();
-            this.AnswerBox = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.AnswerIDList = new System.Windows.Forms.ListBox();
-            this.CorrectCheckbox = new System.Windows.Forms.CheckBox();
+            this.QuestionIDBox = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.UpdateButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.AddButton = new System.Windows.Forms.Button();
             this.QuestionSettingsButton = new System.Windows.Forms.Button();
+            this.CorrectCheckbox = new System.Windows.Forms.CheckBox();
+            this.AnswerIDList = new System.Windows.Forms.ListBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.AnswerBox = new System.Windows.Forms.TextBox();
+            this.DateBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.RatingBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.QuestionBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.SubjectIDBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.UserIDBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.warningLabel = new System.Windows.Forms.Label();
             this.SearchBox = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.QuestionIDBox = new System.Windows.Forms.TextBox();
+            this.QuestionReset = new System.Windows.Forms.Button();
             this.QuestionGroupbox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,6 +78,7 @@
             // 
             // QuestionGroupbox
             // 
+            this.QuestionGroupbox.Controls.Add(this.QuestionReset);
             this.QuestionGroupbox.Controls.Add(this.QuestionIDBox);
             this.QuestionGroupbox.Controls.Add(this.label8);
             this.QuestionGroupbox.Controls.Add(this.UpdateButton);
@@ -106,156 +108,23 @@
             this.QuestionGroupbox.TabStop = false;
             this.QuestionGroupbox.Text = "Question Data";
             // 
-            // warningLabel
+            // QuestionIDBox
             // 
-            this.warningLabel.AutoSize = true;
-            this.warningLabel.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.warningLabel.ForeColor = System.Drawing.Color.Red;
-            this.warningLabel.Location = new System.Drawing.Point(289, 31);
-            this.warningLabel.Name = "warningLabel";
-            this.warningLabel.Size = new System.Drawing.Size(64, 16);
-            this.warningLabel.TabIndex = 5;
-            this.warningLabel.Text = "Warning *";
-            this.warningLabel.Visible = false;
+            this.QuestionIDBox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.QuestionIDBox.Location = new System.Drawing.Point(102, 39);
+            this.QuestionIDBox.Name = "QuestionIDBox";
+            this.QuestionIDBox.ReadOnly = true;
+            this.QuestionIDBox.Size = new System.Drawing.Size(113, 23);
+            this.QuestionIDBox.TabIndex = 2;
             // 
-            // label2
+            // label8
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(36, 71);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 16);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "User ID :";
-            // 
-            // UserIDBox
-            // 
-            this.UserIDBox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.UserIDBox.Location = new System.Drawing.Point(102, 68);
-            this.UserIDBox.Name = "UserIDBox";
-            this.UserIDBox.ReadOnly = true;
-            this.UserIDBox.Size = new System.Drawing.Size(113, 23);
-            this.UserIDBox.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 100);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 16);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Subject ID :";
-            // 
-            // SubjectIDBox
-            // 
-            this.SubjectIDBox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.SubjectIDBox.Location = new System.Drawing.Point(102, 97);
-            this.SubjectIDBox.Name = "SubjectIDBox";
-            this.SubjectIDBox.ReadOnly = true;
-            this.SubjectIDBox.Size = new System.Drawing.Size(113, 23);
-            this.SubjectIDBox.TabIndex = 3;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 142);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 16);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Question :";
-            // 
-            // QuestionBox
-            // 
-            this.QuestionBox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.QuestionBox.Location = new System.Drawing.Point(23, 169);
-            this.QuestionBox.Multiline = true;
-            this.QuestionBox.Name = "QuestionBox";
-            this.QuestionBox.ReadOnly = true;
-            this.QuestionBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.QuestionBox.Size = new System.Drawing.Size(309, 90);
-            this.QuestionBox.TabIndex = 4;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(283, 42);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 16);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Rating :";
-            // 
-            // RatingBox
-            // 
-            this.RatingBox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.RatingBox.Location = new System.Drawing.Point(356, 39);
-            this.RatingBox.Name = "RatingBox";
-            this.RatingBox.ReadOnly = true;
-            this.RatingBox.Size = new System.Drawing.Size(113, 23);
-            this.RatingBox.TabIndex = 5;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(235, 71);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(106, 16);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Creation Date :";
-            // 
-            // DateBox
-            // 
-            this.DateBox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.DateBox.Location = new System.Drawing.Point(356, 68);
-            this.DateBox.Name = "DateBox";
-            this.DateBox.ReadOnly = true;
-            this.DateBox.Size = new System.Drawing.Size(113, 23);
-            this.DateBox.TabIndex = 6;
-            // 
-            // AnswerBox
-            // 
-            this.AnswerBox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.AnswerBox.Location = new System.Drawing.Point(338, 169);
-            this.AnswerBox.Multiline = true;
-            this.AnswerBox.Name = "AnswerBox";
-            this.AnswerBox.ReadOnly = true;
-            this.AnswerBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.AnswerBox.Size = new System.Drawing.Size(309, 90);
-            this.AnswerBox.TabIndex = 8;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(335, 143);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(63, 16);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Answer :";
-            // 
-            // AnswerIDList
-            // 
-            this.AnswerIDList.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.AnswerIDList.FormattingEnabled = true;
-            this.AnswerIDList.ItemHeight = 17;
-            this.AnswerIDList.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.AnswerIDList.Location = new System.Drawing.Point(404, 142);
-            this.AnswerIDList.Name = "AnswerIDList";
-            this.AnswerIDList.Size = new System.Drawing.Size(65, 21);
-            this.AnswerIDList.TabIndex = 7;
-            // 
-            // CorrectCheckbox
-            // 
-            this.CorrectCheckbox.AutoSize = true;
-            this.CorrectCheckbox.Enabled = false;
-            this.CorrectCheckbox.Location = new System.Drawing.Point(493, 142);
-            this.CorrectCheckbox.Name = "CorrectCheckbox";
-            this.CorrectCheckbox.Size = new System.Drawing.Size(75, 20);
-            this.CorrectCheckbox.TabIndex = 11;
-            this.CorrectCheckbox.Text = "Correct";
-            this.CorrectCheckbox.UseVisualStyleBackColor = true;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 42);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(90, 16);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Question ID :";
             // 
             // UpdateButton
             // 
@@ -309,6 +178,157 @@
             this.QuestionSettingsButton.UseVisualStyleBackColor = false;
             this.QuestionSettingsButton.Click += new System.EventHandler(this.QuestionSettingsButton_Click);
             // 
+            // CorrectCheckbox
+            // 
+            this.CorrectCheckbox.AutoSize = true;
+            this.CorrectCheckbox.Enabled = false;
+            this.CorrectCheckbox.Location = new System.Drawing.Point(493, 142);
+            this.CorrectCheckbox.Name = "CorrectCheckbox";
+            this.CorrectCheckbox.Size = new System.Drawing.Size(75, 20);
+            this.CorrectCheckbox.TabIndex = 11;
+            this.CorrectCheckbox.Text = "Correct";
+            this.CorrectCheckbox.UseVisualStyleBackColor = true;
+            // 
+            // AnswerIDList
+            // 
+            this.AnswerIDList.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.AnswerIDList.FormattingEnabled = true;
+            this.AnswerIDList.ItemHeight = 17;
+            this.AnswerIDList.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.AnswerIDList.Location = new System.Drawing.Point(404, 142);
+            this.AnswerIDList.Name = "AnswerIDList";
+            this.AnswerIDList.Size = new System.Drawing.Size(65, 21);
+            this.AnswerIDList.TabIndex = 7;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(335, 143);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(63, 16);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Answer :";
+            // 
+            // AnswerBox
+            // 
+            this.AnswerBox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.AnswerBox.Location = new System.Drawing.Point(338, 169);
+            this.AnswerBox.Multiline = true;
+            this.AnswerBox.Name = "AnswerBox";
+            this.AnswerBox.ReadOnly = true;
+            this.AnswerBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.AnswerBox.Size = new System.Drawing.Size(309, 90);
+            this.AnswerBox.TabIndex = 8;
+            // 
+            // DateBox
+            // 
+            this.DateBox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.DateBox.Location = new System.Drawing.Point(356, 68);
+            this.DateBox.Name = "DateBox";
+            this.DateBox.ReadOnly = true;
+            this.DateBox.Size = new System.Drawing.Size(113, 23);
+            this.DateBox.TabIndex = 6;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(235, 71);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(106, 16);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Creation Date :";
+            // 
+            // RatingBox
+            // 
+            this.RatingBox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.RatingBox.Location = new System.Drawing.Point(356, 39);
+            this.RatingBox.Name = "RatingBox";
+            this.RatingBox.ReadOnly = true;
+            this.RatingBox.Size = new System.Drawing.Size(113, 23);
+            this.RatingBox.TabIndex = 5;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(283, 42);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(58, 16);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Rating :";
+            // 
+            // QuestionBox
+            // 
+            this.QuestionBox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.QuestionBox.Location = new System.Drawing.Point(23, 169);
+            this.QuestionBox.Multiline = true;
+            this.QuestionBox.Name = "QuestionBox";
+            this.QuestionBox.ReadOnly = true;
+            this.QuestionBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.QuestionBox.Size = new System.Drawing.Size(309, 90);
+            this.QuestionBox.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(20, 142);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(73, 16);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Question :";
+            // 
+            // SubjectIDBox
+            // 
+            this.SubjectIDBox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.SubjectIDBox.Location = new System.Drawing.Point(102, 97);
+            this.SubjectIDBox.Name = "SubjectIDBox";
+            this.SubjectIDBox.ReadOnly = true;
+            this.SubjectIDBox.Size = new System.Drawing.Size(113, 23);
+            this.SubjectIDBox.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(13, 100);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(81, 16);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Subject ID :";
+            // 
+            // UserIDBox
+            // 
+            this.UserIDBox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.UserIDBox.Location = new System.Drawing.Point(102, 68);
+            this.UserIDBox.Name = "UserIDBox";
+            this.UserIDBox.ReadOnly = true;
+            this.UserIDBox.Size = new System.Drawing.Size(113, 23);
+            this.UserIDBox.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(36, 71);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 16);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "User ID :";
+            // 
+            // warningLabel
+            // 
+            this.warningLabel.AutoSize = true;
+            this.warningLabel.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.warningLabel.ForeColor = System.Drawing.Color.Red;
+            this.warningLabel.Location = new System.Drawing.Point(289, 31);
+            this.warningLabel.Name = "warningLabel";
+            this.warningLabel.Size = new System.Drawing.Size(64, 16);
+            this.warningLabel.TabIndex = 5;
+            this.warningLabel.Text = "Warning *";
+            this.warningLabel.Visible = false;
+            // 
             // SearchBox
             // 
             this.SearchBox.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
@@ -321,23 +341,19 @@
             this.SearchBox.TabIndex = 1;
             this.SearchBox.UseVisualStyleBackColor = true;
             // 
-            // label8
+            // QuestionReset
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 42);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(90, 16);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "Question ID :";
-            // 
-            // QuestionIDBox
-            // 
-            this.QuestionIDBox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.QuestionIDBox.Location = new System.Drawing.Point(102, 39);
-            this.QuestionIDBox.Name = "QuestionIDBox";
-            this.QuestionIDBox.ReadOnly = true;
-            this.QuestionIDBox.Size = new System.Drawing.Size(113, 23);
-            this.QuestionIDBox.TabIndex = 2;
+            this.QuestionReset.Enabled = false;
+            this.QuestionReset.FlatAppearance.BorderSize = 0;
+            this.QuestionReset.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            this.QuestionReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.QuestionReset.Image = global::Administrator.Properties.Resources.reset;
+            this.QuestionReset.Location = new System.Drawing.Point(613, 60);
+            this.QuestionReset.Name = "QuestionReset";
+            this.QuestionReset.Size = new System.Drawing.Size(35, 35);
+            this.QuestionReset.TabIndex = 16;
+            this.QuestionReset.UseVisualStyleBackColor = false;
+            this.QuestionReset.Click += new System.EventHandler(this.QuestionReset_Click);
             // 
             // QuestionControl
             // 
@@ -385,5 +401,6 @@
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.TextBox QuestionIDBox;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button QuestionReset;
     }
 }
