@@ -154,9 +154,17 @@
     <Compile Include="QuizPanel.Designer.cs">
       <DependentUpon>QuizPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="SearchControl.cs" />
+    <Compile Include="SearchControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="SearchControl.Designer.cs">
       <DependentUpon>SearchControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TempPrintControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TempPrintControl.Designer.cs">
+      <DependentUpon>TempPrintControl.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AnswerPanel.resx">
       <DependentUpon>AnswerPanel.cs</DependentUpon>
@@ -213,6 +221,9 @@
     <None Include="MultipleChoiceDataSet.xsc">
       <DependentUpon>MultipleChoiceDataSet.xsd</DependentUpon>
     </None>
+    <EmbeddedResource Include="TempPrintControl.resx">
+      <DependentUpon>TempPrintControl.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="MultipleChoiceDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>MultipleChoiceDataSet.Designer.cs</LastGenOutput>
@@ -260,7 +271,6 @@
     <Content Include="MultipleChoice.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="Resources\iconfinder_search_285651.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\iconfinder_search_285651.png" />
