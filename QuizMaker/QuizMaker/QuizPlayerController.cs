@@ -21,14 +21,17 @@ namespace QuizMaker
 
         private void setATestQuiz()
         {
-            quiz = new Quiz("My test quiz", 0, 0);
+            quiz = new Quiz("My test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quiz", 0, 0);
             for (int i = 0; i < 10; i++)
             {
-                Question q = new Question("test question" + i, i, i, DateTime.Now);
-                q.AddAnswer(new Answer("test" + i, true));
+                Question q = new Question("1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890" + i, i, i, DateTime.Now);
+                q.AddAnswer(new Answer("testMy test quizMy test quizMy test quizMy test quizMy test quizMy test quiztestMy test quizMy test quizMy test quizMy test quizMy test quizMy test quiztestMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quiz" + i, true));
+                q.AddAnswer(new Answer("testMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quiz" + i, false));
                 q.AddAnswer(new Answer("test" + i, false));
-                q.AddAnswer(new Answer("test" + i, false));
-                q.AddAnswer(new Answer("test" + i, false));
+                q.AddAnswer(new Answer("testMy test quizMy test quizMy test quiz" + i, false));
+                q.AddAnswer(new Answer("testMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quiz" + i, false));
+                q.AddAnswer(new Answer("testMy test quizMy test quizMy test quizMy test quizMy test quiz" + i, false));
+                q.AddAnswer(new Answer("testMy test quizMy test quizMy test quizMy test quiz" + i, false));
                 quiz.AddQuestion(q, 1);
             }
         }
@@ -59,6 +62,11 @@ namespace QuizMaker
         public bool IsCorrect(int question, int answer)
         {
             return quiz.getQuestions().ElementAt<Question>(question).GetAnswers().ElementAt<Answer>(answer).IsCorrect();
+        }
+
+        public void PrintThisQuiz()
+        {
+            new PrintQuizTemplates.PrintQuizController(quiz);
         }
     }
 }

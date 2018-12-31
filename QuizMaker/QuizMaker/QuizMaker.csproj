@@ -115,11 +115,39 @@
     <Compile Include="PlayQuizTemplates\QuizSwap.Designer.cs">
       <DependentUpon>QuizSwap.cs</DependentUpon>
     </Compile>
-    <Compile Include="PrintQuestion.cs">
+    <Compile Include="PrintController.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PrintQuestion.Designer.cs">
+    <Compile Include="PrintForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintForm.Designer.cs">
+      <DependentUpon>PrintForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintQuizTemplates\FirstPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PrintQuizTemplates\FirstPage.Designer.cs">
+      <DependentUpon>FirstPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintQuizTemplates\NextPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PrintQuizTemplates\NextPage.Designer.cs">
+      <DependentUpon>NextPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintQuizTemplates\PrintQuestionController.cs" />
+    <Compile Include="PrintQuizTemplates\PrintQuestion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PrintQuizTemplates\PrintQuestion.Designer.cs">
       <DependentUpon>PrintQuestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintQuizTemplates\QuestionAnswer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PrintQuizTemplates\QuestionAnswer.Designer.cs">
+      <DependentUpon>QuestionAnswer.cs</DependentUpon>
     </Compile>
     <Compile Include="QuizPlayerController.cs" />
     <Compile Include="QuizPlayScore.cs">
@@ -187,8 +215,23 @@
     <EmbeddedResource Include="PlayQuizTemplates\QuizSwap.resx">
       <DependentUpon>QuizSwap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PrintQuestion.resx">
+    <EmbeddedResource Include="PrintController.resx">
+      <DependentUpon>PrintController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintForm.resx">
+      <DependentUpon>PrintForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintQuizTemplates\FirstPage.resx">
+      <DependentUpon>FirstPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintQuizTemplates\NextPage.resx">
+      <DependentUpon>NextPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintQuizTemplates\PrintQuestion.resx">
       <DependentUpon>PrintQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintQuizTemplates\QuestionAnswer.resx">
+      <DependentUpon>QuestionAnswer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -262,6 +305,7 @@
     <Content Include="MultipleChoice.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\print.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\iconfinder_search_285651.png" />

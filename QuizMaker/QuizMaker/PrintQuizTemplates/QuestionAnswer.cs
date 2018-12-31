@@ -8,19 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuizMaker.PlayQuizTemplates
+namespace QuizMaker.PrintQuizTemplates
 {
-    public partial class QuizQuestion : UserControl
+    public partial class QuestionAnswer : UserControl
     {
-        public QuizQuestion()
+        public QuestionAnswer(string t)
         {
             InitializeComponent();
-        }
-
-        public void setQuestion(string question)
-        {
-            questionLabel.Text = question;
-            //questionNumLabel.Text = num + ")";
+            question1.Text = t;
         }
     }
 }
