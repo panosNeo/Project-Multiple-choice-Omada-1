@@ -55,13 +55,13 @@ namespace QuizMaker
             {
                 answer = new QuizAnswers(pos, i);
                 answer.Location = p;
-                answer.setAnswer(""+pos, quiz.GetAnswerTitle(pos, i));
+                answer.setAnswer(""+i, quiz.GetAnswerTitle(pos, i));
                 answersHolder.Controls.Add(answer);
-                p.Y += 50;
+                p.Y += answer.Height;
             }
             string q = quiz.GetQuestionTitle(pos);
             QuizQuestion qu = new QuizQuestion();
-            qu.setQuestion("" + pos, q);
+            qu.setQuestion(q);
             questionHolder.Controls.Add(qu);
             questionCount++;
         }
@@ -146,6 +146,10 @@ namespace QuizMaker
             Controls.Clear();
             Controls.Add(new QuizPlayScore("" + (success * 100) + @"%"));
         }
-        
+
+        private void printQuizBtn_Click(object sender, EventArgs e)
+        {
+            quiz.PrintThisQuiz();
+        }
     }
 }

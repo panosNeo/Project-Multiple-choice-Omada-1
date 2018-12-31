@@ -1,4 +1,3 @@
-
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,20 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuizMaker.PlayQuizTemplates
+namespace QuizMaker.PrintQuizTemplates
 {
-    public partial class QuizQuestion : UserControl
+    public partial class PrintQuestion : UserControl
     {
-        public QuizQuestion()
+        public PrintQuestion()
         {
             InitializeComponent();
         }
-
-        public void setQuestion(string question)
+        public void SetTitle(string t)
         {
-            questionLabel.Text = question;
-            //questionNumLabel.Text = num + ")";
+            questionTitle.Text = t;
         }
+        
     }
 }
-
