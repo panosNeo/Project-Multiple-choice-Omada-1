@@ -8,51 +8,28 @@ namespace Administrator.LoginHandler
 {
     class Profile
     {
-        private string username;
-        private string password;
-        private string name;
-        private string lastname;
-        private string email;
-        private string role;
+        private int user_id { get; set; }
+        private string username { get; set; }
+        private string password { get; set; }
+        private string name { get; set; }
+        private string lastname { get; set; }
+        private string email { get; set; }
+        private string role { get; set; }
 
-        public Profile(string username,string password,string name,string lastname, string email, string role)
+        public Profile(int user_id, string username, string password, string role, string email, string lastname, string name)
         {
+            this.user_id = user_id;
             this.username = username;
             this.password = password;
+            this.role = role;
+            this.email = email;
             this.name = name;
             this.lastname = lastname;
-            this.email = email;
-            this.role = role;
         }
 
-        public string getUsername()
+        public string PrintUserData()
         {
-            return username;
-        }
-
-        public string getPassword()
-        {
-            return password;
-        }
-
-        public string getName()
-        {
-            return name;
-        }
-
-        public string getLastname()
-        {
-            return lastname;
-        }
-
-        public string getEmail()
-        {
-            return email;
-        }
-
-        public string getRole()
-        {
-            return role;
+            return user_id+" "+username+" "+name+" "+lastname+" "+email+" "+role;
         }
     }
 }
