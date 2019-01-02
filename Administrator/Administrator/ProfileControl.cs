@@ -39,7 +39,7 @@ namespace Administrator
 
         private void profileSettingsButton_Click(object sender, EventArgs e)
         {
-            if (dataGroupbox.Enabled  )
+            if (dataGroupbox.Enabled)
             {
                 //
                 //leipei to save changes

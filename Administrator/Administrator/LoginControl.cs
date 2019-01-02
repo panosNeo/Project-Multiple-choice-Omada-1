@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System.Text.RegularExpressions;
+
 namespace Administrator
 {
     public partial class LoginControl : UserControl
@@ -17,6 +19,7 @@ namespace Administrator
             InitializeComponent();
         }
 
+        //login button
         private void LoginButton_Click(object sender, EventArgs e)
         {
             //ean den exei dwsei kwdiko h username tote petaxe warning
@@ -28,11 +31,15 @@ namespace Administrator
             }
 
             //filtrarw username & pass apo special characters
-            string username = InputFilter(UsernameBox.Text);
-            string password = InputFilter(PasswordBox.Text);
+            if (InputFilter(UsernameBox.Text) || InputFilter(PasswordBox.Text))
+            {
+                warningLabel.Visible = true;
+                warningLabel.Text = "Please enter your username and your password.";
+                return;
+            }
 
             //dhmiourgia login handler object gia tis leitourgies tautopoihshs
-            LoginHandler.LoginHandler loginHandler = new LoginHandler.LoginHandler(username,password,false);
+            LoginHandler.LoginHandler loginHandler = new LoginHandler.LoginHandler(UsernameBox.Text,PasswordBox.Text,false);
 
             //kalese th methodo gia tautopoihsh stoixeiwn
             loginHandler.SearchAccount();
@@ -58,9 +65,17 @@ namespace Administrator
         }
 
         //filtro gia special characters
-        private string InputFilter(string text) {
-            //under construction
-            return text;
+        private bool InputFilter(string text) {
+            string pattern = @"([<>\?\*\\\""/\|])+";
+
+            if (Regex.IsMatch(text, pattern))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
