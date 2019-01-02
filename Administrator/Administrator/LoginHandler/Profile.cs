@@ -8,28 +8,81 @@ namespace Administrator.LoginHandler
 {
     class Profile
     {
-        private int user_id { get; set; }
-        private string username { get; set; }
-        private string password { get; set; }
-        private string name { get; set; }
-        private string lastname { get; set; }
-        private string email { get; set; }
-        private string role { get; set; }
+        private int user_id;
+        private string username;
+        private string password;
+        private string name;
+        private string lastname;
+        private string email;
+        private string role;
 
-        public Profile(int user_id, string username, string password, string role, string email, string lastname, string name)
+        public Profile()
         {
-            this.user_id = user_id;
+            role = "Admin";
+        }
+
+        public void SetUserID(int userID)
+        {
+            this.user_id = userID;
+        }
+        public int GetUserID()
+        {
+            return user_id;
+        }
+
+        public void SetUsername(string username)
+        {
             this.username = username;
+        }
+        public string GetUsername()
+        {
+            return username;
+        }
+
+        public void SetPassword(string password)
+        {
             this.password = password;
-            this.role = role;
+        }
+        public string GetPassword()
+        {
+            return password;
+        }
+
+        public string GetRole()
+        {
+            return role;
+        }
+
+        public void SetEmail(string email)
+        {
             this.email = email;
+        }
+        public string GetEmail()
+        {
+            return email;
+        }
+
+        public void SetName(string name)
+        {
             this.name = name;
+        }
+        public string GetName()
+        {
+            return name;
+        }
+
+        public void SetLastname(string lastname)
+        {
             this.lastname = lastname;
+        }
+        public string GetLastname()
+        {
+            return lastname;
         }
 
         public string PrintUserData()
         {
-            return user_id+" "+username+" "+name+" "+lastname+" "+email+" "+role;
+            return user_id+" "+username+" "+password+" "+name+" "+lastname+" "+email;
         }
     }
 }

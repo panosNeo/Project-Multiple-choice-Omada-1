@@ -15,7 +15,7 @@ namespace Administrator.LoginHandler
         private string password;
         private bool stayLog;
 
-        private Profile profile;
+        private static Profile profile = new Profile();
         private bool successLogin = false;
 
         public LoginHandler(string username,string password,bool stayLog)
@@ -38,34 +38,46 @@ namespace Administrator.LoginHandler
                     {
                         conn.Open();
 
-                        searchCommand.Parameters.AddWithValue("@p1",username);
-                        searchCommand.Parameters.AddWithValue("@p2",password);
-                        searchCommand.Parameters.AddWithValue("@p3","Admin");
+                        //parametroi sto query
+                        searchCommand.Parameters.AddWithValue("@p1", username);
+                        searchCommand.Parameters.AddWithValue("@p2", password);
+                        searchCommand.Parameters.AddWithValue("@p3", "Admin");
 
+                        //datareader
                         using (OleDbDataReader searchReader = searchCommand.ExecuteReader())
                         {
                             int countRow = 0;
                             while (searchReader.Read())
                             {
+                                //set profile data
+                                profile.SetUserID(searchReader.GetInt32(0));
+                                profile.SetUsername(searchReader.GetString(1));
+                                profile.SetPassword(searchReader.GetString(2));
+                                profile.SetEmail(searchReader.GetString(4));
+                                profile.SetName(searchReader.GetString(5));
+                                profile.SetLastname(searchReader.GetString(6));
+
                                 countRow++;
                             }
 
                             if (countRow > 0)
                             {
                                 //true gia epituxei tautopoihsh stoixeiwn
-                                successLogin = true;   
-                                //init to object me to data tou user pou kane login
-                                //profile = new Profile(searchReader.GetInt32(0),searchReader.GetString(1), searchReader.GetString(2), searchReader.GetString(3), searchReader.GetString(4), searchReader.GetString(5), searchReader.GetString(6));
-                                //UserData(profile);
+                                successLogin = true;
                             }
                         }
-                        
+
                         conn.Close();
                     }
                 }
             }
-            catch (OleDbException ex) {
-                MessageBox.Show(ex.ToString(),"Message",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            catch (OleDbException ex)
+            {
+                MessageBox.Show(ex.ToString(), "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -79,10 +91,10 @@ namespace Administrator.LoginHandler
             return successLogin;
         }
 
-        //gia na parw ta stoixeia tou user pou kane login
-        public void UserData(Profile prof)
+        //pare profile data apo to object
+        public static Profile GetProfile()
         {
-            //under construction
+            return profile;
         }
     }
 }

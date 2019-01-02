@@ -62,8 +62,5 @@ namespace Administrator
             //under construction
             return text;
         }
-
-
-
     }
 }
