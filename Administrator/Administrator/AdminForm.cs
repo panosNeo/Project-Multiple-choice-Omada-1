@@ -12,13 +12,9 @@ namespace Administrator
 {
     public partial class AdminForm : Form
     {
-        private ProfileControl profileControl = new ProfileControl();   //profileControl object
-        private SubjectControl subjectControl = new SubjectControl();   //subjectControl object
-        private QuestionControl questionControl = new QuestionControl();//questionControl object
-        private UserControl1 userControl1 = new UserControl1();         //userControl object
-        private ReportControl reportControl = new ReportControl();      //reportControl object
-        private FeedbackControl feedbackControl = new FeedbackControl();//feedbackControl object
-        private LoginControl loginControl = new LoginControl();         //loginControl object
+        //control objects
+        private ProfileControl profileControl = new ProfileControl();
+        private LoginControl loginControl = new LoginControl();  
 
         public AdminForm()
         {
@@ -99,6 +95,7 @@ namespace Administrator
         //subject button events
         private void Subject_Click(object sender, EventArgs e)
         {
+            SubjectControl subjectControl = new SubjectControl();
             //kalese methodo gia xrwma kai switch Control
             setDesign(Subject,subjectControl);
         }
@@ -114,6 +111,7 @@ namespace Administrator
         //User button events
         private void User_Click(object sender, EventArgs e)
         {
+            UserControl1 userControl1 = new UserControl1();
             //kalese methodo gia xrwma kai switch Control
             setDesign(User,userControl1);
         }
@@ -129,6 +127,7 @@ namespace Administrator
         //question button events
         private void Question_Click(object sender, EventArgs e)
         {
+            QuestionControl questionControl = new QuestionControl();
             //kalese methodo gia xrwma kai switch Control
             setDesign(Question,questionControl);
         }
@@ -144,6 +143,7 @@ namespace Administrator
         //report button events
         private void Report_Click(object sender, EventArgs e)
         {
+            ReportControl reportControl = new ReportControl();
             //kalese methodo gia xrwma kai switch Control
             setDesign(Report,reportControl);
         }
@@ -159,6 +159,7 @@ namespace Administrator
         //Feedback button events
         private void Feedback_Click(object sender, EventArgs e)
         {
+            FeedbackControl feedbackControl = new FeedbackControl();
             //kalese methodo gia xrwma kai switch Control
             setDesign(Feedback,feedbackControl);
         }

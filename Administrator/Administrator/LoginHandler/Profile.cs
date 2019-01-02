@@ -6,81 +6,82 @@ using System.Threading.Tasks;
 
 namespace Administrator.LoginHandler
 {
-    class Profile
+    static class Profile
     {
-        private int user_id;
-        private string username;
-        private string password;
-        private string name;
-        private string lastname;
-        private string email;
-        private string role;
+        private static int user_id;
+        private static string username;
+        private static string password;
+        private static string name;
+        private static string lastname;
+        private static string email;
+        private static string role;
 
+        /*
         public Profile()
         {
             role = "Admin";
-        }
+        }*/
 
-        public void SetUserID(int userID)
+        public static void SetUserID(int userID)
         {
-            this.user_id = userID;
+            user_id = userID;
         }
-        public int GetUserID()
+        public static int GetUserID()
         {
             return user_id;
         }
 
-        public void SetUsername(string username)
+        public static void SetUsername(string usrname)
         {
-            this.username = username;
+            username = usrname;
         }
-        public string GetUsername()
+        public static string GetUsername()
         {
             return username;
         }
 
-        public void SetPassword(string password)
+        public static void SetPassword(string pssword)
         {
-            this.password = password;
+            password = pssword;
         }
-        public string GetPassword()
+        public static string GetPassword()
         {
             return password;
         }
 
-        public string GetRole()
+        public static string GetRole()
         {
             return role;
         }
 
-        public void SetEmail(string email)
+        public static void SetEmail(string mail)
         {
-            this.email = email;
+            email = mail;
         }
-        public string GetEmail()
+        public static string GetEmail()
         {
             return email;
         }
 
-        public void SetName(string name)
+        public static void SetName(string nme)
         {
-            this.name = name;
+            name = nme;
         }
-        public string GetName()
+        public static string GetName()
         {
             return name;
         }
 
-        public void SetLastname(string lastname)
+        public static void SetLastname(string lstname)
         {
-            this.lastname = lastname;
+            lastname = lstname;
         }
-        public string GetLastname()
+        public static string GetLastname()
         {
             return lastname;
         }
 
-        public string PrintUserData()
+        public static string PrintUserData()
         {
             return user_id+" "+name+" "+lastname+ " " + email +" "+ username + " " + password;
         }

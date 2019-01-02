@@ -12,7 +12,7 @@ namespace Administrator.LoginHandler
     class UserDataController
     {
         //profile object me to data pou ekane login
-        private static Profile profile = LoginHandler.GetProfile();
+        //private static Profile profile = LoginHandler.GetProfile();
 
         public UserDataController()
         {
@@ -37,11 +37,17 @@ namespace Administrator.LoginHandler
                         updateCommand.Parameters.AddWithValue("@p3", email);
                         updateCommand.Parameters.AddWithValue("@p4", name);
                         updateCommand.Parameters.AddWithValue("@p5", lastname);
-                        updateCommand.Parameters.AddWithValue("@p6", profile.GetUserID());
+                        updateCommand.Parameters.AddWithValue("@p6", Profile.GetUserID());
 
                         //data reader
                         using (OleDbDataReader updateReader = updateCommand.ExecuteReader())
                         {
+                            Profile.SetUsername(username);
+                            Profile.SetPassword(password);
+                            Profile.SetEmail(email);
+                            Profile.SetName(name);
+                            Profile.SetLastname(lastname);
+
                             MessageBox.Show("Successful update.");
                         }
 

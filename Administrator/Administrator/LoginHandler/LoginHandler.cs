@@ -15,7 +15,7 @@ namespace Administrator.LoginHandler
         private string password;
         private bool stayLog;
 
-        private static Profile profile = new Profile();
+        //private static Profile profile = new Profile();
         private bool successLogin = false;
 
         public LoginHandler(string username,string password,bool stayLog)
@@ -50,12 +50,12 @@ namespace Administrator.LoginHandler
                             while (searchReader.Read())
                             {
                                 //set profile data
-                                profile.SetUserID(searchReader.GetInt32(0));
-                                profile.SetUsername(searchReader.GetString(1));
-                                profile.SetPassword(searchReader.GetString(2));
-                                profile.SetEmail(searchReader.GetString(4));
-                                profile.SetName(searchReader.GetString(5));
-                                profile.SetLastname(searchReader.GetString(6));
+                                Profile.SetUserID(searchReader.GetInt32(0));
+                                Profile.SetUsername(searchReader.GetString(1));
+                                Profile.SetPassword(searchReader.GetString(2));
+                                Profile.SetEmail(searchReader.GetString(4));
+                                Profile.SetName(searchReader.GetString(5));
+                                Profile.SetLastname(searchReader.GetString(6));
 
                                 countRow++;
                             }
@@ -93,9 +93,11 @@ namespace Administrator.LoginHandler
         }
 
         //pare profile data apo to object
+        /*
         public static Profile GetProfile()
         {
             return profile;
         }
+        */
     }
 }
