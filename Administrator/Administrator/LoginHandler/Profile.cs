@@ -82,7 +82,7 @@ namespace Administrator.LoginHandler
 
         public string PrintUserData()
         {
-            return user_id+" "+username+" "+password+" "+name+" "+lastname+" "+email;
+            return user_id+" "+name+" "+lastname+ " " + email +" "+ username + " " + password;
         }
     }
 }

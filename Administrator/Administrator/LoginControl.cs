@@ -47,7 +47,6 @@ namespace Administrator
             //ean uparxei o logariasmos tote kane login
             if (loginHandler.getSuccessLogin())
             {
-
                 AdminForm adminForm = (AdminForm)this.FindForm();
                 adminForm.LoginDesign();
 

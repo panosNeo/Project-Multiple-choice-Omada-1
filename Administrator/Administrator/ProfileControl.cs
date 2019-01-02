@@ -39,11 +39,22 @@ namespace Administrator
 
         private void profileSettingsButton_Click(object sender, EventArgs e)
         {
+            //string me to data tou user gia tuxwn update
+            string userData = UserIDBox.Text + " "
+                            + NameBox.Text + " " 
+                            + LastNameBox.Text + " " 
+                            + EmailBox.Text + " " 
+                            + UsernameBox.Text + " "
+                            + PasswordBox.Text; 
+
             if (dataGroupbox.Enabled)
             {
-                //
-                //leipei to save changes
-                //
+                //an den einai idio to data tote kane save tis allages
+                if (!userData.Equals(profile.PrintUserData()))
+                {
+                    LoginHandler.UserDataController.UpdateUserData(NameBox.Text,LastNameBox.Text,EmailBox.Text,UsernameBox.Text,PasswordBox.Text);
+                }
+
                 dataGroupbox.Enabled = false;
             }
             else
@@ -77,7 +88,7 @@ namespace Administrator
         }
 
         //kanei fill ta textboxes me ta data tou admin
-        private void FillProfileData()
+        public void FillProfileData()
         {
             UserIDBox.Text = profile.GetUserID().ToString();
             NameBox.Text = profile.GetName();

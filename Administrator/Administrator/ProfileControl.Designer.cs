@@ -31,6 +31,8 @@
             this.welcomeLabel = new System.Windows.Forms.Label();
             this.profileLogoutButton = new System.Windows.Forms.Button();
             this.dataGroupbox = new System.Windows.Forms.GroupBox();
+            this.UserIDBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.ShowPassword = new System.Windows.Forms.CheckBox();
             this.PasswordBox = new System.Windows.Forms.TextBox();
             this.UsernameBox = new System.Windows.Forms.TextBox();
@@ -46,8 +48,6 @@
             this.NotesflowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.profileSettingsButton = new System.Windows.Forms.Button();
-            this.UserIDBox = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.dataGroupbox.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -103,6 +103,24 @@
             this.dataGroupbox.TabIndex = 3;
             this.dataGroupbox.TabStop = false;
             this.dataGroupbox.Text = "Account Data";
+            // 
+            // UserIDBox
+            // 
+            this.UserIDBox.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.UserIDBox.Location = new System.Drawing.Point(113, 22);
+            this.UserIDBox.Name = "UserIDBox";
+            this.UserIDBox.ReadOnly = true;
+            this.UserIDBox.Size = new System.Drawing.Size(186, 26);
+            this.UserIDBox.TabIndex = 12;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(35, 28);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(60, 16);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "User ID :";
             // 
             // ShowPassword
             // 
@@ -244,23 +262,6 @@
             this.profileSettingsButton.TabIndex = 1;
             this.profileSettingsButton.UseVisualStyleBackColor = false;
             this.profileSettingsButton.Click += new System.EventHandler(this.profileSettingsButton_Click);
-            // 
-            // UserIDBox
-            // 
-            this.UserIDBox.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.UserIDBox.Location = new System.Drawing.Point(113, 22);
-            this.UserIDBox.Name = "UserIDBox";
-            this.UserIDBox.Size = new System.Drawing.Size(186, 26);
-            this.UserIDBox.TabIndex = 12;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(35, 28);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 16);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "User ID :";
             // 
             // ProfileControl
             // 
