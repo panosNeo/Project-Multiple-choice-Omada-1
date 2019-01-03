@@ -167,7 +167,6 @@ C:\Users\Vladimiros\Desktop\QuizMaker\QuizMaker\obj\Debug\QuizMaker.exe
 C:\Users\Vladimiros\Desktop\QuizMaker\QuizMaker\obj\Debug\QuizMaker.pdb
 C:\Users\Vladimiros\Desktop\test\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\bin\Debug\MultipleChoice.accdb
 C:\Users\Vladimiros\Desktop\test\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.MailAuthenticationControl.resources
-C:\Users\Vladimiros\Desktop\test\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.PrintQuestion.resources
 C:\Users\Vladimiros\Desktop\test\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.QuizPlayScore.resources
 C:\Users\Vladimiros\Desktop\test\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.SearchControl.resources
 C:\Users\Vladimiros\Desktop\test\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.TempPrintControl.resources
@@ -177,3 +176,14 @@ C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMak
 C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.PrintForm.resources
 C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.PrintController.resources
 C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.PrintQuizTemplates.QuestionAnswer.resources
+C:\Users\Vladimiros\Desktop\test\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\Vladimiros\Desktop\test\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\bin\Debug\Lucene.Net.dll
+C:\Users\Vladimiros\Desktop\test\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\bin\Debug\Lucene.Net.pdb
+C:\Users\Vladimiros\Desktop\test\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\bin\Debug\Lucene.Net.xml
+C:\Users\Vladimiros\Desktop\test\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.PrintController.resources
+C:\Users\Vladimiros\Desktop\test\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.PrintForm.resources
+C:\Users\Vladimiros\Desktop\test\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.PrintQuizTemplates.FirstPage.resources
+C:\Users\Vladimiros\Desktop\test\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.PrintQuizTemplates.NextPage.resources
+C:\Users\Vladimiros\Desktop\test\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.PrintQuizTemplates.PrintQuestion.resources
+C:\Users\Vladimiros\Desktop\test\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.PrintQuizTemplates.QuestionAnswer.resources
+C:\Users\Vladimiros\Desktop\test\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.csproj.CopyComplete
