@@ -14,8 +14,7 @@ namespace Administrator.LoginHandler
         private string username;
         private string password;
         private bool stayLog;
-
-        //private static Profile profile = new Profile();
+        
         private bool successLogin = false;
 
         public LoginHandler(string username,string password,bool stayLog)
@@ -92,12 +91,5 @@ namespace Administrator.LoginHandler
             return successLogin;
         }
 
-        //pare profile data apo to object
-        /*
-        public static Profile GetProfile()
-        {
-            return profile;
-        }
-        */
     }
 }

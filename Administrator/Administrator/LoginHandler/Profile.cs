@@ -14,13 +14,8 @@ namespace Administrator.LoginHandler
         private static string name;
         private static string lastname;
         private static string email;
-        private static string role;
-
-        /*
-        public Profile()
-        {
-            role = "Admin";
-        }*/
+        private static string role = "Admin";
+        
 
         public static void SetUserID(int userID)
         {

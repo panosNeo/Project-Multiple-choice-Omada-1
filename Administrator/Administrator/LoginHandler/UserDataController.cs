@@ -11,9 +11,6 @@ namespace Administrator.LoginHandler
 {
     class UserDataController
     {
-        //profile object me to data pou ekane login
-        //private static Profile profile = LoginHandler.GetProfile();
-
         public UserDataController()
         {
         }

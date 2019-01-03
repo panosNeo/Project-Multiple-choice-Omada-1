@@ -12,9 +12,6 @@ namespace Administrator
 {
     public partial class ProfileControl : UserControl
     {
-        //object profile
-        //private LoginHandler.Profile profile;
-
         public ProfileControl()
         {
             InitializeComponent();
@@ -22,9 +19,6 @@ namespace Administrator
 
         private void ProfileControl_Load(object sender, EventArgs e)
         {
-            //pairnw to profile object me to data tou user
-            //profile = LoginHandler.LoginHandler.GetProfile();
-
             //kalese th methodo gia na elegxei 
             //kai na emfanisei ta notes an uparxoun
             CheckForNotes();
@@ -52,8 +46,18 @@ namespace Administrator
                 //an den einai idio to data tote kane save tis allages
                 if (!userData.Equals(LoginHandler.Profile.PrintUserData()))
                 {
-                    LoginHandler.UserDataController.UpdateUserData(NameBox.Text,LastNameBox.Text,EmailBox.Text,UsernameBox.Text,PasswordBox.Text);
-                    FillProfileData();
+                    //rwthse gia save
+                    DialogResult dialogResult = MessageBox.Show("Do you want to save changes?","Message",MessageBoxButtons.YesNo,MessageBoxIcon.Information);
+                    //an save == yes tote kane save
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        LoginHandler.UserDataController.UpdateUserData(NameBox.Text, LastNameBox.Text, EmailBox.Text, UsernameBox.Text, PasswordBox.Text);
+                        FillProfileData();
+                    }
+                    else
+                    {//an save == no tote kane fill to idio data 
+                        FillProfileData();
+                    }
                 }
 
                 dataGroupbox.Enabled = false;
