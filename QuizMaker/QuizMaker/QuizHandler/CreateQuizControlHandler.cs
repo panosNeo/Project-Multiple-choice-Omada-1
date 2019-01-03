@@ -17,6 +17,11 @@ namespace QuizMaker.QuizHandler
         {
             myQuiz = new Quiz(quizName, subject, user_id);
         }
+        public static void SetQuiz()
+        {
+            myQuiz = new Quiz();
+            myQuestion = new Question();
+        }
 
         public static void AddQuestion(Question que)
         {
