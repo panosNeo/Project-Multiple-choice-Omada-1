@@ -85,6 +85,8 @@
     <Compile Include="QuestionControl.Designer.cs">
       <DependentUpon>QuestionControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuestionHandler\Question.cs" />
+    <Compile Include="QuizHandler\Quiz.cs" />
     <Compile Include="ReportControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -97,6 +99,8 @@
     <Compile Include="SubjectControl.Designer.cs">
       <DependentUpon>SubjectControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="SubjectHandler\Subject.cs" />
+    <Compile Include="SubjectHandler\SubjectController.cs" />
     <Compile Include="UserControl1.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -197,8 +201,6 @@
   <ItemGroup>
     <None Include="Resources\rate.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="SubjectHandler\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
