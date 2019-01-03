@@ -197,5 +197,8 @@
   <ItemGroup>
     <None Include="Resources\rate.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SubjectHandler\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
