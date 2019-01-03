@@ -10,16 +10,15 @@ namespace Administrator.QuestionHandler
     {
         private int question_id;
         private int user_id;
-        private int subject_id;
         private string question;
         private int rating;
         private string cr_date;
 
-        public Question(int question_id,int user_id,int subject_id,string question,int rating,string cr_date)
+        public Question(int question_id,int user_id,string question,int rating,string cr_date) 
+            : base(1,1,"","")
         {
             this.question_id = question_id;
             this.user_id = user_id;
-            this.subject_id = subject_id;
             this.question = question;
             this.rating = rating;
             this.cr_date = cr_date;
@@ -42,16 +41,7 @@ namespace Administrator.QuestionHandler
         {
             return user_id;
         }
-
-        public virtual void SetSubjectID(int subject_id)
-        {
-            this.subject_id = subject_id;
-        }
-        public virtual int GetSubjectID()
-        {
-            return subject_id;
-        }
-
+        
         public void SetQuestion(string question)
         {
             this.question = question;
@@ -70,18 +60,18 @@ namespace Administrator.QuestionHandler
             return rating;
         }
 
-        public void SetCrDate(string cr_date)
+        public override void SetCrDate(string cr_date)
         {
             this.cr_date = cr_date;
         }
-        public string GetCrDate()
+        public override string GetCrDate()
         {
             return cr_date;
         }
 
         public string PrintQuestionData()
         {
-            return question_id + " " + user_id + " " + subject_id + " " + question + " " + rating + " " + cr_date;
+            return question_id + " " + user_id + " " + base.GetSubjectID() + " " + question + " " + rating + " " + cr_date;
         }
 
     }

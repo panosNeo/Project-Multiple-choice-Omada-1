@@ -38,11 +38,11 @@ namespace Administrator.SubjectHandler
             return root_id;
         }
 
-        public void SetName(string name)
+        public virtual void SetName(string name)
         {
             this.name = name;
         }
-        public string GetName()
+        public virtual string GetName()
         {
             return name;
         }
