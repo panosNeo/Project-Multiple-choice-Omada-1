@@ -31,7 +31,6 @@
             this.ExistingSubjectGroup = new System.Windows.Forms.GroupBox();
             this.totalQuizBox = new System.Windows.Forms.TextBox();
             this.NameBox = new System.Windows.Forms.TextBox();
-            this.RootIDBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.SubjectIDListbox = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,6 +48,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.WarningLabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.totalQuestionBox = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.QuizReset = new System.Windows.Forms.Button();
             this.QuizUpdate = new System.Windows.Forms.Button();
             this.QuizSettingsButton = new System.Windows.Forms.Button();
@@ -66,8 +67,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.totalQuestionBox = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
+            this.RootIDListbox = new System.Windows.Forms.ListBox();
             this.ExistingSubjectGroup.SuspendLayout();
             this.ChangeSubjectGroup.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -75,9 +75,9 @@
             // 
             // ExistingSubjectGroup
             // 
+            this.ExistingSubjectGroup.Controls.Add(this.RootIDListbox);
             this.ExistingSubjectGroup.Controls.Add(this.totalQuizBox);
             this.ExistingSubjectGroup.Controls.Add(this.NameBox);
-            this.ExistingSubjectGroup.Controls.Add(this.RootIDBox);
             this.ExistingSubjectGroup.Controls.Add(this.label4);
             this.ExistingSubjectGroup.Controls.Add(this.SubjectIDListbox);
             this.ExistingSubjectGroup.Controls.Add(this.label3);
@@ -109,15 +109,6 @@
             this.NameBox.ReadOnly = true;
             this.NameBox.Size = new System.Drawing.Size(125, 23);
             this.NameBox.TabIndex = 2;
-            // 
-            // RootIDBox
-            // 
-            this.RootIDBox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.RootIDBox.Location = new System.Drawing.Point(159, 59);
-            this.RootIDBox.Name = "RootIDBox";
-            this.RootIDBox.ReadOnly = true;
-            this.RootIDBox.Size = new System.Drawing.Size(125, 23);
-            this.RootIDBox.TabIndex = 1;
             // 
             // label4
             // 
@@ -321,6 +312,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Quizzes";
             // 
+            // totalQuestionBox
+            // 
+            this.totalQuestionBox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.totalQuestionBox.Location = new System.Drawing.Point(387, 120);
+            this.totalQuestionBox.Name = "totalQuestionBox";
+            this.totalQuestionBox.ReadOnly = true;
+            this.totalQuestionBox.Size = new System.Drawing.Size(125, 23);
+            this.totalQuestionBox.TabIndex = 15;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(255, 123);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(130, 16);
+            this.label14.TabIndex = 16;
+            this.label14.Text = "Total of Questions :";
+            // 
             // QuizReset
             // 
             this.QuizReset.Enabled = false;
@@ -502,23 +511,22 @@
             this.label5.TabIndex = 1;
             this.label5.Text = "Quiz ID :";
             // 
-            // totalQuestionBox
+            // RootIDListbox
             // 
-            this.totalQuestionBox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.totalQuestionBox.Location = new System.Drawing.Point(387, 120);
-            this.totalQuestionBox.Name = "totalQuestionBox";
-            this.totalQuestionBox.ReadOnly = true;
-            this.totalQuestionBox.Size = new System.Drawing.Size(125, 23);
-            this.totalQuestionBox.TabIndex = 15;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(255, 123);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(130, 16);
-            this.label14.TabIndex = 16;
-            this.label14.Text = "Total of Questions :";
+            this.RootIDListbox.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.RootIDListbox.FormattingEnabled = true;
+            this.RootIDListbox.ItemHeight = 17;
+            this.RootIDListbox.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.RootIDListbox.Location = new System.Drawing.Point(159, 61);
+            this.RootIDListbox.Name = "RootIDListbox";
+            this.RootIDListbox.Size = new System.Drawing.Size(83, 21);
+            this.RootIDListbox.TabIndex = 5;
+            this.RootIDListbox.SelectedIndexChanged += new System.EventHandler(this.RootIDListbox_SelectedIndexChanged);
             // 
             // SubjectControl
             // 
@@ -553,7 +561,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox totalQuizBox;
         private System.Windows.Forms.TextBox NameBox;
-        private System.Windows.Forms.TextBox RootIDBox;
         private System.Windows.Forms.GroupBox ChangeSubjectGroup;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
@@ -585,5 +592,6 @@
         private System.Windows.Forms.Button QuizReset;
         private System.Windows.Forms.TextBox totalQuestionBox;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ListBox RootIDListbox;
     }
 }

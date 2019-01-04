@@ -13,7 +13,7 @@ namespace Administrator.SubjectHandler
     {
         //queries
         private static string existingSubjects = "Select * From Subject";
-        private static string countQuizzes = "Select Count(*) From Quiz Where Quiz_id = ?";
+        private static string countQuizzes = "Select Count(*) From Quiz inner join Subject on Quiz.Subject_id = Subject.Subject_id Where Subject.Root_id = ?";
 
         
         private static Subject subject;
@@ -64,7 +64,7 @@ namespace Administrator.SubjectHandler
         }
 
         //kane search kai count ola ta quiz pou uparxoun gia kathe subject 3exwrista
-        public static int QuizzesCounter(int subjectID)
+        public static int QuizzesCounter(int rootID)
         {
             try
             {   //connection
@@ -75,7 +75,7 @@ namespace Administrator.SubjectHandler
                     {
                         conn.Open();
                         //parametroi gia to query
-                        exSubCommand.Parameters.AddWithValue("@p1",subjectID);
+                        exSubCommand.Parameters.AddWithValue("@p1",rootID);
                         //execute to command
                         using (OleDbDataReader exSubReader = exSubCommand.ExecuteReader())
                         {

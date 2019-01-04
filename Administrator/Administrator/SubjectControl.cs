@@ -71,7 +71,7 @@ namespace Administrator
             qDateBox.Text = "";
         }
         
-        //gia na gemisw ta components me ta existing subjects
+        //gia na gemisw to subjectID listbox me ta existing subjects id
         private void FillExistingSubjectsID()
         {
             //kane clear ola ta items 
@@ -83,6 +83,20 @@ namespace Administrator
             }
 
             SubjectIDListbox.SelectedIndex = 0;
+        }
+
+        private void FillExistingRootID()
+        {
+            //kane clear ola ta items 
+            RootIDListbox.Items.Clear();
+            //kai gemise ta root id tou antistoixou subject
+            foreach (var subject in subjects)
+            {
+                if (subject.GetSubjectID() == SubjectIDListbox.SelectedIndex) {
+                    RootIDListbox.Items.Add(subject.GetRootID());
+                }
+            }
+            RootIDListbox.SelectedIndex = 0;
         }
 
         //gemise to subject list
@@ -99,14 +113,31 @@ namespace Administrator
         //me kathe allagh tou subjectID listbox gemise ta upoloipa components me data
         private void SubjectIDListbox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //gia kathe subject sto subject list
             foreach (var subject in subjects)
             {
                 //kane fill ta components sto existing Subject groupBox
                 if (subject.GetSubjectID() == SubjectIDListbox.SelectedIndex)
                 {
-                    RootIDBox.Text = subject.GetRootID().ToString();
                     NameBox.Text = subject.GetName();
-                    totalQuizBox.Text = SubjectHandler.SubjectController.QuizzesCounter(subject.GetSubjectID()).ToString();
+                    totalQuizBox.Text = SubjectHandler.SubjectController.QuizzesCounter(subject.GetRootID()).ToString();
+                }
+            }
+            //kane fill to root ID me kathe allagh tou subject ID
+            FillExistingRootID();
+        }
+
+        //me kathe allagh toy rootID listbox gemise ta upoloipa components
+        private void RootIDListbox_SelectedIndexChanged(object sender, EventArgs e)
+        {  
+            //gia kathe subject sto subject list
+            foreach (var subject in subjects)
+            {
+                //kane fill ta components sto existing Subject groupBox
+                if (subject.GetRootID() == SubjectIDListbox.SelectedIndex)
+                {
+                    NameBox.Text = subject.GetName();
+                    totalQuizBox.Text = SubjectHandler.SubjectController.QuizzesCounter(subject.GetRootID()).ToString();
                 }
             }
         }
