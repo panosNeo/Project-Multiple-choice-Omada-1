@@ -14,6 +14,13 @@ namespace Administrator.SubjectHandler
         private int root_id;
         private string name;
 
+        public Subject()
+        {
+            subject_id = 0;
+            root_id = 0;
+            name = "Nothing";
+        }
+        
         public Subject(int subject_id,int root_id,string name)
         {
             this.subject_id = subject_id;
@@ -46,11 +53,10 @@ namespace Administrator.SubjectHandler
         {
             return name;
         }
-
+        
         public string PrintSubjectData()
         {
             return subject_id + " " + root_id + " " + name;
         }
-        
     }
 }

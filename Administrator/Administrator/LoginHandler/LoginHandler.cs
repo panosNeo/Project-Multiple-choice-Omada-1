@@ -64,6 +64,8 @@ namespace Administrator.LoginHandler
                                 //true gia epituxei tautopoihsh stoixeiwn
                                 successLogin = true;
                             }
+
+                            searchReader.Close();
                         }
 
                         conn.Close();

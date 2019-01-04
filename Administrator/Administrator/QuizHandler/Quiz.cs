@@ -10,12 +10,18 @@ namespace Administrator.QuizHandler
     {
         private int quiz_id;
         private int user_id;
-        //private int subject_id;
         private string name;
         private string cr_date;
 
+        public Quiz()
+        {
+            quiz_id = 0;
+            user_id = 0;
+            name = "Nothing";
+            cr_date = "1/1/2019";
+        }
 
-        public Quiz(int quiz_id, int user_id,string name,string cr_date) : base(0,0,"")
+        public Quiz(int quiz_id, int user_id,string name,string cr_date) : base(0,0,"Nothing")
         {
             this.quiz_id = quiz_id;
             this.user_id = user_id;

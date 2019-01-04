@@ -143,6 +143,7 @@
             this.SubjectIDListbox.Name = "SubjectIDListbox";
             this.SubjectIDListbox.Size = new System.Drawing.Size(83, 21);
             this.SubjectIDListbox.TabIndex = 0;
+            this.SubjectIDListbox.SelectedIndexChanged += new System.EventHandler(this.SubjectIDListbox_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -530,6 +531,7 @@
             this.Controls.Add(this.WarningLabel);
             this.Name = "SubjectControl";
             this.Size = new System.Drawing.Size(736, 423);
+            this.Load += new System.EventHandler(this.SubjectControl_Load);
             this.ExistingSubjectGroup.ResumeLayout(false);
             this.ExistingSubjectGroup.PerformLayout();
             this.ChangeSubjectGroup.ResumeLayout(false);

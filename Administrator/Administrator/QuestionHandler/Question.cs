@@ -15,7 +15,7 @@ namespace Administrator.QuestionHandler
         private string cr_date;
 
         public Question(int question_id,int user_id,string question,int rating,string cr_date) 
-            : base(1,1,"","")
+            : base(0,0,"Nothing","1/1/2019")
         {
             this.question_id = question_id;
             this.user_id = user_id;
