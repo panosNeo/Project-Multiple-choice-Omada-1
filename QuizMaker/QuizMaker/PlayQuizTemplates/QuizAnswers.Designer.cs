@@ -38,6 +38,7 @@
             // 
             this.answerLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.answerLabel.AutoSize = true;
+            this.answerLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.answerLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.answerLabel.ForeColor = System.Drawing.Color.White;
             this.answerLabel.Location = new System.Drawing.Point(64, 16);
@@ -46,6 +47,7 @@
             this.answerLabel.Size = new System.Drawing.Size(70, 18);
             this.answerLabel.TabIndex = 0;
             this.answerLabel.Text = "Question";
+            this.answerLabel.Click += new System.EventHandler(this.answerLabel_Click);
             // 
             // answerNumLabel
             // 
@@ -63,6 +65,7 @@
             // 
             this.answerBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.answerBox.AutoSize = true;
+            this.answerBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.answerBox.Location = new System.Drawing.Point(43, 20);
             this.answerBox.Name = "answerBox";
             this.answerBox.Size = new System.Drawing.Size(15, 14);
@@ -80,7 +83,7 @@
             this.Controls.Add(this.answerLabel);
             this.MaximumSize = new System.Drawing.Size(500, 0);
             this.Name = "QuizAnswers";
-            this.Size = new System.Drawing.Size(500, 52);
+            this.Size = new System.Drawing.Size(500, 37);
             this.ResumeLayout(false);
             this.PerformLayout();
 

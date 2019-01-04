@@ -38,5 +38,10 @@ namespace QuizMaker.PlayQuizTemplates
             answerLabel.Text = question;
             answerNumLabel.Text = num + ")";
         }
+
+        private void answerLabel_Click(object sender, EventArgs e)
+        {
+            answerBox.Checked = !answerBox.Checked;
+        }
     }
 }
