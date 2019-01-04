@@ -13,6 +13,7 @@ namespace QuizMaker.PlayQuizTemplates
     public partial class QuizSwap : UserControl
     {
         public int PositionCounter { get; set; }
+        public bool Answered { get; set; }
         public QuizSwap(int pos)
         {
             

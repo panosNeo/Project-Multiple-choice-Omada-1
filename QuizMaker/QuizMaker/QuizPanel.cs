@@ -31,6 +31,7 @@ namespace QuizMaker
             string title = quiz.GetQuizTitle();
             Point p = new Point(0,0);
             QuizSwap temp;
+            //set the buttons under the question that will be used for changing back and forth the questions
             for(int i = 0; i < quiz.GetQuestionLength(); i++)
             {
                 temp = new QuizSwap(i);
@@ -43,6 +44,7 @@ namespace QuizMaker
             }
             quizTitleLabel.Text = title;
             SetNextQuestion(0);
+            SetFocusSwapComponent(0);
         }
 
         private void SetNextQuestion(int pos)
@@ -51,6 +53,7 @@ namespace QuizMaker
             questionHolder.Controls.Clear();
             QuizAnswers answer;
             Point p = new Point(30, 0);
+            //dynamically setting the answers for each question
             for(int i = 0; i < quiz.GetQuestionAnswersLength(pos); i++)
             {
                 answer = new QuizAnswers(pos, i);
@@ -63,65 +66,105 @@ namespace QuizMaker
             QuizQuestion qu = new QuizQuestion();
             qu.setQuestion(q);
             questionHolder.Controls.Add(qu);
-            questionCount++;
+            
         }
 
         private void answerBtn_Click(object sender, EventArgs e)
         {
             List<QuizAnswers> temp = new List<QuizAnswers>();
-            //Αν υπαρχει εγγραφη απαντησεων για την συγκεκριμενη ερωτηση την αποθηκευουμε για να την διαγραψουμε   
-            foreach(QuizAnswers listq in userAnswers)
+            //If there is an older record of the user answer in this question, we remove it and save the new answer   
+            //Find
+            foreach (QuizAnswers listq in userAnswers)
             {
-                if(listq.getQuestionNum() == questionCount-1)
+                if(listq.getQuestionNum() == questionCount)
                 {
                     temp.Add(listq);
                 }
             }
+            //Remove
             foreach (QuizAnswers deleted in temp)
             {
                 
                 userAnswers.Remove(deleted);
                 
             }
+            //Save new answer
             foreach (QuizAnswers q in answersHolder.Controls)
             {
                 userAnswers.Add(q);
             }
             
-            
-            if(questionCount >= quiz.GetQuestionLength())
+            //User answered all questions
+            if(questionCount >= quiz.GetQuestionLength() - 1)
             {
-                Finish();
+                finishBtn.Visible = true;
+                PaintSwapComponent(questionCount);
             }
             else {
+                questionCount++;
                 PaintSwapComponent(questionCount-1);
                 SetNextQuestion(questionCount);
+                SetFocusSwapComponent(questionCount);
             }
             
         }
         
         private void swap_Click(object sender, EventArgs e)
         {
+            //In the Tag of each QuizSwap button exists the number of the question to redirect
             questionCount = Convert.ToInt32(((Button)sender).Tag.ToString());
             
+            //Redirect to the question n. where n = Tag of sender(QuizSwap)
             SetNextQuestion(questionCount);
+
+            SetFocusSwapComponent(questionCount);
+        }
+
+        private void SetFocusSwapComponent(int pos)
+        {
+            foreach (QuizSwap c in questionSwapHolder.Controls)
+            {
+                if (c.PositionCounter == pos)
+                {
+                    c.SetButtonColor(Color.Red);
+                }
+                else if (!c.Answered)
+                {
+                    c.SetButtonColor(Color.LightGray);
+                }
+                else
+                {
+                    c.SetButtonColor(Color.Blue);
+                }
+            }
         }
         private void PaintSwapComponent(int pos)
         {
+            bool answered = false;
+            foreach(QuizAnswers q in userAnswers)
+            {
+                if (q.getAnswer() && q.getQuestionNum() == pos)
+                {
+                    answered = true;
+                    break;
+                }
+            }
             foreach(QuizSwap c in questionSwapHolder.Controls)
             {
-                if(c.PositionCounter == pos)
+                if(c.PositionCounter == pos && answered)
                 {
                     c.SetButtonColor(Color.Blue);
+                    c.Answered = answered;
                 }
             }
         }
 
         private void Finish()
         {
-            
+            //this code used to calculate the score. Needs to be more dynamic. 
             double sum = 0;
             double correctsum = 0;
+            double falsesum = 0;
             for(int i = 0; i < quiz.GetQuestionLength(); i++)
             {
                 for(int k = 0; k < quiz.GetQuestionAnswersLength(i); k++)
@@ -137,12 +180,18 @@ namespace QuizMaker
                                 {
                                     correctsum++;
                                 }
+                            }else if(ans.getQuestionNum() == i && ans.getAnswerNum() != k)
+                            {
+                                if (ans.getAnswer())
+                                {
+                                    falsesum++;
+                                }
                             }
                         }
                     }
                 }
             }
-            double success = correctsum / sum;
+            double success = (correctsum - (falsesum/2)) / sum;
             Controls.Clear();
             Controls.Add(new QuizPlayScore("" + (success * 100) + @"%"));
         }
@@ -150,6 +199,11 @@ namespace QuizMaker
         private void printQuizBtn_Click(object sender, EventArgs e)
         {
             quiz.PrintThisQuiz();
+        }
+
+        private void finishBtn_Click(object sender, EventArgs e)
+        {
+            Finish();
         }
     }
 }

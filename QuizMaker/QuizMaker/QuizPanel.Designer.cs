@@ -34,6 +34,7 @@
             this.quizTitleLabel = new System.Windows.Forms.Label();
             this.answerBtn = new System.Windows.Forms.Button();
             this.printQuizBtn = new System.Windows.Forms.Button();
+            this.finishBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // questionHolder
@@ -91,7 +92,7 @@
             this.answerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.answerBtn.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.answerBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.answerBtn.Location = new System.Drawing.Point(377, 453);
+            this.answerBtn.Location = new System.Drawing.Point(175, 453);
             this.answerBtn.Name = "answerBtn";
             this.answerBtn.Size = new System.Drawing.Size(186, 38);
             this.answerBtn.TabIndex = 6;
@@ -110,21 +111,44 @@
             this.printQuizBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.printQuizBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGreen;
             this.printQuizBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.printQuizBtn.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.printQuizBtn.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.printQuizBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.printQuizBtn.Location = new System.Drawing.Point(580, 453);
+            this.printQuizBtn.Location = new System.Drawing.Point(641, 466);
             this.printQuizBtn.Name = "printQuizBtn";
-            this.printQuizBtn.Size = new System.Drawing.Size(186, 38);
+            this.printQuizBtn.Size = new System.Drawing.Size(134, 25);
             this.printQuizBtn.TabIndex = 7;
             this.printQuizBtn.Text = "Print this quiz";
             this.printQuizBtn.UseVisualStyleBackColor = false;
             this.printQuizBtn.Click += new System.EventHandler(this.printQuizBtn_Click);
+            // 
+            // finishBtn
+            // 
+            this.finishBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.finishBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.finishBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.finishBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.finishBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.finishBtn.FlatAppearance.BorderSize = 0;
+            this.finishBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.finishBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGreen;
+            this.finishBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.finishBtn.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.finishBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.finishBtn.Location = new System.Drawing.Point(392, 453);
+            this.finishBtn.Name = "finishBtn";
+            this.finishBtn.Size = new System.Drawing.Size(186, 38);
+            this.finishBtn.TabIndex = 8;
+            this.finishBtn.Text = "Finish";
+            this.finishBtn.UseVisualStyleBackColor = false;
+            this.finishBtn.Visible = false;
+            this.finishBtn.Click += new System.EventHandler(this.finishBtn_Click);
             // 
             // QuizPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.Controls.Add(this.finishBtn);
             this.Controls.Add(this.printQuizBtn);
             this.Controls.Add(this.answerBtn);
             this.Controls.Add(this.quizTitleLabel);
@@ -147,5 +171,6 @@
         private System.Windows.Forms.Label quizTitleLabel;
         private System.Windows.Forms.Button answerBtn;
         private System.Windows.Forms.Button printQuizBtn;
+        private System.Windows.Forms.Button finishBtn;
     }
 }
