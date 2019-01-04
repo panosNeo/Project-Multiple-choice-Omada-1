@@ -89,8 +89,8 @@ namespace Administrator
         private void FillSubjectList()
         {
             //pare th lista me ta subjects
-            //apo to subjectController
-            subjects = SubjectHandler.SubjectController.GetList();
+            //apo to subject
+            subjects = SubjectHandler.Subject.GetList();
 
             //kane sort me vash to Subject ID
             subjects.Sort((x,y) => x.GetSubjectID().CompareTo(y.GetSubjectID()));

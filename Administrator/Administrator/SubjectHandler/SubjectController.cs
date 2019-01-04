@@ -15,14 +15,13 @@ namespace Administrator.SubjectHandler
         private static string existingSubjects = "Select * From Subject";
         private static string countQuizzes = "Select Count(*) From Quiz Where Quiz_id = ?";
 
-        //subject list me ta uparxonta subjects
-        private static List<Subject> subjectList = new List<Subject>();
+        
         private static Subject subject;
-
+        
         //kane search gia ola ta subjects pou uparxoun
         public static void SearchForExistingSubjects()
         {
-            subjectList.Clear(); //kane clear th lista prin apo kathe search
+            Subject.ClearList(); //kane clear th lista prin apo kathe search
             try {
                 //connection
                 using (OleDbConnection conn = new OleDbConnection(Properties.Settings.Default.DatabaseConnectionString))
@@ -42,12 +41,12 @@ namespace Administrator.SubjectHandler
                                     //ftiaxe subject object me to data tou subject
                                     subject = new Subject(exSubReader.GetInt32(0), exSubReader.GetInt32(1), exSubReader.GetString(2));
                                     //kanto add sth lista me ta subjects
-                                    Add(subject);
+                                    Subject.Add(subject);
                                 }
                             else
                             {
                                 subject = new Subject();
-                                Add(subject);
+                                Subject.Add(subject);
                             }
                             exSubReader.Close();
                         }
@@ -104,54 +103,5 @@ namespace Administrator.SubjectHandler
             }
             return -1;
         }
-
-        
-        //add ena subject
-        public static void Add(Subject subject)
-        {
-            try
-            {
-                //checkare gia diplotupo
-                bool checkForDuplicate = subjectList.Contains(subject);
-
-                //an uparxei hdh tote petaxe mhnuma
-                //alliws kane add
-                if (checkForDuplicate)
-                    MessageBox.Show("The subject already exist.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                else
-                    subjectList.Add(subject);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        //delete ena subject
-        public static void Delete(Subject subject)
-        {
-            try
-            {
-                //checkare gia diplotupo
-                bool checkIfexist = subjectList.Contains(subject);
-
-                if (checkIfexist)
-                    subjectList.Remove(subject);
-                else
-                    MessageBox.Show("This Subject does not exist.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        //return th lista me ta subjects
-        public static List<Subject> GetList()
-        {
-            return subjectList;
-        }
-
     }
 }
