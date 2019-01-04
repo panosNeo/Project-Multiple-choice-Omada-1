@@ -67,6 +67,7 @@
             this.UsernameBox.Name = "UsernameBox";
             this.UsernameBox.Size = new System.Drawing.Size(189, 23);
             this.UsernameBox.TabIndex = 3;
+            this.UsernameBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LoginBox_KeyPress);
             // 
             // PasswordBox
             // 
@@ -76,6 +77,7 @@
             this.PasswordBox.PasswordChar = '*';
             this.PasswordBox.Size = new System.Drawing.Size(189, 23);
             this.PasswordBox.TabIndex = 4;
+            this.PasswordBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LoginBox_KeyPress);
             // 
             // label3
             // 

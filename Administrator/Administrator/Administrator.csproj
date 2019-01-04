@@ -87,6 +87,12 @@
     </Compile>
     <Compile Include="QuestionHandler\Question.cs" />
     <Compile Include="QuizHandler\Quiz.cs" />
+    <Compile Include="Report.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Report.Designer.cs">
+      <DependentUpon>Report.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuestionControl.resx">
       <DependentUpon>QuestionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report.resx">
+      <DependentUpon>Report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportControl.resx">
       <DependentUpon>ReportControl.cs</DependentUpon>

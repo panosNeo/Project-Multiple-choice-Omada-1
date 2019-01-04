@@ -49,6 +49,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.warningLabel = new System.Windows.Forms.Label();
+            this.reportPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.ReportGroupbox.SuspendLayout();
             this.QuestionGroupbox.SuspendLayout();
             this.SuspendLayout();
@@ -66,7 +67,7 @@
             this.ReportGroupbox.Controls.Add(this.label1);
             this.ReportGroupbox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.ReportGroupbox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            this.ReportGroupbox.Location = new System.Drawing.Point(36, 18);
+            this.ReportGroupbox.Location = new System.Drawing.Point(3, 18);
             this.ReportGroupbox.Name = "ReportGroupbox";
             this.ReportGroupbox.Size = new System.Drawing.Size(298, 294);
             this.ReportGroupbox.TabIndex = 1;
@@ -186,7 +187,7 @@
             this.QuestionGroupbox.Controls.Add(this.label8);
             this.QuestionGroupbox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.QuestionGroupbox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            this.QuestionGroupbox.Location = new System.Drawing.Point(403, 18);
+            this.QuestionGroupbox.Location = new System.Drawing.Point(388, 18);
             this.QuestionGroupbox.Name = "QuestionGroupbox";
             this.QuestionGroupbox.Size = new System.Drawing.Size(298, 336);
             this.QuestionGroupbox.TabIndex = 2;
@@ -297,13 +298,22 @@
             this.warningLabel.Text = "*Report";
             this.warningLabel.Visible = false;
             // 
+            // reportPanel
+            // 
+            this.reportPanel.AutoScroll = true;
+            this.reportPanel.Location = new System.Drawing.Point(388, 385);
+            this.reportPanel.Name = "reportPanel";
+            this.reportPanel.Size = new System.Drawing.Size(298, 22);
+            this.reportPanel.TabIndex = 6;
+            // 
             // ReportControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(184)))), ((int)(((byte)(185)))));
-            this.Controls.Add(this.warningLabel);
+            this.Controls.Add(this.reportPanel);
             this.Controls.Add(this.QuestionGroupbox);
+            this.Controls.Add(this.warningLabel);
             this.Controls.Add(this.ReportGroupbox);
             this.Name = "ReportControl";
             this.Size = new System.Drawing.Size(736, 423);
@@ -339,5 +349,6 @@
         private System.Windows.Forms.TextBox AnswerBox;
         private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.Label warningLabel;
+        private System.Windows.Forms.FlowLayoutPanel reportPanel;
     }
 }

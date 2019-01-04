@@ -33,13 +33,18 @@ namespace Administrator
 
         private void profileSettingsButton_Click(object sender, EventArgs e)
         {
+            SetProfileSettings();
+        }
+
+        private void SetProfileSettings()
+        {
             //string me to data tou user gia tuxwn update
             string userData = UserIDBox.Text + " "
-                            + NameBox.Text + " " 
-                            + LastNameBox.Text + " " 
-                            + EmailBox.Text + " " 
+                            + NameBox.Text + " "
+                            + LastNameBox.Text + " "
+                            + EmailBox.Text + " "
                             + UsernameBox.Text + " "
-                            + PasswordBox.Text; 
+                            + PasswordBox.Text;
 
             if (dataGroupbox.Enabled)
             {
@@ -47,7 +52,7 @@ namespace Administrator
                 if (!userData.Equals(LoginHandler.Profile.PrintUserData()))
                 {
                     //rwthse gia save
-                    DialogResult dialogResult = MessageBox.Show("Do you want to save changes?","Message",MessageBoxButtons.YesNo,MessageBoxIcon.Information);
+                    DialogResult dialogResult = MessageBox.Show("Do you want to save changes?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                     //an save == yes tote kane save
                     if (dialogResult == DialogResult.Yes)
                     {
@@ -104,6 +109,16 @@ namespace Administrator
 
             //dwse to name tou user sto label
             welcomeLabel.Text = "Welcome "+NameBox.Text;
+        }
+
+        private void SaveAdminData_keyDown(object sender, KeyEventArgs e)
+        {
+            
+            if (e.KeyData == Keys.Enter)
+            {
+                SetProfileSettings();
+            }
+            
         }
     }
 }

@@ -22,6 +22,11 @@ namespace Administrator
         //login button
         private void LoginButton_Click(object sender, EventArgs e)
         {
+            login();
+        }
+
+        private void login()
+        {
             //ean den exei dwsei kwdiko h username tote petaxe warning
             if (string.IsNullOrEmpty(UsernameBox.Text) || string.IsNullOrEmpty(PasswordBox.Text))
             {
@@ -39,7 +44,7 @@ namespace Administrator
             }
 
             //dhmiourgia login handler object gia tis leitourgies tautopoihshs
-            LoginHandler.LoginHandler loginHandler = new LoginHandler.LoginHandler(UsernameBox.Text,PasswordBox.Text,false);
+            LoginHandler.LoginHandler loginHandler = new LoginHandler.LoginHandler(UsernameBox.Text, PasswordBox.Text, false);
 
             //kalese th methodo gia tautopoihsh stoixeiwn
             loginHandler.SearchAccount();
@@ -74,6 +79,16 @@ namespace Administrator
             else
             {
                 return false;
+            }
+        }
+
+        
+
+        private void LoginBox_KeyPress(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                login();
             }
         }
     }
