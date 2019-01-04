@@ -29,6 +29,8 @@ namespace Administrator
 
             //gemise to subject listbox me id
             FillExistingSubjectsID();
+            //gemise to root listbox me id 
+            FillExistingRootID();
         }
 
         private void QuizSettingsButton_Click(object sender, EventArgs e)
@@ -96,6 +98,8 @@ namespace Administrator
                     RootIDListbox.Items.Add(subject.GetRootID());
                 }
             }
+
+            /////paizei error
             RootIDListbox.SelectedIndex = 0;
         }
 
@@ -140,6 +144,29 @@ namespace Administrator
                     totalQuizBox.Text = SubjectHandler.SubjectController.QuizzesCounter(subject.GetRootID()).ToString();
                 }
             }
+        }
+
+        //kane add ena kainourio Subject
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(SubIDBox.Text) || string.IsNullOrEmpty(RootBox.Text) || string.IsNullOrEmpty(NamBox.Text))
+            {
+                WarningLabel.Text = "Please enter all fields.";
+                WarningLabel.Visible = true;
+                return;
+            }
+
+            SubjectHandler.SubjectController.AddNewSubject(Int32.Parse(SubIDBox.Text),Int32.Parse(RootBox.Text),NamBox.Text);
+            WarningLabel.Visible = false;
+
+            //reload ta subjects poy uparxoun
+            SubjectHandler.SubjectController.SearchForExistingSubjects();
+            //gemise th lista
+            FillSubjectList();
+            //gemise to subject listbox me id
+            FillExistingSubjectsID();
+            //gemise to root listbox me id 
+            FillExistingRootID();
         }
     }
 }
