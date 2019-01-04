@@ -65,7 +65,7 @@
             // RateCheckbox
             // 
             this.RateCheckbox.AutoSize = true;
-            this.RateCheckbox.Location = new System.Drawing.Point(257, 130);
+            this.RateCheckbox.Location = new System.Drawing.Point(436, 131);
             this.RateCheckbox.Name = "RateCheckbox";
             this.RateCheckbox.Size = new System.Drawing.Size(56, 20);
             this.RateCheckbox.TabIndex = 17;

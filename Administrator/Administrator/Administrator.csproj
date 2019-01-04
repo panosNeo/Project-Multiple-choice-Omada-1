@@ -63,6 +63,14 @@
     <Compile Include="LoginControl.Designer.cs">
       <DependentUpon>LoginControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginHandler\LoginHandler.cs" />
+    <Compile Include="LoginHandler\Profile.cs" />
+    <Compile Include="LoginHandler\UserDataController.cs" />
+    <Compile Include="MultipleChoiceDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MultipleChoiceDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ProfileControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -77,6 +85,8 @@
     <Compile Include="QuestionControl.Designer.cs">
       <DependentUpon>QuestionControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuestionHandler\Question.cs" />
+    <Compile Include="QuizHandler\Quiz.cs" />
     <Compile Include="ReportControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -89,6 +99,8 @@
     <Compile Include="SubjectControl.Designer.cs">
       <DependentUpon>SubjectControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="SubjectHandler\Subject.cs" />
+    <Compile Include="SubjectHandler\SubjectController.cs" />
     <Compile Include="UserControl1.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -124,6 +136,17 @@
     <EmbeddedResource Include="UserControl1.resx">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="MultipleChoiceDataSet.xsc">
+      <DependentUpon>MultipleChoiceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MultipleChoiceDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MultipleChoiceDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MultipleChoiceDataSet.xss">
+      <DependentUpon>MultipleChoiceDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -178,5 +201,6 @@
   <ItemGroup>
     <None Include="Resources\rate.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

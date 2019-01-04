@@ -34,6 +34,7 @@ namespace Administrator
                 AddButton.Enabled = true;
                 DeleteButton.Enabled = true;
                 UpdateButton.Enabled = true;
+                QuestionReset.Enabled = true;
             }
             else
             {
@@ -49,7 +50,19 @@ namespace Administrator
                 AddButton.Enabled = false;
                 DeleteButton.Enabled = false;
                 UpdateButton.Enabled = false;
+                QuestionReset.Enabled = false;
             }
+        }
+
+        private void QuestionReset_Click(object sender, EventArgs e)
+        {
+            UserIDBox.Text = "";
+            SubjectIDBox.Text = "";
+            QuestionBox.Text = "";
+            RatingBox.Text = "";
+            DateBox.Text = "";
+            AnswerBox.Text = "";
+            QuestionIDBox.Text = "";
         }
     }
 }
