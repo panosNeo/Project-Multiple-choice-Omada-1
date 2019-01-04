@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.ExistingSubjectGroup = new System.Windows.Forms.GroupBox();
+            this.RootIDListbox = new System.Windows.Forms.ListBox();
             this.totalQuizBox = new System.Windows.Forms.TextBox();
             this.NameBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -67,7 +68,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.RootIDListbox = new System.Windows.Forms.ListBox();
             this.ExistingSubjectGroup.SuspendLayout();
             this.ChangeSubjectGroup.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -91,6 +91,23 @@
             this.ExistingSubjectGroup.TabIndex = 0;
             this.ExistingSubjectGroup.TabStop = false;
             this.ExistingSubjectGroup.Text = "Existing Subjects";
+            // 
+            // RootIDListbox
+            // 
+            this.RootIDListbox.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.RootIDListbox.FormattingEnabled = true;
+            this.RootIDListbox.ItemHeight = 17;
+            this.RootIDListbox.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.RootIDListbox.Location = new System.Drawing.Point(159, 61);
+            this.RootIDListbox.Name = "RootIDListbox";
+            this.RootIDListbox.Size = new System.Drawing.Size(83, 21);
+            this.RootIDListbox.TabIndex = 5;
+            this.RootIDListbox.SelectedIndexChanged += new System.EventHandler(this.RootIDListbox_SelectedIndexChanged);
             // 
             // totalQuizBox
             // 
@@ -206,6 +223,7 @@
             this.DeleteButton.TabIndex = 4;
             this.DeleteButton.Text = "Delete";
             this.DeleteButton.UseVisualStyleBackColor = false;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // AddButton
             // 
@@ -511,23 +529,6 @@
             this.label5.Size = new System.Drawing.Size(62, 16);
             this.label5.TabIndex = 1;
             this.label5.Text = "Quiz ID :";
-            // 
-            // RootIDListbox
-            // 
-            this.RootIDListbox.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.RootIDListbox.FormattingEnabled = true;
-            this.RootIDListbox.ItemHeight = 17;
-            this.RootIDListbox.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.RootIDListbox.Location = new System.Drawing.Point(159, 61);
-            this.RootIDListbox.Name = "RootIDListbox";
-            this.RootIDListbox.Size = new System.Drawing.Size(83, 21);
-            this.RootIDListbox.TabIndex = 5;
-            this.RootIDListbox.SelectedIndexChanged += new System.EventHandler(this.RootIDListbox_SelectedIndexChanged);
             // 
             // SubjectControl
             // 

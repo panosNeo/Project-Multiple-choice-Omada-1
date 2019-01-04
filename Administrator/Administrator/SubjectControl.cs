@@ -29,7 +29,7 @@ namespace Administrator
 
             //gemise to subject listbox me id
             FillExistingSubjectsID();
-            //gemise to root listbox me id 
+            //gemise to root listbox me id
             FillExistingRootID();
         }
 
@@ -76,14 +76,20 @@ namespace Administrator
         //gia na gemisw to subjectID listbox me ta existing subjects id
         private void FillExistingSubjectsID()
         {
+            string toMatch;
+
             //kane clear ola ta items 
             SubjectIDListbox.Items.Clear();
             //kai gemise me ta subject id
             foreach (var subject in subjects)
             {
-                SubjectIDListbox.Items.Add(subject.GetSubjectID());
+                //tsekare an uparxei hdh to subject id
+                //an oxi tote kane add
+                toMatch = subject.GetSubjectID().ToString();
+                if(!SubjectIDListbox.Items.Contains(toMatch))
+                    SubjectIDListbox.Items.Add(subject.GetSubjectID());
             }
-
+            //vale epilegmeno item to prwto
             SubjectIDListbox.SelectedIndex = 0;
         }
 
@@ -94,12 +100,11 @@ namespace Administrator
             //kai gemise ta root id tou antistoixou subject
             foreach (var subject in subjects)
             {
-                if (subject.GetSubjectID() == SubjectIDListbox.SelectedIndex) {
+                if (SubjectIDListbox.SelectedItem.Equals(subject.GetSubjectID())) {
                     RootIDListbox.Items.Add(subject.GetRootID());
                 }
             }
-
-            /////paizei error
+            //vale epilegmeno item to prwto
             RootIDListbox.SelectedIndex = 0;
         }
 
@@ -113,21 +118,11 @@ namespace Administrator
             //kane sort me vash to Subject ID
             subjects.Sort((x,y) => x.GetSubjectID().CompareTo(y.GetSubjectID()));
         }
-
+        
         //me kathe allagh tou subjectID listbox gemise ta upoloipa components me data
         private void SubjectIDListbox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //gia kathe subject sto subject list
-            foreach (var subject in subjects)
-            {
-                //kane fill ta components sto existing Subject groupBox
-                if (subject.GetSubjectID() == SubjectIDListbox.SelectedIndex)
-                {
-                    NameBox.Text = subject.GetName();
-                    totalQuizBox.Text = SubjectHandler.SubjectController.QuizzesCounter(subject.GetRootID()).ToString();
-                }
-            }
-            //kane fill to root ID me kathe allagh tou subject ID
+            //kane fill to root id listbox*/
             FillExistingRootID();
         }
 
@@ -138,7 +133,7 @@ namespace Administrator
             foreach (var subject in subjects)
             {
                 //kane fill ta components sto existing Subject groupBox
-                if (subject.GetRootID() == SubjectIDListbox.SelectedIndex)
+                if (SubjectIDListbox.SelectedItem.Equals(subject.GetRootID()))
                 {
                     NameBox.Text = subject.GetName();
                     totalQuizBox.Text = SubjectHandler.SubjectController.QuizzesCounter(subject.GetRootID()).ToString();
@@ -165,8 +160,26 @@ namespace Administrator
             FillSubjectList();
             //gemise to subject listbox me id
             FillExistingSubjectsID();
-            //gemise to root listbox me id 
-            FillExistingRootID();
+        }
+        //kane delete ena subject
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(SubIDBox.Text) || string.IsNullOrEmpty(RootBox.Text))
+            {
+                WarningLabel.Text = "Please enter all fields.";
+                WarningLabel.Visible = true;
+                return;
+            }
+
+            SubjectHandler.SubjectController.DeleteSubject(Int32.Parse(SubIDBox.Text),Int32.Parse(RootBox.Text));
+            WarningLabel.Visible = false;
+
+            //reload ta subjects poy uparxoun
+            SubjectHandler.SubjectController.SearchForExistingSubjects();
+            //gemise th lista
+            FillSubjectList();
+            //gemise to subject listbox me id
+            FillExistingSubjectsID();
         }
     }
 }
