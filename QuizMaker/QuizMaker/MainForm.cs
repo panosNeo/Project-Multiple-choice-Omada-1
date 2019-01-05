@@ -99,6 +99,11 @@ namespace QuizMaker
                     e.Dock = DockStyle.Fill;
                     mainPanel.Controls.Add(e);
                     break;
+                case "profile":
+                    ProfileControl f = new ProfileControl();
+                    f.Dock = DockStyle.Fill;
+                    mainPanel.Controls.Add(f);
+                    break;
                 default:
                     Console.WriteLine("No control selected");
                     break;

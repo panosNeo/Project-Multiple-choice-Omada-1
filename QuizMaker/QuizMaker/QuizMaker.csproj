@@ -71,6 +71,9 @@
     <Compile Include="CreateQuizControl.Designer.cs">
       <DependentUpon>CreateQuizControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="FeelLuckyControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -148,6 +151,12 @@
     </Compile>
     <Compile Include="PrintQuizTemplates\QuestionAnswer.Designer.cs">
       <DependentUpon>QuestionAnswer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProfileControl.Designer.cs">
+      <DependentUpon>ProfileControl.cs</DependentUpon>
     </Compile>
     <Compile Include="QuizPlayerController.cs" />
     <Compile Include="QuizPlayScore.cs">
@@ -239,6 +248,9 @@
     <EmbeddedResource Include="PrintQuizTemplates\QuestionAnswer.resx">
       <DependentUpon>QuestionAnswer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ProfileControl.resx">
+      <DependentUpon>ProfileControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -314,6 +326,10 @@
     <Content Include="MultipleChoice.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\Account1.png" />
+    <None Include="Resources\feedback1.png" />
+    <None Include="Resources\subject.png" />
+    <None Include="Resources\search.png" />
     <None Include="Resources\print.png" />
   </ItemGroup>
   <ItemGroup>
