@@ -27,10 +27,8 @@ namespace Administrator
             //gemise th lista
             FillSubjectList();
 
-            //gemise to subject listbox me id
+            //gemise to subject treeView me ola ta subjects
             FillExistingSubjectsID();
-            //gemise to root listbox me id
-            FillExistingRootID();
         }
 
         private void QuizSettingsButton_Click(object sender, EventArgs e)
@@ -72,40 +70,23 @@ namespace Administrator
             qQuizNameBox.Text = "";
             qDateBox.Text = "";
         }
-        
+
         //gia na gemisw to subjectID listbox me ta existing subjects id
         private void FillExistingSubjectsID()
         {
-            string toMatch;
+            //TreeNode toMatch;
 
             //kane clear ola ta items 
-            SubjectIDListbox.Items.Clear();
+            SubjectTreeView.Nodes.Clear();
             //kai gemise me ta subject id
             foreach (var subject in subjects)
             {
                 //tsekare an uparxei hdh to subject id
                 //an oxi tote kane add
-                toMatch = subject.GetSubjectID().ToString();
-                if(!SubjectIDListbox.Items.Contains(toMatch))
-                    SubjectIDListbox.Items.Add(subject.GetSubjectID());
+                //toMatch.Tag = subject.GetName();
+                //if (!SubjectTreeView.Nodes.Contains(toMatch))
+                   // SubjectIDListbox.Items.Add(subject.GetSubjectID());
             }
-            //vale epilegmeno item to prwto
-            SubjectIDListbox.SelectedIndex = 0;
-        }
-
-        private void FillExistingRootID()
-        {
-            //kane clear ola ta items 
-            RootIDListbox.Items.Clear();
-            //kai gemise ta root id tou antistoixou subject
-            foreach (var subject in subjects)
-            {
-                if (SubjectIDListbox.SelectedItem.Equals(subject.GetSubjectID())) {
-                    RootIDListbox.Items.Add(subject.GetRootID());
-                }
-            }
-            //vale epilegmeno item to prwto
-            RootIDListbox.SelectedIndex = 0;
         }
 
         //gemise to subject list
@@ -119,27 +100,6 @@ namespace Administrator
             subjects.Sort((x,y) => x.GetSubjectID().CompareTo(y.GetSubjectID()));
         }
         
-        //me kathe allagh tou subjectID listbox gemise ta upoloipa components me data
-        private void SubjectIDListbox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //kane fill to root id listbox*/
-            FillExistingRootID();
-        }
-
-        //me kathe allagh toy rootID listbox gemise ta upoloipa components
-        private void RootIDListbox_SelectedIndexChanged(object sender, EventArgs e)
-        {  
-            //gia kathe subject sto subject list
-            foreach (var subject in subjects)
-            {
-                //kane fill ta components sto existing Subject groupBox
-                if (SubjectIDListbox.SelectedItem.Equals(subject.GetRootID()))
-                {
-                    NameBox.Text = subject.GetName();
-                    totalQuizBox.Text = SubjectHandler.SubjectController.QuizzesCounter(subject.GetRootID()).ToString();
-                }
-            }
-        }
 
         //kane add ena kainourio Subject
         private void AddButton_Click(object sender, EventArgs e)
@@ -157,9 +117,9 @@ namespace Administrator
             //reload ta subjects poy uparxoun
             SubjectHandler.SubjectController.SearchForExistingSubjects();
             //gemise th lista
-            FillSubjectList();
+            //FillSubjectList();
             //gemise to subject listbox me id
-            FillExistingSubjectsID();
+            //FillExistingSubjectsID();
         }
         //kane delete ena subject
         private void DeleteButton_Click(object sender, EventArgs e)
@@ -177,9 +137,9 @@ namespace Administrator
             //reload ta subjects poy uparxoun
             SubjectHandler.SubjectController.SearchForExistingSubjects();
             //gemise th lista
-            FillSubjectList();
+            //FillSubjectList();
             //gemise to subject listbox me id
-            FillExistingSubjectsID();
+            //FillExistingSubjectsID();
         }
     }
 }

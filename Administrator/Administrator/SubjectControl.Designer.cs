@@ -28,15 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ExistingSubjectGroup = new System.Windows.Forms.GroupBox();
-            this.RootIDListbox = new System.Windows.Forms.ListBox();
-            this.totalQuizBox = new System.Windows.Forms.TextBox();
-            this.NameBox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.SubjectIDListbox = new System.Windows.Forms.ListBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Node73");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Node74");
             this.ChangeSubjectGroup = new System.Windows.Forms.GroupBox();
             this.UpdateButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
@@ -68,117 +61,12 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.ExistingSubjectGroup.SuspendLayout();
+            this.SubjectTreeView = new System.Windows.Forms.TreeView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.ChangeSubjectGroup.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // ExistingSubjectGroup
-            // 
-            this.ExistingSubjectGroup.Controls.Add(this.RootIDListbox);
-            this.ExistingSubjectGroup.Controls.Add(this.totalQuizBox);
-            this.ExistingSubjectGroup.Controls.Add(this.NameBox);
-            this.ExistingSubjectGroup.Controls.Add(this.label4);
-            this.ExistingSubjectGroup.Controls.Add(this.SubjectIDListbox);
-            this.ExistingSubjectGroup.Controls.Add(this.label3);
-            this.ExistingSubjectGroup.Controls.Add(this.label2);
-            this.ExistingSubjectGroup.Controls.Add(this.label1);
-            this.ExistingSubjectGroup.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.ExistingSubjectGroup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            this.ExistingSubjectGroup.Location = new System.Drawing.Point(20, 19);
-            this.ExistingSubjectGroup.Name = "ExistingSubjectGroup";
-            this.ExistingSubjectGroup.Size = new System.Drawing.Size(298, 159);
-            this.ExistingSubjectGroup.TabIndex = 0;
-            this.ExistingSubjectGroup.TabStop = false;
-            this.ExistingSubjectGroup.Text = "Existing Subjects";
-            // 
-            // RootIDListbox
-            // 
-            this.RootIDListbox.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.RootIDListbox.FormattingEnabled = true;
-            this.RootIDListbox.ItemHeight = 17;
-            this.RootIDListbox.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.RootIDListbox.Location = new System.Drawing.Point(159, 61);
-            this.RootIDListbox.Name = "RootIDListbox";
-            this.RootIDListbox.Size = new System.Drawing.Size(83, 21);
-            this.RootIDListbox.TabIndex = 5;
-            this.RootIDListbox.SelectedIndexChanged += new System.EventHandler(this.RootIDListbox_SelectedIndexChanged);
-            // 
-            // totalQuizBox
-            // 
-            this.totalQuizBox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.totalQuizBox.Location = new System.Drawing.Point(159, 117);
-            this.totalQuizBox.Name = "totalQuizBox";
-            this.totalQuizBox.ReadOnly = true;
-            this.totalQuizBox.Size = new System.Drawing.Size(125, 23);
-            this.totalQuizBox.TabIndex = 3;
-            // 
-            // NameBox
-            // 
-            this.NameBox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.NameBox.Location = new System.Drawing.Point(159, 88);
-            this.NameBox.Name = "NameBox";
-            this.NameBox.ReadOnly = true;
-            this.NameBox.Size = new System.Drawing.Size(125, 23);
-            this.NameBox.TabIndex = 2;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 124);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(116, 16);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Total of Quizzes :";
-            // 
-            // SubjectIDListbox
-            // 
-            this.SubjectIDListbox.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.SubjectIDListbox.FormattingEnabled = true;
-            this.SubjectIDListbox.ItemHeight = 17;
-            this.SubjectIDListbox.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.SubjectIDListbox.Location = new System.Drawing.Point(159, 32);
-            this.SubjectIDListbox.Name = "SubjectIDListbox";
-            this.SubjectIDListbox.Size = new System.Drawing.Size(83, 21);
-            this.SubjectIDListbox.TabIndex = 0;
-            this.SubjectIDListbox.SelectedIndexChanged += new System.EventHandler(this.SubjectIDListbox_SelectedIndexChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 95);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 16);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Subject Name :";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(70, 66);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Root ID :";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(50, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Subject ID :";
             // 
             // ChangeSubjectGroup
             // 
@@ -294,7 +182,7 @@
             this.WarningLabel.AutoSize = true;
             this.WarningLabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.WarningLabel.ForeColor = System.Drawing.Color.Red;
-            this.WarningLabel.Location = new System.Drawing.Point(17, 396);
+            this.WarningLabel.Location = new System.Drawing.Point(340, 194);
             this.WarningLabel.Name = "WarningLabel";
             this.WarningLabel.Size = new System.Drawing.Size(38, 16);
             this.WarningLabel.TabIndex = 4;
@@ -324,7 +212,7 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            this.groupBox1.Location = new System.Drawing.Point(20, 225);
+            this.groupBox1.Location = new System.Drawing.Point(20, 253);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(696, 158);
             this.groupBox1.TabIndex = 2;
@@ -530,39 +418,61 @@
             this.label5.TabIndex = 1;
             this.label5.Text = "Quiz ID :";
             // 
+            // SubjectTreeView
+            // 
+            this.SubjectTreeView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(184)))), ((int)(((byte)(185)))));
+            this.SubjectTreeView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.SubjectTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SubjectTreeView.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.SubjectTreeView.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            this.SubjectTreeView.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            this.SubjectTreeView.Location = new System.Drawing.Point(3, 19);
+            this.SubjectTreeView.Name = "SubjectTreeView";
+            treeNode1.Name = "Node73";
+            treeNode1.Text = "Node73";
+            treeNode2.Name = "Node74";
+            treeNode2.Text = "Node74";
+            this.SubjectTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2});
+            this.SubjectTreeView.Size = new System.Drawing.Size(281, 206);
+            this.SubjectTreeView.TabIndex = 1;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.SubjectTreeView);
+            this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            this.groupBox2.Location = new System.Drawing.Point(20, 19);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(287, 228);
+            this.groupBox2.TabIndex = 5;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Existing Subjects";
+            // 
             // SubjectControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(184)))), ((int)(((byte)(185)))));
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ChangeSubjectGroup);
-            this.Controls.Add(this.ExistingSubjectGroup);
             this.Controls.Add(this.WarningLabel);
             this.Name = "SubjectControl";
             this.Size = new System.Drawing.Size(736, 423);
             this.Load += new System.EventHandler(this.SubjectControl_Load);
-            this.ExistingSubjectGroup.ResumeLayout(false);
-            this.ExistingSubjectGroup.PerformLayout();
             this.ChangeSubjectGroup.ResumeLayout(false);
             this.ChangeSubjectGroup.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox ExistingSubjectGroup;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox SubjectIDListbox;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox totalQuizBox;
-        private System.Windows.Forms.TextBox NameBox;
         private System.Windows.Forms.GroupBox ChangeSubjectGroup;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
@@ -594,6 +504,7 @@
         private System.Windows.Forms.Button QuizReset;
         private System.Windows.Forms.TextBox totalQuestionBox;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ListBox RootIDListbox;
+        private System.Windows.Forms.TreeView SubjectTreeView;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
