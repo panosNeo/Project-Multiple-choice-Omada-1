@@ -107,6 +107,7 @@
     </Compile>
     <Compile Include="SubjectHandler\Subject.cs" />
     <Compile Include="SubjectHandler\SubjectController.cs" />
+    <Compile Include="SubjectHandler\SubjectTreeView.cs" />
     <Compile Include="UserControl1.cs">
       <SubType>UserControl</SubType>
     </Compile>

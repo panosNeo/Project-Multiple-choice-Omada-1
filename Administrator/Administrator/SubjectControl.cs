@@ -74,18 +74,48 @@ namespace Administrator
         //gia na gemisw to subjectID listbox me ta existing subjects id
         private void FillExistingSubjectsID()
         {
-            //TreeNode toMatch;
-
+            TreeNode node;
+            string makaronia = "";
             //kane clear ola ta items 
             SubjectTreeView.Nodes.Clear();
             //kai gemise me ta subject id
             foreach (var subject in subjects)
             {
-                //tsekare an uparxei hdh to subject id
-                //an oxi tote kane add
-                //toMatch.Tag = subject.GetName();
-                //if (!SubjectTreeView.Nodes.Contains(toMatch))
-                   // SubjectIDListbox.Items.Add(subject.GetSubjectID());
+                makaronia += subject.GetSubjectID() + " " + subject.GetRootID() + " " + subject.GetName() + "\n";
+
+                if (subject.GetRootID() == 0)
+                {
+                    node = new TreeNode(subject.GetName());
+                    node.Name = subject.GetName();
+                    node.Tag = subject.GetSubjectID();
+
+                    //kane add ta root = 0
+                    SubjectHandler.SubjectTreeView.AddRoot(SubjectTreeView,node);
+                }
+                else
+                {   //gia opoiadhpote allh timh tou root 
+                    foreach (TreeNode n in SubjectTreeView.Nodes)
+                    {
+                        MessageBox.Show("Koukou : " + subject.GetSubjectID());
+                        if(n.Tag.Equals(4))
+                            AddChildNodes(n, 2,subject.GetName(),subject.GetSubjectID());
+                    }
+                    
+                }
+            }
+            MessageBox.Show(makaronia);
+        }
+        private void AddChildNodes(TreeNode node, int level,string name,int id)
+        {
+            if (level > 0 && node != null)
+            {
+                TreeNode childNode = new TreeNode(name);
+                childNode.Name = name;
+                childNode.Tag = id;
+
+                node.Nodes.Add(childNode);
+
+                AddChildNodes(node, --level,name,id);
             }
         }
 
