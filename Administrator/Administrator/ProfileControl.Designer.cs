@@ -141,6 +141,7 @@
             this.PasswordBox.PasswordChar = '*';
             this.PasswordBox.Size = new System.Drawing.Size(186, 26);
             this.PasswordBox.TabIndex = 9;
+            this.PasswordBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SaveAdminData_keyDown);
             // 
             // UsernameBox
             // 
@@ -149,6 +150,7 @@
             this.UsernameBox.Name = "UsernameBox";
             this.UsernameBox.Size = new System.Drawing.Size(186, 26);
             this.UsernameBox.TabIndex = 8;
+            this.UsernameBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SaveAdminData_keyDown);
             // 
             // EmailBox
             // 
@@ -157,6 +159,7 @@
             this.EmailBox.Name = "EmailBox";
             this.EmailBox.Size = new System.Drawing.Size(186, 26);
             this.EmailBox.TabIndex = 7;
+            this.EmailBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SaveAdminData_keyDown);
             // 
             // LastNameBox
             // 
@@ -165,6 +168,7 @@
             this.LastNameBox.Name = "LastNameBox";
             this.LastNameBox.Size = new System.Drawing.Size(186, 26);
             this.LastNameBox.TabIndex = 6;
+            this.LastNameBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SaveAdminData_keyDown);
             // 
             // NameBox
             // 
@@ -173,6 +177,7 @@
             this.NameBox.Name = "NameBox";
             this.NameBox.Size = new System.Drawing.Size(186, 26);
             this.NameBox.TabIndex = 5;
+            this.NameBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SaveAdminData_keyDown);
             // 
             // label5
             // 
