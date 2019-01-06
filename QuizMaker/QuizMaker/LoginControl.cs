@@ -27,20 +27,11 @@ namespace QuizMaker
         {
             string user = usernameText.Text;
             string pass = passwordText.Text;
-
-            if (login.IsLoggedIn(user, pass))
-            {
-                MessageBox.Show("You are logged in succesfully");
-            }
-            else
-            {
-                MessageBox.Show("Login Error!");
-            }
+            login.LoginUser(user, pass);
         }
 
         private void createAccountBtn_Click(object sender, EventArgs e)
         {
-
             RegisterControl re = new RegisterControl();
             re.Dock = DockStyle.Fill;
             this.Controls.Clear();

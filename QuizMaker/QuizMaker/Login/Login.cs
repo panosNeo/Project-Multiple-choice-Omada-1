@@ -100,6 +100,17 @@ namespace QuizMaker.Login
             }
         }
 
+        public void LoginUser(string user, string pass)
+        {
+            if (IsLoggedIn(user, pass)) { 
+                MultipleChoiceDataSetTableAdapters.UserTableAdapter userTableAdapter = new MultipleChoiceDataSetTableAdapters.UserTableAdapter();
+                userTableAdapter.LoginQuery(user, pass);
+
+                string userId = userTableAdapter.ToString();
+                MessageBox.Show(userId);
+            }
+        }
+
       
     }
 }

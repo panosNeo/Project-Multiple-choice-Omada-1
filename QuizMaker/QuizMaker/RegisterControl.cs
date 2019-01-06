@@ -35,33 +35,19 @@ namespace QuizMaker
             email = emailText.Text;
             fn = firstNameText.Text;
             ln = lastNameText.Text;
+
             Register.Register re = new Register.Register(user, pass, email, fn, ln);
-           
 
-            if (re.IsRegistered(user, pass, email, fn, ln) == true)
+            if (re.IsRegistered(user, pass, email, fn, ln))
             {
-                MultipleChoiceDataSetTableAdapters.UserTableAdapter userTableAdapter = new MultipleChoiceDataSetTableAdapters.UserTableAdapter();
-                userTableAdapter.RegisterQuery(user, pass, email, fn, ln);
-                int u = userTableAdapter.Update(new MultipleChoiceDataSet.UserDataTable());
-                /*
-                
-                
-                SendMailController.SendVerificationMail(email);
-
+                re.RegisterUser(user, pass, email, fn, ln);
                 MailAuthenticationControl m = new MailAuthenticationControl();
                 m.Dock = DockStyle.Fill;
                 this.Controls.Clear();
-                this.Controls.Add(m);*/
-
-
-            }
-            else
-            {
-                MessageBox.Show("Register Failed");
+                this.Controls.Add(m);
             }
 
-
-        }
+}
             
 
             

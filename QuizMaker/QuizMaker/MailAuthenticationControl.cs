@@ -23,6 +23,12 @@ namespace QuizMaker
             if (vCodeText.Text == SendMailController.getVerificationCode())
             {
                 MessageBox.Show("Your email has been verified");
+
+                LoginControl l = new LoginControl();
+                l.Dock = DockStyle.Fill;
+                this.Controls.Clear();
+                this.Controls.Add(l);
+
             }
         }
     }
