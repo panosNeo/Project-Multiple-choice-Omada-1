@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Node73");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Node74");
             this.ChangeSubjectGroup = new System.Windows.Forms.GroupBox();
             this.UpdateButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
@@ -428,13 +426,6 @@
             this.SubjectTreeView.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.SubjectTreeView.Location = new System.Drawing.Point(3, 19);
             this.SubjectTreeView.Name = "SubjectTreeView";
-            treeNode1.Name = "Node73";
-            treeNode1.Text = "Node73";
-            treeNode2.Name = "Node74";
-            treeNode2.Text = "Node74";
-            this.SubjectTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2});
             this.SubjectTreeView.Size = new System.Drawing.Size(281, 206);
             this.SubjectTreeView.TabIndex = 1;
             // 
