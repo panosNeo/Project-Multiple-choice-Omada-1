@@ -1,3 +1,4 @@
+
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,11 +9,11 @@ using QuizMaker.PlayQuizTemplates;
 
 namespace QuizMaker
 {
-    class QuizPlayerController
+    public class QuizPlayerController
     {
         private QuizHandler.Quiz quiz;
-        private int questionCount;
-        private List<QuizAnswers> userAnswers;
+        //private int questionCount;
+        //private List<QuizAnswers> userAnswers;
 
         public QuizPlayerController()
         {
@@ -24,11 +25,14 @@ namespace QuizMaker
             quiz = new Quiz("My test quiz", 0, 0);
             for (int i = 0; i < 10; i++)
             {
-                Question q = new Question("test question" + i, i, i, DateTime.Now);
-                q.AddAnswer(new Answer("test" + i, true));
+                Question q = new Question("TEST1" + i, i, i, DateTime.Now);
+                q.AddAnswer(new Answer("testMy test quizMy test quizMy test quizMy test quizMy test quizMy test quiztestMy test quizMy test quizMy test quizMy test quizMy test quizMy test quiztestMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quiz" + i, true));
+                q.AddAnswer(new Answer("testMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quiz" + i, false));
                 q.AddAnswer(new Answer("test" + i, false));
-                q.AddAnswer(new Answer("test" + i, false));
-                q.AddAnswer(new Answer("test" + i, false));
+                q.AddAnswer(new Answer("testMy test quizMy test quizMy test quiz" + i, false));
+                q.AddAnswer(new Answer("testMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quizMy test quiz" + i, false));
+                q.AddAnswer(new Answer("testMy test quizMy test quizMy test quizMy test quizMy test quiz" + i, false));
+                q.AddAnswer(new Answer("testMy test quizMy test quizMy test quizMy test quiz" + i, false));
                 quiz.AddQuestion(q, 1);
             }
         }
@@ -60,5 +64,11 @@ namespace QuizMaker
         {
             return quiz.getQuestions().ElementAt<Question>(question).GetAnswers().ElementAt<Answer>(answer).IsCorrect();
         }
+
+        public void PrintThisQuiz()
+        {
+            new PrintQuizTemplates.PrintQuizController(quiz);
+        }
     }
 }
+

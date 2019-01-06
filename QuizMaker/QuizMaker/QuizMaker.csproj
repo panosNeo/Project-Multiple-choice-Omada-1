@@ -71,6 +71,9 @@
     <Compile Include="CreateQuizControl.Designer.cs">
       <DependentUpon>CreateQuizControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="FeelLuckyControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -115,11 +118,45 @@
     <Compile Include="PlayQuizTemplates\QuizSwap.Designer.cs">
       <DependentUpon>QuizSwap.cs</DependentUpon>
     </Compile>
-    <Compile Include="PrintQuestion.cs">
+    <Compile Include="PrintController.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PrintQuestion.Designer.cs">
+    <Compile Include="PrintForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintForm.Designer.cs">
+      <DependentUpon>PrintForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintQuizTemplates\FirstPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PrintQuizTemplates\FirstPage.Designer.cs">
+      <DependentUpon>FirstPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintQuizTemplates\NextPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PrintQuizTemplates\NextPage.Designer.cs">
+      <DependentUpon>NextPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintQuizTemplates\PrintQuestionController.cs" />
+    <Compile Include="PrintQuizTemplates\PrintQuestion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PrintQuizTemplates\PrintQuestion.Designer.cs">
       <DependentUpon>PrintQuestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintQuizTemplates\QuestionAnswer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PrintQuizTemplates\QuestionAnswer.Designer.cs">
+      <DependentUpon>QuestionAnswer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProfileControl.Designer.cs">
+      <DependentUpon>ProfileControl.cs</DependentUpon>
     </Compile>
     <Compile Include="QuizPlayerController.cs" />
     <Compile Include="QuizPlayScore.cs">
@@ -154,9 +191,25 @@
     <Compile Include="QuizPanel.Designer.cs">
       <DependentUpon>QuizPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="SearchControl.cs" />
+    <Compile Include="ResultQuizControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ResultQuizControl.Designer.cs">
+      <DependentUpon>ResultQuizControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="SearchControl.Designer.cs">
       <DependentUpon>SearchControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchHandler\SearchController.cs" />
+    <Compile Include="SearchHandler\SubjectStack.cs" />
+    <Compile Include="TempPrintControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TempPrintControl.Designer.cs">
+      <DependentUpon>TempPrintControl.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AnswerPanel.resx">
       <DependentUpon>AnswerPanel.cs</DependentUpon>
@@ -185,8 +238,26 @@
     <EmbeddedResource Include="PlayQuizTemplates\QuizSwap.resx">
       <DependentUpon>QuizSwap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PrintQuestion.resx">
+    <EmbeddedResource Include="PrintController.resx">
+      <DependentUpon>PrintController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintForm.resx">
+      <DependentUpon>PrintForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintQuizTemplates\FirstPage.resx">
+      <DependentUpon>FirstPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintQuizTemplates\NextPage.resx">
+      <DependentUpon>NextPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintQuizTemplates\PrintQuestion.resx">
       <DependentUpon>PrintQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintQuizTemplates\QuestionAnswer.resx">
+      <DependentUpon>QuestionAnswer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfileControl.resx">
+      <DependentUpon>ProfileControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -207,12 +278,18 @@
     <EmbeddedResource Include="QuizPlayScore.resx">
       <DependentUpon>QuizPlayScore.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ResultQuizControl.resx">
+      <DependentUpon>ResultQuizControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SearchControl.resx">
       <DependentUpon>SearchControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="MultipleChoiceDataSet.xsc">
       <DependentUpon>MultipleChoiceDataSet.xsd</DependentUpon>
     </None>
+    <EmbeddedResource Include="TempPrintControl.resx">
+      <DependentUpon>TempPrintControl.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="MultipleChoiceDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>MultipleChoiceDataSet.Designer.cs</LastGenOutput>
@@ -260,13 +337,16 @@
     <Content Include="MultipleChoice.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="Resources\iconfinder_search_285651.png" />
+    <None Include="Resources\dislike.png" />
+    <None Include="Resources\like.png" />
+    <None Include="Resources\Account1.png" />
+    <None Include="Resources\feedback1.png" />
+    <None Include="Resources\subject.png" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\print.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\iconfinder_search_285651.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="MultipleChoice.accdb" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -12,13 +12,9 @@ namespace Administrator
 {
     public partial class AdminForm : Form
     {
-        private ProfileControl profileControl = new ProfileControl();   //profileControl object
-        private SubjectControl subjectControl = new SubjectControl();   //subjectControl object
-        private QuestionControl questionControl = new QuestionControl();//questionControl object
-        private UserControl1 userControl1 = new UserControl1();         //userControl object
-        private ReportControl reportControl = new ReportControl();      //reportControl object
-        private FeedbackControl feedbackControl = new FeedbackControl();//feedbackControl object
-        private LoginControl loginControl = new LoginControl();         //loginControl object
+        //control objects
+        private ProfileControl profileControl = new ProfileControl();
+        private LoginControl loginControl = new LoginControl();  
 
         public AdminForm()
         {
@@ -87,103 +83,69 @@ namespace Administrator
             //kalese methodo gia xrwma kai switch Control
             setDesign(Profile,profileControl);
         }
-        private void Profile_MouseEnter(object sender, EventArgs e)
-        {
-            Profile.ForeColor = Color.White;
-        }
-        private void Profile_MouseLeave(object sender, EventArgs e)
-        {
-            Profile.ForeColor = Color.FromName("GradientActiveCaption");
-        }
-
         //subject button events
         private void Subject_Click(object sender, EventArgs e)
         {
+            SubjectControl subjectControl = new SubjectControl();
             //kalese methodo gia xrwma kai switch Control
             setDesign(Subject,subjectControl);
         }
-        private void Subject_MouseEnter(object sender, EventArgs e)
+        private void Button_MouseEnter(object sender, EventArgs e)
         {
-            Subject.ForeColor = Color.White;
+            if(((Button)sender).Tag != null && ((Button)sender).Tag.ToString() == "close")
+            {
+                ((Button)sender).BackColor = Color.Red;
+            }
+            else
+            {
+                ((Button)sender).ForeColor = Color.White;
+            }
         }
-        private void Subject_MouseLeave(object sender, EventArgs e)
+        private void Button_MouseLeave(object sender, EventArgs e)
         {
-            Subject.ForeColor = Color.FromName("GradientActiveCaption");
+            ((Button)sender).ForeColor = Color.FromName("GradientActiveCaption");
+            if (((Button)sender).Tag != null && ((Button)sender).Tag.ToString() == "close")
+            {
+                ((Button)sender).BackColor = Color.FromArgb(3, 56, 73);
+            }
+            else
+            {
+                ((Button)sender).ForeColor = Color.FromName("GradientActiveCaption");
+            }
         }
 
         //User button events
         private void User_Click(object sender, EventArgs e)
         {
+            UserControl1 userControl1 = new UserControl1();
             //kalese methodo gia xrwma kai switch Control
             setDesign(User,userControl1);
         }
-        private void User_MouseEnter(object sender, EventArgs e)
-        {
-            User.ForeColor = Color.White;
-        }
-        private void User_MouseLeave(object sender, EventArgs e)
-        {
-            User.ForeColor = Color.FromName("GradientActiveCaption");
-        }
-
         //question button events
         private void Question_Click(object sender, EventArgs e)
         {
+            QuestionControl questionControl = new QuestionControl();
             //kalese methodo gia xrwma kai switch Control
             setDesign(Question,questionControl);
         }
-        private void Question_MouseEnter(object sender, EventArgs e)
-        {
-            Question.ForeColor = Color.White;
-        }
-        private void Question_MouseLeave(object sender, EventArgs e)
-        {
-            Question.ForeColor = Color.FromName("GradientActiveCaption");
-        }
-
         //report button events
         private void Report_Click(object sender, EventArgs e)
         {
+            ReportControl reportControl = new ReportControl();
             //kalese methodo gia xrwma kai switch Control
             setDesign(Report,reportControl);
         }
-        private void Report_MouseEnter(object sender, EventArgs e)
-        {
-            Report.ForeColor = Color.White;
-        }
-        private void Report_MouseLeave(object sender, EventArgs e)
-        {
-            Report.ForeColor = Color.FromName("GradientActiveCaption");
-        }
-
         //Feedback button events
         private void Feedback_Click(object sender, EventArgs e)
         {
+            FeedbackControl feedbackControl = new FeedbackControl();
             //kalese methodo gia xrwma kai switch Control
             setDesign(Feedback,feedbackControl);
         }
-        private void Feedback_MouseEnter(object sender, EventArgs e)
-        {
-            Feedback.ForeColor = Color.White;
-        }
-        private void Feedback_MouseLeave(object sender, EventArgs e)
-        {
-            Feedback.ForeColor = Color.FromName("GradientActiveCaption");
-        }
-
         //close button events
         private void Close_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        private void Close_MouseEnter(object sender, EventArgs e)
-        {
-            Close.BackColor = Color.Red;
-        }
-        private void Close_MouseLeave(object sender, EventArgs e)
-        {
-            Close.BackColor = Color.FromArgb(3,56,73);
-        }
-        
     }
 }

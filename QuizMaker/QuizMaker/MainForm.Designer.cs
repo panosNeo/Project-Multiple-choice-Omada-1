@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.leftPanel = new System.Windows.Forms.Panel();
+            this.profileBtn = new System.Windows.Forms.Button();
             this.menuVisibleBtn = new System.Windows.Forms.Button();
             this.feelLuckyBtn = new System.Windows.Forms.Button();
             this.categoriesBtn = new System.Windows.Forms.Button();
@@ -47,6 +48,7 @@
             // 
             this.leftPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.leftPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.leftPanel.Controls.Add(this.profileBtn);
             this.leftPanel.Controls.Add(this.menuVisibleBtn);
             this.leftPanel.Controls.Add(this.feelLuckyBtn);
             this.leftPanel.Controls.Add(this.categoriesBtn);
@@ -56,6 +58,28 @@
             this.leftPanel.Name = "leftPanel";
             this.leftPanel.Size = new System.Drawing.Size(165, 485);
             this.leftPanel.TabIndex = 1;
+            // 
+            // profileBtn
+            // 
+            this.profileBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.profileBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.profileBtn.FlatAppearance.BorderSize = 0;
+            this.profileBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(150)))));
+            this.profileBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
+            this.profileBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(150)))));
+            this.profileBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.profileBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.profileBtn.ForeColor = System.Drawing.Color.White;
+            this.profileBtn.Image = global::QuizMaker.Properties.Resources.Account1;
+            this.profileBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.profileBtn.Location = new System.Drawing.Point(-1, 424);
+            this.profileBtn.Name = "profileBtn";
+            this.profileBtn.Size = new System.Drawing.Size(169, 36);
+            this.profileBtn.TabIndex = 6;
+            this.profileBtn.Tag = "profile";
+            this.profileBtn.Text = "Profile";
+            this.profileBtn.UseVisualStyleBackColor = true;
+            this.profileBtn.Click += new System.EventHandler(this.LeftMenuButtons_Click);
             // 
             // menuVisibleBtn
             // 
@@ -84,9 +108,9 @@
             this.feelLuckyBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.feelLuckyBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.feelLuckyBtn.ForeColor = System.Drawing.Color.White;
-            this.feelLuckyBtn.Image = global::QuizMaker.Properties.Resources.list;
+            this.feelLuckyBtn.Image = global::QuizMaker.Properties.Resources.feedback1;
             this.feelLuckyBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.feelLuckyBtn.Location = new System.Drawing.Point(-5, 135);
+            this.feelLuckyBtn.Location = new System.Drawing.Point(-1, 134);
             this.feelLuckyBtn.Name = "feelLuckyBtn";
             this.feelLuckyBtn.Size = new System.Drawing.Size(169, 36);
             this.feelLuckyBtn.TabIndex = 4;
@@ -105,9 +129,9 @@
             this.categoriesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.categoriesBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.categoriesBtn.ForeColor = System.Drawing.Color.White;
-            this.categoriesBtn.Image = global::QuizMaker.Properties.Resources.list;
+            this.categoriesBtn.Image = global::QuizMaker.Properties.Resources.subject;
             this.categoriesBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.categoriesBtn.Location = new System.Drawing.Point(-5, 93);
+            this.categoriesBtn.Location = new System.Drawing.Point(-1, 92);
             this.categoriesBtn.Name = "categoriesBtn";
             this.categoriesBtn.Size = new System.Drawing.Size(169, 36);
             this.categoriesBtn.TabIndex = 3;
@@ -128,7 +152,7 @@
             this.createQuizBtn.ForeColor = System.Drawing.Color.White;
             this.createQuizBtn.Image = global::QuizMaker.Properties.Resources.list;
             this.createQuizBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.createQuizBtn.Location = new System.Drawing.Point(-5, 51);
+            this.createQuizBtn.Location = new System.Drawing.Point(-1, 50);
             this.createQuizBtn.Name = "createQuizBtn";
             this.createQuizBtn.Size = new System.Drawing.Size(169, 36);
             this.createQuizBtn.TabIndex = 2;
@@ -228,6 +252,7 @@
         private System.Windows.Forms.Button categoriesBtn;
         private System.Windows.Forms.Button menuVisibleBtn;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button profileBtn;
     }
 }
 

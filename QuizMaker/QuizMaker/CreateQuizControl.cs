@@ -38,7 +38,16 @@ namespace QuizMaker
                 }
             }else if (name.Equals("backBtn"))
             {
-                SetEnabledPanels(0);
+                if(MessageBox.Show("Do you want to delete thiz QUIZ ?","Message",MessageBoxButtons.YesNo)==DialogResult.Yes)
+                {
+                    CreateQuizControlHandler.SetQuiz();
+                    currentQuestion = 0;
+                    NewEmptyQuestion();
+                    CheckQuestionNum();
+                    lastQuestion = new Question();
+                    lastQuestionBool = false;
+                    SetEnabledPanels(0);
+                }
             }else if (name.Equals("finishQuestionsBtn"))
             {
                 SetEnabledPanels(2);
@@ -86,6 +95,7 @@ namespace QuizMaker
             }
         }
 
+
         private Question lastQuestion = new Question();
         private bool lastQuestionBool = false;
         private int currentQuestion = 1;
@@ -98,12 +108,24 @@ namespace QuizMaker
             }
             else
             {
-                currentQuestion += 1;
-                CreateQuizControlHandler.AddNewQuestion(questionNameTextBox.Text, ans);
-                List<Answer> nullAns = new List<Answer>();
-                SetQuestionPanelVar("", nullAns,currentQuestion);
+                NewEmptyQuestion();
             }
             CheckQuestionNum();
+        }
+
+        private void NewEmptyQuestion()
+        {
+            int allQ = CreateQuizControlHandler.CountQuests();
+            if (allQ<=currentQuestion)
+            {
+                if (currentQuestion != allQ)
+                {
+                    CreateQuizControlHandler.AddNewQuestion(questionNameTextBox.Text, getAnswers());
+                }
+                currentQuestion += 1;
+                List<Answer> nullAns = new List<Answer>();
+                SetQuestionPanelVar("", nullAns, currentQuestion);
+            }
         }
 
         public void nextQBtn_Click(object sender, EventArgs e)
@@ -111,7 +133,6 @@ namespace QuizMaker
             int allQ = CreateQuizControlHandler.CountQuests();
             currentQuestion += 1;
             CheckQuestionNum();
-            Console.WriteLine(lastQuestionBool);
             if (currentQuestion>allQ)
             {
                 SetQuestionPanelVar(lastQuestion.GetQuestion(), lastQuestion.GetAnswers(), currentQuestion );
@@ -126,14 +147,7 @@ namespace QuizMaker
         {
             if(currentQuestion > CreateQuizControlHandler.CountQuests())
             {
-                lastQuestionBool = true;
-                List<Answer> ans = getAnswers();
-                Quiz myq = CreateQuizControlHandler.GetQuiz();
-                lastQuestion = new Question(questionNameTextBox.Text, myq.GetUser_id(), myq.GetSubject_id(), myq.GetCreationDate());
-                foreach(Answer an in ans)
-                {
-                    lastQuestion.AddAnswer(an);
-                }
+                SaveLastQuestion();
             }
             currentQuestion -= 1;
             CheckQuestionNum();
@@ -153,11 +167,39 @@ namespace QuizMaker
                 }
                 else
                 {
-                    
+                    currentQuestion -= 1;
                     CreateQuizControlHandler.RemoveQuestion(currentQuestion);
                 }
-                SetQuestionPanelVar(CreateQuizControlHandler.GetQuestion(currentQuestion-1).GetQuestion(), CreateQuizControlHandler.GetQuestion(currentQuestion-1).GetAnswers(), currentQuestion);
+                if (currentQuestion == 0)
+                {
+                    currentQuestion = 1;
+                    if(!lastQuestionBool)
+                    {
+                        List<Answer> nullAns = new List<Answer>();
+                        SetQuestionPanelVar("", nullAns, 1);
+                    }
+                    else
+                    {
+                        SetQuestionPanelVar(lastQuestion.GetQuestion(), lastQuestion.GetAnswers(), currentQuestion);
+                    }
+                }
+                else
+                {
+                    SetQuestionPanelVar(CreateQuizControlHandler.GetQuestion(currentQuestion - 1).GetQuestion(), CreateQuizControlHandler.GetQuestion(currentQuestion - 1).GetAnswers(), currentQuestion);
+                }
                 CheckQuestionNum();
+            }
+        }
+
+        private void SaveLastQuestion()
+        {
+            lastQuestionBool = true;
+            List<Answer> ans = getAnswers();
+            Quiz myq = CreateQuizControlHandler.GetQuiz();
+            lastQuestion = new Question(questionNameTextBox.Text, myq.GetUser_id(), myq.GetSubject_id(), myq.GetCreationDate());
+            foreach (Answer an in ans)
+            {
+                lastQuestion.AddAnswer(an);
             }
         }
 
@@ -203,6 +245,7 @@ namespace QuizMaker
 
         private void CheckQuestionNum()
         {
+            Console.WriteLine(lastQuestionBool);
             int allQ = CreateQuizControlHandler.CountQuests();
             Console.WriteLine(allQ + " " + currentQuestion);
             if(allQ==0)
@@ -217,14 +260,23 @@ namespace QuizMaker
             }
             else
             {
-                if(currentQuestion==1)
+                if (currentQuestion == allQ)
+                {
+                    nextQuBtn.Enabled = lastQuestionBool;
+                }
+                else
+                {
+                    nextQuBtn.Enabled = true;
+                }
+                if (currentQuestion==1)
                 {
                     prevQuBtn.Enabled = false;
-                }else
+                }
+                else
                 {
                     prevQuBtn.Enabled = true;
                 }
-                nextQuBtn.Enabled = lastQuestionBool;
+
             }
         }
 

@@ -79,10 +79,11 @@
             this.Close.Name = "Close";
             this.Close.Size = new System.Drawing.Size(42, 45);
             this.Close.TabIndex = 0;
+            this.Close.Tag = "close";
             this.Close.UseVisualStyleBackColor = false;
             this.Close.Click += new System.EventHandler(this.Close_Click);
-            this.Close.MouseEnter += new System.EventHandler(this.Close_MouseEnter);
-            this.Close.MouseLeave += new System.EventHandler(this.Close_MouseLeave);
+            this.Close.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.Close.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // MenuPanel
             // 
@@ -117,8 +118,8 @@
             this.Feedback.Text = "Feedbacks";
             this.Feedback.UseVisualStyleBackColor = false;
             this.Feedback.Click += new System.EventHandler(this.Feedback_Click);
-            this.Feedback.MouseEnter += new System.EventHandler(this.Feedback_MouseEnter);
-            this.Feedback.MouseLeave += new System.EventHandler(this.Feedback_MouseLeave);
+            this.Feedback.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.Feedback.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // Report
             // 
@@ -136,8 +137,8 @@
             this.Report.Text = "Reports";
             this.Report.UseVisualStyleBackColor = false;
             this.Report.Click += new System.EventHandler(this.Report_Click);
-            this.Report.MouseEnter += new System.EventHandler(this.Report_MouseEnter);
-            this.Report.MouseLeave += new System.EventHandler(this.Report_MouseLeave);
+            this.Report.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.Report.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // Question
             // 
@@ -155,8 +156,8 @@
             this.Question.Text = "Question Settings";
             this.Question.UseVisualStyleBackColor = false;
             this.Question.Click += new System.EventHandler(this.Question_Click);
-            this.Question.MouseEnter += new System.EventHandler(this.Question_MouseEnter);
-            this.Question.MouseLeave += new System.EventHandler(this.Question_MouseLeave);
+            this.Question.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.Question.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // User
             // 
@@ -174,8 +175,8 @@
             this.User.Text = "User Settings";
             this.User.UseVisualStyleBackColor = false;
             this.User.Click += new System.EventHandler(this.User_Click);
-            this.User.MouseEnter += new System.EventHandler(this.User_MouseEnter);
-            this.User.MouseLeave += new System.EventHandler(this.User_MouseLeave);
+            this.User.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.User.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // Subject
             // 
@@ -193,8 +194,8 @@
             this.Subject.Text = "Subject Settings";
             this.Subject.UseVisualStyleBackColor = false;
             this.Subject.Click += new System.EventHandler(this.Subject_Click);
-            this.Subject.MouseEnter += new System.EventHandler(this.Subject_MouseEnter);
-            this.Subject.MouseLeave += new System.EventHandler(this.Subject_MouseLeave);
+            this.Subject.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.Subject.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // Profile
             // 
@@ -213,8 +214,8 @@
             this.Profile.Text = "My Profile";
             this.Profile.UseVisualStyleBackColor = false;
             this.Profile.Click += new System.EventHandler(this.Profile_Click);
-            this.Profile.MouseEnter += new System.EventHandler(this.Profile_MouseEnter);
-            this.Profile.MouseLeave += new System.EventHandler(this.Profile_MouseLeave);
+            this.Profile.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.Profile.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // MainPanel
             // 

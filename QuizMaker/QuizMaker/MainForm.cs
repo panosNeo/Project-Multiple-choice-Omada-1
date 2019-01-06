@@ -20,6 +20,7 @@ namespace QuizMaker
         {
             InitializeComponent();
             menuVisible = true;
+            SearchHandler.SearchController.SetSubjects();
         }
 
 
@@ -95,9 +96,14 @@ namespace QuizMaker
                     mainPanel.Controls.Add(d);
                     break;
                 case "feelLucky":
-                    QuizPanel e = new QuizPanel();
+                    QuizPanel e = new QuizPanel(new QuizPlayerController());
                     e.Dock = DockStyle.Fill;
                     mainPanel.Controls.Add(e);
+                    break;
+                case "profile":
+                    ProfileControl f = new ProfileControl();
+                    f.Dock = DockStyle.Fill;
+                    mainPanel.Controls.Add(f);
                     break;
                 default:
                     Console.WriteLine("No control selected");

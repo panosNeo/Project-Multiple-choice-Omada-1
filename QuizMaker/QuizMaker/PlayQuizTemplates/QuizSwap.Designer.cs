@@ -34,11 +34,12 @@
             // questionBtn
             // 
             this.questionBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.questionBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.questionBtn.Location = new System.Drawing.Point(0, 0);
             this.questionBtn.Name = "questionBtn";
             this.questionBtn.Size = new System.Drawing.Size(50, 50);
             this.questionBtn.TabIndex = 0;
-            this.questionBtn.UseVisualStyleBackColor = true;
+            this.questionBtn.UseVisualStyleBackColor = false;
             // 
             // QuizSwap
             // 

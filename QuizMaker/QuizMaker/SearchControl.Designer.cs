@@ -30,13 +30,13 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.searchByTextLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.searchTextBtn = new System.Windows.Forms.Button();
-            this.searchByTagLabel = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.searchTagBtn = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.searchByTagLabel = new System.Windows.Forms.Label();
+            this.searchTextBtn = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.searchByTextLabel = new System.Windows.Forms.Label();
+            this.resultsPanel = new System.Windows.Forms.Panel();
+            this.tagTreeView = new System.Windows.Forms.TreeView();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,34 +52,42 @@
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.panel2.Controls.Add(this.tagTreeView);
             this.panel2.Controls.Add(this.searchTagBtn);
-            this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Controls.Add(this.searchByTagLabel);
             this.panel2.Controls.Add(this.searchTextBtn);
             this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.searchByTextLabel);
             this.panel2.Location = new System.Drawing.Point(0, 76);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(843, 59);
+            this.panel2.Size = new System.Drawing.Size(840, 59);
             this.panel2.TabIndex = 1;
             // 
-            // searchByTextLabel
+            // searchTagBtn
             // 
-            this.searchByTextLabel.AutoSize = true;
-            this.searchByTextLabel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.searchByTextLabel.ForeColor = System.Drawing.Color.White;
-            this.searchByTextLabel.Location = new System.Drawing.Point(3, 18);
-            this.searchByTextLabel.Name = "searchByTextLabel";
-            this.searchByTextLabel.Size = new System.Drawing.Size(70, 22);
-            this.searchByTextLabel.TabIndex = 2;
-            this.searchByTextLabel.Text = "Search";
+            this.searchTagBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchTagBtn.FlatAppearance.BorderSize = 0;
+            this.searchTagBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
+            this.searchTagBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(150)))));
+            this.searchTagBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchTagBtn.Image = global::QuizMaker.Properties.Resources.iconfinder_search_285651;
+            this.searchTagBtn.Location = new System.Drawing.Point(800, 16);
+            this.searchTagBtn.Name = "searchTagBtn";
+            this.searchTagBtn.Size = new System.Drawing.Size(37, 29);
+            this.searchTagBtn.TabIndex = 7;
+            this.searchTagBtn.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // searchByTagLabel
             // 
-            this.textBox1.Location = new System.Drawing.Point(79, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(234, 20);
-            this.textBox1.TabIndex = 3;
+            this.searchByTagLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchByTagLabel.AutoSize = true;
+            this.searchByTagLabel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.searchByTagLabel.ForeColor = System.Drawing.Color.White;
+            this.searchByTagLabel.Location = new System.Drawing.Point(439, 16);
+            this.searchByTagLabel.Name = "searchByTagLabel";
+            this.searchByTagLabel.Size = new System.Drawing.Size(126, 22);
+            this.searchByTagLabel.TabIndex = 5;
+            this.searchByTagLabel.Text = "Search by tag";
             // 
             // searchTextBtn
             // 
@@ -94,62 +102,56 @@
             this.searchTextBtn.TabIndex = 4;
             this.searchTextBtn.UseVisualStyleBackColor = true;
             // 
-            // searchByTagLabel
+            // textBox1
             // 
-            this.searchByTagLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchByTagLabel.AutoSize = true;
-            this.searchByTagLabel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.searchByTagLabel.ForeColor = System.Drawing.Color.White;
-            this.searchByTagLabel.Location = new System.Drawing.Point(470, 17);
-            this.searchByTagLabel.Name = "searchByTagLabel";
-            this.searchByTagLabel.Size = new System.Drawing.Size(126, 22);
-            this.searchByTagLabel.TabIndex = 5;
-            this.searchByTagLabel.Text = "Search by tag";
+            this.textBox1.Location = new System.Drawing.Point(79, 20);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(234, 20);
+            this.textBox1.TabIndex = 3;
             // 
-            // comboBox1
+            // searchByTextLabel
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(602, 18);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 6;
+            this.searchByTextLabel.AutoSize = true;
+            this.searchByTextLabel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.searchByTextLabel.ForeColor = System.Drawing.Color.White;
+            this.searchByTextLabel.Location = new System.Drawing.Point(3, 18);
+            this.searchByTextLabel.Name = "searchByTextLabel";
+            this.searchByTextLabel.Size = new System.Drawing.Size(70, 22);
+            this.searchByTextLabel.TabIndex = 2;
+            this.searchByTextLabel.Text = "Search";
             // 
-            // searchTagBtn
+            // resultsPanel
             // 
-            this.searchTagBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchTagBtn.FlatAppearance.BorderSize = 0;
-            this.searchTagBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.searchTagBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(150)))));
-            this.searchTagBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchTagBtn.Image = global::QuizMaker.Properties.Resources.iconfinder_search_285651;
-            this.searchTagBtn.Location = new System.Drawing.Point(729, 16);
-            this.searchTagBtn.Name = "searchTagBtn";
-            this.searchTagBtn.Size = new System.Drawing.Size(37, 29);
-            this.searchTagBtn.TabIndex = 7;
-            this.searchTagBtn.UseVisualStyleBackColor = true;
+            this.resultsPanel.AutoScroll = true;
+            this.resultsPanel.AutoSize = true;
+            this.resultsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.resultsPanel.Location = new System.Drawing.Point(60, 141);
+            this.resultsPanel.Name = "resultsPanel";
+            this.resultsPanel.Size = new System.Drawing.Size(720, 330);
+            this.resultsPanel.TabIndex = 2;
             // 
-            // panel3
+            // tagTreeView
             // 
-            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 141);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(843, 354);
-            this.panel3.TabIndex = 2;
+            this.tagTreeView.Location = new System.Drawing.Point(591, 7);
+            this.tagTreeView.Name = "tagTreeView";
+            this.tagTreeView.Size = new System.Drawing.Size(176, 49);
+            this.tagTreeView.TabIndex = 8;
             // 
             // SearchControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.resultsPanel);
             this.Controls.Add(this.panel1);
             this.Name = "SearchControl";
-            this.Size = new System.Drawing.Size(843, 495);
+            this.Size = new System.Drawing.Size(843, 490);
+            this.SizeChanged += new System.EventHandler(this.SearchControl_SizeChanged);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -161,8 +163,8 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label searchByTextLabel;
         private System.Windows.Forms.Label searchByTagLabel;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button searchTagBtn;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel resultsPanel;
+        private System.Windows.Forms.TreeView tagTreeView;
     }
 }

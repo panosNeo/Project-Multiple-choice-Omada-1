@@ -35,6 +35,7 @@ namespace Administrator
                 AddButton.Enabled = true;
                 DeleteButton.Enabled = true;
                 UpdateButton.Enabled = true;
+                UserReset.Enabled = true;
             }
             else
             {
@@ -51,7 +52,22 @@ namespace Administrator
                 AddButton.Enabled = false;
                 DeleteButton.Enabled = false;
                 UpdateButton.Enabled = false;
+                UserReset.Enabled = false;
             }
+        }
+
+        private void UserReset_Click(object sender, EventArgs e)
+        {
+            UserIDBox.Text = "";
+            RoleBox.Text = "";
+            NameBox.Text = "";
+            LastNameBox.Text = "";
+            EmailBox.Text = "";
+            BlockIDBox.Text = "";
+            ReasonBox.Text = "";
+            DaysBox.Text = "";
+
+            BlockCheckbox.Checked = false;
         }
     }
 }

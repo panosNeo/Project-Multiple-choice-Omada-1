@@ -63,19 +63,21 @@
             // UsernameBox
             // 
             this.UsernameBox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.UsernameBox.Location = new System.Drawing.Point(437, 165);
+            this.UsernameBox.Location = new System.Drawing.Point(420, 165);
             this.UsernameBox.Name = "UsernameBox";
-            this.UsernameBox.Size = new System.Drawing.Size(149, 23);
+            this.UsernameBox.Size = new System.Drawing.Size(189, 23);
             this.UsernameBox.TabIndex = 3;
+            this.UsernameBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LoginBox_KeyPress);
             // 
             // PasswordBox
             // 
             this.PasswordBox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.PasswordBox.Location = new System.Drawing.Point(437, 205);
+            this.PasswordBox.Location = new System.Drawing.Point(420, 205);
             this.PasswordBox.Name = "PasswordBox";
             this.PasswordBox.PasswordChar = '*';
-            this.PasswordBox.Size = new System.Drawing.Size(149, 23);
+            this.PasswordBox.Size = new System.Drawing.Size(189, 23);
             this.PasswordBox.TabIndex = 4;
+            this.PasswordBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LoginBox_KeyPress);
             // 
             // label3
             // 
@@ -96,9 +98,9 @@
             this.LoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LoginButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.LoginButton.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.LoginButton.Location = new System.Drawing.Point(437, 280);
+            this.LoginButton.Location = new System.Drawing.Point(420, 280);
             this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(149, 31);
+            this.LoginButton.Size = new System.Drawing.Size(189, 31);
             this.LoginButton.TabIndex = 10;
             this.LoginButton.Text = "Login";
             this.LoginButton.UseVisualStyleBackColor = false;
@@ -109,7 +111,7 @@
             this.warningLabel.AutoSize = true;
             this.warningLabel.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.warningLabel.ForeColor = System.Drawing.Color.Red;
-            this.warningLabel.Location = new System.Drawing.Point(420, 361);
+            this.warningLabel.Location = new System.Drawing.Point(12, 397);
             this.warningLabel.Name = "warningLabel";
             this.warningLabel.Size = new System.Drawing.Size(189, 16);
             this.warningLabel.TabIndex = 11;
@@ -124,9 +126,9 @@
             this.ResetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ResetButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.ResetButton.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ResetButton.Location = new System.Drawing.Point(437, 317);
+            this.ResetButton.Location = new System.Drawing.Point(420, 317);
             this.ResetButton.Name = "ResetButton";
-            this.ResetButton.Size = new System.Drawing.Size(149, 31);
+            this.ResetButton.Size = new System.Drawing.Size(189, 31);
             this.ResetButton.TabIndex = 12;
             this.ResetButton.Text = "Reset Password";
             this.ResetButton.UseVisualStyleBackColor = false;

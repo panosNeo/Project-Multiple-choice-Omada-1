@@ -31,6 +31,8 @@
             this.welcomeLabel = new System.Windows.Forms.Label();
             this.profileLogoutButton = new System.Windows.Forms.Button();
             this.dataGroupbox = new System.Windows.Forms.GroupBox();
+            this.UserIDBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.ShowPassword = new System.Windows.Forms.CheckBox();
             this.PasswordBox = new System.Windows.Forms.TextBox();
             this.UsernameBox = new System.Windows.Forms.TextBox();
@@ -79,6 +81,8 @@
             // 
             // dataGroupbox
             // 
+            this.dataGroupbox.Controls.Add(this.UserIDBox);
+            this.dataGroupbox.Controls.Add(this.label6);
             this.dataGroupbox.Controls.Add(this.ShowPassword);
             this.dataGroupbox.Controls.Add(this.PasswordBox);
             this.dataGroupbox.Controls.Add(this.UsernameBox);
@@ -95,15 +99,33 @@
             this.dataGroupbox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.dataGroupbox.Location = new System.Drawing.Point(50, 83);
             this.dataGroupbox.Name = "dataGroupbox";
-            this.dataGroupbox.Size = new System.Drawing.Size(372, 181);
+            this.dataGroupbox.Size = new System.Drawing.Size(372, 209);
             this.dataGroupbox.TabIndex = 3;
             this.dataGroupbox.TabStop = false;
             this.dataGroupbox.Text = "Account Data";
             // 
+            // UserIDBox
+            // 
+            this.UserIDBox.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.UserIDBox.Location = new System.Drawing.Point(113, 22);
+            this.UserIDBox.Name = "UserIDBox";
+            this.UserIDBox.ReadOnly = true;
+            this.UserIDBox.Size = new System.Drawing.Size(186, 26);
+            this.UserIDBox.TabIndex = 12;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(35, 28);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(60, 16);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "User ID :";
+            // 
             // ShowPassword
             // 
             this.ShowPassword.AutoSize = true;
-            this.ShowPassword.Location = new System.Drawing.Point(306, 144);
+            this.ShowPassword.Location = new System.Drawing.Point(305, 172);
             this.ShowPassword.Name = "ShowPassword";
             this.ShowPassword.Size = new System.Drawing.Size(60, 20);
             this.ShowPassword.TabIndex = 10;
@@ -114,48 +136,53 @@
             // PasswordBox
             // 
             this.PasswordBox.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.PasswordBox.Location = new System.Drawing.Point(114, 141);
+            this.PasswordBox.Location = new System.Drawing.Point(113, 167);
             this.PasswordBox.Name = "PasswordBox";
             this.PasswordBox.PasswordChar = '*';
             this.PasswordBox.Size = new System.Drawing.Size(186, 26);
             this.PasswordBox.TabIndex = 9;
+            this.PasswordBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SaveAdminData_keyDown);
             // 
             // UsernameBox
             // 
             this.UsernameBox.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.UsernameBox.Location = new System.Drawing.Point(114, 112);
+            this.UsernameBox.Location = new System.Drawing.Point(113, 138);
             this.UsernameBox.Name = "UsernameBox";
             this.UsernameBox.Size = new System.Drawing.Size(186, 26);
             this.UsernameBox.TabIndex = 8;
+            this.UsernameBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SaveAdminData_keyDown);
             // 
             // EmailBox
             // 
             this.EmailBox.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.EmailBox.Location = new System.Drawing.Point(114, 83);
+            this.EmailBox.Location = new System.Drawing.Point(113, 109);
             this.EmailBox.Name = "EmailBox";
             this.EmailBox.Size = new System.Drawing.Size(186, 26);
             this.EmailBox.TabIndex = 7;
+            this.EmailBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SaveAdminData_keyDown);
             // 
             // LastNameBox
             // 
             this.LastNameBox.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.LastNameBox.Location = new System.Drawing.Point(114, 54);
+            this.LastNameBox.Location = new System.Drawing.Point(113, 80);
             this.LastNameBox.Name = "LastNameBox";
             this.LastNameBox.Size = new System.Drawing.Size(186, 26);
             this.LastNameBox.TabIndex = 6;
+            this.LastNameBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SaveAdminData_keyDown);
             // 
             // NameBox
             // 
             this.NameBox.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.NameBox.Location = new System.Drawing.Point(114, 25);
+            this.NameBox.Location = new System.Drawing.Point(113, 51);
             this.NameBox.Name = "NameBox";
             this.NameBox.Size = new System.Drawing.Size(186, 26);
             this.NameBox.TabIndex = 5;
+            this.NameBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SaveAdminData_keyDown);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(20, 148);
+            this.label5.Location = new System.Drawing.Point(19, 173);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 16);
             this.label5.TabIndex = 4;
@@ -164,7 +191,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 119);
+            this.label4.Location = new System.Drawing.Point(15, 144);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(80, 16);
             this.label4.TabIndex = 3;
@@ -173,7 +200,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(44, 90);
+            this.label3.Location = new System.Drawing.Point(43, 115);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 16);
             this.label3.TabIndex = 2;
@@ -182,7 +209,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 61);
+            this.label2.Location = new System.Drawing.Point(11, 86);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 16);
             this.label2.TabIndex = 1;
@@ -191,7 +218,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 32);
+            this.label1.Location = new System.Drawing.Point(40, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 16);
             this.label1.TabIndex = 0;
@@ -284,5 +311,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.FlowLayoutPanel NotesflowLayoutPanel;
+        private System.Windows.Forms.TextBox UserIDBox;
+        private System.Windows.Forms.Label label6;
     }
 }

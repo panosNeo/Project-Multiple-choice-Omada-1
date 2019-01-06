@@ -15,6 +15,23 @@ namespace Administrator
         public ReportControl()
         {
             InitializeComponent();
+            loadReports();
+        }
+        private void loadReports()
+        {
+            Report temp;
+            for(int i = 0; i < 11; i++)
+            {
+                temp = new Report();
+                if (i % 2 == 0)
+                    temp.BackColor = Color.White;
+                temp.Click += new EventHandler(clicked);
+                reportPanel.Controls.Add(temp);
+            }
+        }
+
+        private void clicked(object sender, EventArgs e) {
+            MessageBox.Show("You clicked me");
         }
     }
 }

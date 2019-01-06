@@ -1,3 +1,4 @@
+
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,10 +18,11 @@ namespace QuizMaker.PlayQuizTemplates
             InitializeComponent();
         }
 
-        public void setQuestion(string num, string question)
+        public void setQuestion(string question)
         {
             questionLabel.Text = question;
-            questionNumLabel.Text = num + ")";
+            //questionNumLabel.Text = num + ")";
         }
     }
 }
+
