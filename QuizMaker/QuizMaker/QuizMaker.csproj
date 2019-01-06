@@ -71,6 +71,9 @@
     <Compile Include="CreateQuizControl.Designer.cs">
       <DependentUpon>CreateQuizControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="FeelLuckyControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -149,6 +152,12 @@
     <Compile Include="PrintQuizTemplates\QuestionAnswer.Designer.cs">
       <DependentUpon>QuestionAnswer.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProfileControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProfileControl.Designer.cs">
+      <DependentUpon>ProfileControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuizPlayerController.cs" />
     <Compile Include="QuizPlayScore.cs">
       <SubType>UserControl</SubType>
@@ -182,12 +191,22 @@
     <Compile Include="QuizPanel.Designer.cs">
       <DependentUpon>QuizPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="ResultQuizControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ResultQuizControl.Designer.cs">
+      <DependentUpon>ResultQuizControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="SearchControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="SearchControl.Designer.cs">
       <DependentUpon>SearchControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="SearchHandler\SearchController.cs" />
+    <Compile Include="SearchHandler\SubjectStack.cs" />
+    <Compile Include="SearchHandler\TransferList.cs" />
+    <Compile Include="SearchHandler\TreeItem.cs" />
     <Compile Include="TempPrintControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -239,6 +258,9 @@
     <EmbeddedResource Include="PrintQuizTemplates\QuestionAnswer.resx">
       <DependentUpon>QuestionAnswer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ProfileControl.resx">
+      <DependentUpon>ProfileControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -257,6 +279,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuizPlayScore.resx">
       <DependentUpon>QuizPlayScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResultQuizControl.resx">
+      <DependentUpon>ResultQuizControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SearchControl.resx">
       <DependentUpon>SearchControl.cs</DependentUpon>
@@ -314,6 +339,10 @@
     <Content Include="MultipleChoice.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\Account1.png" />
+    <None Include="Resources\feedback1.png" />
+    <None Include="Resources\subject.png" />
+    <None Include="Resources\search.png" />
     <None Include="Resources\print.png" />
   </ItemGroup>
   <ItemGroup>

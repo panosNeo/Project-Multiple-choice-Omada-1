@@ -59,6 +59,8 @@ namespace QuizMaker
                 answer = new QuizAnswers(pos, i);
                 answer.Location = p;
                 answer.setAnswer(""+i, quiz.GetAnswerTitle(pos, i));
+                if (i % 2 == 0)
+                    answer.BackColor = Color.FromArgb(37, 46, 69);
                 answersHolder.Controls.Add(answer);
                 p.Y += answer.Height;
             }
@@ -193,7 +195,9 @@ namespace QuizMaker
             }
             double success = (correctsum - (falsesum/2)) / sum;
             Controls.Clear();
-            Controls.Add(new QuizPlayScore("" + (success * 100) + @"%"));
+            QuizPlayScore qp = new QuizPlayScore("" + (success * 100) + @"%");
+            qp.Dock = DockStyle.Fill;
+            Controls.Add(qp);
         }
 
         private void printQuizBtn_Click(object sender, EventArgs e)

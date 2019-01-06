@@ -41,7 +41,8 @@
             // 
             this.questionHolder.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.questionHolder.AutoScroll = true;
-            this.questionHolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(69)))));
+            this.questionHolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.questionHolder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.questionHolder.Location = new System.Drawing.Point(175, 121);
             this.questionHolder.Name = "questionHolder";
             this.questionHolder.Size = new System.Drawing.Size(600, 85);
@@ -52,6 +53,7 @@
             this.answersHolder.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.answersHolder.AutoScroll = true;
             this.answersHolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.answersHolder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.answersHolder.Location = new System.Drawing.Point(175, 212);
             this.answersHolder.Name = "answersHolder";
             this.answersHolder.Size = new System.Drawing.Size(600, 235);
@@ -61,7 +63,7 @@
             // 
             this.questionSwapHolder.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.questionSwapHolder.AutoScroll = true;
-            this.questionSwapHolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(79)))));
+            this.questionSwapHolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.questionSwapHolder.Location = new System.Drawing.Point(175, 497);
             this.questionSwapHolder.Name = "questionSwapHolder";
             this.questionSwapHolder.Size = new System.Drawing.Size(600, 69);
@@ -73,7 +75,7 @@
             this.quizTitleLabel.AutoSize = true;
             this.quizTitleLabel.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.quizTitleLabel.ForeColor = System.Drawing.Color.White;
-            this.quizTitleLabel.Location = new System.Drawing.Point(439, 89);
+            this.quizTitleLabel.Location = new System.Drawing.Point(170, 80);
             this.quizTitleLabel.Name = "quizTitleLabel";
             this.quizTitleLabel.Size = new System.Drawing.Size(63, 29);
             this.quizTitleLabel.TabIndex = 3;
