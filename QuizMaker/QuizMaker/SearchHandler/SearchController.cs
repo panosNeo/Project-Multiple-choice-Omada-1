@@ -12,10 +12,13 @@ namespace QuizMaker.SearchHandler
         public static TreeNode GetSubjects()
         {
             MultipleChoiceDataSetTableAdapters.SubjectTableAdapter subject = new MultipleChoiceDataSetTableAdapters.SubjectTableAdapter();
+            List<MultipleChoiceDataSet.SubjectRow> lrow = new List<MultipleChoiceDataSet.SubjectRow>();
+            foreach (var d in subject.GetData())
+                lrow.Add(d);
             SubjectStack sub = new SubjectStack();
             SubjectStack temp = new SubjectStack();
-            
-            foreach (var d in subject.GetData()) 
+            SortArray(lrow);
+            foreach (var d in lrow) 
             {
                 
                 
@@ -90,18 +93,7 @@ namespace QuizMaker.SearchHandler
         public static void SetSubjects()
         {
             MultipleChoiceDataSetTableAdapters.SubjectTableAdapter subject = new MultipleChoiceDataSetTableAdapters.SubjectTableAdapter();
-            subject.InsertQueryWithID(1,0,"Root");//1
-            subject.InsertQueryWithID(2,1, "Technology");//2
-            subject.InsertQueryWithID(3,1, "Physics");//3
-            subject.InsertQueryWithID(4,1, "Math");//4
-            subject.InsertQueryWithID(5,1, "History");//5
-            subject.InsertQueryWithID(6,1, "Chemistry");//6
-            subject.InsertQueryWithID(7,2, "Programming");//7
-            subject.InsertQueryWithID(8,2, "Networking");//8
-            subject.InsertQueryWithID(9,3, "AstroPhysics");//9
-            subject.InsertQueryWithID(10,3, "Quantum Physics");//10
-            subject.InsertQueryWithID(11,4, "Algebra");//11
-            subject.InsertQueryWithID(12,4, "Geometry");//12
+            
             subject.InsertQueryWithID(13,7, "HTML");//13
             subject.InsertQueryWithID(14, 7, "Java");//14
             subject.InsertQueryWithID(15, 7, "C#");//13
@@ -109,8 +101,20 @@ namespace QuizMaker.SearchHandler
             subject.InsertQueryWithID(17, 14, "Recursion");//14
             subject.InsertQueryWithID(18, 13, "CSS");//13
             subject.InsertQueryWithID(19, 9, "Stars");//9
+            subject.InsertQueryWithID(1, 0, "Root");//1
+            subject.InsertQueryWithID(2, 1, "Technology");//2
+            subject.InsertQueryWithID(3, 1, "Physics");//3
+            subject.InsertQueryWithID(4, 1, "Math");//4
+            subject.InsertQueryWithID(5, 1, "History");//5
+            subject.InsertQueryWithID(6, 1, "Chemistry");//6
+            subject.InsertQueryWithID(7, 2, "Programming");//7
+            subject.InsertQueryWithID(8, 2, "Networking");//8
+            subject.InsertQueryWithID(9, 3, "AstroPhysics");//9
+            subject.InsertQueryWithID(10, 3, "Quantum Physics");//10
+            subject.InsertQueryWithID(11, 4, "Algebra");//11
+            subject.InsertQueryWithID(12, 4, "Geometry");//12
 
-            foreach(MultipleChoiceDataSet.SubjectRow s in subject.GetData())
+            foreach (MultipleChoiceDataSet.SubjectRow s in subject.GetData())
             {
                 Console.WriteLine("Record ID: "+s.Subject_id);
             }

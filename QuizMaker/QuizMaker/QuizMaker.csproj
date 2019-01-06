@@ -337,6 +337,8 @@
     <Content Include="MultipleChoice.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\dislike.png" />
+    <None Include="Resources\like.png" />
     <None Include="Resources\Account1.png" />
     <None Include="Resources\feedback1.png" />
     <None Include="Resources\subject.png" />

@@ -31,10 +31,11 @@
             this.quizTitleLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.score = new System.Windows.Forms.Label();
-            this.rateBtn = new System.Windows.Forms.Button();
             this.printQuizBtn = new System.Windows.Forms.Button();
             this.playAgainBtn = new System.Windows.Forms.Button();
             this.reportBtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.likeBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // quizTitleLabel
@@ -72,26 +73,6 @@
             this.score.Size = new System.Drawing.Size(79, 29);
             this.score.TabIndex = 6;
             this.score.Text = "Score";
-            // 
-            // rateBtn
-            // 
-            this.rateBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.rateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rateBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.rateBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rateBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rateBtn.FlatAppearance.BorderSize = 0;
-            this.rateBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.rateBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGreen;
-            this.rateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rateBtn.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.rateBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.rateBtn.Location = new System.Drawing.Point(192, 159);
-            this.rateBtn.Name = "rateBtn";
-            this.rateBtn.Size = new System.Drawing.Size(186, 38);
-            this.rateBtn.TabIndex = 9;
-            this.rateBtn.Text = "Rate this quiz";
-            this.rateBtn.UseVisualStyleBackColor = false;
             // 
             // printQuizBtn
             // 
@@ -155,16 +136,59 @@
             this.reportBtn.Text = "Report this quiz";
             this.reportBtn.UseVisualStyleBackColor = false;
             // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = global::QuizMaker.Properties.Resources.dislike;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.Red;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGreen;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Location = new System.Drawing.Point(237, 183);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(50, 56);
+            this.button1.TabIndex = 13;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // likeBtn
+            // 
+            this.likeBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.likeBtn.BackColor = System.Drawing.Color.Transparent;
+            this.likeBtn.BackgroundImage = global::QuizMaker.Properties.Resources.like;
+            this.likeBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.likeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.likeBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.likeBtn.FlatAppearance.BorderSize = 0;
+            this.likeBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Red;
+            this.likeBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.likeBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGreen;
+            this.likeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.likeBtn.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.likeBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.likeBtn.Location = new System.Drawing.Point(181, 183);
+            this.likeBtn.Name = "likeBtn";
+            this.likeBtn.Size = new System.Drawing.Size(50, 56);
+            this.likeBtn.TabIndex = 9;
+            this.likeBtn.UseVisualStyleBackColor = false;
+            // 
             // QuizPlayScore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.reportBtn);
             this.Controls.Add(this.playAgainBtn);
             this.Controls.Add(this.printQuizBtn);
-            this.Controls.Add(this.rateBtn);
+            this.Controls.Add(this.likeBtn);
             this.Controls.Add(this.score);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.quizTitleLabel);
@@ -180,9 +204,10 @@
         private System.Windows.Forms.Label quizTitleLabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label score;
-        private System.Windows.Forms.Button rateBtn;
+        private System.Windows.Forms.Button likeBtn;
         private System.Windows.Forms.Button printQuizBtn;
         private System.Windows.Forms.Button playAgainBtn;
         private System.Windows.Forms.Button reportBtn;
+        private System.Windows.Forms.Button button1;
     }
 }

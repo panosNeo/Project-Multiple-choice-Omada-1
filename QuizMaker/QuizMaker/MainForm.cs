@@ -20,6 +20,7 @@ namespace QuizMaker
         {
             InitializeComponent();
             menuVisible = true;
+            SearchHandler.SearchController.SetSubjects();
         }
 
 

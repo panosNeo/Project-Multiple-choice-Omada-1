@@ -17,7 +17,7 @@ namespace QuizMaker
         {
             
             InitializeComponent();
-            SearchHandler.SearchController.SetSubjects();
+            //SearchHandler.SearchController.SetSubjects();
             setElementAtTreeView();
         }
 
