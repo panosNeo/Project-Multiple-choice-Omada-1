@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace QuizMaker.SearchHandler
 {
+    /*
+    This stack is created for using the records of Subject in db. It is very heavy so it's better to
+    be loaded during the start of the application. Do not reload the stack. Exception handling is needed.
+    */
     class SubjectStack
     {
         public SubjectStack before { get; set; }
@@ -37,8 +41,6 @@ namespace QuizMaker.SearchHandler
         
         public SubjectStack GetSubWithID(int id, List<SubjectStack> temp)
         {
-            
-            //bool found = false;
             foreach (SubjectStack s in temp)
             {
                 if (s.subId == id)
@@ -46,8 +48,6 @@ namespace QuizMaker.SearchHandler
                     foreach (SubjectStack ss in s.after)
                         Console.WriteLine("Found sub: " + ss.subId + " " + ss.subName);
                     return s;
-                    
-                    //return s;
                 }
             }
             SubjectStack ret = new SubjectStack();
@@ -56,17 +56,15 @@ namespace QuizMaker.SearchHandler
                 if(s.subId != id)
                 {
                     return GetSubWithID(id, s.after);
-                    
-                    //break;
-                    //Console.WriteLine("Found sub: " + s.subId + " " + s.subName);
+
                 }
             }
             return ret;
         }
-        //private List<SubjectStack> testtemp = new List<SubjectStack>();
+        
         public void ReplaceSub(int id, SubjectStack sub, List<SubjectStack> temp)
         {
-            //SubjectStack deleted;
+            
             
             for (int i = 0; i < temp.Count; i++)
             {

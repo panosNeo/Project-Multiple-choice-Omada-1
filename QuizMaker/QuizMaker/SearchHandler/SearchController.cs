@@ -12,14 +12,13 @@ namespace QuizMaker.SearchHandler
         public static TreeNode GetSubjects()
         {
             MultipleChoiceDataSetTableAdapters.SubjectTableAdapter subject = new MultipleChoiceDataSetTableAdapters.SubjectTableAdapter();
-            List<MultipleChoiceDataSet.SubjectRow> nodeList = new List<MultipleChoiceDataSet.SubjectRow>();
             SubjectStack sub = new SubjectStack();
             SubjectStack temp = new SubjectStack();
             
             foreach (var d in subject.GetData()) 
             {
                 
-                nodeList.Add(d);
+                
                 if(d.Root_id == 0)
                 {
                     sub = new SubjectStack(d.Subject_id, d.Root_id, d.S_name);
@@ -45,17 +44,14 @@ namespace QuizMaker.SearchHandler
                 
 
             }
-            SortArray(nodeList);
-            
             return SeeThroughStack(sub);
-            //Console.WriteLine("done");
         }
         private static TreeNode SeeThroughStack(SubjectStack sss)
         {
             var dtemp = new TreeNode(sss.subName);
             foreach(SubjectStack temp in sss.after)
             {
-                //Console.WriteLine(temp.subId + " " + temp.rootId + " " + temp.subName);
+                
                 if (!temp.IsLeaf())
                 {
                     dtemp.Nodes.Add(SeeThroughStack(temp));
@@ -111,25 +107,30 @@ namespace QuizMaker.SearchHandler
         public static void SetSubjects()
         {
             MultipleChoiceDataSetTableAdapters.SubjectTableAdapter subject = new MultipleChoiceDataSetTableAdapters.SubjectTableAdapter();
-            subject.InsertQuery(0,"Root");//1
-            subject.InsertQuery(1, "Technology");//2
-            subject.InsertQuery(1, "Physics");//3
-            subject.InsertQuery(1, "Math");//4
-            subject.InsertQuery(1, "History");//5
-            subject.InsertQuery(1, "Chemistry");//6
-            subject.InsertQuery(2, "Programming");//7
-            subject.InsertQuery(2, "Networking");//8
-            subject.InsertQuery(3, "AstroPhysics");//9
-            subject.InsertQuery(3, "Quantum Physics");//10
-            subject.InsertQuery(4, "Algebra");//11
-            subject.InsertQuery(4, "Geometry");//12
-            subject.InsertQuery(7, "HTML");//13
-            subject.InsertQuery(7, "Java");//14
-            subject.InsertQuery(7, "C#");//13
-            subject.InsertQuery(7, "Python");//13
-            subject.InsertQuery(14, "Recursion");//14
-            subject.InsertQuery(13, "CSS");//13
-            subject.InsertQuery(9, "Stars");//9
+            subject.InsertQueryWithID(1,0,"Root");//1
+            subject.InsertQueryWithID(2,1, "Technology");//2
+            subject.InsertQueryWithID(3,1, "Physics");//3
+            subject.InsertQueryWithID(4,1, "Math");//4
+            subject.InsertQueryWithID(5,1, "History");//5
+            subject.InsertQueryWithID(6,1, "Chemistry");//6
+            subject.InsertQueryWithID(7,2, "Programming");//7
+            subject.InsertQueryWithID(8,2, "Networking");//8
+            subject.InsertQueryWithID(9,3, "AstroPhysics");//9
+            subject.InsertQueryWithID(10,3, "Quantum Physics");//10
+            subject.InsertQueryWithID(11,4, "Algebra");//11
+            subject.InsertQueryWithID(12,4, "Geometry");//12
+            subject.InsertQueryWithID(13,7, "HTML");//13
+            subject.InsertQueryWithID(14, 7, "Java");//14
+            subject.InsertQueryWithID(15, 7, "C#");//13
+            subject.InsertQueryWithID(16, 7, "Python");//13
+            subject.InsertQueryWithID(17, 14, "Recursion");//14
+            subject.InsertQueryWithID(18, 13, "CSS");//13
+            subject.InsertQueryWithID(19, 9, "Stars");//9
+
+            foreach(MultipleChoiceDataSet.SubjectRow s in subject.GetData())
+            {
+                Console.WriteLine("Record ID: "+s.Subject_id);
+            }
 
         }
     }

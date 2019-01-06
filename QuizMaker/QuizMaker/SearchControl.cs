@@ -28,14 +28,10 @@ namespace QuizMaker
 
         private void setElementAtTreeView()
         {
-
+            tagTreeView.Nodes.Clear();
             tagTreeView.Nodes.Add(SearchHandler.SearchController.GetSubjects());
         }
 
-        private void PopulateThisTree(TreeView tree, List<SearchHandler.TreeItem> items)
-        {
-            tree.Nodes.Clear();
-            
-        }
+        
     }
 }

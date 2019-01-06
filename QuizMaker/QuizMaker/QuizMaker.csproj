@@ -205,8 +205,6 @@
     </Compile>
     <Compile Include="SearchHandler\SearchController.cs" />
     <Compile Include="SearchHandler\SubjectStack.cs" />
-    <Compile Include="SearchHandler\TransferList.cs" />
-    <Compile Include="SearchHandler\TreeItem.cs" />
     <Compile Include="TempPrintControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
