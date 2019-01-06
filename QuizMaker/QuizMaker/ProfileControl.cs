@@ -31,7 +31,7 @@ namespace QuizMaker
                 personalDown = false;
                 ((Button)sender).Tag = "+";
             }
-            ((Button)sender).Text = ((Button)sender).Tag.ToString() + "  Personal Data";
+            ((Button)sender).Text = ((Button)sender).Tag.ToString() + " Personal Data";
             personalAnimationTimer.Start();
         }
         private string personal;
@@ -97,7 +97,7 @@ namespace QuizMaker
                 quizDown = false;
                 ((Button)sender).Tag = "+";
             }
-            ((Button)sender).Text = ((Button)sender).Tag.ToString() + "  My quizes";
+            ((Button)sender).Text = ((Button)sender).Tag.ToString() + " My quizes";
             quizAnimtionTimer.Start();
         }
 

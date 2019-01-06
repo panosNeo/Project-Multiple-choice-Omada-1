@@ -32,25 +32,26 @@
             this.personalPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.personalBtn = new System.Windows.Forms.Button();
             this.usernameLabel = new System.Windows.Forms.Label();
+            this.usernameText = new QuizMaker.CustomTextBox();
             this.emailLabel = new System.Windows.Forms.Label();
+            this.emailText = new QuizMaker.CustomTextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.firstNameText = new QuizMaker.CustomTextBox();
             this.lastNameLabel = new System.Windows.Forms.Label();
+            this.LastNameText = new QuizMaker.CustomTextBox();
             this.quizPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.quizBtn = new System.Windows.Forms.Button();
-            this.personalAnimationTimer = new System.Windows.Forms.Timer(this.components);
-            this.quizAnimtionTimer = new System.Windows.Forms.Timer(this.components);
-            this.usernameText = new QuizMaker.CustomTextBox();
-            this.emailText = new QuizMaker.CustomTextBox();
-            this.firstNameText = new QuizMaker.CustomTextBox();
-            this.LastNameText = new QuizMaker.CustomTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.personalAnimationTimer = new System.Windows.Forms.Timer(this.components);
+            this.quizAnimtionTimer = new System.Windows.Forms.Timer(this.components);
             this.personalPanel.SuspendLayout();
             this.quizPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // personalPanel
             // 
+            this.personalPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.personalPanel.Controls.Add(this.personalBtn);
             this.personalPanel.Controls.Add(this.usernameLabel);
             this.personalPanel.Controls.Add(this.usernameText);
@@ -61,7 +62,7 @@
             this.personalPanel.Controls.Add(this.lastNameLabel);
             this.personalPanel.Controls.Add(this.LastNameText);
             this.personalPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.personalPanel.Location = new System.Drawing.Point(150, 120);
+            this.personalPanel.Location = new System.Drawing.Point(150, 117);
             this.personalPanel.Name = "personalPanel";
             this.personalPanel.Size = new System.Drawing.Size(627, 50);
             this.personalPanel.TabIndex = 0;
@@ -93,6 +94,18 @@
             this.usernameLabel.TabIndex = 9;
             this.usernameLabel.Text = "Username";
             // 
+            // usernameText
+            // 
+            this.usernameText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.usernameText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.usernameText.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.usernameText.ForeColor = System.Drawing.Color.White;
+            this.usernameText.Location = new System.Drawing.Point(632, 21);
+            this.usernameText.Name = "usernameText";
+            this.usernameText.Size = new System.Drawing.Size(231, 23);
+            this.usernameText.TabIndex = 10;
+            this.usernameText.Text = "petros";
+            // 
             // emailLabel
             // 
             this.emailLabel.AutoSize = true;
@@ -103,6 +116,17 @@
             this.emailLabel.Size = new System.Drawing.Size(53, 18);
             this.emailLabel.TabIndex = 11;
             this.emailLabel.Text = "E-mail";
+            // 
+            // emailText
+            // 
+            this.emailText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.emailText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.emailText.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.emailText.ForeColor = System.Drawing.Color.White;
+            this.emailText.Location = new System.Drawing.Point(869, 21);
+            this.emailText.Name = "emailText";
+            this.emailText.Size = new System.Drawing.Size(231, 23);
+            this.emailText.TabIndex = 12;
             // 
             // label1
             // 
@@ -115,6 +139,17 @@
             this.label1.TabIndex = 13;
             this.label1.Text = "First Name";
             // 
+            // firstNameText
+            // 
+            this.firstNameText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.firstNameText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.firstNameText.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.firstNameText.ForeColor = System.Drawing.Color.White;
+            this.firstNameText.Location = new System.Drawing.Point(1106, 21);
+            this.firstNameText.Name = "firstNameText";
+            this.firstNameText.Size = new System.Drawing.Size(231, 23);
+            this.firstNameText.TabIndex = 14;
+            // 
             // lastNameLabel
             // 
             this.lastNameLabel.AutoSize = true;
@@ -126,8 +161,20 @@
             this.lastNameLabel.TabIndex = 15;
             this.lastNameLabel.Text = "Last Name";
             // 
+            // LastNameText
+            // 
+            this.LastNameText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.LastNameText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.LastNameText.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.LastNameText.ForeColor = System.Drawing.Color.White;
+            this.LastNameText.Location = new System.Drawing.Point(1343, 21);
+            this.LastNameText.Name = "LastNameText";
+            this.LastNameText.Size = new System.Drawing.Size(231, 23);
+            this.LastNameText.TabIndex = 16;
+            // 
             // quizPanel
             // 
+            this.quizPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.quizPanel.Controls.Add(this.quizBtn);
             this.quizPanel.Controls.Add(this.label2);
             this.quizPanel.Controls.Add(this.label3);
@@ -152,61 +199,6 @@
             this.quizBtn.UseVisualStyleBackColor = true;
             this.quizBtn.Click += new System.EventHandler(this.button1_Click);
             // 
-            // personalAnimationTimer
-            // 
-            this.personalAnimationTimer.Interval = 1;
-            this.personalAnimationTimer.Tick += new System.EventHandler(this.panelTimer_Tick);
-            // 
-            // quizAnimtionTimer
-            // 
-            this.quizAnimtionTimer.Interval = 1;
-            this.quizAnimtionTimer.Tick += new System.EventHandler(this.quizAnimtionTimer_Tick);
-            // 
-            // usernameText
-            // 
-            this.usernameText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.usernameText.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.usernameText.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.usernameText.ForeColor = System.Drawing.Color.White;
-            this.usernameText.Location = new System.Drawing.Point(632, 21);
-            this.usernameText.Name = "usernameText";
-            this.usernameText.Size = new System.Drawing.Size(231, 23);
-            this.usernameText.TabIndex = 10;
-            this.usernameText.Text = "petros";
-            // 
-            // emailText
-            // 
-            this.emailText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.emailText.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.emailText.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.emailText.ForeColor = System.Drawing.Color.White;
-            this.emailText.Location = new System.Drawing.Point(869, 21);
-            this.emailText.Name = "emailText";
-            this.emailText.Size = new System.Drawing.Size(231, 23);
-            this.emailText.TabIndex = 12;
-            // 
-            // firstNameText
-            // 
-            this.firstNameText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.firstNameText.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.firstNameText.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.firstNameText.ForeColor = System.Drawing.Color.White;
-            this.firstNameText.Location = new System.Drawing.Point(1106, 21);
-            this.firstNameText.Name = "firstNameText";
-            this.firstNameText.Size = new System.Drawing.Size(231, 23);
-            this.firstNameText.TabIndex = 14;
-            // 
-            // LastNameText
-            // 
-            this.LastNameText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.LastNameText.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.LastNameText.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.LastNameText.ForeColor = System.Drawing.Color.White;
-            this.LastNameText.Location = new System.Drawing.Point(1343, 21);
-            this.LastNameText.Name = "LastNameText";
-            this.LastNameText.Size = new System.Drawing.Size(231, 23);
-            this.LastNameText.TabIndex = 16;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -226,6 +218,16 @@
             this.label3.TabIndex = 11;
             this.label3.Text = "label3";
             // 
+            // personalAnimationTimer
+            // 
+            this.personalAnimationTimer.Interval = 1;
+            this.personalAnimationTimer.Tick += new System.EventHandler(this.panelTimer_Tick);
+            // 
+            // quizAnimtionTimer
+            // 
+            this.quizAnimtionTimer.Interval = 1;
+            this.quizAnimtionTimer.Tick += new System.EventHandler(this.quizAnimtionTimer_Tick);
+            // 
             // ProfileControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -235,7 +237,7 @@
             this.Controls.Add(this.quizPanel);
             this.Controls.Add(this.personalPanel);
             this.Name = "ProfileControl";
-            this.Size = new System.Drawing.Size(778, 547);
+            this.Size = new System.Drawing.Size(917, 547);
             this.personalPanel.ResumeLayout(false);
             this.personalPanel.PerformLayout();
             this.quizPanel.ResumeLayout(false);

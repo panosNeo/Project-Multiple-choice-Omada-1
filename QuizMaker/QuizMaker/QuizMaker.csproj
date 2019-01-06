@@ -191,12 +191,22 @@
     <Compile Include="QuizPanel.Designer.cs">
       <DependentUpon>QuizPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="ResultQuizControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ResultQuizControl.Designer.cs">
+      <DependentUpon>ResultQuizControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="SearchControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="SearchControl.Designer.cs">
       <DependentUpon>SearchControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="SearchHandler\SearchController.cs" />
+    <Compile Include="SearchHandler\SubjectStack.cs" />
+    <Compile Include="SearchHandler\TransferList.cs" />
+    <Compile Include="SearchHandler\TreeItem.cs" />
     <Compile Include="TempPrintControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -269,6 +279,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuizPlayScore.resx">
       <DependentUpon>QuizPlayScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResultQuizControl.resx">
+      <DependentUpon>ResultQuizControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SearchControl.resx">
       <DependentUpon>SearchControl.cs</DependentUpon>

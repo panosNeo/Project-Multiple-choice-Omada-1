@@ -12,9 +12,30 @@ namespace QuizMaker
 {
     public partial class SearchControl : UserControl
     {
+        private MultipleChoiceDataSetTableAdapters.SubjectTableAdapter s;
         public SearchControl()
         {
+            
             InitializeComponent();
+            SearchHandler.SearchController.SetSubjects();
+            setElementAtTreeView();
+        }
+
+        private void SearchControl_SizeChanged(object sender, EventArgs e)
+        {
+            resultsPanel.Size = new Size(this.Size.Width - 100, this.Size.Height - 160);
+        }
+
+        private void setElementAtTreeView()
+        {
+
+            tagTreeView.Nodes.Add(SearchHandler.SearchController.GetSubjects());
+        }
+
+        private void PopulateThisTree(TreeView tree, List<SearchHandler.TreeItem> items)
+        {
+            tree.Nodes.Clear();
+            
         }
     }
 }

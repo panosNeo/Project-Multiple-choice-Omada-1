@@ -178,3 +178,4 @@ C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMak
 C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.PrintController.resources
 C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.PrintQuizTemplates.QuestionAnswer.resources
 C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.ProfileControl.resources
+C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.ResultQuizControl.resources
