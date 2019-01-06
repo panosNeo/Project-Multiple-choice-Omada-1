@@ -19,8 +19,8 @@ namespace QuizMaker
         }
 
         //prosorina stoixeia gia testing
-        Login.Login login = new Login.Login("admin", "1234");
-       
+        Login.Login login = new Login.Login();
+        
         
         //log in button
         private void loginBtn_Click(object sender, EventArgs e)

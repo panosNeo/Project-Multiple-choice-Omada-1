@@ -10,15 +10,7 @@ namespace QuizMaker.Login
 {
     class Login
     {
-        private string username { get; set; }
-        private string passwd { get; set; }
-
-        //initalize
-        public Login(string user,string pass)
-        {
-            this.username = user;
-            this.passwd = pass;
-        }
+        
 
         //Method that shows if an input has any special characters in it
         private bool SpecialCharactersValidator(string input)
@@ -89,11 +81,13 @@ namespace QuizMaker.Login
         public void LoginUser(string user, string pass)
         {
             if (IsLoggedIn(user, pass)) { 
+                //Using the adapter to validate through queries the login info and also store the Id of the user that logged in
                 MultipleChoiceDataSetTableAdapters.UserTableAdapter userTableAdapter = new MultipleChoiceDataSetTableAdapters.UserTableAdapter();
                 userTableAdapter.LoginQuery(user, pass);
-
-                
                 MessageBox.Show("You are logged in");
+                int userID = (int)userTableAdapter.ReturnUserId(user, pass);
+
+                //MessageBox.Show(userID.ToString());
             }
         }
 
