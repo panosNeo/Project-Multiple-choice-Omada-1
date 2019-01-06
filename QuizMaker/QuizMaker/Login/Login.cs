@@ -58,19 +58,10 @@ namespace QuizMaker.Login
                 MessageBox.Show("No special characters are allowed");
                 ClearTexts(user, pass);
                 return false;
-            }
-            //check if the username is correct
+            }        
+            //username is valid...
             else
-            {
-                if (username != user)
-                {
-                    MessageBox.Show("Your username is incorrect");
-                    ClearTexts(user, pass);
-                    return false;
-                }
-                //username is correct...
-                else
-                {
+              {
                     //check if password is empty
                     if (String.IsNullOrEmpty(pass))
                     {
@@ -84,12 +75,7 @@ namespace QuizMaker.Login
                         ClearTexts(user, pass);
                         return false;
                     }
-                    //check if the password is correct
-                    else if (passwd != pass)
-                    {
-                        MessageBox.Show("Your password is incorrect");
-                        return false;
-                    }
+                    // the password is valid...
                     else
                     {
                         return true;
@@ -97,7 +83,7 @@ namespace QuizMaker.Login
                        
                 }
                 
-            }
+            
         }
 
         public void LoginUser(string user, string pass)
@@ -106,8 +92,8 @@ namespace QuizMaker.Login
                 MultipleChoiceDataSetTableAdapters.UserTableAdapter userTableAdapter = new MultipleChoiceDataSetTableAdapters.UserTableAdapter();
                 userTableAdapter.LoginQuery(user, pass);
 
-                string userId = userTableAdapter.ToString();
-                MessageBox.Show(userId);
+                
+                MessageBox.Show("You are logged in");
             }
         }
 
