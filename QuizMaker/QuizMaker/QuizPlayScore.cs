@@ -7,15 +7,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuizMaker.QuizHandler;
 
 namespace QuizMaker
 {
     public partial class QuizPlayScore : UserControl
     {
-        public QuizPlayScore(string score)
+        private QuizPlayerController quiz;
+        public QuizPlayScore(string score, QuizPlayerController q)
         {
             InitializeComponent();
             this.score.Text = score;
+            SetQuiz(q);
+            
+        }
+
+        public void SetQuiz(QuizPlayerController q)
+        {
+            this.quiz = q;
+        }
+
+        private void printQuizBtn_Click(object sender, EventArgs e)
+        {
+            quiz.PrintThisQuiz();
+        }
+
+        private void playAgainBtn_Click(object sender, EventArgs e)
+        {
+            Controls.Clear();
+            QuizPanel q = new QuizPanel(quiz);
+            q.Dock = DockStyle.Fill;
+            Controls.Add(q);
         }
     }
 }

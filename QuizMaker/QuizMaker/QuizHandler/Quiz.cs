@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuizMaker.QuizHandler
 {
-    class Quiz
+    public class Quiz
     {
         //private int quiz_id;
         private string quizTitle;

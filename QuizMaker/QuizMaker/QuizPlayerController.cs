@@ -9,11 +9,11 @@ using QuizMaker.PlayQuizTemplates;
 
 namespace QuizMaker
 {
-    class QuizPlayerController
+    public class QuizPlayerController
     {
         private QuizHandler.Quiz quiz;
-        private int questionCount;
-        private List<QuizAnswers> userAnswers;
+        //private int questionCount;
+        //private List<QuizAnswers> userAnswers;
 
         public QuizPlayerController()
         {

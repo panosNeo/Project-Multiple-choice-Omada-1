@@ -17,11 +17,11 @@ namespace QuizMaker
         private QuizPlayerController quiz;
         private int questionCount;
         private List<QuizAnswers> userAnswers;
-        public QuizPanel()
+        public QuizPanel(QuizPlayerController q)
         {
             InitializeComponent();
             questionCount = 0;
-            quiz = new QuizPlayerController();
+            quiz = q;
             userAnswers = new List<QuizAnswers>();
             SetInitialQuizPanel();
         }
@@ -195,7 +195,7 @@ namespace QuizMaker
             }
             double success = (correctsum - (falsesum/2)) / sum;
             Controls.Clear();
-            QuizPlayScore qp = new QuizPlayScore("" + (success * 100) + @"%");
+            QuizPlayScore qp = new QuizPlayScore("" + (success * 100) + @"%",quiz);
             qp.Dock = DockStyle.Fill;
             Controls.Add(qp);
         }

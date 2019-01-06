@@ -112,6 +112,7 @@
             this.printQuizBtn.TabIndex = 10;
             this.printQuizBtn.Text = "Print this quiz";
             this.printQuizBtn.UseVisualStyleBackColor = false;
+            this.printQuizBtn.Click += new System.EventHandler(this.printQuizBtn_Click);
             // 
             // playAgainBtn
             // 
@@ -132,6 +133,7 @@
             this.playAgainBtn.TabIndex = 11;
             this.playAgainBtn.Text = "Get tested again";
             this.playAgainBtn.UseVisualStyleBackColor = false;
+            this.playAgainBtn.Click += new System.EventHandler(this.playAgainBtn_Click);
             // 
             // reportBtn
             // 

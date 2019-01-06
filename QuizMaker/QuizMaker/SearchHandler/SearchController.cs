@@ -86,24 +86,7 @@ namespace QuizMaker.SearchHandler
             return l;
 
         }
-        private static TreeNode getTree(List<MultipleChoiceDataSet.SubjectRow> l, int pos)
-        {
-            var temp = new TreeNode(l[pos].S_name);
-            var depth = new TreeNode();
-            int tempRoot = 1;
-            foreach(MultipleChoiceDataSet.SubjectRow row in l)
-            {
-                if(row.Root_id == tempRoot)
-                {
-                    temp.Nodes[tempRoot - 1].Nodes.Add(new TreeNode(row.S_name));
-                }
-                else
-                {
-                    depth.Nodes.Add(new TreeNode(row.S_name));
-                }
-            }
-            return temp;
-        }
+        
         public static void SetSubjects()
         {
             MultipleChoiceDataSetTableAdapters.SubjectTableAdapter subject = new MultipleChoiceDataSetTableAdapters.SubjectTableAdapter();

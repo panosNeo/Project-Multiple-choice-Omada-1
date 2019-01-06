@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuizMaker.QuizHandler
 {
-    class Answer
+    public class Answer
     {
         private string answer;
         private bool isCorrect;
