@@ -15,6 +15,9 @@ namespace Administrator
         //subject list
         private List<SubjectHandler.Subject> subjects;
 
+        //treeNode gia ta subject Nodes pou exoun childs
+        private TreeNode childNode;
+
         public SubjectControl()
         {
             InitializeComponent();
@@ -75,47 +78,84 @@ namespace Administrator
         private void FillExistingSubjectsID()
         {
             TreeNode node;
+
             string makaronia = "";
-            //kane clear ola ta items 
+
+            //lista me ta root ID pou ekane mia fora elegxo 
+            //etsi wste na mhn ta xana kanei
+            List<int> ignoreIDs = new List<int>();
+
+            //kane clear ola ta nodes pou uparxoun
             SubjectTreeView.Nodes.Clear();
-            //kai gemise me ta subject id
+            //kai gemise nodes me ta subject poy yparxoun
             foreach (var subject in subjects)
             {
-                makaronia += subject.GetSubjectID() + " " + subject.GetRootID() + " " + subject.GetName() + "\n";
-
+                makaronia += subject.GetSubjectID() + " " + subject.GetRootID() + " " +subject.GetName() + "\n";
                 if (subject.GetRootID() == 0)
                 {
+                    //an to root ID == 0 tote ftiaxe ta Nodes - kathgories
+                    //
                     node = new TreeNode(subject.GetName());
                     node.Name = subject.GetName();
                     node.Tag = subject.GetSubjectID();
 
-                    //kane add ta root = 0
+                    //kai kane add
                     SubjectHandler.SubjectTreeView.AddRoot(SubjectTreeView,node);
                 }
                 else
-                {   //gia opoiadhpote allh timh tou root 
-                    foreach (TreeNode n in SubjectTreeView.Nodes)
-                    {
-                        MessageBox.Show("Koukou : " + subject.GetSubjectID());
-                        if(n.Tag.Equals(4))
-                            AddChildNodes(n, 2,subject.GetName(),subject.GetSubjectID());
-                    }
+                {
+                    int count = -1;
+                    List<string> nameList = new List<string>();
+                    List<int> subjectIDList = new List<int>();
                     
+
+                    //an den uparxei to root id sto ignore list id's
+                    if (!ignoreIDs.Contains(subject.GetRootID())) {
+                        //metra ola ta root id pou einai idia kai krata onoma kai subject id
+                        foreach (var s in subjects)
+                        {
+                            if (subject.GetRootID() == s.GetRootID())
+                            {
+                                nameList.Add(s.GetName());
+                                subjectIDList.Add(s.GetSubjectID());
+                                count++;
+                            }
+                        }
+                        //kane add to root id sto ignore list gia na to prosperasei sta epomena loop
+                        ignoreIDs.Add(subject.GetRootID());
+                        
+                        //gia kathe Node pou uparxei sto TreeView
+                        foreach (TreeNode tNode in SubjectTreeView.Nodes)
+                        {   //checkare an to Tag einai root id tou neou Subject
+                            //kai an einai, tote ftiaxe ola ta childNodes tou neou subject
+                            if (tNode.Tag.Equals(subject.GetRootID()))
+                            {   //kane add ta nodes 2 epipedou
+                                SubjectHandler.SubjectTreeView.AddNodes(tNode,count,nameList,subjectIDList);
+                            }
+
+                            //checkare an yparxoun child nodes 
+                            SearchChildNodes(tNode, subject.GetRootID());
+                            if (childNode != null)
+                            {   //an yparxoun tote kane ta add
+                                SubjectHandler.SubjectTreeView.AddNodes(childNode, count, nameList, subjectIDList);
+                            }
+                            childNode = null; //kane null to child Node gia na deis to epomeno Node an exei paidia
+                        }
+                    }
                 }
             }
-            MessageBox.Show(makaronia);
+            MessageBox.Show(makaronia + "\n");
         }
-        private void AddChildNodes(TreeNode node, int level,string name,int id)
+        //methodos gia ton elegxo enos Subject node
+        private void SearchChildNodes(TreeNode parentNode, int id)
         {
-            if (level > 0 && node != null)
+            //des an to subject node exei childs me id idio gia ena neo subject
+            //an exei tote dwse ta stoixeia toy subject.child node sto childNode
+            foreach (TreeNode node in parentNode.Nodes)
             {
-                TreeNode childNode = new TreeNode(name);
-                childNode.Name = name;
-                childNode.Tag = id;
-
-                node.Nodes.Add(childNode);
-
-                AddChildNodes(node, --level,name,id);
+                if (node.Tag.Equals(id))
+                    childNode = node;
+                SearchChildNodes(node,id);
             }
         }
 
@@ -130,7 +170,6 @@ namespace Administrator
             subjects.Sort((x,y) => x.GetSubjectID().CompareTo(y.GetSubjectID()));
         }
         
-
         //kane add ena kainourio Subject
         private void AddButton_Click(object sender, EventArgs e)
         {
@@ -147,9 +186,9 @@ namespace Administrator
             //reload ta subjects poy uparxoun
             SubjectHandler.SubjectController.SearchForExistingSubjects();
             //gemise th lista
-            //FillSubjectList();
-            //gemise to subject listbox me id
-            //FillExistingSubjectsID();
+            FillSubjectList();
+            //gemise to subject TreeView me id
+            FillExistingSubjectsID();
         }
         //kane delete ena subject
         private void DeleteButton_Click(object sender, EventArgs e)
@@ -167,9 +206,9 @@ namespace Administrator
             //reload ta subjects poy uparxoun
             SubjectHandler.SubjectController.SearchForExistingSubjects();
             //gemise th lista
-            //FillSubjectList();
-            //gemise to subject listbox me id
-            //FillExistingSubjectsID();
+            FillSubjectList();
+            //gemise to subject TreeView me id
+            FillExistingSubjectsID();
         }
     }
 }

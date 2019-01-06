@@ -14,7 +14,7 @@ namespace Administrator.SubjectHandler
         //queries
         private static string existingSubjects = "Select * From Subject";
         private static string countQuizzes = "Select Count(*) From Quiz inner join Subject on Quiz.Subject_id = Subject.Subject_id Where Subject.Root_id = ?";
-        private static string addNewSubject = "Insert Into Subject(Root_id,S_name) Values(?,?);";
+        private static string addNewSubject = "Insert Into Subject(Subject_id,Root_id,S_name) Values(?,?,?);";
         private static string deleteSubject = "Delete From Subject Where Subject_id = ? AND Root_id = ?;";
         //object
         private static Subject subject;
@@ -121,7 +121,7 @@ namespace Administrator.SubjectHandler
                     {
                         conn.Open();
 
-                        //exSubCommand.Parameters.AddWithValue("@p1",subjectID);
+                        exSubCommand.Parameters.AddWithValue("@p1",subjectID);
                         exSubCommand.Parameters.AddWithValue("@p1",rootID);
                         exSubCommand.Parameters.AddWithValue("@p2",name);
 
