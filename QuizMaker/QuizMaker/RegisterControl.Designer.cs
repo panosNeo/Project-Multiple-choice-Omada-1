@@ -50,15 +50,13 @@
             this.createAccountBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.createAccountBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.createAccountBtn.FlatAppearance.BorderSize = 0;
-            this.createAccountBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.createAccountBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGreen;
             this.createAccountBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.createAccountBtn.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.createAccountBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.createAccountBtn.Location = new System.Drawing.Point(406, 444);
+            this.createAccountBtn.Location = new System.Drawing.Point(390, 375);
             this.createAccountBtn.Name = "createAccountBtn";
-            this.createAccountBtn.Size = new System.Drawing.Size(168, 38);
-            this.createAccountBtn.TabIndex = 13;
+            this.createAccountBtn.Size = new System.Drawing.Size(201, 38);
+            this.createAccountBtn.TabIndex = 6;
             this.createAccountBtn.Text = "Create account";
             this.createAccountBtn.UseVisualStyleBackColor = false;
             this.createAccountBtn.Click += new System.EventHandler(this.createAccountBtn_Click);
@@ -66,19 +64,21 @@
             // passwordText
             // 
             this.passwordText.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.passwordText.Location = new System.Drawing.Point(390, 200);
+            this.passwordText.Font = new System.Drawing.Font("Arial", 12F);
+            this.passwordText.Location = new System.Drawing.Point(390, 190);
             this.passwordText.Name = "passwordText";
             this.passwordText.PasswordChar = '*';
-            this.passwordText.Size = new System.Drawing.Size(201, 20);
-            this.passwordText.TabIndex = 11;
+            this.passwordText.Size = new System.Drawing.Size(201, 26);
+            this.passwordText.TabIndex = 2;
             // 
             // usernameText
             // 
             this.usernameText.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.usernameText.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.usernameText.Location = new System.Drawing.Point(390, 149);
             this.usernameText.Name = "usernameText";
-            this.usernameText.Size = new System.Drawing.Size(201, 20);
-            this.usernameText.TabIndex = 10;
+            this.usernameText.Size = new System.Drawing.Size(201, 26);
+            this.usernameText.TabIndex = 1;
             // 
             // passwordLabel
             // 
@@ -86,11 +86,11 @@
             this.passwordLabel.AutoSize = true;
             this.passwordLabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.passwordLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.passwordLabel.Location = new System.Drawing.Point(161, 195);
+            this.passwordLabel.Location = new System.Drawing.Point(231, 192);
             this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(109, 24);
+            this.passwordLabel.Size = new System.Drawing.Size(115, 24);
             this.passwordLabel.TabIndex = 9;
-            this.passwordLabel.Text = "Password:";
+            this.passwordLabel.Text = "Password :";
             // 
             // usernameLabel
             // 
@@ -98,11 +98,11 @@
             this.usernameLabel.AutoSize = true;
             this.usernameLabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.usernameLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.usernameLabel.Location = new System.Drawing.Point(161, 144);
+            this.usernameLabel.Location = new System.Drawing.Point(229, 151);
             this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(111, 24);
+            this.usernameLabel.Size = new System.Drawing.Size(117, 24);
             this.usernameLabel.TabIndex = 8;
-            this.usernameLabel.Text = "Username:";
+            this.usernameLabel.Text = "Username :";
             // 
             // topLabel
             // 
@@ -119,10 +119,11 @@
             // emailText
             // 
             this.emailText.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.emailText.Location = new System.Drawing.Point(390, 249);
+            this.emailText.Font = new System.Drawing.Font("Arial", 12F);
+            this.emailText.Location = new System.Drawing.Point(390, 231);
             this.emailText.Name = "emailText";
-            this.emailText.Size = new System.Drawing.Size(201, 20);
-            this.emailText.TabIndex = 15;
+            this.emailText.Size = new System.Drawing.Size(201, 26);
+            this.emailText.TabIndex = 3;
             // 
             // emailLabel
             // 
@@ -130,19 +131,20 @@
             this.emailLabel.AutoSize = true;
             this.emailLabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.emailLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.emailLabel.Location = new System.Drawing.Point(161, 244);
+            this.emailLabel.Location = new System.Drawing.Point(266, 233);
             this.emailLabel.Name = "emailLabel";
-            this.emailLabel.Size = new System.Drawing.Size(68, 24);
+            this.emailLabel.Size = new System.Drawing.Size(80, 24);
             this.emailLabel.TabIndex = 14;
-            this.emailLabel.Text = "E-mail";
+            this.emailLabel.Text = "E-mail :";
             // 
             // firstNameText
             // 
             this.firstNameText.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.firstNameText.Location = new System.Drawing.Point(390, 307);
+            this.firstNameText.Font = new System.Drawing.Font("Arial", 12F);
+            this.firstNameText.Location = new System.Drawing.Point(390, 272);
             this.firstNameText.Name = "firstNameText";
-            this.firstNameText.Size = new System.Drawing.Size(201, 20);
-            this.firstNameText.TabIndex = 17;
+            this.firstNameText.Size = new System.Drawing.Size(201, 26);
+            this.firstNameText.TabIndex = 4;
             // 
             // firstNameLabel
             // 
@@ -150,19 +152,20 @@
             this.firstNameLabel.AutoSize = true;
             this.firstNameLabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.firstNameLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.firstNameLabel.Location = new System.Drawing.Point(160, 302);
+            this.firstNameLabel.Location = new System.Drawing.Point(222, 274);
             this.firstNameLabel.Name = "firstNameLabel";
-            this.firstNameLabel.Size = new System.Drawing.Size(112, 24);
+            this.firstNameLabel.Size = new System.Drawing.Size(124, 24);
             this.firstNameLabel.TabIndex = 16;
-            this.firstNameLabel.Text = "First Name";
+            this.firstNameLabel.Text = "First Name :";
             // 
             // lastNameText
             // 
             this.lastNameText.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lastNameText.Location = new System.Drawing.Point(390, 365);
+            this.lastNameText.Font = new System.Drawing.Font("Arial", 12F);
+            this.lastNameText.Location = new System.Drawing.Point(390, 313);
             this.lastNameText.Name = "lastNameText";
-            this.lastNameText.Size = new System.Drawing.Size(201, 20);
-            this.lastNameText.TabIndex = 19;
+            this.lastNameText.Size = new System.Drawing.Size(201, 26);
+            this.lastNameText.TabIndex = 5;
             // 
             // lastNameLabel
             // 
@@ -170,11 +173,11 @@
             this.lastNameLabel.AutoSize = true;
             this.lastNameLabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.lastNameLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lastNameLabel.Location = new System.Drawing.Point(161, 360);
+            this.lastNameLabel.Location = new System.Drawing.Point(223, 315);
             this.lastNameLabel.Name = "lastNameLabel";
-            this.lastNameLabel.Size = new System.Drawing.Size(111, 24);
+            this.lastNameLabel.Size = new System.Drawing.Size(123, 24);
             this.lastNameLabel.TabIndex = 18;
-            this.lastNameLabel.Text = "Last Name";
+            this.lastNameLabel.Text = "Last Name :";
             // 
             // RegisterControl
             // 

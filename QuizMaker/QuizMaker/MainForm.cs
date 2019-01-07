@@ -12,7 +12,7 @@ namespace QuizMaker
 {
     public partial class MainForm : Form
     {
-        
+
 
         //Η μεταβλητή menuVisible ελέγχεται για το αν το leftPanel είναι σε κατάσταση κλειστή ή ανοιχτή(false/true αντίστοιχα)
         private bool menuVisible;
@@ -32,6 +32,8 @@ namespace QuizMaker
             //δίνουμε dock fill για να αλλάζει το μέγεθος του user control ανάλογα με το μέγεθος του mainPanel
             l.Dock = DockStyle.Fill;
             mainPanel.Controls.Add(l);
+
+            ChangeButtonColor(loginBtn);
         }
 
         private void menuVisibleBtn_Click(object sender, EventArgs e)
@@ -46,16 +48,16 @@ namespace QuizMaker
         {
             //παίρνουμε σε κάθε tick το size του leftPanel ώστε να αλλάξουμε τον άξονα Χ κατά 5 κάθε φορά
             Size leftPanelSize = leftPanel.Size;
-            
+
             Point mainPanelLocation = mainPanel.Location;
             if (!menuVisible)
             {
                 if (leftPanelSize.Width >= 32)
                 {
                     leftPanelSize.Width = leftPanelSize.Width - 5;
-                   
+
                     leftPanel.Size = leftPanelSize;
-                    
+
                 }
                 else timer1.Stop();
             }
@@ -64,9 +66,9 @@ namespace QuizMaker
                 if (leftPanelSize.Width <= 165)
                 {
                     leftPanelSize.Width = leftPanelSize.Width + 5;
-                    
+
                     leftPanel.Size = leftPanelSize;
-                    
+
                 }
                 else timer1.Stop();
             }
@@ -77,6 +79,7 @@ namespace QuizMaker
             //στο tag των τριών button ορίζεται το panel που ανοίγουν
             string panelName = ((Button)sender).Tag.ToString();
             ChangePanel(panelName);
+            ChangeButtonColor((Button)sender);
         }
         private void ChangePanel(string name)
         {
@@ -109,9 +112,17 @@ namespace QuizMaker
                     Console.WriteLine("No control selected");
                     break;
             }
-
         }
 
-       
+        private void ChangeButtonColor(Button button)
+        {
+            createQuizBtn.BackColor = Color.FromArgb(26,32,40);
+            categoriesBtn.BackColor = Color.FromArgb(26, 32, 40);
+            feelLuckyBtn.BackColor = Color.FromArgb(26, 32, 40);
+            profileBtn.BackColor = Color.FromArgb(26, 32, 40);
+            loginBtn.BackColor = Color.FromArgb(0, 64, 64);
+
+            button.BackColor = Color.FromArgb(0, 64, 64);
+        }
     }
 }

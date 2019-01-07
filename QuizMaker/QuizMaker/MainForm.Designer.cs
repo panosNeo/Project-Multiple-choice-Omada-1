@@ -56,7 +56,7 @@
             this.leftPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.leftPanel.Location = new System.Drawing.Point(0, 70);
             this.leftPanel.Name = "leftPanel";
-            this.leftPanel.Size = new System.Drawing.Size(165, 485);
+            this.leftPanel.Size = new System.Drawing.Size(165, 486);
             this.leftPanel.TabIndex = 1;
             // 
             // profileBtn
@@ -65,14 +65,12 @@
             this.profileBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.profileBtn.FlatAppearance.BorderSize = 0;
             this.profileBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(150)))));
-            this.profileBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.profileBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(150)))));
             this.profileBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.profileBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.profileBtn.ForeColor = System.Drawing.Color.White;
             this.profileBtn.Image = global::QuizMaker.Properties.Resources.Account1;
             this.profileBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.profileBtn.Location = new System.Drawing.Point(-1, 424);
+            this.profileBtn.Location = new System.Drawing.Point(-1, 425);
             this.profileBtn.Name = "profileBtn";
             this.profileBtn.Size = new System.Drawing.Size(169, 36);
             this.profileBtn.TabIndex = 6;
@@ -85,8 +83,6 @@
             // 
             this.menuVisibleBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.menuVisibleBtn.FlatAppearance.BorderSize = 0;
-            this.menuVisibleBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.menuVisibleBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(150)))));
             this.menuVisibleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.menuVisibleBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.menuVisibleBtn.ForeColor = System.Drawing.Color.White;
@@ -103,8 +99,6 @@
             this.feelLuckyBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.feelLuckyBtn.FlatAppearance.BorderSize = 0;
             this.feelLuckyBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(150)))));
-            this.feelLuckyBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.feelLuckyBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(150)))));
             this.feelLuckyBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.feelLuckyBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.feelLuckyBtn.ForeColor = System.Drawing.Color.White;
@@ -124,8 +118,6 @@
             this.categoriesBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.categoriesBtn.FlatAppearance.BorderSize = 0;
             this.categoriesBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(150)))));
-            this.categoriesBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.categoriesBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(150)))));
             this.categoriesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.categoriesBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.categoriesBtn.ForeColor = System.Drawing.Color.White;
@@ -145,8 +137,6 @@
             this.createQuizBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.createQuizBtn.FlatAppearance.BorderSize = 0;
             this.createQuizBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(150)))));
-            this.createQuizBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.createQuizBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(150)))));
             this.createQuizBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.createQuizBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.createQuizBtn.ForeColor = System.Drawing.Color.White;
@@ -163,7 +153,7 @@
             // 
             // topPanel
             // 
-            this.topPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.topPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.topPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.topPanel.Controls.Add(this.logoLabel);
             this.topPanel.Controls.Add(this.loginBtn);
@@ -192,8 +182,6 @@
             this.loginBtn.Dock = System.Windows.Forms.DockStyle.Right;
             this.loginBtn.FlatAppearance.BorderSize = 0;
             this.loginBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(150)))));
-            this.loginBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.loginBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(150)))));
             this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginBtn.Font = new System.Drawing.Font("Arial", 15.75F);
             this.loginBtn.ForeColor = System.Drawing.Color.Transparent;
@@ -213,7 +201,7 @@
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(0, 0);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(950, 555);
+            this.mainPanel.Size = new System.Drawing.Size(950, 556);
             this.mainPanel.TabIndex = 4;
             // 
             // timer1
@@ -225,7 +213,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(950, 555);
+            this.ClientSize = new System.Drawing.Size(950, 556);
             this.Controls.Add(this.leftPanel);
             this.Controls.Add(this.topPanel);
             this.Controls.Add(this.mainPanel);

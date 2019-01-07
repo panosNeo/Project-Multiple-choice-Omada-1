@@ -278,6 +278,9 @@
     <EmbeddedResource Include="QuizPlayScore.resx">
       <DependentUpon>QuizPlayScore.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RegisterControl.resx">
+      <DependentUpon>RegisterControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ResultQuizControl.resx">
       <DependentUpon>ResultQuizControl.cs</DependentUpon>
     </EmbeddedResource>

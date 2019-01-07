@@ -37,9 +37,10 @@
             // vCodeText
             // 
             this.vCodeText.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.vCodeText.Location = new System.Drawing.Point(437, 255);
+            this.vCodeText.Font = new System.Drawing.Font("Arial", 12F);
+            this.vCodeText.Location = new System.Drawing.Point(412, 251);
             this.vCodeText.Name = "vCodeText";
-            this.vCodeText.Size = new System.Drawing.Size(201, 20);
+            this.vCodeText.Size = new System.Drawing.Size(226, 26);
             this.vCodeText.TabIndex = 6;
             // 
             // vCodeLabel
@@ -79,9 +80,9 @@
             this.verifyBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.verifyBtn.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.verifyBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.verifyBtn.Location = new System.Drawing.Point(378, 340);
+            this.verifyBtn.Location = new System.Drawing.Point(412, 308);
             this.verifyBtn.Name = "verifyBtn";
-            this.verifyBtn.Size = new System.Drawing.Size(107, 38);
+            this.verifyBtn.Size = new System.Drawing.Size(226, 34);
             this.verifyBtn.TabIndex = 7;
             this.verifyBtn.Text = "Verify";
             this.verifyBtn.UseVisualStyleBackColor = false;
