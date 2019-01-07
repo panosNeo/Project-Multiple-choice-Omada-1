@@ -41,7 +41,7 @@
             this.answerLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.answerLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.answerLabel.ForeColor = System.Drawing.Color.White;
-            this.answerLabel.Location = new System.Drawing.Point(64, 16);
+            this.answerLabel.Location = new System.Drawing.Point(85, 10);
             this.answerLabel.MaximumSize = new System.Drawing.Size(400, 0);
             this.answerLabel.Name = "answerLabel";
             this.answerLabel.Size = new System.Drawing.Size(70, 18);
@@ -53,11 +53,11 @@
             // 
             this.answerNumLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.answerNumLabel.AutoSize = true;
-            this.answerNumLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.answerNumLabel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.answerNumLabel.ForeColor = System.Drawing.Color.White;
-            this.answerNumLabel.Location = new System.Drawing.Point(15, 16);
+            this.answerNumLabel.Location = new System.Drawing.Point(17, 7);
             this.answerNumLabel.Name = "answerNumLabel";
-            this.answerNumLabel.Size = new System.Drawing.Size(22, 18);
+            this.answerNumLabel.Size = new System.Drawing.Size(27, 22);
             this.answerNumLabel.TabIndex = 1;
             this.answerNumLabel.Text = "1)";
             // 
@@ -66,7 +66,7 @@
             this.answerBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.answerBox.AutoSize = true;
             this.answerBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.answerBox.Location = new System.Drawing.Point(43, 20);
+            this.answerBox.Location = new System.Drawing.Point(64, 14);
             this.answerBox.Name = "answerBox";
             this.answerBox.Size = new System.Drawing.Size(15, 14);
             this.answerBox.TabIndex = 2;

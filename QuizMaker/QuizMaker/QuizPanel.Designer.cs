@@ -107,8 +107,6 @@
             this.finishBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.finishBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.finishBtn.FlatAppearance.BorderSize = 0;
-            this.finishBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.finishBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGreen;
             this.finishBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.finishBtn.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.finishBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;

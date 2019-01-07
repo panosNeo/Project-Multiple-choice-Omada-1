@@ -60,6 +60,8 @@ namespace QuizMaker
                 answer.Location = p;
                 answer.setAnswer(""+i, quiz.GetAnswerTitle(pos, i));
                 if (i % 2 == 0)
+                    answer.BackColor = Color.FromArgb(26, 32, 40);
+                else
                     answer.BackColor = Color.FromArgb(37, 46, 69);
                 answersHolder.Controls.Add(answer);
                 p.Y += answer.Height;
@@ -67,8 +69,7 @@ namespace QuizMaker
             string q = quiz.GetQuestionTitle(pos);
             QuizQuestion qu = new QuizQuestion();
             qu.setQuestion(q);
-            questionHolder.Controls.Add(qu);
-            
+            questionHolder.Controls.Add(qu);            
         }
 
         private void answerBtn_Click(object sender, EventArgs e)
@@ -128,15 +129,15 @@ namespace QuizMaker
             {
                 if (c.PositionCounter == pos)
                 {
-                    c.SetButtonColor(Color.Red);
+                    c.SetButtonColor(Color.FromArgb(26, 32, 40));
                 }
                 else if (!c.Answered)
                 {
-                    c.SetButtonColor(Color.LightGray);
+                    c.SetButtonColor(Color.FromArgb(37, 46, 59));
                 }
                 else
                 {
-                    c.SetButtonColor(Color.Blue);
+                    c.SetButtonColor(Color.FromArgb(0, 64, 64));
                 }
             }
         }
@@ -155,7 +156,7 @@ namespace QuizMaker
             {
                 if(c.PositionCounter == pos && answered)
                 {
-                    c.SetButtonColor(Color.Blue);
+                    c.SetButtonColor(Color.FromArgb(0, 64, 64));
                     c.Answered = answered;
                 }
             }

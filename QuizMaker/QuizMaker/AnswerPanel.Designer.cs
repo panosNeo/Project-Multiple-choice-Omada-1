@@ -45,10 +45,11 @@
             // 
             this.correctCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.correctCheckBox.AutoSize = true;
-            this.correctCheckBox.Font = new System.Drawing.Font("Century", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.correctCheckBox.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.correctCheckBox.ForeColor = System.Drawing.Color.White;
             this.correctCheckBox.Location = new System.Drawing.Point(172, 9);
             this.correctCheckBox.Name = "correctCheckBox";
-            this.correctCheckBox.Size = new System.Drawing.Size(62, 19);
+            this.correctCheckBox.Size = new System.Drawing.Size(67, 20);
             this.correctCheckBox.TabIndex = 15;
             this.correctCheckBox.Text = "correct";
             this.correctCheckBox.UseVisualStyleBackColor = true;

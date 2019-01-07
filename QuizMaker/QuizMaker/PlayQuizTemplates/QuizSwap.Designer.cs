@@ -34,7 +34,8 @@
             // questionBtn
             // 
             this.questionBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.questionBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.questionBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.questionBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.questionBtn.Location = new System.Drawing.Point(0, 0);
             this.questionBtn.Name = "questionBtn";
             this.questionBtn.Size = new System.Drawing.Size(50, 50);

@@ -52,7 +52,7 @@ namespace QuizMaker
             Point mainPanelLocation = mainPanel.Location;
             if (!menuVisible)
             {
-                if (leftPanelSize.Width >= 32)
+                if (leftPanelSize.Width >= 40)
                 {
                     leftPanelSize.Width = leftPanelSize.Width - 5;
 

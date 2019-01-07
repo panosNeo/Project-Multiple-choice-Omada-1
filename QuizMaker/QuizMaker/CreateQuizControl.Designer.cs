@@ -67,16 +67,17 @@
             // firstPanel
             // 
             this.firstPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.firstPanel.BackColor = System.Drawing.Color.White;
+            this.firstPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.firstPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.firstPanel.Controls.Add(this.stepOneNextBtn);
             this.firstPanel.Controls.Add(this.comboBox1);
             this.firstPanel.Controls.Add(this.tagsLabel);
             this.firstPanel.Controls.Add(this.quizNameTextBox);
             this.firstPanel.Controls.Add(this.label1);
             this.firstPanel.Controls.Add(this.stepOneLabel);
-            this.firstPanel.Location = new System.Drawing.Point(794, 105);
+            this.firstPanel.Location = new System.Drawing.Point(779, 105);
             this.firstPanel.Name = "firstPanel";
-            this.firstPanel.Size = new System.Drawing.Size(260, 325);
+            this.firstPanel.Size = new System.Drawing.Size(286, 391);
             this.firstPanel.TabIndex = 0;
             // 
             // stepOneNextBtn
@@ -86,14 +87,12 @@
             this.stepOneNextBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.stepOneNextBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.stepOneNextBtn.FlatAppearance.BorderSize = 0;
-            this.stepOneNextBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.stepOneNextBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGreen;
             this.stepOneNextBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.stepOneNextBtn.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.stepOneNextBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.stepOneNextBtn.Location = new System.Drawing.Point(77, 275);
+            this.stepOneNextBtn.Location = new System.Drawing.Point(57, 337);
             this.stepOneNextBtn.Name = "stepOneNextBtn";
-            this.stepOneNextBtn.Size = new System.Drawing.Size(107, 38);
+            this.stepOneNextBtn.Size = new System.Drawing.Size(166, 38);
             this.stepOneNextBtn.TabIndex = 6;
             this.stepOneNextBtn.Tag = "-5";
             this.stepOneNextBtn.Text = "Next";
@@ -103,7 +102,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(7, 185);
+            this.comboBox1.Location = new System.Drawing.Point(57, 210);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 4;
@@ -112,7 +111,8 @@
             // 
             this.tagsLabel.AutoSize = true;
             this.tagsLabel.Font = new System.Drawing.Font("Century", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.tagsLabel.Location = new System.Drawing.Point(3, 149);
+            this.tagsLabel.ForeColor = System.Drawing.Color.White;
+            this.tagsLabel.Location = new System.Drawing.Point(53, 174);
             this.tagsLabel.Name = "tagsLabel";
             this.tagsLabel.Size = new System.Drawing.Size(170, 23);
             this.tagsLabel.TabIndex = 3;
@@ -121,7 +121,7 @@
             // quizNameTextBox
             // 
             this.quizNameTextBox.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.quizNameTextBox.Location = new System.Drawing.Point(7, 83);
+            this.quizNameTextBox.Location = new System.Drawing.Point(57, 108);
             this.quizNameTextBox.Name = "quizNameTextBox";
             this.quizNameTextBox.Size = new System.Drawing.Size(166, 27);
             this.quizNameTextBox.TabIndex = 2;
@@ -130,7 +130,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label1.Location = new System.Drawing.Point(3, 57);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(53, 82);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(170, 23);
             this.label1.TabIndex = 1;
@@ -140,6 +141,7 @@
             // 
             this.stepOneLabel.AutoSize = true;
             this.stepOneLabel.Font = new System.Drawing.Font("Century", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.stepOneLabel.ForeColor = System.Drawing.Color.White;
             this.stepOneLabel.Location = new System.Drawing.Point(93, 11);
             this.stepOneLabel.Name = "stepOneLabel";
             this.stepOneLabel.Size = new System.Drawing.Size(80, 25);
@@ -149,11 +151,12 @@
             // secondPanel
             // 
             this.secondPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.secondPanel.BackColor = System.Drawing.Color.White;
+            this.secondPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.secondPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.secondPanel.Controls.Add(this.innerQuestionPanel);
             this.secondPanel.Controls.Add(this.nextQuBtn);
             this.secondPanel.Controls.Add(this.prevQuBtn);
             this.secondPanel.Controls.Add(this.backBtn);
-            this.secondPanel.Controls.Add(this.innerQuestionPanel);
             this.secondPanel.Controls.Add(this.newQuestionBtn);
             this.secondPanel.Controls.Add(this.finishQuestionsBtn);
             this.secondPanel.Enabled = false;
@@ -191,8 +194,6 @@
             this.backBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.backBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.backBtn.FlatAppearance.BorderSize = 0;
-            this.backBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.backBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGreen;
             this.backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backBtn.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.backBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -207,7 +208,8 @@
             // 
             // innerQuestionPanel
             // 
-            this.innerQuestionPanel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.innerQuestionPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.innerQuestionPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.innerQuestionPanel.Controls.Add(this.deleteBtn);
             this.innerQuestionPanel.Controls.Add(this.AnswersPanel);
             this.innerQuestionPanel.Controls.Add(this.questionNumber);
@@ -234,6 +236,7 @@
             // AnswersPanel
             // 
             this.AnswersPanel.AutoScroll = true;
+            this.AnswersPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.AnswersPanel.Controls.Add(this.delAnswerBtn);
             this.AnswersPanel.Controls.Add(this.nextAnswerBtn);
             this.AnswersPanel.Location = new System.Drawing.Point(0, 149);
@@ -243,30 +246,39 @@
             // 
             // delAnswerBtn
             // 
-            this.delAnswerBtn.Font = new System.Drawing.Font("Century", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.delAnswerBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.delAnswerBtn.FlatAppearance.BorderSize = 0;
+            this.delAnswerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.delAnswerBtn.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.delAnswerBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.delAnswerBtn.Location = new System.Drawing.Point(66, 3);
             this.delAnswerBtn.Name = "delAnswerBtn";
             this.delAnswerBtn.Size = new System.Drawing.Size(31, 30);
             this.delAnswerBtn.TabIndex = 13;
             this.delAnswerBtn.Text = "-";
-            this.delAnswerBtn.UseVisualStyleBackColor = true;
+            this.delAnswerBtn.UseVisualStyleBackColor = false;
             this.delAnswerBtn.Click += new System.EventHandler(this.delAnswerBtn_Click);
             // 
             // nextAnswerBtn
             // 
-            this.nextAnswerBtn.Font = new System.Drawing.Font("Century", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.nextAnswerBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.nextAnswerBtn.FlatAppearance.BorderSize = 0;
+            this.nextAnswerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.nextAnswerBtn.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.nextAnswerBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.nextAnswerBtn.Location = new System.Drawing.Point(16, 3);
             this.nextAnswerBtn.Name = "nextAnswerBtn";
             this.nextAnswerBtn.Size = new System.Drawing.Size(31, 30);
             this.nextAnswerBtn.TabIndex = 12;
             this.nextAnswerBtn.Text = "+";
-            this.nextAnswerBtn.UseVisualStyleBackColor = true;
+            this.nextAnswerBtn.UseVisualStyleBackColor = false;
             this.nextAnswerBtn.Click += new System.EventHandler(this.nextAnswerBtn_Click);
             // 
             // questionNumber
             // 
             this.questionNumber.AutoSize = true;
             this.questionNumber.Font = new System.Drawing.Font("Century", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.questionNumber.ForeColor = System.Drawing.Color.White;
             this.questionNumber.Location = new System.Drawing.Point(185, 57);
             this.questionNumber.Name = "questionNumber";
             this.questionNumber.Size = new System.Drawing.Size(22, 23);
@@ -277,6 +289,7 @@
             // 
             this.questionSetLabel.AutoSize = true;
             this.questionSetLabel.Font = new System.Drawing.Font("Century", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.questionSetLabel.ForeColor = System.Drawing.Color.White;
             this.questionSetLabel.Location = new System.Drawing.Point(12, 57);
             this.questionSetLabel.Name = "questionSetLabel";
             this.questionSetLabel.Size = new System.Drawing.Size(172, 23);
@@ -287,6 +300,7 @@
             // 
             this.setAnswerLabel.AutoSize = true;
             this.setAnswerLabel.Font = new System.Drawing.Font("Century", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.setAnswerLabel.ForeColor = System.Drawing.Color.White;
             this.setAnswerLabel.Location = new System.Drawing.Point(12, 123);
             this.setAnswerLabel.Name = "setAnswerLabel";
             this.setAnswerLabel.Size = new System.Drawing.Size(135, 23);
@@ -305,6 +319,7 @@
             // 
             this.stepToLabel.AutoSize = true;
             this.stepToLabel.Font = new System.Drawing.Font("Century", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.stepToLabel.ForeColor = System.Drawing.Color.White;
             this.stepToLabel.Location = new System.Drawing.Point(102, 11);
             this.stepToLabel.Name = "stepToLabel";
             this.stepToLabel.Size = new System.Drawing.Size(80, 25);
@@ -318,8 +333,6 @@
             this.newQuestionBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.newQuestionBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.newQuestionBtn.FlatAppearance.BorderSize = 0;
-            this.newQuestionBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.newQuestionBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGreen;
             this.newQuestionBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.newQuestionBtn.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.newQuestionBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -338,8 +351,6 @@
             this.finishQuestionsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.finishQuestionsBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.finishQuestionsBtn.FlatAppearance.BorderSize = 0;
-            this.finishQuestionsBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.finishQuestionsBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGreen;
             this.finishQuestionsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.finishQuestionsBtn.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.finishQuestionsBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -355,14 +366,15 @@
             // thirdPanel
             // 
             this.thirdPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.thirdPanel.BackColor = System.Drawing.Color.White;
+            this.thirdPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.thirdPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.thirdPanel.Controls.Add(this.finishQuizBtn);
             this.thirdPanel.Controls.Add(this.reviewLabel);
             this.thirdPanel.Controls.Add(this.stepThreeLabel);
             this.thirdPanel.Enabled = false;
             this.thirdPanel.Location = new System.Drawing.Point(1494, 105);
             this.thirdPanel.Name = "thirdPanel";
-            this.thirdPanel.Size = new System.Drawing.Size(260, 325);
+            this.thirdPanel.Size = new System.Drawing.Size(286, 391);
             this.thirdPanel.TabIndex = 2;
             // 
             // finishQuizBtn
@@ -372,14 +384,12 @@
             this.finishQuizBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.finishQuizBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.finishQuizBtn.FlatAppearance.BorderSize = 0;
-            this.finishQuizBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.finishQuizBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGreen;
             this.finishQuizBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.finishQuizBtn.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.finishQuizBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.finishQuizBtn.Location = new System.Drawing.Point(77, 275);
+            this.finishQuizBtn.Location = new System.Drawing.Point(62, 338);
             this.finishQuizBtn.Name = "finishQuizBtn";
-            this.finishQuizBtn.Size = new System.Drawing.Size(107, 38);
+            this.finishQuizBtn.Size = new System.Drawing.Size(166, 38);
             this.finishQuizBtn.TabIndex = 6;
             this.finishQuizBtn.Tag = "3";
             this.finishQuizBtn.Text = "Finish";
@@ -389,6 +399,7 @@
             // 
             this.reviewLabel.AutoSize = true;
             this.reviewLabel.Font = new System.Drawing.Font("Century", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.reviewLabel.ForeColor = System.Drawing.Color.White;
             this.reviewLabel.Location = new System.Drawing.Point(3, 57);
             this.reviewLabel.Name = "reviewLabel";
             this.reviewLabel.Size = new System.Drawing.Size(179, 23);
@@ -399,6 +410,7 @@
             // 
             this.stepThreeLabel.AutoSize = true;
             this.stepThreeLabel.Font = new System.Drawing.Font("Century", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.stepThreeLabel.ForeColor = System.Drawing.Color.White;
             this.stepThreeLabel.Location = new System.Drawing.Point(93, 11);
             this.stepThreeLabel.Name = "stepThreeLabel";
             this.stepThreeLabel.Size = new System.Drawing.Size(80, 25);

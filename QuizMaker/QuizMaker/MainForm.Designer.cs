@@ -176,7 +176,6 @@
             // 
             // loginBtn
             // 
-            this.loginBtn.BackColor = System.Drawing.Color.Transparent;
             this.loginBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.loginBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.loginBtn.Dock = System.Windows.Forms.DockStyle.Right;
@@ -184,7 +183,7 @@
             this.loginBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(150)))));
             this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginBtn.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.loginBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.loginBtn.ForeColor = System.Drawing.Color.White;
             this.loginBtn.Image = global::QuizMaker.Properties.Resources.login;
             this.loginBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.loginBtn.Location = new System.Drawing.Point(815, 0);
