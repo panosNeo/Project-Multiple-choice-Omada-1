@@ -30,10 +30,9 @@
         {
             this.QuestionGroupbox = new System.Windows.Forms.GroupBox();
             this.AnswerBox = new System.Windows.Forms.TextBox();
-            this.AnswerIDList = new System.Windows.Forms.ListBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.qUserIDBox = new System.Windows.Forms.TextBox();
             this.qQuestionBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.QuizNameBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -42,18 +41,19 @@
             this.showReportsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.deleteAllCheckbox = new System.Windows.Forms.CheckBox();
             this.reportPanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.deleteReportButton = new System.Windows.Forms.Button();
-            this.questionIDListbox = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.questionIDCombo = new System.Windows.Forms.ComboBox();
+            this.answerIDCombo = new System.Windows.Forms.ComboBox();
             this.QuestionGroupbox.SuspendLayout();
             this.reportPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // QuestionGroupbox
             // 
-            this.QuestionGroupbox.Controls.Add(this.questionIDListbox);
+            this.QuestionGroupbox.Controls.Add(this.answerIDCombo);
+            this.QuestionGroupbox.Controls.Add(this.questionIDCombo);
             this.QuestionGroupbox.Controls.Add(this.AnswerBox);
-            this.QuestionGroupbox.Controls.Add(this.AnswerIDList);
             this.QuestionGroupbox.Controls.Add(this.qUserIDBox);
             this.QuestionGroupbox.Controls.Add(this.qQuestionBox);
             this.QuestionGroupbox.Controls.Add(this.label5);
@@ -68,7 +68,7 @@
             this.QuestionGroupbox.Size = new System.Drawing.Size(676, 156);
             this.QuestionGroupbox.TabIndex = 2;
             this.QuestionGroupbox.TabStop = false;
-            this.QuestionGroupbox.Text = "Question";
+            this.QuestionGroupbox.Text = "Quiz Data";
             // 
             // AnswerBox
             // 
@@ -80,31 +80,6 @@
             this.AnswerBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.AnswerBox.Size = new System.Drawing.Size(267, 70);
             this.AnswerBox.TabIndex = 10;
-            // 
-            // AnswerIDList
-            // 
-            this.AnswerIDList.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.AnswerIDList.FormattingEnabled = true;
-            this.AnswerIDList.ItemHeight = 17;
-            this.AnswerIDList.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.AnswerIDList.Location = new System.Drawing.Point(469, 56);
-            this.AnswerIDList.Name = "AnswerIDList";
-            this.AnswerIDList.Size = new System.Drawing.Size(83, 21);
-            this.AnswerIDList.TabIndex = 8;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(368, 56);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 16);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Answer ID :";
             // 
             // qUserIDBox
             // 
@@ -125,6 +100,15 @@
             this.qQuestionBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.qQuestionBox.Size = new System.Drawing.Size(267, 70);
             this.qQuestionBox.TabIndex = 3;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(368, 56);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(80, 16);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Answer ID :";
             // 
             // QuizNameBox
             // 
@@ -203,17 +187,6 @@
             this.reportPanel.Size = new System.Drawing.Size(676, 43);
             this.reportPanel.TabIndex = 8;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label1.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label1.Location = new System.Drawing.Point(18, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Reports";
-            // 
             // deleteReportButton
             // 
             this.deleteReportButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(39)))));
@@ -231,21 +204,32 @@
             this.deleteReportButton.MouseEnter += new System.EventHandler(this.deleteReportButton_MouseEnter);
             this.deleteReportButton.MouseLeave += new System.EventHandler(this.deleteReportButton_MouseLeave);
             // 
-            // questionIDListbox
+            // label1
             // 
-            this.questionIDListbox.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.questionIDListbox.FormattingEnabled = true;
-            this.questionIDListbox.ItemHeight = 17;
-            this.questionIDListbox.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.questionIDListbox.Location = new System.Drawing.Point(110, 56);
-            this.questionIDListbox.Name = "questionIDListbox";
-            this.questionIDListbox.Size = new System.Drawing.Size(83, 21);
-            this.questionIDListbox.TabIndex = 11;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label1.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label1.Location = new System.Drawing.Point(18, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 23);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Reports";
+            // 
+            // questionIDCombo
+            // 
+            this.questionIDCombo.FormattingEnabled = true;
+            this.questionIDCombo.Location = new System.Drawing.Point(110, 53);
+            this.questionIDCombo.Name = "questionIDCombo";
+            this.questionIDCombo.Size = new System.Drawing.Size(125, 24);
+            this.questionIDCombo.TabIndex = 12;
+            // 
+            // answerIDCombo
+            // 
+            this.answerIDCombo.FormattingEnabled = true;
+            this.answerIDCombo.Location = new System.Drawing.Point(469, 53);
+            this.answerIDCombo.Name = "answerIDCombo";
+            this.answerIDCombo.Size = new System.Drawing.Size(125, 24);
+            this.answerIDCombo.TabIndex = 13;
             // 
             // ReportControl
             // 
@@ -275,7 +259,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox qUserIDBox;
-        private System.Windows.Forms.ListBox AnswerIDList;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox AnswerBox;
         private System.Windows.Forms.Label warningLabel;
@@ -284,6 +267,7 @@
         private System.Windows.Forms.Panel reportPanel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button deleteReportButton;
-        private System.Windows.Forms.ListBox questionIDListbox;
+        private System.Windows.Forms.ComboBox questionIDCombo;
+        private System.Windows.Forms.ComboBox answerIDCombo;
     }
 }

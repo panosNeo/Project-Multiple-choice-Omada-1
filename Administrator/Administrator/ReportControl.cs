@@ -31,7 +31,6 @@ namespace Administrator
                 showReportsPanel.Controls.Add(temp);
             }
         }
-
         private void clicked(object sender, EventArgs e) {
             MessageBox.Show("You clicked me");
         }
