@@ -67,6 +67,12 @@ namespace QuizMaker.QuizHandler
             questions.Add(question);
         }
 
+        public void ChangeQuestion(Question question, int pos)
+        {
+            questions[pos] = null;
+            questions[pos] = question;
+        }
+
         public void RemoveQuestion(int position)
         {
             questions.RemoveAt(position);

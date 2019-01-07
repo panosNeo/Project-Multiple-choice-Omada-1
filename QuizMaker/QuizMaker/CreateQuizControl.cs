@@ -131,6 +131,7 @@ namespace QuizMaker
         public void nextQBtn_Click(object sender, EventArgs e)
         {
             int allQ = CreateQuizControlHandler.CountQuests();
+            CreateQuizControlHandler.ChangeQuestionIn(currentQuestion - 1, questionNameTextBox.Text, getAnswers());
             currentQuestion += 1;
             CheckQuestionNum();
             if (currentQuestion>allQ)
@@ -149,10 +150,15 @@ namespace QuizMaker
             {
                 SaveLastQuestion();
             }
+            else
+            {
+                CreateQuizControlHandler.ChangeQuestionIn(currentQuestion - 1, questionNameTextBox.Text, getAnswers());
+            }
             currentQuestion -= 1;
             CheckQuestionNum();
             SetQuestionPanelVar(CreateQuizControlHandler.GetQuestion(currentQuestion-1).GetQuestion(), CreateQuizControlHandler.GetQuestion(currentQuestion - 1).GetAnswers(), currentQuestion);
         }
+
         public void deleteQBtn_Click(object sender, EventArgs e)
         {
             int allQ = CreateQuizControlHandler.CountQuests();
@@ -173,14 +179,20 @@ namespace QuizMaker
                 if (currentQuestion == 0)
                 {
                     currentQuestion = 1;
-                    if(!lastQuestionBool)
+                    if(allQ==0)
                     {
-                        List<Answer> nullAns = new List<Answer>();
-                        SetQuestionPanelVar("", nullAns, 1);
-                    }
-                    else
+                        if (!lastQuestionBool)
+                        {
+                            List<Answer> nullAns = new List<Answer>();
+                            SetQuestionPanelVar("", nullAns, 1);
+                        }
+                        else
+                        {
+                            SetQuestionPanelVar(lastQuestion.GetQuestion(), lastQuestion.GetAnswers(), currentQuestion);
+                        }
+                    }else
                     {
-                        SetQuestionPanelVar(lastQuestion.GetQuestion(), lastQuestion.GetAnswers(), currentQuestion);
+                        SetQuestionPanelVar(CreateQuizControlHandler.GetQuestion(currentQuestion - 1).GetQuestion(), CreateQuizControlHandler.GetQuestion(currentQuestion - 1).GetAnswers(), currentQuestion);
                     }
                 }
                 else

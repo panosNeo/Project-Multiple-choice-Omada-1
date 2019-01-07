@@ -49,6 +49,17 @@ namespace QuizMaker.QuizHandler
             return myQuiz.getQuestions()[index];
         }
 
+        public static void ChangeQuestionIn(int pos, string questionName, List<Answer> answers)
+        {
+            myQuestion = new Question(questionName, myQuiz.GetUser_id(), myQuiz.GetSubject_id(), myQuiz.GetCreationDate());
+            foreach (Answer an in answers)
+            {
+                myQuestion.AddAnswer(an);
+            }
+            myQuiz.ChangeQuestion(myQuestion,pos);
+
+        }
+
         public static Quiz GetQuiz()
         {
             return myQuiz;
