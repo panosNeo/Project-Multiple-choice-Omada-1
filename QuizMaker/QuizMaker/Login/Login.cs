@@ -83,11 +83,19 @@ namespace QuizMaker.Login
             if (IsLoggedIn(user, pass)) { 
                 //Using the adapter to validate through queries the login info and also store the Id of the user that logged in
                 MultipleChoiceDataSetTableAdapters.UserTableAdapter userTableAdapter = new MultipleChoiceDataSetTableAdapters.UserTableAdapter();
-                userTableAdapter.LoginQuery(user, pass);
-                MessageBox.Show("You are logged in");
-                int userID = (int)userTableAdapter.ReturnUserId(user, pass);
 
-                //MessageBox.Show(userID.ToString());
+                try
+                {
+                    int userID = (int)userTableAdapter.ReturnUserId(user, pass);
+               
+                    MessageBox.Show("You logged in succesfully");
+                }catch(Exception)
+                {
+                    MessageBox.Show("Your username or password is incorrect");
+                }
+
+
+
             }
         }
 

@@ -28,6 +28,7 @@ namespace QuizMaker
             string user = usernameText.Text;
             string pass = passwordText.Text;
             login.LoginUser(user, pass);
+            
         }
 
         private void createAccountBtn_Click(object sender, EventArgs e)
