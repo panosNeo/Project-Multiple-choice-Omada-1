@@ -112,8 +112,7 @@ namespace Administrator.SubjectHandler
         public static void AddNewSubject(int subjectID,int rootID,string name)
         {
             try
-            {
-                //connection
+            {   //connection
                 using (OleDbConnection conn = new OleDbConnection(Properties.Settings.Default.DatabaseConnectionString))
                 {
                     //command gia na vrei ta subjects
