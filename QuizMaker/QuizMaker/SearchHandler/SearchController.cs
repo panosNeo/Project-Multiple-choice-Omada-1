@@ -97,7 +97,7 @@ namespace QuizMaker.SearchHandler
             return l;
 
         }
-        private static List<QuizHandler.Quiz> GetQuizDataFromSubject(int subID)
+        public static List<QuizHandler.Quiz> GetQuizDataFromSubject(int subID)
         {
             QuizTableAdapter quizData = new QuizTableAdapter();
             QuestionTableAdapter questionData = new QuestionTableAdapter();

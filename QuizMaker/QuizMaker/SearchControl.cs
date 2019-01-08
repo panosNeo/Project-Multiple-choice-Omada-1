@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuizMaker.QuizHandler;
 
 namespace QuizMaker
 {
     public partial class SearchControl : UserControl
     {
-        private string selectedTreeNodeID = "";
+        private string selectedTreeNodeID = "0";
         private MultipleChoiceDataSetTableAdapters.SubjectTableAdapter s;
         public SearchControl()
         {
@@ -41,8 +42,25 @@ namespace QuizMaker
 
         private void searchTagBtn_Click(object sender, EventArgs e)
         {
-            
-
+            List<Quiz> quizzes = SearchHandler.SearchController.GetQuizDataFromSubject(Convert.ToInt32(selectedTreeNodeID));
+            ResultQuizControl temp;
+            foreach (Quiz q in quizzes)
+            {
+                temp = new ResultQuizControl(q)
+                {
+                    Dock = DockStyle.Top
+                };
+                temp.SetQuizNumberOfQuestions(q.getQuestions().Count);
+                temp.SetQuizTitle(q.GetQuizTitle());
+                temp.SetQuizSubject(q.GetSubject_id().ToString());
+                temp.Click += new EventHandler(ResultQuiz_Click);
+                resultsPanel.Controls.Add(temp);
+            }
+        }
+        private void ResultQuiz_Click(object sender, EventArgs e)
+        {
+            Controls.Clear();
+            QuizPanel p = new QuizPanel(new QuizPlayerController(((ResultQuizControl)sender).GetQuiz()));
         }
     }
 }
