@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.personalPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.personalBtn = new System.Windows.Forms.Button();
+            this.UpdateBtn = new System.Windows.Forms.Button();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.emailLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.personalAnimationTimer = new System.Windows.Forms.Timer(this.components);
             this.quizAnimtionTimer = new System.Windows.Forms.Timer(this.components);
-            this.stepOneNextBtn = new System.Windows.Forms.Button();
             this.usernameText = new QuizMaker.CustomTextBox();
             this.emailText = new QuizMaker.CustomTextBox();
             this.firstNameText = new QuizMaker.CustomTextBox();
@@ -54,7 +54,7 @@
             // 
             this.personalPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.personalPanel.Controls.Add(this.personalBtn);
-            this.personalPanel.Controls.Add(this.stepOneNextBtn);
+            this.personalPanel.Controls.Add(this.UpdateBtn);
             this.personalPanel.Controls.Add(this.usernameLabel);
             this.personalPanel.Controls.Add(this.usernameText);
             this.personalPanel.Controls.Add(this.emailLabel);
@@ -84,6 +84,25 @@
             this.personalBtn.UseCompatibleTextRendering = true;
             this.personalBtn.UseVisualStyleBackColor = true;
             this.personalBtn.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // UpdateBtn
+            // 
+            this.UpdateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.UpdateBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.UpdateBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.UpdateBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.UpdateBtn.FlatAppearance.BorderSize = 0;
+            this.UpdateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UpdateBtn.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.UpdateBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.UpdateBtn.Location = new System.Drawing.Point(632, 3);
+            this.UpdateBtn.Name = "UpdateBtn";
+            this.UpdateBtn.Size = new System.Drawing.Size(166, 38);
+            this.UpdateBtn.TabIndex = 17;
+            this.UpdateBtn.Tag = "-5";
+            this.UpdateBtn.Text = "Update";
+            this.UpdateBtn.UseVisualStyleBackColor = false;
+            this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
             // 
             // usernameLabel
             // 
@@ -185,24 +204,6 @@
             this.quizAnimtionTimer.Interval = 1;
             this.quizAnimtionTimer.Tick += new System.EventHandler(this.quizAnimtionTimer_Tick);
             // 
-            // stepOneNextBtn
-            // 
-            this.stepOneNextBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.stepOneNextBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.stepOneNextBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.stepOneNextBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.stepOneNextBtn.FlatAppearance.BorderSize = 0;
-            this.stepOneNextBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.stepOneNextBtn.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.stepOneNextBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.stepOneNextBtn.Location = new System.Drawing.Point(632, 3);
-            this.stepOneNextBtn.Name = "stepOneNextBtn";
-            this.stepOneNextBtn.Size = new System.Drawing.Size(166, 38);
-            this.stepOneNextBtn.TabIndex = 17;
-            this.stepOneNextBtn.Tag = "-5";
-            this.stepOneNextBtn.Text = "Next";
-            this.stepOneNextBtn.UseVisualStyleBackColor = false;
-            // 
             // usernameText
             // 
             this.usernameText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
@@ -284,6 +285,6 @@
         private System.Windows.Forms.Timer quizAnimtionTimer;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button stepOneNextBtn;
+        private System.Windows.Forms.Button UpdateBtn;
     }
 }

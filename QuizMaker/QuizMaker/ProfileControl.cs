@@ -135,5 +135,17 @@ namespace QuizMaker
             LastNameText.Text = lname;
             emailText.Text = email;
         }
+
+        private void UpdateBtn_Click(object sender, EventArgs e)
+        {
+            string user = usernameText.Text;
+            string name = firstNameText.Text;
+            string lname = LastNameText.Text;
+            string email = emailText.Text;
+            int userId = Login.Login.userID;
+            
+            MultipleChoiceDataSetTableAdapters.UserTableAdapter userTable = new MultipleChoiceDataSetTableAdapters.UserTableAdapter();
+            userTable.UpdateProfile(user, email, name, lname, userId);
+        }
     }
 }
