@@ -49,7 +49,8 @@ namespace QuizMaker
                 if (quizNameTextBox.Text != "" && s_id > 0)
                 {
                     //αν είναι κενό το όνομα δεν συνεχίζεται 
-                    CreateQuizControlHandler.SetQuiz(quizNameTextBox.Text, s_id, 0);
+                    
+                    CreateQuizControlHandler.SetQuiz(quizNameTextBox.Text, s_id, Login.Login.userID);
                     SetEnabledPanels(1);
                 }
             }
@@ -406,6 +407,7 @@ namespace QuizMaker
             PrintQuizTemplates.PrintQuizController print = new PrintQuizTemplates.PrintQuizController(CreateQuizControlHandler.GetQuiz());
             MultipleChoiceDataSetTableAdapters.QuizTableAdapter quizTableAdapter = new MultipleChoiceDataSetTableAdapters.QuizTableAdapter();
             quizTableAdapter.InsertNewQuiz(myQuiz.GetUser_id(), myQuiz.GetCreationDate(), myQuiz.GetQuizTitle(), myQuiz.GetSubject_id());
+            myQuiz.SetQuiz_id((int)quizTableAdapter.ReturnLastQuizId());
 
             MultipleChoiceDataSetTableAdapters.QuestionTableAdapter questionTableAdapter = new MultipleChoiceDataSetTableAdapters.QuestionTableAdapter();
             MultipleChoiceDataSetTableAdapters.Quiz_QuestionsTableAdapter qqTableAdapter = new MultipleChoiceDataSetTableAdapters.Quiz_QuestionsTableAdapter();
@@ -413,7 +415,14 @@ namespace QuizMaker
             foreach (Question q in myQuiz.getQuestions())
             {
                 questionTableAdapter.InsertNewQuestion(q.GetQuestion(), q.GetCrDate(), q.GetUser_id(), q.GetSubject());
-                //qqTableAdapter.InsertQuizAndQuestionID(myQuiz.get)
+                q.SetQuestion_id((int)questionTableAdapter.ReturnLastQuestionId());
+
+                qqTableAdapter.InsertQuizAndQuestionID(myQuiz.GetQuiz_id(), q.GetQuestion_id());
+                foreach(Answer a in q.GetAnswers())
+                {
+                    answerTableAdapter.InsertNewAnswer(a.GetAnswer(), a.IsCorrect(), q.GetQuestion_id());
+                }
+
             }
         }
     }

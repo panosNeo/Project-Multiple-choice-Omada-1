@@ -299,11 +299,6 @@ C:\Users\Vladimiros\Desktop\test2\QuizMaker\QuizMaker\obj\Debug\QuizMaker.csproj
 C:\Users\Vladimiros\Desktop\test2\QuizMaker\QuizMaker\obj\Debug\QuizMaker.csproj.CoreCompileInputs.cache
 C:\Users\Vladimiros\Desktop\test2\QuizMaker\QuizMaker\obj\Debug\QuizMaker.exe
 C:\Users\Vladimiros\Desktop\test2\QuizMaker\QuizMaker\obj\Debug\QuizMaker.pdb
-C:\Users\Vladimiros\Desktop\test2\QuizMaker\QuizMaker\bin\Debug\ICSharpCode.SharpZipLib.dll
-C:\Users\Vladimiros\Desktop\test2\QuizMaker\QuizMaker\bin\Debug\Lucene.Net.dll
-C:\Users\Vladimiros\Desktop\test2\QuizMaker\QuizMaker\bin\Debug\Lucene.Net.pdb
-C:\Users\Vladimiros\Desktop\test2\QuizMaker\QuizMaker\bin\Debug\Lucene.Net.xml
-C:\Users\Vladimiros\Desktop\test2\QuizMaker\QuizMaker\obj\Debug\QuizMaker.csproj.CopyComplete
 C:\Users\Giorgos\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.PrintController.resources
 C:\Users\Giorgos\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.PrintForm.resources
 C:\Users\Giorgos\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.PrintQuizTemplates.FirstPage.resources
@@ -315,3 +310,8 @@ C:\Users\Giorgos\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\Quiz
 C:\Users\Giorgos\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.ResultQuizControl.resources
 C:\Users\Giorgos\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.TempPrintControl.resources
 C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.RegisterControl.resources
+C:\Users\Vladimiros\Desktop\test2\QuizMaker\QuizMaker\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\Vladimiros\Desktop\test2\QuizMaker\QuizMaker\bin\Debug\Lucene.Net.dll
+C:\Users\Vladimiros\Desktop\test2\QuizMaker\QuizMaker\bin\Debug\Lucene.Net.pdb
+C:\Users\Vladimiros\Desktop\test2\QuizMaker\QuizMaker\bin\Debug\Lucene.Net.xml
+C:\Users\Vladimiros\Desktop\test2\QuizMaker\QuizMaker\obj\Debug\QuizMaker.csproj.CopyComplete
