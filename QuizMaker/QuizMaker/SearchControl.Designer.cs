@@ -30,13 +30,13 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.tagTreeView = new System.Windows.Forms.TreeView();
             this.searchTagBtn = new System.Windows.Forms.Button();
             this.searchByTagLabel = new System.Windows.Forms.Label();
             this.searchTextBtn = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.searchByTextLabel = new System.Windows.Forms.Label();
             this.resultsPanel = new System.Windows.Forms.Panel();
-            this.tagTreeView = new System.Windows.Forms.TreeView();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +63,14 @@
             this.panel2.Size = new System.Drawing.Size(840, 59);
             this.panel2.TabIndex = 1;
             // 
+            // tagTreeView
+            // 
+            this.tagTreeView.Location = new System.Drawing.Point(591, 7);
+            this.tagTreeView.Name = "tagTreeView";
+            this.tagTreeView.Size = new System.Drawing.Size(176, 49);
+            this.tagTreeView.TabIndex = 8;
+            this.tagTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tagTreeView_AfterSelect);
+            // 
             // searchTagBtn
             // 
             this.searchTagBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -76,6 +84,7 @@
             this.searchTagBtn.Size = new System.Drawing.Size(37, 29);
             this.searchTagBtn.TabIndex = 7;
             this.searchTagBtn.UseVisualStyleBackColor = true;
+            this.searchTagBtn.Click += new System.EventHandler(this.searchTagBtn_Click);
             // 
             // searchByTagLabel
             // 
@@ -129,13 +138,6 @@
             this.resultsPanel.Name = "resultsPanel";
             this.resultsPanel.Size = new System.Drawing.Size(720, 330);
             this.resultsPanel.TabIndex = 2;
-            // 
-            // tagTreeView
-            // 
-            this.tagTreeView.Location = new System.Drawing.Point(591, 7);
-            this.tagTreeView.Name = "tagTreeView";
-            this.tagTreeView.Size = new System.Drawing.Size(176, 49);
-            this.tagTreeView.TabIndex = 8;
             // 
             // SearchControl
             // 

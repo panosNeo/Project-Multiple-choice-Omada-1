@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuizMaker.MultipleChoiceDataSetTableAdapters;
+using QuizMaker.QuizHandler;
+
 
 namespace QuizMaker.SearchHandler
 {
@@ -52,19 +55,24 @@ namespace QuizMaker.SearchHandler
         private static TreeNode SeeThroughStack(SubjectStack sss)
         {
             var dtemp = new TreeNode(sss.subName);
+            dtemp.Tag = sss.subId;
             foreach(SubjectStack temp in sss.after)
             {
                 
                 if (!temp.IsLeaf())
                 {
-                    dtemp.Nodes.Add(SeeThroughStack(temp));
+                    var stemp = SeeThroughStack(temp);
+                    stemp.Tag = temp.subId;
+                    dtemp.Nodes.Add(stemp);
                 }
             }
             foreach (SubjectStack temp in sss.after)
             {
                 if (temp.IsLeaf())
                 {
-                    dtemp.Nodes.Add(new TreeNode(temp.subName));
+                    var stemp = new TreeNode(temp.subName);
+                    stemp.Tag = temp.subId;
+                    dtemp.Nodes.Add(stemp);
                 }
             }
             return dtemp;
@@ -89,7 +97,45 @@ namespace QuizMaker.SearchHandler
             return l;
 
         }
-        
+        private static List<QuizHandler.Quiz> GetQuizDataFromSubject(int subID)
+        {
+            QuizTableAdapter quizData = new QuizTableAdapter();
+            QuestionTableAdapter questionData = new QuestionTableAdapter();
+            Quiz_QuestionsTableAdapter quizQuestion = new Quiz_QuestionsTableAdapter();
+            AnswerTableAdapter answerData = new AnswerTableAdapter();
+            List<Quiz> quizzes = new List<Quiz>();
+            List<Question> questions = new List<Question>();
+            List<Answer> answers = new List<Answer>();
+
+            foreach (MultipleChoiceDataSet.QuizRow q in quizData.GetData())
+            {
+                if (q.Subject_id == subID)
+                {
+                    quizzes.Add(new Quiz(q.Title, q.Subject_id, q.By_user));
+                    foreach (MultipleChoiceDataSet.QuestionRow question in questionData.GetDataBy(q.Quiz_id))
+                    {
+                        foreach (MultipleChoiceDataSet.Quiz_QuestionsRow qq in quizQuestion.GetDataBy(q.Quiz_id))
+                        {
+                            if (qq.Quiz_id == q.Quiz_id)
+                            {
+                                Question tempq = new Question(question.Question, question.By_user, question.Subject_id, DateTime.Now);
+                                //questions.Add(new Question(question.Question, question.By_user, question.Subject_id, DateTime.Now));
+                                foreach (MultipleChoiceDataSet.AnswerRow an in answerData.GetDataBy(question.Question_id))
+                                {
+                                    //answers.Add(new Answer(an.Answer,an.Correct));
+                                       tempq.AddAnswer(new Answer(an.Answer, an.Correct));
+                                }
+                                quizzes[quizzes.Count - 1].AddQuestion(tempq, question.Subject_id);
+                            }
+
+                        }
+                        
+                    }
+                }
+                
+            }
+            return quizzes;
+        }
         public static void SetSubjects()
         {
             MultipleChoiceDataSetTableAdapters.SubjectTableAdapter subject = new MultipleChoiceDataSetTableAdapters.SubjectTableAdapter();
