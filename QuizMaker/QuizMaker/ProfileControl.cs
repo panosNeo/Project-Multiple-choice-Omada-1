@@ -123,10 +123,14 @@ namespace QuizMaker
 
         internal void setProfile(int id)
         {
+            
+            string user="null";
+            string name= "null";
+            string lname= "null";
             MultipleChoiceDataSetTableAdapters.UserTableAdapter users = new MultipleChoiceDataSetTableAdapters.UserTableAdapter();
-            DataTable profile = new DataTable();
-            profile = users.GetProfile(id);
-            MessageBox.Show(profile.ToString());
+            user = (string)users.ReturnUsername(id);
+            testText.Text = "asdasdasdsa";
+            MessageBox.Show("Teststst");
 
         }
     }

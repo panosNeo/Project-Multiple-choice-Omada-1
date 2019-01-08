@@ -45,6 +45,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.personalAnimationTimer = new System.Windows.Forms.Timer(this.components);
             this.quizAnimtionTimer = new System.Windows.Forms.Timer(this.components);
+            this.testText = new QuizMaker.CustomTextBox();
             this.personalPanel.SuspendLayout();
             this.quizPanel.SuspendLayout();
             this.SuspendLayout();
@@ -228,12 +229,21 @@
             this.quizAnimtionTimer.Interval = 1;
             this.quizAnimtionTimer.Tick += new System.EventHandler(this.quizAnimtionTimer_Tick);
             // 
+            // testText
+            // 
+            this.testText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.testText.Location = new System.Drawing.Point(209, 333);
+            this.testText.Name = "testText";
+            this.testText.Size = new System.Drawing.Size(100, 20);
+            this.testText.TabIndex = 2;
+            // 
             // ProfileControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.Controls.Add(this.testText);
             this.Controls.Add(this.quizPanel);
             this.Controls.Add(this.personalPanel);
             this.Name = "ProfileControl";
@@ -264,5 +274,6 @@
         private System.Windows.Forms.Timer quizAnimtionTimer;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private CustomTextBox testText;
     }
 }
