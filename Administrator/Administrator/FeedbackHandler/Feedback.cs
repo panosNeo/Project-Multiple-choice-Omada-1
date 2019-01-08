@@ -77,7 +77,7 @@ namespace Administrator.FeedbackHandler
                 bool checkForDuplicate = feedbackList.Contains(feedback);
 
                 if (checkForDuplicate)
-                    MessageBox.Show("The already exist.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("The feedback already exist.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else
                     feedbackList.Add(feedback);
             }

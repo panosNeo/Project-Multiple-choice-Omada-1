@@ -17,7 +17,7 @@ namespace Administrator.FeedbackHandler
         private static string setAdminAproval = "Update Feedback Set Admin_aproval = ? Where Feedback_id = ?;";
         private static string deleteFeedbacks = "Delete From Feedback;";
 
-        private static bool hasFeedbacks = false;   //an uparxoun feedbacks tote trues
+        private static bool hasFeedbacks = false;   //an uparxoun feedbacks tote true
         private static Feedback feedback;
         //search gia feedbacks
         public static void SearchFeedbacks()
@@ -121,10 +121,7 @@ namespace Administrator.FeedbackHandler
                     {
                         conn.Open();
 
-                        if (check)
-                            updateCommand.Parameters.AddWithValue("@p1", -1);
-                        else
-                            updateCommand.Parameters.AddWithValue("@p1", 0);
+                        updateCommand.Parameters.AddWithValue("@p1", check);
                         updateCommand.Parameters.AddWithValue("@p2", feedback_id);
 
                         //datareader
@@ -133,7 +130,6 @@ namespace Administrator.FeedbackHandler
                             updateAdapter.UpdateCommand = updateCommand;    //update to query ston adapter
                             updateAdapter.UpdateCommand.ExecuteNonQuery();  //ektelese to query 
                         }
-
                         conn.Close();
                     }
                 }

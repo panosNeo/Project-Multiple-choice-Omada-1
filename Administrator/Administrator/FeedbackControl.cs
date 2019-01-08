@@ -12,7 +12,7 @@ namespace Administrator
 {
     public partial class FeedbackControl : UserControl
     {
-        private bool hasFeedbacks;
+        private bool hasFeedbacks = false;
         private List<FeedbackHandler.Feedback> feedbackList = new List<FeedbackHandler.Feedback>();
         private List<Feedback> feedbackControls = new List<Feedback>();
 
@@ -69,6 +69,8 @@ namespace Administrator
 
         private void SearchFeedbacks()
         {
+            feedbackControls.Clear();
+
             Feedback temp;
             int colorCounter = 0;
             foreach (var feedback in feedbackList) {
@@ -113,7 +115,7 @@ namespace Administrator
                 }
             }else
                 if (showFeedbacksPanel.Controls.ContainsKey("noFeedback"))
-                    MessageBox.Show("makaronia");
+                MessageBox.Show("There is no Feedbacks.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         //delete ena h ola ta feedbacks
@@ -131,13 +133,16 @@ namespace Administrator
                 }
                 else if (dialogResult == DialogResult.Yes)
                 {
-                    foreach (var control in feedbackControls)
+                    var control = feedbackControls[0];
+                    for(int i=0; i < feedbackControls.Count; i++)
                     {
                         if (control.GetDeleteCheckbox())
                         {
                             FeedbackHandler.FeedbackController.DeleteCheckbox(Int32.Parse((string)control.Tag));
                         }
+                        control = feedbackControls[i];
                     }
+                    CheckForFeedbacks();
                 }
             }else
                 MessageBox.Show("There is no Feedbacks", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
