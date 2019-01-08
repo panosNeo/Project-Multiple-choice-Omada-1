@@ -15,6 +15,7 @@ namespace QuizMaker
         public ProfileControl()
         {
             InitializeComponent();
+            setProfile();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -121,17 +122,13 @@ namespace QuizMaker
             }
         }
 
-        internal void setProfile(int id)
+        internal void setProfile()
         {
             
             string user= LoginStatusData.username;
             string name= LoginStatusData.name;
             string lname= LoginStatusData.surname;
-            MultipleChoiceDataSetTableAdapters.UserTableAdapter users = new MultipleChoiceDataSetTableAdapters.UserTableAdapter();
-            user = (string)users.ReturnUsername(id);
-            name = (string)users.ReturnFirstName(id);
-            lname = (string)users.ReturnLastName(id);
-            //MessageBox.Show(id.ToString());
+            
             usernameText.Text = user;
             firstNameText.Text = name;
             LastNameText.Text = lname;
