@@ -407,13 +407,14 @@ namespace QuizMaker
             PrintQuizTemplates.PrintQuizController print = new PrintQuizTemplates.PrintQuizController(CreateQuizControlHandler.GetQuiz());
             MultipleChoiceDataSetTableAdapters.QuizTableAdapter quizTableAdapter = new MultipleChoiceDataSetTableAdapters.QuizTableAdapter();
             quizTableAdapter.InsertNewQuiz(myQuiz.GetUser_id(), myQuiz.GetCreationDate(), myQuiz.GetQuizTitle(), myQuiz.GetSubject_id());
-            myQuiz.SetQuiz_id((int)quizTableAdapter.ReturnLastQuizId());
-
+            //myQuiz.SetQuiz_id((int)quizTableAdapter.ReturnLastQuizId());
+            int quiz_id = (int)quizTableAdapter.ReturnLastQuizId();
             MultipleChoiceDataSetTableAdapters.QuestionTableAdapter questionTableAdapter = new MultipleChoiceDataSetTableAdapters.QuestionTableAdapter();
             MultipleChoiceDataSetTableAdapters.AnswerTableAdapter answerTableAdapter = new MultipleChoiceDataSetTableAdapters.AnswerTableAdapter();
             foreach (Question q in myQuiz.getQuestions())
             {
-                questionTableAdapter.InsertQuery(q.GetQuestion(), q.GetCrDate(), q.GetUser_id(), q.GetSubject(), myQuiz.GetQuiz_id());
+                //Console.WriteLine(quiz_id);
+                questionTableAdapter.InsertQuery(q.GetQuestion(), q.GetCrDate(), q.GetUser_id(), q.GetSubject(), quiz_id);
                 q.SetQuestion_id((int)questionTableAdapter.ReturnLastQuestionId());
 
                 foreach (Answer a in q.GetAnswers())
@@ -422,6 +423,7 @@ namespace QuizMaker
                 }
 
             }
+
         }
     }
 }
