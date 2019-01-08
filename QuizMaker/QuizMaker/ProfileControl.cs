@@ -98,7 +98,7 @@ namespace QuizMaker
                 ((Button)sender).Tag = "+";
             }
             ((Button)sender).Text = ((Button)sender).Tag.ToString() + " My quizes";
-            quizAnimtionTimer.Start();
+            quizAnimtionTimer.Start(); 
         }
 
         private void quizAnimtionTimer_Tick(object sender, EventArgs e)

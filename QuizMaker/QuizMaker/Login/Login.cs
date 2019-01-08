@@ -78,6 +78,7 @@ namespace QuizMaker.Login
             
         }
 
+        public static int userID = -1;
         internal bool LoginUser(string user, string pass)
         {
             if (IsLoggedIn(user, pass)) { 
@@ -86,7 +87,7 @@ namespace QuizMaker.Login
 
                 try
                 {
-                    int userID = (int)userTableAdapter.ReturnUserId(user, pass);
+                    userID = (int)userTableAdapter.ReturnUserId(user, pass);
                
                     MessageBox.Show("You logged in succesfully");
                     return true;
