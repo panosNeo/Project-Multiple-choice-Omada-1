@@ -88,9 +88,13 @@ namespace QuizMaker.Login
                 try
                 {
                     userID = (int)userTableAdapter.ReturnUserId(user, pass);
+                    LoginStatusData.userID = userID;
+                    LoginStatusData.username = userTableAdapter.ReturnUsername(userID);
+                    LoginStatusData.name = userTableAdapter.ReturnFirstName(userID);
+                    LoginStatusData.surname = userTableAdapter.ReturnLastName(userID);
+                    LoginStatusData.email = userTableAdapter.ReturnEmail(userID);
                     MessageBox.Show("You logged in succesfully");
-                    ProfileControl pr = new ProfileControl();
-                    pr.setProfile(userID);
+                    
                     return true;
 
                     
