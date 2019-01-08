@@ -27,8 +27,19 @@ namespace QuizMaker
         {
             string user = usernameText.Text;
             string pass = passwordText.Text;
-            login.LoginUser(user, pass);
-            
+            bool a =login.LoginUser(user, pass);
+            if (a)
+            {
+                ProfileControl pr = new ProfileControl();
+                pr.Dock = DockStyle.Fill;
+                this.Controls.Clear();
+                this.Controls.Add(pr);
+            }
+            else
+            {
+                usernameText.Clear();
+                passwordText.Clear();
+            }
         }
 
         private void createAccountBtn_Click(object sender, EventArgs e)

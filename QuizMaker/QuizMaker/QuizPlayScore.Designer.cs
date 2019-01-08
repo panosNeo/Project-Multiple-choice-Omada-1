@@ -156,6 +156,7 @@
             this.button1.Size = new System.Drawing.Size(50, 56);
             this.button1.TabIndex = 13;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // likeBtn
             // 
@@ -177,6 +178,7 @@
             this.likeBtn.Size = new System.Drawing.Size(50, 56);
             this.likeBtn.TabIndex = 9;
             this.likeBtn.UseVisualStyleBackColor = false;
+            this.likeBtn.Click += new System.EventHandler(this.likeBtn_Click);
             // 
             // QuizPlayScore
             // 

@@ -78,7 +78,7 @@ namespace QuizMaker.Login
             
         }
 
-        public void LoginUser(string user, string pass)
+        internal bool LoginUser(string user, string pass)
         {
             if (IsLoggedIn(user, pass)) { 
                 //Using the adapter to validate through queries the login info and also store the Id of the user that logged in
@@ -89,13 +89,20 @@ namespace QuizMaker.Login
                     int userID = (int)userTableAdapter.ReturnUserId(user, pass);
                
                     MessageBox.Show("You logged in succesfully");
-                }catch(Exception)
+                    return true;
+                    
+                }
+                catch(Exception)
                 {
                     MessageBox.Show("Your username or password is incorrect");
+                    return false;
                 }
 
 
-
+            }
+            else
+            {
+                return false;
             }
         }
 

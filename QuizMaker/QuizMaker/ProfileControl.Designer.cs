@@ -98,7 +98,7 @@
             // 
             this.usernameText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.usernameText.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.usernameText.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.usernameText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.usernameText.ForeColor = System.Drawing.Color.White;
             this.usernameText.Location = new System.Drawing.Point(632, 21);
             this.usernameText.Name = "usernameText";
@@ -121,7 +121,7 @@
             // 
             this.emailText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.emailText.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.emailText.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.emailText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.emailText.ForeColor = System.Drawing.Color.White;
             this.emailText.Location = new System.Drawing.Point(869, 21);
             this.emailText.Name = "emailText";
@@ -143,7 +143,7 @@
             // 
             this.firstNameText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.firstNameText.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.firstNameText.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.firstNameText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.firstNameText.ForeColor = System.Drawing.Color.White;
             this.firstNameText.Location = new System.Drawing.Point(1106, 21);
             this.firstNameText.Name = "firstNameText";
@@ -165,7 +165,7 @@
             // 
             this.LastNameText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.LastNameText.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.LastNameText.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.LastNameText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.LastNameText.ForeColor = System.Drawing.Color.White;
             this.LastNameText.Location = new System.Drawing.Point(1343, 21);
             this.LastNameText.Name = "LastNameText";
@@ -202,17 +202,17 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.label2.Location = new System.Drawing.Point(3, 49);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(181, 75);
+            this.label2.Size = new System.Drawing.Size(210, 73);
             this.label2.TabIndex = 10;
             this.label2.Text = "label2";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(190, 49);
+            this.label3.Location = new System.Drawing.Point(219, 49);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 11;
