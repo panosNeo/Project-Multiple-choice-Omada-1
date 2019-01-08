@@ -31,15 +31,11 @@
             this.components = new System.ComponentModel.Container();
             this.firstPanel = new System.Windows.Forms.Panel();
             this.stepOneNextBtn = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tagsLabel = new System.Windows.Forms.Label();
             this.quizNameTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.stepOneLabel = new System.Windows.Forms.Label();
             this.secondPanel = new System.Windows.Forms.Panel();
-            this.nextQuBtn = new System.Windows.Forms.Button();
-            this.prevQuBtn = new System.Windows.Forms.Button();
-            this.backBtn = new System.Windows.Forms.Button();
             this.innerQuestionPanel = new System.Windows.Forms.Panel();
             this.deleteBtn = new System.Windows.Forms.Button();
             this.AnswersPanel = new System.Windows.Forms.Panel();
@@ -50,6 +46,9 @@
             this.setAnswerLabel = new System.Windows.Forms.Label();
             this.questionNameTextBox = new System.Windows.Forms.TextBox();
             this.stepToLabel = new System.Windows.Forms.Label();
+            this.nextQuBtn = new System.Windows.Forms.Button();
+            this.prevQuBtn = new System.Windows.Forms.Button();
+            this.backBtn = new System.Windows.Forms.Button();
             this.newQuestionBtn = new System.Windows.Forms.Button();
             this.finishQuestionsBtn = new System.Windows.Forms.Button();
             this.thirdPanel = new System.Windows.Forms.Panel();
@@ -57,6 +56,7 @@
             this.reviewLabel = new System.Windows.Forms.Label();
             this.stepThreeLabel = new System.Windows.Forms.Label();
             this.createQuizTimer = new System.Windows.Forms.Timer(this.components);
+            this.tagTreeView = new System.Windows.Forms.TreeView();
             this.firstPanel.SuspendLayout();
             this.secondPanel.SuspendLayout();
             this.innerQuestionPanel.SuspendLayout();
@@ -69,8 +69,8 @@
             this.firstPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.firstPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.firstPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.firstPanel.Controls.Add(this.tagTreeView);
             this.firstPanel.Controls.Add(this.stepOneNextBtn);
-            this.firstPanel.Controls.Add(this.comboBox1);
             this.firstPanel.Controls.Add(this.tagsLabel);
             this.firstPanel.Controls.Add(this.quizNameTextBox);
             this.firstPanel.Controls.Add(this.label1);
@@ -98,14 +98,6 @@
             this.stepOneNextBtn.Text = "Next";
             this.stepOneNextBtn.UseVisualStyleBackColor = false;
             this.stepOneNextBtn.Click += new System.EventHandler(this.movePanelsBtn_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(57, 210);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 4;
             // 
             // tagsLabel
             // 
@@ -164,47 +156,6 @@
             this.secondPanel.Name = "secondPanel";
             this.secondPanel.Size = new System.Drawing.Size(272, 391);
             this.secondPanel.TabIndex = 1;
-            // 
-            // nextQuBtn
-            // 
-            this.nextQuBtn.Enabled = false;
-            this.nextQuBtn.Image = global::QuizMaker.Properties.Resources.fast_forward;
-            this.nextQuBtn.Location = new System.Drawing.Point(213, 301);
-            this.nextQuBtn.Name = "nextQuBtn";
-            this.nextQuBtn.Size = new System.Drawing.Size(24, 24);
-            this.nextQuBtn.TabIndex = 14;
-            this.nextQuBtn.UseVisualStyleBackColor = true;
-            this.nextQuBtn.Click += new System.EventHandler(this.nextQBtn_Click);
-            // 
-            // prevQuBtn
-            // 
-            this.prevQuBtn.Enabled = false;
-            this.prevQuBtn.Image = global::QuizMaker.Properties.Resources.rewind;
-            this.prevQuBtn.Location = new System.Drawing.Point(36, 301);
-            this.prevQuBtn.Name = "prevQuBtn";
-            this.prevQuBtn.Size = new System.Drawing.Size(24, 24);
-            this.prevQuBtn.TabIndex = 13;
-            this.prevQuBtn.UseVisualStyleBackColor = true;
-            this.prevQuBtn.Click += new System.EventHandler(this.prevQBtn_click);
-            // 
-            // backBtn
-            // 
-            this.backBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.backBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.backBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.backBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.backBtn.FlatAppearance.BorderSize = 0;
-            this.backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backBtn.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.backBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.backBtn.Location = new System.Drawing.Point(16, 338);
-            this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(107, 38);
-            this.backBtn.TabIndex = 12;
-            this.backBtn.Tag = "5";
-            this.backBtn.Text = "Back";
-            this.backBtn.UseVisualStyleBackColor = false;
-            this.backBtn.Click += new System.EventHandler(this.movePanelsBtn_Click);
             // 
             // innerQuestionPanel
             // 
@@ -326,6 +277,47 @@
             this.stepToLabel.TabIndex = 0;
             this.stepToLabel.Text = "Step 2";
             // 
+            // nextQuBtn
+            // 
+            this.nextQuBtn.Enabled = false;
+            this.nextQuBtn.Image = global::QuizMaker.Properties.Resources.fast_forward;
+            this.nextQuBtn.Location = new System.Drawing.Point(213, 301);
+            this.nextQuBtn.Name = "nextQuBtn";
+            this.nextQuBtn.Size = new System.Drawing.Size(24, 24);
+            this.nextQuBtn.TabIndex = 14;
+            this.nextQuBtn.UseVisualStyleBackColor = true;
+            this.nextQuBtn.Click += new System.EventHandler(this.nextQBtn_Click);
+            // 
+            // prevQuBtn
+            // 
+            this.prevQuBtn.Enabled = false;
+            this.prevQuBtn.Image = global::QuizMaker.Properties.Resources.rewind;
+            this.prevQuBtn.Location = new System.Drawing.Point(36, 301);
+            this.prevQuBtn.Name = "prevQuBtn";
+            this.prevQuBtn.Size = new System.Drawing.Size(24, 24);
+            this.prevQuBtn.TabIndex = 13;
+            this.prevQuBtn.UseVisualStyleBackColor = true;
+            this.prevQuBtn.Click += new System.EventHandler(this.prevQBtn_click);
+            // 
+            // backBtn
+            // 
+            this.backBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.backBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.backBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.backBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.backBtn.FlatAppearance.BorderSize = 0;
+            this.backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backBtn.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.backBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.backBtn.Location = new System.Drawing.Point(16, 338);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(107, 38);
+            this.backBtn.TabIndex = 12;
+            this.backBtn.Tag = "5";
+            this.backBtn.Text = "Back";
+            this.backBtn.UseVisualStyleBackColor = false;
+            this.backBtn.Click += new System.EventHandler(this.movePanelsBtn_Click);
+            // 
             // newQuestionBtn
             // 
             this.newQuestionBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -394,6 +386,7 @@
             this.finishQuizBtn.Tag = "3";
             this.finishQuizBtn.Text = "Finish";
             this.finishQuizBtn.UseVisualStyleBackColor = false;
+            this.finishQuizBtn.Click += new System.EventHandler(this.finishQuizBtn_Click);
             // 
             // reviewLabel
             // 
@@ -422,6 +415,14 @@
             this.createQuizTimer.Interval = 1;
             this.createQuizTimer.Tick += new System.EventHandler(this.createQuizTimer_Tick);
             // 
+            // tagTreeView
+            // 
+            this.tagTreeView.HideSelection = false;
+            this.tagTreeView.Location = new System.Drawing.Point(57, 212);
+            this.tagTreeView.Name = "tagTreeView";
+            this.tagTreeView.Size = new System.Drawing.Size(166, 113);
+            this.tagTreeView.TabIndex = 7;
+            // 
             // CreateQuizControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -447,7 +448,6 @@
         #endregion
 
         private System.Windows.Forms.Panel firstPanel;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label tagsLabel;
         private System.Windows.Forms.TextBox quizNameTextBox;
         private System.Windows.Forms.Label label1;
@@ -474,5 +474,6 @@
         private System.Windows.Forms.Button prevQuBtn;
         private System.Windows.Forms.Button nextQuBtn;
         private System.Windows.Forms.Button deleteBtn;
+        private System.Windows.Forms.TreeView tagTreeView;
     }
 }
