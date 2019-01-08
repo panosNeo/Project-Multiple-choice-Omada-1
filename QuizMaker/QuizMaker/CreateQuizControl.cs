@@ -410,15 +410,13 @@ namespace QuizMaker
             myQuiz.SetQuiz_id((int)quizTableAdapter.ReturnLastQuizId());
 
             MultipleChoiceDataSetTableAdapters.QuestionTableAdapter questionTableAdapter = new MultipleChoiceDataSetTableAdapters.QuestionTableAdapter();
-            //MultipleChoiceDataSetTableAdapters.Quiz_QuestionsTableAdapter qqTableAdapter = new MultipleChoiceDataSetTableAdapters.Quiz_QuestionsTableAdapter();
             MultipleChoiceDataSetTableAdapters.AnswerTableAdapter answerTableAdapter = new MultipleChoiceDataSetTableAdapters.AnswerTableAdapter();
             foreach (Question q in myQuiz.getQuestions())
             {
-                questionTableAdapter.InsertNewQuestion(q.GetQuestion(), q.GetCrDate(), q.GetUser_id(), q.GetSubject());
+                questionTableAdapter.InsertQuery(q.GetQuestion(), q.GetCrDate(), q.GetUser_id(), q.GetSubject(), myQuiz.GetQuiz_id());
                 q.SetQuestion_id((int)questionTableAdapter.ReturnLastQuestionId());
 
-                //qqTableAdapter.InsertQuizAndQuestionID(myQuiz.GetQuiz_id(), q.GetQuestion_id());
-                foreach(Answer a in q.GetAnswers())
+                foreach (Answer a in q.GetAnswers())
                 {
                     answerTableAdapter.InsertNewAnswer(a.GetAnswer(), a.IsCorrect(), q.GetQuestion_id());
                 }
