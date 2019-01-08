@@ -120,5 +120,14 @@ namespace QuizMaker
                 else quizAnimtionTimer.Stop();
             }
         }
+
+        internal void setProfile(int id)
+        {
+            MultipleChoiceDataSetTableAdapters.UserTableAdapter users = new MultipleChoiceDataSetTableAdapters.UserTableAdapter();
+            DataTable profile = new DataTable();
+            profile = users.GetProfile(id);
+            MessageBox.Show(profile.ToString());
+
+        }
     }
 }

@@ -90,6 +90,8 @@ namespace QuizMaker.Login
                     userID = (int)userTableAdapter.ReturnUserId(user, pass);
                
                     MessageBox.Show("You logged in succesfully");
+                    ProfileControl pr = new ProfileControl();
+                    pr.setProfile(userID);
                     return true;
                     
                 }
