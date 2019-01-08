@@ -12,6 +12,7 @@ namespace QuizMaker
 {
     public partial class SearchControl : UserControl
     {
+        private string selectedTreeNodeID = "";
         private MultipleChoiceDataSetTableAdapters.SubjectTableAdapter s;
         public SearchControl()
         {
@@ -32,6 +33,16 @@ namespace QuizMaker
             tagTreeView.Nodes.Add(SearchHandler.SearchController.GetSubjects());
         }
 
-        
+        private void tagTreeView_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            if(((TreeView)sender).SelectedNode.Tag != null)
+                selectedTreeNodeID = ((TreeView)sender).SelectedNode.Tag.ToString();
+        }
+
+        private void searchTagBtn_Click(object sender, EventArgs e)
+        {
+            
+
+        }
     }
 }
