@@ -13,7 +13,7 @@ namespace QuizMaker
 {
     public partial class CreateQuizControl : UserControl
     {
-        
+
         public CreateQuizControl()
         {
             InitializeComponent();
@@ -30,15 +30,16 @@ namespace QuizMaker
             string name = ((Button)sender).Name;
             if (name.Equals("stepOneNextBtn"))
             {
-                if(quizNameTextBox.Text!="")
+                if (quizNameTextBox.Text != "")
                 {
                     //αν είναι κενό το όνομα δεν συνεχίζεται 
                     CreateQuizControlHandler.SetQuiz(quizNameTextBox.Text, 0, 0);
                     SetEnabledPanels(1);
                 }
-            }else if (name.Equals("backBtn"))
+            }
+            else if (name.Equals("backBtn"))
             {
-                if(MessageBox.Show("Do you want to delete thiz QUIZ ?","Message",MessageBoxButtons.YesNo)==DialogResult.Yes)
+                if (MessageBox.Show("Do you want to delete this QUIZ ?", "Message", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     CreateQuizControlHandler.SetQuiz();
                     currentQuestion = 0;
@@ -48,9 +49,11 @@ namespace QuizMaker
                     lastQuestionBool = false;
                     SetEnabledPanels(0);
                 }
-            }else if (name.Equals("finishQuestionsBtn"))
+            }
+            else if (name.Equals("finishQuestionsBtn"))
             {
-                SetEnabledPanels(2);
+                if (FinishButton())
+                    SetEnabledPanels(2);
             }
         }
 
@@ -58,7 +61,7 @@ namespace QuizMaker
         private int movePanelsPivot = 0;
         private void createQuizTimer_Tick(object sender, EventArgs e)
         {
-            if(movePanelsPivot < 350)
+            if (movePanelsPivot < 350)
             {
                 movePanels(panelPos);
                 movePanelsPivot += Math.Abs(panelPos);
@@ -102,7 +105,7 @@ namespace QuizMaker
         private void newQuestionsBtn_Click(object sender, EventArgs e)
         {
             List<Answer> ans = getAnswers();
-            if(ans.Count==0 || !ListIsCompleted(getAnswers()) || questionNameTextBox.Text=="")
+            if (ans.Count == 0 || !ListIsCompleted(getAnswers()) || questionNameTextBox.Text == "")
             {
                 Console.WriteLine("adio");
             }
@@ -116,7 +119,7 @@ namespace QuizMaker
         private void NewEmptyQuestion()
         {
             int allQ = CreateQuizControlHandler.CountQuests();
-            if (allQ<=currentQuestion)
+            if (allQ <= currentQuestion)
             {
                 if (currentQuestion != allQ)
                 {
@@ -134,19 +137,19 @@ namespace QuizMaker
             CreateQuizControlHandler.ChangeQuestionIn(currentQuestion - 1, questionNameTextBox.Text, getAnswers());
             currentQuestion += 1;
             CheckQuestionNum();
-            if (currentQuestion>allQ)
+            if (currentQuestion > allQ)
             {
-                SetQuestionPanelVar(lastQuestion.GetQuestion(), lastQuestion.GetAnswers(), currentQuestion );
+                SetQuestionPanelVar(lastQuestion.GetQuestion(), lastQuestion.GetAnswers(), currentQuestion);
             }
             else
             {
-                SetQuestionPanelVar(CreateQuizControlHandler.GetQuestion(currentQuestion-1).GetQuestion(), CreateQuizControlHandler.GetQuestion(currentQuestion - 1).GetAnswers(), currentQuestion );
+                SetQuestionPanelVar(CreateQuizControlHandler.GetQuestion(currentQuestion - 1).GetQuestion(), CreateQuizControlHandler.GetQuestion(currentQuestion - 1).GetAnswers(), currentQuestion);
             }
-            
+
         }
         public void prevQBtn_click(object sender, EventArgs e)
         {
-            if(currentQuestion > CreateQuizControlHandler.CountQuests())
+            if (currentQuestion > CreateQuizControlHandler.CountQuests())
             {
                 SaveLastQuestion();
             }
@@ -156,14 +159,14 @@ namespace QuizMaker
             }
             currentQuestion -= 1;
             CheckQuestionNum();
-            SetQuestionPanelVar(CreateQuizControlHandler.GetQuestion(currentQuestion-1).GetQuestion(), CreateQuizControlHandler.GetQuestion(currentQuestion - 1).GetAnswers(), currentQuestion);
+            SetQuestionPanelVar(CreateQuizControlHandler.GetQuestion(currentQuestion - 1).GetQuestion(), CreateQuizControlHandler.GetQuestion(currentQuestion - 1).GetAnswers(), currentQuestion);
         }
 
         public void deleteQBtn_Click(object sender, EventArgs e)
         {
             int allQ = CreateQuizControlHandler.CountQuests();
-            
-            if(allQ != 0)
+
+            if (allQ != 0)
             {
                 if (allQ < currentQuestion)
                 {
@@ -179,7 +182,7 @@ namespace QuizMaker
                 if (currentQuestion == 0)
                 {
                     currentQuestion = 1;
-                    if(allQ==0)
+                    if (allQ <= 1)
                     {
                         if (!lastQuestionBool)
                         {
@@ -190,9 +193,11 @@ namespace QuizMaker
                         {
                             SetQuestionPanelVar(lastQuestion.GetQuestion(), lastQuestion.GetAnswers(), currentQuestion);
                         }
-                    }else
+                    }
+                    else
                     {
-                        SetQuestionPanelVar(CreateQuizControlHandler.GetQuestion(currentQuestion - 1).GetQuestion(), CreateQuizControlHandler.GetQuestion(currentQuestion - 1).GetAnswers(), currentQuestion);
+                        Console.WriteLine("asd");
+                        SetQuestionPanelVar(CreateQuizControlHandler.GetQuestion(currentQuestion-1).GetQuestion(), CreateQuizControlHandler.GetQuestion(currentQuestion - 1).GetAnswers(), currentQuestion);
                     }
                 }
                 else
@@ -215,7 +220,7 @@ namespace QuizMaker
             }
         }
 
-        private void SetQuestionPanelVar(string questionName, List<Answer> ans,int questionNum)
+        private void SetQuestionPanelVar(string questionName, List<Answer> ans, int questionNum)
         {
             questionNameTextBox.Text = questionName;
             questionNumber.Text = questionNum + "";
@@ -230,8 +235,8 @@ namespace QuizMaker
             }
 
             ResetAnswers(ap);
-    
-            foreach(Answer a in ans)
+
+            foreach (Answer a in ans)
             {
                 AnswerPanel aP = new AnswerPanel();
                 aP.SetAnswerName(a.GetAnswer());
@@ -260,12 +265,12 @@ namespace QuizMaker
             Console.WriteLine(lastQuestionBool);
             int allQ = CreateQuizControlHandler.CountQuests();
             Console.WriteLine(allQ + " " + currentQuestion);
-            if(allQ==0)
+            if (allQ == 0)
             {
                 prevQuBtn.Enabled = false;
                 nextQuBtn.Enabled = false;
             }
-            else if(currentQuestion>allQ)
+            else if (currentQuestion > allQ)
             {
                 prevQuBtn.Enabled = true;
                 nextQuBtn.Enabled = false;
@@ -280,7 +285,7 @@ namespace QuizMaker
                 {
                     nextQuBtn.Enabled = true;
                 }
-                if (currentQuestion==1)
+                if (currentQuestion == 1)
                 {
                     prevQuBtn.Enabled = false;
                 }
@@ -302,7 +307,6 @@ namespace QuizMaker
             delAnswerBtn.Location = new Point(delAnswerBtn.Location.X, delAnswerBtn.Location.Y + 33);
             AnswersPanel.Controls.Add(ap);
         }
-
         private void delAnswerBtn_Click(object sender, EventArgs e)
         {
             AnswerPanel ap = new AnswerPanel();
@@ -340,18 +344,40 @@ namespace QuizMaker
             }
             return ans;
         }
-
         private bool ListIsCompleted(List<Answer> lis)
         {
-            foreach(Answer a in lis)
+            foreach (Answer a in lis)
             {
-                if(a.GetAnswer()=="")
+                if (a.GetAnswer() == "")
                 {
                     return false;
                 }
             }
             return true;
         }
-    }
 
+        private bool FinishButton()
+        {
+            int allQ = CreateQuizControlHandler.CountQuests();
+            if (MessageBox.Show("Do you want to finish this QUIZ ?", "Message", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (allQ < currentQuestion)
+                {
+                    SaveLastQuestion();
+                    List<Answer> ans = getAnswers();
+                    if (ans.Count == 0 || !ListIsCompleted(getAnswers()) || questionNameTextBox.Text == "")
+                    {
+                        MessageBox.Show("Please don't leave empty spaces");
+                        return false;
+                    }
+                    CreateQuizControlHandler.AddNewQuestion(lastQuestion.GetQuestion(), ans);
+                }
+                return true;
+            }
+            else
+            {
+                return true;
+            }
+        }
+    }
 }
