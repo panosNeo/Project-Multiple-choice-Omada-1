@@ -84,7 +84,17 @@ namespace Administrator.FeedbackHandler
                         using (OleDbDataAdapter updateAdapter = new OleDbDataAdapter())
                         {
                             updateAdapter.UpdateCommand = updateCommand;    //update to query ston adapter
-                            updateAdapter.UpdateCommand.ExecuteNonQuery();  //ektelese to query 
+                            updateAdapter.UpdateCommand.ExecuteNonQuery();  //ektelese to query
+
+                            //kane delete to item apo th lista me ta feedbacks
+                            foreach (var item in Feedback.GetList())
+                            {
+                                if (item.GetFeedbackID() == feedback_id)
+                                {
+                                    Feedback.Delete(item);
+                                    break;
+                                }
+                            }
                         }
 
                         conn.Close();
@@ -181,6 +191,7 @@ namespace Administrator.FeedbackHandler
                         {
                             updateAdapter.UpdateCommand = updateCommand;    //update to query ston adapter
                             updateAdapter.UpdateCommand.ExecuteNonQuery();  //ektelese to query 
+                            Feedback.ClearList();   //adeiase th lista
                         }
                         conn.Close();
                     }

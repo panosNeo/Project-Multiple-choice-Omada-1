@@ -44,7 +44,7 @@ namespace Administrator
             }
 
             //dhmiourgia login handler object gia tis leitourgies tautopoihshs
-            LoginHandler.LoginHandler loginHandler = new LoginHandler.LoginHandler(UsernameBox.Text, PasswordBox.Text, false);
+            LoginHandler.LoginHandler loginHandler = new LoginHandler.LoginHandler(UsernameBox.Text, PasswordBox.Text);
 
             //kalese th methodo gia tautopoihsh stoixeiwn
             loginHandler.SearchAccount();

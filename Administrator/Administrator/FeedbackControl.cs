@@ -38,6 +38,14 @@ namespace Administrator
         {
             //kane search gia feedbacks
             FeedbackHandler.FeedbackController.SearchFeedbacks();
+
+            //des an yparxoun feedbacks
+            CheckForFeedbacks();
+        }
+
+        //tsekare an yparxoun feedbacks
+        private void CheckForFeedbacks()
+        {
             //des an vrhke feedbacks
             hasFeedbacks = FeedbackHandler.FeedbackController.GetHasFeedbacks();
 
@@ -53,6 +61,7 @@ namespace Administrator
             }
             else
             {
+                showFeedbacksPanel.Controls.Clear();
                 showFeedbacksPanel.Controls.Add(noFeedback);
                 noFeedback.Visible = true;
             }
@@ -115,7 +124,11 @@ namespace Administrator
                 DialogResult dialogResult = MessageBox.Show("Do you want to delete feedbacks?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 //ean nai tote
                 if (dialogResult == DialogResult.Yes && deleteAllCheckbox.Checked)
-                    FeedbackHandler.FeedbackController.DeleteFeedbacks();
+                {
+                    FeedbackHandler.FeedbackController.DeleteFeedbacks();   //svhse ola ta feedbacks
+                    feedbackControls.Clear();                               //kane clear ola ta object ths listas
+                    CheckForFeedbacks();                                    //kai tsekare an yparxei allo feedback
+                }
                 else if (dialogResult == DialogResult.Yes)
                 {
                     foreach (var control in feedbackControls)
