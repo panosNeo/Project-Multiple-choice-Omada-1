@@ -63,7 +63,6 @@
             this.personalPanel.Controls.Add(this.firstNameText);
             this.personalPanel.Controls.Add(this.lastNameLabel);
             this.personalPanel.Controls.Add(this.LastNameText);
-            this.personalPanel.Controls.Add(this.stepOneNextBtn);
             this.personalPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.personalPanel.Location = new System.Drawing.Point(150, 112);
             this.personalPanel.Name = "personalPanel";
