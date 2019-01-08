@@ -88,6 +88,16 @@
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
+              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="Answer" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="ReturnLastAnswerId" Modifier="Public" Name="ReturnLastAnswerId" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="ReturnLastAnswerId">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TOP 1 Answer_id
+FROM            Answer
+ORDER BY Answer_id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
             </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BlockedTableAdapter" GeneratorDataComponentClassName="BlockedTableAdapter" Name="Blocked" UserDataComponentName="BlockedTableAdapter">
@@ -297,6 +307,16 @@
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
+              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="Question" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="ReturnLastQuestionId" Modifier="Public" Name="ReturnLastQuestionId" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="ReturnLastQuestionId">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TOP 1 Question_id
+FROM            Question
+ORDER BY Question_id DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
             </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="QuizTableAdapter" GeneratorDataComponentClassName="QuizTableAdapter" Name="Quiz" UserDataComponentName="QuizTableAdapter">
@@ -395,6 +415,16 @@
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="Quiz" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="ReturnLastQuizId" Modifier="Public" Name="ReturnLastQuizId" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="ReturnLastQuizId">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TOP 1 Quiz_id
+FROM            Quiz
+ORDER BY Quiz_id DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
               </DbSource>
               <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="Quiz" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="ReturnRating" Modifier="Public" Name="ReturnRating" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="ReturnRating">
                 <SelectCommand>
