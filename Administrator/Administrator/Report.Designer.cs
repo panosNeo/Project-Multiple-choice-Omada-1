@@ -33,7 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.reportBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.quizID = new System.Windows.Forms.TextBox();
+            this.quizIDBox = new System.Windows.Forms.TextBox();
             this.deleteCheckbox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
@@ -89,13 +89,13 @@
             this.label2.TabIndex = 16;
             this.label2.Text = "Quiz ID :";
             // 
-            // quizID
+            // quizIDBox
             // 
-            this.quizID.Location = new System.Drawing.Point(432, 23);
-            this.quizID.Name = "quizID";
-            this.quizID.ReadOnly = true;
-            this.quizID.Size = new System.Drawing.Size(100, 20);
-            this.quizID.TabIndex = 17;
+            this.quizIDBox.Location = new System.Drawing.Point(432, 23);
+            this.quizIDBox.Name = "quizIDBox";
+            this.quizIDBox.ReadOnly = true;
+            this.quizIDBox.Size = new System.Drawing.Size(100, 20);
+            this.quizIDBox.TabIndex = 17;
             // 
             // deleteCheckbox
             // 
@@ -111,7 +111,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.deleteCheckbox);
-            this.Controls.Add(this.quizID);
+            this.Controls.Add(this.quizIDBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.reportBox);
             this.Controls.Add(this.label1);
@@ -131,7 +131,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox reportBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox quizID;
+        private System.Windows.Forms.TextBox quizIDBox;
         private System.Windows.Forms.CheckBox deleteCheckbox;
     }
 }

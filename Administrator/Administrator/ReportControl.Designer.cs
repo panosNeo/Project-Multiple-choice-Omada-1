@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.QuestionGroupbox = new System.Windows.Forms.GroupBox();
+            this.answerIDCombo = new System.Windows.Forms.ComboBox();
+            this.questionIDCombo = new System.Windows.Forms.ComboBox();
             this.AnswerBox = new System.Windows.Forms.TextBox();
             this.qUserIDBox = new System.Windows.Forms.TextBox();
             this.qQuestionBox = new System.Windows.Forms.TextBox();
@@ -43,8 +45,7 @@
             this.reportPanel = new System.Windows.Forms.Panel();
             this.deleteReportButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.questionIDCombo = new System.Windows.Forms.ComboBox();
-            this.answerIDCombo = new System.Windows.Forms.ComboBox();
+            this.noReports = new System.Windows.Forms.Label();
             this.QuestionGroupbox.SuspendLayout();
             this.reportPanel.SuspendLayout();
             this.SuspendLayout();
@@ -69,6 +70,22 @@
             this.QuestionGroupbox.TabIndex = 2;
             this.QuestionGroupbox.TabStop = false;
             this.QuestionGroupbox.Text = "Quiz Data";
+            // 
+            // answerIDCombo
+            // 
+            this.answerIDCombo.FormattingEnabled = true;
+            this.answerIDCombo.Location = new System.Drawing.Point(469, 53);
+            this.answerIDCombo.Name = "answerIDCombo";
+            this.answerIDCombo.Size = new System.Drawing.Size(125, 24);
+            this.answerIDCombo.TabIndex = 5;
+            // 
+            // questionIDCombo
+            // 
+            this.questionIDCombo.FormattingEnabled = true;
+            this.questionIDCombo.Location = new System.Drawing.Point(110, 53);
+            this.questionIDCombo.Name = "questionIDCombo";
+            this.questionIDCombo.Size = new System.Drawing.Size(125, 24);
+            this.questionIDCombo.TabIndex = 2;
             // 
             // AnswerBox
             // 
@@ -174,6 +191,7 @@
             this.deleteAllCheckbox.Size = new System.Drawing.Size(15, 14);
             this.deleteAllCheckbox.TabIndex = 7;
             this.deleteAllCheckbox.UseVisualStyleBackColor = true;
+            this.deleteAllCheckbox.CheckedChanged += new System.EventHandler(this.deleteAllCheckbox_CheckedChanged);
             // 
             // reportPanel
             // 
@@ -201,6 +219,7 @@
             this.deleteReportButton.TabIndex = 9;
             this.deleteReportButton.Text = "Delete";
             this.deleteReportButton.UseVisualStyleBackColor = false;
+            this.deleteReportButton.Click += new System.EventHandler(this.deleteReportButton_Click);
             this.deleteReportButton.MouseEnter += new System.EventHandler(this.deleteReportButton_MouseEnter);
             this.deleteReportButton.MouseLeave += new System.EventHandler(this.deleteReportButton_MouseLeave);
             // 
@@ -215,33 +234,35 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Reports";
             // 
-            // questionIDCombo
+            // noReports
             // 
-            this.questionIDCombo.FormattingEnabled = true;
-            this.questionIDCombo.Location = new System.Drawing.Point(110, 53);
-            this.questionIDCombo.Name = "questionIDCombo";
-            this.questionIDCombo.Size = new System.Drawing.Size(125, 24);
-            this.questionIDCombo.TabIndex = 2;
-            // 
-            // answerIDCombo
-            // 
-            this.answerIDCombo.FormattingEnabled = true;
-            this.answerIDCombo.Location = new System.Drawing.Point(469, 53);
-            this.answerIDCombo.Name = "answerIDCombo";
-            this.answerIDCombo.Size = new System.Drawing.Size(125, 24);
-            this.answerIDCombo.TabIndex = 5;
+            this.noReports.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.noReports.AutoSize = true;
+            this.noReports.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
+            this.noReports.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            this.noReports.Location = new System.Drawing.Point(256, 239);
+            this.noReports.Name = "noReports";
+            this.noReports.Size = new System.Drawing.Size(178, 23);
+            this.noReports.TabIndex = 19;
+            this.noReports.Tag = "noReports";
+            this.noReports.Text = "There is no Reports";
+            this.noReports.Visible = false;
             // 
             // ReportControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(184)))), ((int)(((byte)(185)))));
+            this.Controls.Add(this.noReports);
             this.Controls.Add(this.QuestionGroupbox);
             this.Controls.Add(this.reportPanel);
             this.Controls.Add(this.showReportsPanel);
             this.Controls.Add(this.warningLabel);
             this.Name = "ReportControl";
             this.Size = new System.Drawing.Size(736, 423);
+            this.Load += new System.EventHandler(this.ReportControl_Load);
             this.QuestionGroupbox.ResumeLayout(false);
             this.QuestionGroupbox.PerformLayout();
             this.reportPanel.ResumeLayout(false);
@@ -269,5 +290,6 @@
         private System.Windows.Forms.Button deleteReportButton;
         private System.Windows.Forms.ComboBox questionIDCombo;
         private System.Windows.Forms.ComboBox answerIDCombo;
+        private System.Windows.Forms.Label noReports;
     }
 }

@@ -107,6 +107,8 @@
     <Compile Include="ReportControl.Designer.cs">
       <DependentUpon>ReportControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportHandler\Report.cs" />
+    <Compile Include="ReportHandler\ReportController.cs" />
     <Compile Include="SubjectControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
