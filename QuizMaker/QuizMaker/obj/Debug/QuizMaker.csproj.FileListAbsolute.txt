@@ -314,3 +314,4 @@ C:\Users\Giorgos\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\Quiz
 C:\Users\Giorgos\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.RegisterControl.resources
 C:\Users\Giorgos\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.ResultQuizControl.resources
 C:\Users\Giorgos\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.TempPrintControl.resources
+C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.RegisterControl.resources

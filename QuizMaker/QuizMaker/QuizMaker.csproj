@@ -80,6 +80,7 @@
     <Compile Include="FeelLuckyControl.Designer.cs">
       <DependentUpon>FeelLuckyControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginStatusData.cs" />
     <Compile Include="Login\Login.cs" />
     <Compile Include="MailAuthenticationControl.cs">
       <SubType>UserControl</SubType>
