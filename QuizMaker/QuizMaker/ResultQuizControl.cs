@@ -7,34 +7,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuizMaker.QuizHandler;
 
 namespace QuizMaker
 {
     public partial class ResultQuizControl : UserControl
     {
-        public ResultQuizControl()
+        public Quiz Quiz;
+        public ResultQuizControl(Quiz q)
         {
+            Quiz = q;
             InitializeComponent();
         }
-        private void SetQuizTitle(string title)
+        public Quiz GetQuiz()
+        {
+            return Quiz;
+        }
+        public void SetQuizTitle(string title)
         {
             quizTitleText.Text = title;
         }
-        private void SetQuizSubject(string title)
+        public void SetQuizSubject(string title)
         {
             quizSubjectText.Text = title;
         }
-        private void SetQuizNumberOfQuestions(string title)
+        public void SetQuizNumberOfQuestions(int title)
         {
-            questionCountText.Text = title;
+            questionCountText.Text = Convert.ToString(title);
         }
-        private void SetQuizLikes(string title)
+        public void SetQuizLikes(int title)
         {
-            likesText.Text = title;
+            likesText.Text = Convert.ToString(title);
         }
-        private void SetQuizDislikes(string title)
+        public void SetQuizDislikes(int title)
         {
-            dislikesText.Text = title;
+            dislikesText.Text = Convert.ToString(title);
         }
     }
 }

@@ -15,9 +15,10 @@ namespace QuizMaker
         //private int questionCount;
         //private List<QuizAnswers> userAnswers;
 
-        public QuizPlayerController()
+        public QuizPlayerController(Quiz q)
         {
-            setATestQuiz();
+            quiz = q;
+            //setATestQuiz();
         }
 
         private void setATestQuiz()
