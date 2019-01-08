@@ -13,15 +13,13 @@ namespace Administrator.LoginHandler
     {
         private string username;
         private string password;
-        private bool stayLog;
         
         private bool successLogin = false;
 
-        public LoginHandler(string username,string password,bool stayLog)
+        public LoginHandler(string username,string password)
         {
             this.username = username;
             this.password = password;
-            this.stayLog = stayLog;
         }
 
         //kane search gia to account
@@ -81,12 +79,7 @@ namespace Administrator.LoginHandler
                 MessageBox.Show(ex.ToString(), "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void StayIn() {
-            //under construction
-            //checkarw gia na ton afhsw in
-        }
-
+        
         //prospelash ths boolean success login
         public bool getSuccessLogin()
         {

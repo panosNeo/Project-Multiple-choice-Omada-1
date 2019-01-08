@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.userIDBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.reportBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.quizIDBox = new System.Windows.Forms.TextBox();
             this.deleteCheckbox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
@@ -48,12 +48,13 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "User :";
             // 
-            // textBox1
+            // userIDBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(25, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 13;
+            this.userIDBox.Location = new System.Drawing.Point(25, 23);
+            this.userIDBox.Name = "userIDBox";
+            this.userIDBox.ReadOnly = true;
+            this.userIDBox.Size = new System.Drawing.Size(100, 20);
+            this.userIDBox.TabIndex = 13;
             // 
             // label1
             // 
@@ -66,15 +67,16 @@
             this.label1.TabIndex = 14;
             this.label1.Text = "Report reason :";
             // 
-            // textBox2
+            // reportBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(147, 14);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox2.Size = new System.Drawing.Size(264, 34);
-            this.textBox2.TabIndex = 15;
-            this.textBox2.Text = " \r\n ";
+            this.reportBox.Location = new System.Drawing.Point(147, 14);
+            this.reportBox.Multiline = true;
+            this.reportBox.Name = "reportBox";
+            this.reportBox.ReadOnly = true;
+            this.reportBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.reportBox.Size = new System.Drawing.Size(264, 34);
+            this.reportBox.TabIndex = 15;
+            this.reportBox.Text = " \r\n ";
             // 
             // label2
             // 
@@ -87,12 +89,13 @@
             this.label2.TabIndex = 16;
             this.label2.Text = "Quiz ID :";
             // 
-            // textBox3
+            // quizIDBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(432, 23);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 17;
+            this.quizIDBox.Location = new System.Drawing.Point(432, 23);
+            this.quizIDBox.Name = "quizIDBox";
+            this.quizIDBox.ReadOnly = true;
+            this.quizIDBox.Size = new System.Drawing.Size(100, 20);
+            this.quizIDBox.TabIndex = 17;
             // 
             // deleteCheckbox
             // 
@@ -108,11 +111,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.deleteCheckbox);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.quizIDBox);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.reportBox);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.userIDBox);
             this.Controls.Add(this.label6);
             this.Name = "Report";
             this.Size = new System.Drawing.Size(600, 51);
@@ -124,11 +127,11 @@
         #endregion
 
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox userIDBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox reportBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox quizIDBox;
         private System.Windows.Forms.CheckBox deleteCheckbox;
     }
 }

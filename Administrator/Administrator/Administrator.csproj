@@ -51,12 +51,20 @@
     <Compile Include="AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Feedback.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Feedback.Designer.cs">
+      <DependentUpon>Feedback.cs</DependentUpon>
+    </Compile>
     <Compile Include="FeedbackControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="FeedbackControl.Designer.cs">
       <DependentUpon>FeedbackControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="FeedbackHandler\Feedback.cs" />
+    <Compile Include="FeedbackHandler\FeedbackController.cs" />
     <Compile Include="LoginControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -99,6 +107,8 @@
     <Compile Include="ReportControl.Designer.cs">
       <DependentUpon>ReportControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportHandler\Report.cs" />
+    <Compile Include="ReportHandler\ReportController.cs" />
     <Compile Include="SubjectControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -116,6 +126,9 @@
     </Compile>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Feedback.resx">
+      <DependentUpon>Feedback.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FeedbackControl.resx">
       <DependentUpon>FeedbackControl.cs</DependentUpon>

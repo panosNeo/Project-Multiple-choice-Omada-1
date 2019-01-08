@@ -81,7 +81,7 @@
             this.ChangeSubjectGroup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.ChangeSubjectGroup.Location = new System.Drawing.Point(343, 19);
             this.ChangeSubjectGroup.Name = "ChangeSubjectGroup";
-            this.ChangeSubjectGroup.Size = new System.Drawing.Size(373, 159);
+            this.ChangeSubjectGroup.Size = new System.Drawing.Size(373, 172);
             this.ChangeSubjectGroup.TabIndex = 1;
             this.ChangeSubjectGroup.TabStop = false;
             this.ChangeSubjectGroup.Text = "Data Settings";
@@ -392,7 +392,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(36, 129);
+            this.label10.Location = new System.Drawing.Point(54, 125);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(60, 16);
             this.label10.TabIndex = 3;
@@ -401,7 +401,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(15, 69);
+            this.label9.Location = new System.Drawing.Point(33, 65);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(81, 16);
             this.label9.TabIndex = 2;
@@ -410,7 +410,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(34, 99);
+            this.label5.Location = new System.Drawing.Point(52, 95);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 16);
             this.label5.TabIndex = 1;
@@ -426,7 +426,7 @@
             this.SubjectTreeView.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.SubjectTreeView.Location = new System.Drawing.Point(3, 19);
             this.SubjectTreeView.Name = "SubjectTreeView";
-            this.SubjectTreeView.Size = new System.Drawing.Size(281, 206);
+            this.SubjectTreeView.Size = new System.Drawing.Size(281, 189);
             this.SubjectTreeView.TabIndex = 1;
             // 
             // groupBox2
@@ -436,7 +436,7 @@
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.groupBox2.Location = new System.Drawing.Point(20, 19);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(287, 228);
+            this.groupBox2.Size = new System.Drawing.Size(287, 211);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Existing Subjects";

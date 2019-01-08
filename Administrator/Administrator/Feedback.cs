@@ -10,19 +10,23 @@ using System.Windows.Forms;
 
 namespace Administrator
 {
-    public partial class Report : UserControl
+    public partial class Feedback : UserControl
     {
-        public Report()
+        public Feedback()
         {
             InitializeComponent();
         }
 
-        //perase to data sta fields
-        public void SetData(int userID,string report,int quizID)
+        //vale to data sta components
+        public void SetData(int userID,string feedback,bool rate)
         {
             userIDBox.Text = userID.ToString();
-            reportBox.Text = report;
-            quizIDBox.Text = quizID.ToString();
+            feedbackBox.Text = feedback;
+
+            if (rate)
+                rateCheckbox.Checked = true;
+            else
+                rateCheckbox.Checked = false;
         }
 
         //delete checkbox
@@ -30,7 +34,6 @@ namespace Administrator
         {
             deleteCheckbox.Checked = check;
         }
-        //des an einai checked h oxi to delete checkbox
         public bool GetDeleteCheckbox()
         {
             if (deleteCheckbox.Checked)
@@ -38,5 +41,19 @@ namespace Administrator
             else
                 return false;
         }
+
+        //update checkbox
+        public void SetRateCheckbox(bool check)
+        {
+            rateCheckbox.Checked = check;
+        }
+        public bool GetRateCheckbox()
+        {
+            if (deleteCheckbox.Checked)
+                return true;
+            else
+                return false;
+        }
+
     }
 }
