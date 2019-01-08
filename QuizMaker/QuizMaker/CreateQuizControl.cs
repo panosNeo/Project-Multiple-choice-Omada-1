@@ -37,10 +37,19 @@ namespace QuizMaker
             string name = ((Button)sender).Name;
             if (name.Equals("stepOneNextBtn"))
             {
-                if (quizNameTextBox.Text != "" /*&& tagTreeView.SelectedNode.Tag !=null*/)
+                int s_id;
+                try
+                {
+                    s_id = (int)tagTreeView.SelectedNode.Tag;
+                }
+                catch
+                {
+                    s_id = 0;
+                }
+                if (quizNameTextBox.Text != "" && s_id > 0)
                 {
                     //αν είναι κενό το όνομα δεν συνεχίζεται 
-                    CreateQuizControlHandler.SetQuiz(quizNameTextBox.Text, 0, 0);
+                    CreateQuizControlHandler.SetQuiz(quizNameTextBox.Text, s_id, 0);
                     SetEnabledPanels(1);
                 }
             }
@@ -61,6 +70,10 @@ namespace QuizMaker
             {
                 if (FinishButton())
                     SetEnabledPanels(2);
+            }
+            else if(name.Equals("backBtn2"))
+            {
+                SetEnabledPanels(1);
             }
         }
 
@@ -389,7 +402,19 @@ namespace QuizMaker
 
         private void finishQuizBtn_Click(object sender, EventArgs e)
         {
+            Quiz myQuiz = CreateQuizControlHandler.GetQuiz();
             PrintQuizTemplates.PrintQuizController print = new PrintQuizTemplates.PrintQuizController(CreateQuizControlHandler.GetQuiz());
+            MultipleChoiceDataSetTableAdapters.QuizTableAdapter quizTableAdapter = new MultipleChoiceDataSetTableAdapters.QuizTableAdapter();
+            quizTableAdapter.InsertNewQuiz(myQuiz.GetUser_id(), myQuiz.GetCreationDate(), myQuiz.GetQuizTitle(), myQuiz.GetSubject_id());
+
+            MultipleChoiceDataSetTableAdapters.QuestionTableAdapter questionTableAdapter = new MultipleChoiceDataSetTableAdapters.QuestionTableAdapter();
+            MultipleChoiceDataSetTableAdapters.Quiz_QuestionsTableAdapter qqTableAdapter = new MultipleChoiceDataSetTableAdapters.Quiz_QuestionsTableAdapter();
+            MultipleChoiceDataSetTableAdapters.AnswerTableAdapter answerTableAdapter = new MultipleChoiceDataSetTableAdapters.AnswerTableAdapter();
+            foreach (Question q in myQuiz.getQuestions())
+            {
+                questionTableAdapter.InsertNewQuestion(q.GetQuestion(), q.GetCrDate(), q.GetUser_id(), q.GetSubject());
+                //qqTableAdapter.InsertQuizAndQuestionID(myQuiz.get)
+            }
         }
     }
 }

@@ -8,7 +8,7 @@ namespace QuizMaker.QuizHandler
 {
     public class Quiz
     {
-        //private int quiz_id;
+        private int quiz_id;
         private string quizTitle;
         private int subject_id;
         private int by_user_id;
@@ -18,6 +18,7 @@ namespace QuizMaker.QuizHandler
         public Quiz()
         {
             this.questions = new List<Question>();
+            this.quiz_id = -1;
         }
 
         public Quiz(string title, int subject, int user)
@@ -27,6 +28,7 @@ namespace QuizMaker.QuizHandler
             this.by_user_id = user;
             this.creationDate = DateTime.Now;
             this.questions = new List<Question>();
+            this.quiz_id = -1;
         }
 
         //SETTERS//
@@ -38,6 +40,11 @@ namespace QuizMaker.QuizHandler
         {
             this.subject_id = subject;
         }
+        public void SetQuiz_id(int q_id)
+        {
+            this.quiz_id = q_id;
+        }
+
 
         //GETTERS//
         public string GetQuizTitle()
@@ -59,6 +66,10 @@ namespace QuizMaker.QuizHandler
         public List<Question> getQuestions()
         {
             return questions;
+        }
+        public int GetQuiz_id()
+        {
+            return quiz_id;
         }
 
         //Handle question list//

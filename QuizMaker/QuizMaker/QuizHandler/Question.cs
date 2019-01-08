@@ -8,7 +8,7 @@ namespace QuizMaker.QuizHandler
 {
     public class Question
     {
-        //private int q_id;
+        private int q_id;
         private String question;
         private List<Answer> answers;
 
@@ -16,16 +16,14 @@ namespace QuizMaker.QuizHandler
         private int rating;
         private int subject_id;
         private DateTime creationDate;
-
-        /*
-        private int quiz_id; 
-        */
+        
 
         //CONSTRUCTOR, create Question object//
 
         public Question()
         {
             this.answers = new List<Answer>();
+            q_id = -1;
         }
 
         public Question(string question, int user, int subject, DateTime date)
@@ -36,6 +34,7 @@ namespace QuizMaker.QuizHandler
             this.creationDate = date;
             this.rating = 0;
             this.answers = new List<Answer>();
+            q_id = -1;
         }
 
         //SETTERS, change variables//
@@ -50,6 +49,10 @@ namespace QuizMaker.QuizHandler
         public void SetSubject(int subject)
         {
             this.subject_id = subject;
+        }
+        public void SetQuestion_id(int q_id)
+        {
+            this.q_id = q_id;
         }
 
         //GETTERS//
@@ -76,6 +79,10 @@ namespace QuizMaker.QuizHandler
         public DateTime GetCrDate()
         {
             return creationDate;
+        }
+        public int GetQuestion_id()
+        {
+            return q_id;
         }
 
         public void AddAnswer(Answer answer)

@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.firstPanel = new System.Windows.Forms.Panel();
+            this.tagTreeView = new System.Windows.Forms.TreeView();
             this.stepOneNextBtn = new System.Windows.Forms.Button();
             this.tagsLabel = new System.Windows.Forms.Label();
             this.quizNameTextBox = new System.Windows.Forms.TextBox();
@@ -56,7 +57,7 @@
             this.reviewLabel = new System.Windows.Forms.Label();
             this.stepThreeLabel = new System.Windows.Forms.Label();
             this.createQuizTimer = new System.Windows.Forms.Timer(this.components);
-            this.tagTreeView = new System.Windows.Forms.TreeView();
+            this.backBtn2 = new System.Windows.Forms.Button();
             this.firstPanel.SuspendLayout();
             this.secondPanel.SuspendLayout();
             this.innerQuestionPanel.SuspendLayout();
@@ -79,6 +80,14 @@
             this.firstPanel.Name = "firstPanel";
             this.firstPanel.Size = new System.Drawing.Size(286, 391);
             this.firstPanel.TabIndex = 0;
+            // 
+            // tagTreeView
+            // 
+            this.tagTreeView.HideSelection = false;
+            this.tagTreeView.Location = new System.Drawing.Point(57, 212);
+            this.tagTreeView.Name = "tagTreeView";
+            this.tagTreeView.Size = new System.Drawing.Size(166, 113);
+            this.tagTreeView.TabIndex = 7;
             // 
             // stepOneNextBtn
             // 
@@ -360,6 +369,7 @@
             this.thirdPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.thirdPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.thirdPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.thirdPanel.Controls.Add(this.backBtn2);
             this.thirdPanel.Controls.Add(this.finishQuizBtn);
             this.thirdPanel.Controls.Add(this.reviewLabel);
             this.thirdPanel.Controls.Add(this.stepThreeLabel);
@@ -415,13 +425,24 @@
             this.createQuizTimer.Interval = 1;
             this.createQuizTimer.Tick += new System.EventHandler(this.createQuizTimer_Tick);
             // 
-            // tagTreeView
+            // backBtn2
             // 
-            this.tagTreeView.HideSelection = false;
-            this.tagTreeView.Location = new System.Drawing.Point(57, 212);
-            this.tagTreeView.Name = "tagTreeView";
-            this.tagTreeView.Size = new System.Drawing.Size(166, 113);
-            this.tagTreeView.TabIndex = 7;
+            this.backBtn2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.backBtn2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.backBtn2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.backBtn2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.backBtn2.FlatAppearance.BorderSize = 0;
+            this.backBtn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backBtn2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.backBtn2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.backBtn2.Location = new System.Drawing.Point(88, 287);
+            this.backBtn2.Name = "backBtn2";
+            this.backBtn2.Size = new System.Drawing.Size(107, 38);
+            this.backBtn2.TabIndex = 15;
+            this.backBtn2.Tag = "5";
+            this.backBtn2.Text = "Back";
+            this.backBtn2.UseVisualStyleBackColor = false;
+            this.backBtn2.Click += new System.EventHandler(this.movePanelsBtn_Click);
             // 
             // CreateQuizControl
             // 
@@ -475,5 +496,6 @@
         private System.Windows.Forms.Button nextQuBtn;
         private System.Windows.Forms.Button deleteBtn;
         private System.Windows.Forms.TreeView tagTreeView;
+        private System.Windows.Forms.Button backBtn2;
     }
 }
