@@ -17,6 +17,13 @@ namespace QuizMaker
         public CreateQuizControl()
         {
             InitializeComponent();
+            setElementAtTreeView();
+        }
+
+        private void setElementAtTreeView()
+        {
+            tagTreeView.Nodes.Clear();
+            tagTreeView.Nodes.Add(SearchHandler.SearchController.GetSubjects());
         }
 
         //ορίζουμε την μεταβλητή panelPos ώστε να θέσουμε κίνηση προς τα αριστερά ή δεξιά
@@ -30,7 +37,7 @@ namespace QuizMaker
             string name = ((Button)sender).Name;
             if (name.Equals("stepOneNextBtn"))
             {
-                if (quizNameTextBox.Text != "")
+                if (quizNameTextBox.Text != "" /*&& tagTreeView.SelectedNode.Tag !=null*/)
                 {
                     //αν είναι κενό το όνομα δεν συνεχίζεται 
                     CreateQuizControlHandler.SetQuiz(quizNameTextBox.Text, 0, 0);
@@ -378,6 +385,11 @@ namespace QuizMaker
             {
                 return true;
             }
+        }
+
+        private void finishQuizBtn_Click(object sender, EventArgs e)
+        {
+            PrintQuizTemplates.PrintQuizController print = new PrintQuizTemplates.PrintQuizController(CreateQuizControlHandler.GetQuiz());
         }
     }
 }

@@ -17,5 +17,7 @@ namespace QuizMaker.PrintQuizTemplates
             InitializeComponent();
             question1.Text = t;
         }
+
+        
     }
 }
