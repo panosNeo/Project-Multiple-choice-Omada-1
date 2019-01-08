@@ -45,10 +45,11 @@ namespace QuizMaker
             MultipleChoiceDataSetTableAdapters.QuizTableAdapter quizTableAdapter = new MultipleChoiceDataSetTableAdapters.QuizTableAdapter();
             int rating =(int)quizTableAdapter.ReturnRating();
             rating += 1;
-            int quizId = (int)quizTableAdapter.ReturnQuizId();
+            Quiz quiz = new Quiz();
+            int qid =quiz.GetQuiz_id();
             int subjectId = (int)quizTableAdapter.ReturnSubjectOfQuiz();
 
-            quizTableAdapter.UpdateRating(rating, quizId, subjectId);
+            quizTableAdapter.UpdateRating(rating, qid, subjectId);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -56,10 +57,11 @@ namespace QuizMaker
             MultipleChoiceDataSetTableAdapters.QuizTableAdapter quizTableAdapter = new MultipleChoiceDataSetTableAdapters.QuizTableAdapter();
             int rating = (int)quizTableAdapter.ReturnRating();
             rating -= 1;
-            int quizId = (int)quizTableAdapter.ReturnQuizId();
+            Quiz quiz = new Quiz();
+            int qid = quiz.GetQuiz_id();
             int subjectId = (int)quizTableAdapter.ReturnSubjectOfQuiz();
 
-            quizTableAdapter.UpdateRating(rating, quizId, subjectId);
+            quizTableAdapter.UpdateRating(rating, qid, subjectId);
         }
     }
 }
