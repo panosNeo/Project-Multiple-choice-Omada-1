@@ -34,8 +34,6 @@ namespace QuizMaker {
         
         private QuizDataTable tableQuiz;
         
-        private Quiz_QuestionsDataTable tableQuiz_Questions;
-        
         private RatingDataTable tableRating;
         
         private ReportDataTable tableReport;
@@ -57,10 +55,6 @@ namespace QuizMaker {
         private global::System.Data.DataRelation relationSubjectQuiz;
         
         private global::System.Data.DataRelation relationUserQuiz;
-        
-        private global::System.Data.DataRelation relationQuestionQuiz_Questions;
-        
-        private global::System.Data.DataRelation relationQuizQuiz_Questions;
         
         private global::System.Data.DataRelation relationQuestionRating;
         
@@ -112,9 +106,6 @@ namespace QuizMaker {
                 }
                 if ((ds.Tables["Quiz"] != null)) {
                     base.Tables.Add(new QuizDataTable(ds.Tables["Quiz"]));
-                }
-                if ((ds.Tables["Quiz_Questions"] != null)) {
-                    base.Tables.Add(new Quiz_QuestionsDataTable(ds.Tables["Quiz_Questions"]));
                 }
                 if ((ds.Tables["Rating"] != null)) {
                     base.Tables.Add(new RatingDataTable(ds.Tables["Rating"]));
@@ -193,16 +184,6 @@ namespace QuizMaker {
         public QuizDataTable Quiz {
             get {
                 return this.tableQuiz;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public Quiz_QuestionsDataTable Quiz_Questions {
-            get {
-                return this.tableQuiz_Questions;
             }
         }
         
@@ -328,9 +309,6 @@ namespace QuizMaker {
                 if ((ds.Tables["Quiz"] != null)) {
                     base.Tables.Add(new QuizDataTable(ds.Tables["Quiz"]));
                 }
-                if ((ds.Tables["Quiz_Questions"] != null)) {
-                    base.Tables.Add(new Quiz_QuestionsDataTable(ds.Tables["Quiz_Questions"]));
-                }
                 if ((ds.Tables["Rating"] != null)) {
                     base.Tables.Add(new RatingDataTable(ds.Tables["Rating"]));
                 }
@@ -406,12 +384,6 @@ namespace QuizMaker {
                     this.tableQuiz.InitVars();
                 }
             }
-            this.tableQuiz_Questions = ((Quiz_QuestionsDataTable)(base.Tables["Quiz_Questions"]));
-            if ((initTable == true)) {
-                if ((this.tableQuiz_Questions != null)) {
-                    this.tableQuiz_Questions.InitVars();
-                }
-            }
             this.tableRating = ((RatingDataTable)(base.Tables["Rating"]));
             if ((initTable == true)) {
                 if ((this.tableRating != null)) {
@@ -443,8 +415,6 @@ namespace QuizMaker {
             this.relationUserQuestion = this.Relations["UserQuestion"];
             this.relationSubjectQuiz = this.Relations["SubjectQuiz"];
             this.relationUserQuiz = this.Relations["UserQuiz"];
-            this.relationQuestionQuiz_Questions = this.Relations["QuestionQuiz_Questions"];
-            this.relationQuizQuiz_Questions = this.Relations["QuizQuiz_Questions"];
             this.relationQuestionRating = this.Relations["QuestionRating"];
             this.relationUserRating = this.Relations["UserRating"];
             this.relationQuestionReport = this.Relations["QuestionReport"];
@@ -469,8 +439,6 @@ namespace QuizMaker {
             base.Tables.Add(this.tableQuestion);
             this.tableQuiz = new QuizDataTable();
             base.Tables.Add(this.tableQuiz);
-            this.tableQuiz_Questions = new Quiz_QuestionsDataTable();
-            base.Tables.Add(this.tableQuiz_Questions);
             this.tableRating = new RatingDataTable();
             base.Tables.Add(this.tableRating);
             this.tableReport = new ReportDataTable();
@@ -479,6 +447,14 @@ namespace QuizMaker {
             base.Tables.Add(this.tableSubject);
             this.tableUser = new UserDataTable();
             base.Tables.Add(this.tableUser);
+            global::System.Data.ForeignKeyConstraint fkc;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_Quiz_Question", new global::System.Data.DataColumn[] {
+                        this.tableQuiz.Quiz_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableQuestion.Question_idColumn});
+            this.tableQuestion.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.Cascade;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
             this.relationQuestionAnswer = new global::System.Data.DataRelation("QuestionAnswer", new global::System.Data.DataColumn[] {
                         this.tableQuestion.Question_idColumn}, new global::System.Data.DataColumn[] {
                         this.tableAnswer.Question_idColumn}, false);
@@ -507,14 +483,6 @@ namespace QuizMaker {
                         this.tableUser.User_idColumn}, new global::System.Data.DataColumn[] {
                         this.tableQuiz.By_userColumn}, false);
             this.Relations.Add(this.relationUserQuiz);
-            this.relationQuestionQuiz_Questions = new global::System.Data.DataRelation("QuestionQuiz_Questions", new global::System.Data.DataColumn[] {
-                        this.tableQuestion.Question_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableQuiz_Questions.Question_idColumn}, false);
-            this.Relations.Add(this.relationQuestionQuiz_Questions);
-            this.relationQuizQuiz_Questions = new global::System.Data.DataRelation("QuizQuiz_Questions", new global::System.Data.DataColumn[] {
-                        this.tableQuiz.Quiz_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableQuiz_Questions.Quiz_idColumn}, false);
-            this.Relations.Add(this.relationQuizQuiz_Questions);
             this.relationQuestionRating = new global::System.Data.DataRelation("QuestionRating", new global::System.Data.DataColumn[] {
                         this.tableQuestion.Question_idColumn}, new global::System.Data.DataColumn[] {
                         this.tableRating.Question_idColumn}, false);
@@ -560,12 +528,6 @@ namespace QuizMaker {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private bool ShouldSerializeQuiz() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializeQuiz_Questions() {
             return false;
         }
         
@@ -662,9 +624,6 @@ namespace QuizMaker {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void QuizRowChangeEventHandler(object sender, QuizRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void Quiz_QuestionsRowChangeEventHandler(object sender, Quiz_QuestionsRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void RatingRowChangeEventHandler(object sender, RatingRowChangeEvent e);
@@ -1613,6 +1572,8 @@ namespace QuizMaker {
             
             private global::System.Data.DataColumn columnSubject_id;
             
+            private global::System.Data.DataColumn columnQuiz_id;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public QuestionDataTable() {
@@ -1688,6 +1649,14 @@ namespace QuizMaker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Quiz_idColumn {
+                get {
+                    return this.columnQuiz_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1723,14 +1692,15 @@ namespace QuizMaker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public QuestionRow AddQuestionRow(string Question, System.DateTime Cr_date, UserRow parentUserRowByUserQuestion, SubjectRow parentSubjectRowBySubjectQuestion) {
+            public QuestionRow AddQuestionRow(string Question, System.DateTime Cr_date, UserRow parentUserRowByUserQuestion, SubjectRow parentSubjectRowBySubjectQuestion, int Quiz_id) {
                 QuestionRow rowQuestionRow = ((QuestionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Question,
                         Cr_date,
                         null,
-                        null};
+                        null,
+                        Quiz_id};
                 if ((parentUserRowByUserQuestion != null)) {
                     columnValuesArray[3] = parentUserRowByUserQuestion[0];
                 }
@@ -1771,6 +1741,7 @@ namespace QuizMaker {
                 this.columnCr_date = base.Columns["Cr_date"];
                 this.columnBy_user = base.Columns["By_user"];
                 this.columnSubject_id = base.Columns["Subject_id"];
+                this.columnQuiz_id = base.Columns["Quiz_id"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1786,6 +1757,8 @@ namespace QuizMaker {
                 base.Columns.Add(this.columnBy_user);
                 this.columnSubject_id = new global::System.Data.DataColumn("Subject_id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSubject_id);
+                this.columnQuiz_id = new global::System.Data.DataColumn("Quiz_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuiz_id);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnQuestion_id}, true));
                 this.columnQuestion_id.AutoIncrement = true;
@@ -2204,284 +2177,6 @@ namespace QuizMaker {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "QuizDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class Quiz_QuestionsDataTable : global::System.Data.TypedTableBase<Quiz_QuestionsRow> {
-            
-            private global::System.Data.DataColumn columnQuiz_id;
-            
-            private global::System.Data.DataColumn columnQuestion_id;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Quiz_QuestionsDataTable() {
-                this.TableName = "Quiz_Questions";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal Quiz_QuestionsDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected Quiz_QuestionsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Quiz_idColumn {
-                get {
-                    return this.columnQuiz_id;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Question_idColumn {
-                get {
-                    return this.columnQuestion_id;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Quiz_QuestionsRow this[int index] {
-                get {
-                    return ((Quiz_QuestionsRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event Quiz_QuestionsRowChangeEventHandler Quiz_QuestionsRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event Quiz_QuestionsRowChangeEventHandler Quiz_QuestionsRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event Quiz_QuestionsRowChangeEventHandler Quiz_QuestionsRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event Quiz_QuestionsRowChangeEventHandler Quiz_QuestionsRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddQuiz_QuestionsRow(Quiz_QuestionsRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Quiz_QuestionsRow AddQuiz_QuestionsRow(QuizRow parentQuizRowByQuizQuiz_Questions, QuestionRow parentQuestionRowByQuestionQuiz_Questions) {
-                Quiz_QuestionsRow rowQuiz_QuestionsRow = ((Quiz_QuestionsRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        null};
-                if ((parentQuizRowByQuizQuiz_Questions != null)) {
-                    columnValuesArray[0] = parentQuizRowByQuizQuiz_Questions[0];
-                }
-                if ((parentQuestionRowByQuestionQuiz_Questions != null)) {
-                    columnValuesArray[1] = parentQuestionRowByQuestionQuiz_Questions[0];
-                }
-                rowQuiz_QuestionsRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowQuiz_QuestionsRow);
-                return rowQuiz_QuestionsRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Quiz_QuestionsRow FindByQuiz_id(int Quiz_id) {
-                return ((Quiz_QuestionsRow)(this.Rows.Find(new object[] {
-                            Quiz_id})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                Quiz_QuestionsDataTable cln = ((Quiz_QuestionsDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new Quiz_QuestionsDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal void InitVars() {
-                this.columnQuiz_id = base.Columns["Quiz_id"];
-                this.columnQuestion_id = base.Columns["Question_id"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            private void InitClass() {
-                this.columnQuiz_id = new global::System.Data.DataColumn("Quiz_id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnQuiz_id);
-                this.columnQuestion_id = new global::System.Data.DataColumn("Question_id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnQuestion_id);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnQuiz_id}, true));
-                this.columnQuiz_id.AllowDBNull = false;
-                this.columnQuiz_id.Unique = true;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Quiz_QuestionsRow NewQuiz_QuestionsRow() {
-                return ((Quiz_QuestionsRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new Quiz_QuestionsRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(Quiz_QuestionsRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.Quiz_QuestionsRowChanged != null)) {
-                    this.Quiz_QuestionsRowChanged(this, new Quiz_QuestionsRowChangeEvent(((Quiz_QuestionsRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.Quiz_QuestionsRowChanging != null)) {
-                    this.Quiz_QuestionsRowChanging(this, new Quiz_QuestionsRowChangeEvent(((Quiz_QuestionsRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.Quiz_QuestionsRowDeleted != null)) {
-                    this.Quiz_QuestionsRowDeleted(this, new Quiz_QuestionsRowChangeEvent(((Quiz_QuestionsRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.Quiz_QuestionsRowDeleting != null)) {
-                    this.Quiz_QuestionsRowDeleting(this, new Quiz_QuestionsRowChangeEvent(((Quiz_QuestionsRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemoveQuiz_QuestionsRow(Quiz_QuestionsRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                MultipleChoiceDataSet ds = new MultipleChoiceDataSet();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "Quiz_QuestionsDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -4202,6 +3897,22 @@ namespace QuizMaker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int Quiz_id {
+                get {
+                    try {
+                        return ((int)(this[this.tableQuestion.Quiz_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Quiz_id\' in table \'Question\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableQuestion.Quiz_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public SubjectRow SubjectRow {
                 get {
                     return ((SubjectRow)(this.GetParentRow(this.Table.ParentRelations["SubjectQuestion"])));
@@ -4272,23 +3983,24 @@ namespace QuizMaker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsQuiz_idNull() {
+                return this.IsNull(this.tableQuestion.Quiz_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetQuiz_idNull() {
+                this[this.tableQuestion.Quiz_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public AnswerRow[] GetAnswerRows() {
                 if ((this.Table.ChildRelations["QuestionAnswer"] == null)) {
                     return new AnswerRow[0];
                 }
                 else {
                     return ((AnswerRow[])(base.GetChildRows(this.Table.ChildRelations["QuestionAnswer"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Quiz_QuestionsRow[] GetQuiz_QuestionsRows() {
-                if ((this.Table.ChildRelations["QuestionQuiz_Questions"] == null)) {
-                    return new Quiz_QuestionsRow[0];
-                }
-                else {
-                    return ((Quiz_QuestionsRow[])(base.GetChildRows(this.Table.ChildRelations["QuestionQuiz_Questions"])));
                 }
             }
             
@@ -4472,93 +4184,6 @@ namespace QuizMaker {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetSubject_idNull() {
                 this[this.tableQuiz.Subject_idColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Quiz_QuestionsRow[] GetQuiz_QuestionsRows() {
-                if ((this.Table.ChildRelations["QuizQuiz_Questions"] == null)) {
-                    return new Quiz_QuestionsRow[0];
-                }
-                else {
-                    return ((Quiz_QuestionsRow[])(base.GetChildRows(this.Table.ChildRelations["QuizQuiz_Questions"])));
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class Quiz_QuestionsRow : global::System.Data.DataRow {
-            
-            private Quiz_QuestionsDataTable tableQuiz_Questions;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal Quiz_QuestionsRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableQuiz_Questions = ((Quiz_QuestionsDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int Quiz_id {
-                get {
-                    return ((int)(this[this.tableQuiz_Questions.Quiz_idColumn]));
-                }
-                set {
-                    this[this.tableQuiz_Questions.Quiz_idColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int Question_id {
-                get {
-                    try {
-                        return ((int)(this[this.tableQuiz_Questions.Question_idColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Question_id\' in table \'Quiz_Questions\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableQuiz_Questions.Question_idColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public QuestionRow QuestionRow {
-                get {
-                    return ((QuestionRow)(this.GetParentRow(this.Table.ParentRelations["QuestionQuiz_Questions"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["QuestionQuiz_Questions"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public QuizRow QuizRow {
-                get {
-                    return ((QuizRow)(this.GetParentRow(this.Table.ParentRelations["QuizQuiz_Questions"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["QuizQuiz_Questions"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsQuestion_idNull() {
-                return this.IsNull(this.tableQuiz_Questions.Question_idColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetQuestion_idNull() {
-                this[this.tableQuiz_Questions.Question_idColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -5290,40 +4915,6 @@ namespace QuizMaker {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public QuizRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class Quiz_QuestionsRowChangeEvent : global::System.EventArgs {
-            
-            private Quiz_QuestionsRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Quiz_QuestionsRowChangeEvent(Quiz_QuestionsRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Quiz_QuestionsRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -7893,397 +7484,6 @@ namespace QuizMaker.MultipleChoiceDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class Quiz_QuestionsTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.OleDb.OleDbDataAdapter _adapter;
-        
-        private global::System.Data.OleDb.OleDbConnection _connection;
-        
-        private global::System.Data.OleDb.OleDbTransaction _transaction;
-        
-        private global::System.Data.OleDb.OleDbCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public Quiz_QuestionsTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected internal global::System.Data.OleDb.OleDbDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        internal global::System.Data.OleDb.OleDbConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.OleDb.OleDbCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        internal global::System.Data.OleDb.OleDbTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected global::System.Data.OleDb.OleDbCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.OleDb.OleDbDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Quiz_Questions";
-            tableMapping.ColumnMappings.Add("Quiz_id", "Quiz_id");
-            tableMapping.ColumnMappings.Add("Question_id", "Question_id");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `Quiz_Questions` WHERE ((`Quiz_id` = ?) AND ((? = 1 AND `Question_id`" +
-                " IS NULL) OR (`Question_id` = ?)))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Quiz_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Quiz_id", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Question_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Question_id", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Question_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Question_id", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `Quiz_Questions` (`Quiz_id`, `Question_id`) VALUES (?, ?)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Quiz_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Quiz_id", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Question_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Question_id", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `Quiz_Questions` SET `Quiz_id` = ?, `Question_id` = ? WHERE ((`Quiz_id` = " +
-                "?) AND ((? = 1 AND `Question_id` IS NULL) OR (`Question_id` = ?)))";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Quiz_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Quiz_id", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Question_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Question_id", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Quiz_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Quiz_id", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Question_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Question_id", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Question_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Question_id", global::System.Data.DataRowVersion.Original, false, null));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::QuizMaker.Properties.Settings.Default.DatabaseConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[3];
-            this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Quiz_id, Question_id FROM Quiz_Questions";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT Quiz_id, Question_id FROM Quiz_Questions WHERE Quiz_id = ?";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Quiz_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Quiz_id", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
-            this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "INSERT INTO `Quiz_Questions` (`Quiz_id`, `Question_id`) VALUES (?, ?)";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Quiz_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Quiz_id", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Question_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Question_id", global::System.Data.DataRowVersion.Current, false, null));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(MultipleChoiceDataSet.Quiz_QuestionsDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual MultipleChoiceDataSet.Quiz_QuestionsDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            MultipleChoiceDataSet.Quiz_QuestionsDataTable dataTable = new MultipleChoiceDataSet.Quiz_QuestionsDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(MultipleChoiceDataSet.Quiz_QuestionsDataTable dataTable, int Quiz_id) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Quiz_id));
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual MultipleChoiceDataSet.Quiz_QuestionsDataTable GetDataBy(int Quiz_id) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Quiz_id));
-            MultipleChoiceDataSet.Quiz_QuestionsDataTable dataTable = new MultipleChoiceDataSet.Quiz_QuestionsDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(MultipleChoiceDataSet.Quiz_QuestionsDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(MultipleChoiceDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "Quiz_Questions");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Quiz_id, global::System.Nullable<int> Original_Question_id) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Quiz_id));
-            if ((Original_Question_id.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Question_id.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int Quiz_id, global::System.Nullable<int> Question_id) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Quiz_id));
-            if ((Question_id.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Question_id.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Quiz_id, global::System.Nullable<int> Question_id, int Original_Quiz_id, global::System.Nullable<int> Original_Question_id) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Quiz_id));
-            if ((Question_id.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Question_id.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_Quiz_id));
-            if ((Original_Question_id.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_Question_id.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> Question_id, int Original_Quiz_id, global::System.Nullable<int> Original_Question_id) {
-            return this.Update(Original_Quiz_id, Question_id, Original_Quiz_id, Original_Question_id);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertQuizAndQuestionID(int Quiz_id, global::System.Nullable<int> Question_id) {
-            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[2];
-            command.Parameters[0].Value = ((int)(Quiz_id));
-            if ((Question_id.HasValue == true)) {
-                command.Parameters[1].Value = ((int)(Question_id.Value));
-            }
-            else {
-                command.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class RatingTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.OleDb.OleDbDataAdapter _adapter;
@@ -10160,8 +9360,6 @@ namespace QuizMaker.MultipleChoiceDataSetTableAdapters {
         
         private QuizTableAdapter _quizTableAdapter;
         
-        private Quiz_QuestionsTableAdapter _quiz_QuestionsTableAdapter;
-        
         private RatingTableAdapter _ratingTableAdapter;
         
         private ReportTableAdapter _reportTableAdapter;
@@ -10260,20 +9458,6 @@ namespace QuizMaker.MultipleChoiceDataSetTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public Quiz_QuestionsTableAdapter Quiz_QuestionsTableAdapter {
-            get {
-                return this._quiz_QuestionsTableAdapter;
-            }
-            set {
-                this._quiz_QuestionsTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
         public RatingTableAdapter RatingTableAdapter {
             get {
                 return this._ratingTableAdapter;
@@ -10364,10 +9548,6 @@ namespace QuizMaker.MultipleChoiceDataSetTableAdapters {
                             && (this._quizTableAdapter.Connection != null))) {
                     return this._quizTableAdapter.Connection;
                 }
-                if (((this._quiz_QuestionsTableAdapter != null) 
-                            && (this._quiz_QuestionsTableAdapter.Connection != null))) {
-                    return this._quiz_QuestionsTableAdapter.Connection;
-                }
                 if (((this._ratingTableAdapter != null) 
                             && (this._ratingTableAdapter.Connection != null))) {
                     return this._ratingTableAdapter.Connection;
@@ -10412,9 +9592,6 @@ namespace QuizMaker.MultipleChoiceDataSetTableAdapters {
                 if ((this._quizTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._quiz_QuestionsTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 if ((this._ratingTableAdapter != null)) {
                     count = (count + 1);
                 }
@@ -10456,21 +9633,21 @@ namespace QuizMaker.MultipleChoiceDataSetTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._questionTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Question.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._questionTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._quizTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Quiz.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._quizTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._questionTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Question.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._questionTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -10498,15 +9675,6 @@ namespace QuizMaker.MultipleChoiceDataSetTableAdapters {
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._feedbackTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._quiz_QuestionsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Quiz_Questions.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._quiz_QuestionsTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -10554,19 +9722,19 @@ namespace QuizMaker.MultipleChoiceDataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._questionTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Question.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._questionTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._quizTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Quiz.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._quizTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._questionTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Question.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._questionTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -10591,14 +9759,6 @@ namespace QuizMaker.MultipleChoiceDataSetTableAdapters {
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._feedbackTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._quiz_QuestionsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Quiz_Questions.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._quiz_QuestionsTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -10644,14 +9804,6 @@ namespace QuizMaker.MultipleChoiceDataSetTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._quiz_QuestionsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Quiz_Questions.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._quiz_QuestionsTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._feedbackTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Feedback.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -10676,19 +9828,19 @@ namespace QuizMaker.MultipleChoiceDataSetTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._quizTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Quiz.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._quizTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._questionTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Question.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._questionTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._quizTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Quiz.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._quizTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -10769,11 +9921,6 @@ namespace QuizMaker.MultipleChoiceDataSetTableAdapters {
             }
             if (((this._quizTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._quizTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
-            if (((this._quiz_QuestionsTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._quiz_QuestionsTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -10872,15 +10019,6 @@ namespace QuizMaker.MultipleChoiceDataSetTableAdapters {
                     if (this._quizTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._quizTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._quizTableAdapter.Adapter);
-                    }
-                }
-                if ((this._quiz_QuestionsTableAdapter != null)) {
-                    revertConnections.Add(this._quiz_QuestionsTableAdapter, this._quiz_QuestionsTableAdapter.Connection);
-                    this._quiz_QuestionsTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
-                    this._quiz_QuestionsTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
-                    if (this._quiz_QuestionsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._quiz_QuestionsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._quiz_QuestionsTableAdapter.Adapter);
                     }
                 }
                 if ((this._ratingTableAdapter != null)) {
@@ -10996,10 +10134,6 @@ namespace QuizMaker.MultipleChoiceDataSetTableAdapters {
                 if ((this._quizTableAdapter != null)) {
                     this._quizTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._quizTableAdapter]));
                     this._quizTableAdapter.Transaction = null;
-                }
-                if ((this._quiz_QuestionsTableAdapter != null)) {
-                    this._quiz_QuestionsTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._quiz_QuestionsTableAdapter]));
-                    this._quiz_QuestionsTableAdapter.Transaction = null;
                 }
                 if ((this._ratingTableAdapter != null)) {
                     this._ratingTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._ratingTableAdapter]));

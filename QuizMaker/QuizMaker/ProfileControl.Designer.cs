@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.personalPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.personalBtn = new System.Windows.Forms.Button();
+            this.stepOneNextBtn = new System.Windows.Forms.Button();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.emailLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.personalAnimationTimer = new System.Windows.Forms.Timer(this.components);
             this.quizAnimtionTimer = new System.Windows.Forms.Timer(this.components);
-            this.stepOneNextBtn = new System.Windows.Forms.Button();
             this.usernameText = new QuizMaker.CustomTextBox();
             this.emailText = new QuizMaker.CustomTextBox();
             this.firstNameText = new QuizMaker.CustomTextBox();
@@ -54,7 +54,6 @@
             // 
             this.personalPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.personalPanel.Controls.Add(this.personalBtn);
-            this.personalPanel.Controls.Add(this.stepOneNextBtn);
             this.personalPanel.Controls.Add(this.usernameLabel);
             this.personalPanel.Controls.Add(this.usernameText);
             this.personalPanel.Controls.Add(this.emailLabel);
@@ -63,10 +62,11 @@
             this.personalPanel.Controls.Add(this.firstNameText);
             this.personalPanel.Controls.Add(this.lastNameLabel);
             this.personalPanel.Controls.Add(this.LastNameText);
+            this.personalPanel.Controls.Add(this.stepOneNextBtn);
             this.personalPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.personalPanel.Location = new System.Drawing.Point(150, 117);
+            this.personalPanel.Location = new System.Drawing.Point(150, 112);
             this.personalPanel.Name = "personalPanel";
-            this.personalPanel.Size = new System.Drawing.Size(627, 50);
+            this.personalPanel.Size = new System.Drawing.Size(627, 55);
             this.personalPanel.TabIndex = 0;
             // 
             // personalBtn
@@ -85,12 +85,30 @@
             this.personalBtn.UseVisualStyleBackColor = true;
             this.personalBtn.Click += new System.EventHandler(this.button2_Click);
             // 
+            // stepOneNextBtn
+            // 
+            this.stepOneNextBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.stepOneNextBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.stepOneNextBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.stepOneNextBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.stepOneNextBtn.FlatAppearance.BorderSize = 0;
+            this.stepOneNextBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.stepOneNextBtn.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.stepOneNextBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.stepOneNextBtn.Location = new System.Drawing.Point(1580, 3);
+            this.stepOneNextBtn.Name = "stepOneNextBtn";
+            this.stepOneNextBtn.Size = new System.Drawing.Size(166, 38);
+            this.stepOneNextBtn.TabIndex = 17;
+            this.stepOneNextBtn.Tag = "-5";
+            this.stepOneNextBtn.Text = "Next";
+            this.stepOneNextBtn.UseVisualStyleBackColor = false;
+            // 
             // usernameLabel
             // 
             this.usernameLabel.AutoSize = true;
             this.usernameLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.usernameLabel.ForeColor = System.Drawing.Color.White;
-            this.usernameLabel.Location = new System.Drawing.Point(804, 0);
+            this.usernameLabel.Location = new System.Drawing.Point(632, 0);
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(80, 18);
             this.usernameLabel.TabIndex = 9;
@@ -101,7 +119,7 @@
             this.emailLabel.AutoSize = true;
             this.emailLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.emailLabel.ForeColor = System.Drawing.Color.White;
-            this.emailLabel.Location = new System.Drawing.Point(1041, 0);
+            this.emailLabel.Location = new System.Drawing.Point(869, 0);
             this.emailLabel.Name = "emailLabel";
             this.emailLabel.Size = new System.Drawing.Size(53, 18);
             this.emailLabel.TabIndex = 11;
@@ -112,7 +130,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(1278, 0);
+            this.label1.Location = new System.Drawing.Point(1106, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 18);
             this.label1.TabIndex = 13;
@@ -123,7 +141,7 @@
             this.lastNameLabel.AutoSize = true;
             this.lastNameLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.lastNameLabel.ForeColor = System.Drawing.Color.White;
-            this.lastNameLabel.Location = new System.Drawing.Point(1515, 0);
+            this.lastNameLabel.Location = new System.Drawing.Point(1343, 0);
             this.lastNameLabel.Name = "lastNameLabel";
             this.lastNameLabel.Size = new System.Drawing.Size(84, 18);
             this.lastNameLabel.TabIndex = 15;
@@ -137,7 +155,7 @@
             this.quizPanel.Controls.Add(this.label3);
             this.quizPanel.Location = new System.Drawing.Point(150, 170);
             this.quizPanel.Name = "quizPanel";
-            this.quizPanel.Size = new System.Drawing.Size(627, 49);
+            this.quizPanel.Size = new System.Drawing.Size(627, 51);
             this.quizPanel.TabIndex = 1;
             // 
             // quizBtn
@@ -185,31 +203,13 @@
             this.quizAnimtionTimer.Interval = 1;
             this.quizAnimtionTimer.Tick += new System.EventHandler(this.quizAnimtionTimer_Tick);
             // 
-            // stepOneNextBtn
-            // 
-            this.stepOneNextBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.stepOneNextBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.stepOneNextBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.stepOneNextBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.stepOneNextBtn.FlatAppearance.BorderSize = 0;
-            this.stepOneNextBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.stepOneNextBtn.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.stepOneNextBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.stepOneNextBtn.Location = new System.Drawing.Point(632, 3);
-            this.stepOneNextBtn.Name = "stepOneNextBtn";
-            this.stepOneNextBtn.Size = new System.Drawing.Size(166, 38);
-            this.stepOneNextBtn.TabIndex = 17;
-            this.stepOneNextBtn.Tag = "-5";
-            this.stepOneNextBtn.Text = "Next";
-            this.stepOneNextBtn.UseVisualStyleBackColor = false;
-            // 
             // usernameText
             // 
             this.usernameText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.usernameText.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.usernameText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.usernameText.ForeColor = System.Drawing.Color.White;
-            this.usernameText.Location = new System.Drawing.Point(804, 21);
+            this.usernameText.Location = new System.Drawing.Point(632, 21);
             this.usernameText.Name = "usernameText";
             this.usernameText.Size = new System.Drawing.Size(231, 23);
             this.usernameText.TabIndex = 10;
@@ -221,7 +221,7 @@
             this.emailText.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.emailText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.emailText.ForeColor = System.Drawing.Color.White;
-            this.emailText.Location = new System.Drawing.Point(1041, 21);
+            this.emailText.Location = new System.Drawing.Point(869, 21);
             this.emailText.Name = "emailText";
             this.emailText.Size = new System.Drawing.Size(231, 23);
             this.emailText.TabIndex = 12;
@@ -232,7 +232,7 @@
             this.firstNameText.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.firstNameText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.firstNameText.ForeColor = System.Drawing.Color.White;
-            this.firstNameText.Location = new System.Drawing.Point(1278, 21);
+            this.firstNameText.Location = new System.Drawing.Point(1106, 21);
             this.firstNameText.Name = "firstNameText";
             this.firstNameText.Size = new System.Drawing.Size(231, 23);
             this.firstNameText.TabIndex = 14;
@@ -243,7 +243,7 @@
             this.LastNameText.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.LastNameText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.LastNameText.ForeColor = System.Drawing.Color.White;
-            this.LastNameText.Location = new System.Drawing.Point(1515, 21);
+            this.LastNameText.Location = new System.Drawing.Point(1343, 21);
             this.LastNameText.Name = "LastNameText";
             this.LastNameText.Size = new System.Drawing.Size(231, 23);
             this.LastNameText.TabIndex = 16;

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuizMaker.QuizHandler;
 
 namespace QuizMaker
 {
@@ -41,7 +42,7 @@ namespace QuizMaker
         {
             if (personalDown)
             {
-                if (personalPanel.Size.Height < 250)
+                if (personalPanel.Size.Height < 300)
                 {
                     SetAnimation(personal, personalDown);
                 }
@@ -49,14 +50,40 @@ namespace QuizMaker
             }
             else
             {
-                if (personalPanel.Size.Height > 50)
+                if (personalPanel.Size.Height > 60)
                 {
                     SetAnimation(personal, personalDown);
                 }
                 else personalAnimationTimer.Stop();
             }
         }
-
+        private void setUserQuizes()
+        {
+            ResultQuizControl temp;
+            int counter = 0;
+            foreach (Quiz q in SearchHandler.SearchController.GetQuizByUserID(LoginStatusData.userID))
+            {
+                
+                temp = new ResultQuizControl(q)
+                {
+                    Dock = DockStyle.Top
+                };
+                if(counter%2 == 0)
+                {
+                    temp.BackColor = Color.FromArgb(37, 46, 69);
+                }
+                temp.SetQuizNumberOfQuestions(q.getQuestions().Count);
+                temp.SetQuizTitle(q.GetQuizTitle());
+                temp.SetQuizSubject(q.GetSubject_id().ToString());
+                temp.Click += new EventHandler(ResultQuiz_Click);
+                quizPanel.Controls.Add(temp);
+            }
+        }
+        private void ResultQuiz_Click(object sender, EventArgs e)
+        {
+            Controls.Clear();
+            QuizPanel p = new QuizPanel(new QuizPlayerController(((ResultQuizControl)sender).GetQuiz()));
+        }
         private void SetAnimation(string panel, bool down)
         {
             if(panel == "personal")
@@ -114,7 +141,7 @@ namespace QuizMaker
             }
             else
             {
-                if (quizPanel.Size.Height > 50)
+                if (quizPanel.Size.Height > 60)
                 {
                     SetAnimation(quiz, quizDown);
                 }

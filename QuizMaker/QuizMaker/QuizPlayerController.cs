@@ -18,6 +18,10 @@ namespace QuizMaker
         public QuizPlayerController(Quiz q)
         {
             quiz = q;
+            if(quiz.getQuestions().Count == 0)
+            {
+                setATestQuiz();
+            }
             //setATestQuiz();
         }
 

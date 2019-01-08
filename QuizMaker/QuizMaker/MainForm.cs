@@ -114,9 +114,16 @@ namespace QuizMaker
                     mainPanel.Controls.Add(e);
                     break;
                 case "profile":
-                    ProfileControl f = new ProfileControl();
-                    f.Dock = DockStyle.Fill;
-                    mainPanel.Controls.Add(f);
+                    if(LoginStatusData.userID != 0)
+                    {
+                        ProfileControl f = new ProfileControl();
+                        f.Dock = DockStyle.Fill;
+                        mainPanel.Controls.Add(f);
+                    }
+                    else
+                    {
+                        GoToLoginPanel();
+                    }
                     break;
                 default:
                     Console.WriteLine("No control selected");
