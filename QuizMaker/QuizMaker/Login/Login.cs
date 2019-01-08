@@ -10,15 +10,7 @@ namespace QuizMaker.Login
 {
     class Login
     {
-        private string username { get; set; }
-        private string passwd { get; set; }
-
-        //initalize
-        public Login(string user,string pass)
-        {
-            this.username = user;
-            this.passwd = pass;
-        }
+        
 
         //Method that shows if an input has any special characters in it
         private bool SpecialCharactersValidator(string input)
@@ -58,19 +50,10 @@ namespace QuizMaker.Login
                 MessageBox.Show("No special characters are allowed");
                 ClearTexts(user, pass);
                 return false;
-            }
-            //check if the username is correct
+            }        
+            //username is valid...
             else
-            {
-                if (username != user)
-                {
-                    MessageBox.Show("Your username is incorrect");
-                    ClearTexts(user, pass);
-                    return false;
-                }
-                //username is correct...
-                else
-                {
+              {
                     //check if password is empty
                     if (String.IsNullOrEmpty(pass))
                     {
@@ -84,12 +67,7 @@ namespace QuizMaker.Login
                         ClearTexts(user, pass);
                         return false;
                     }
-                    //check if the password is correct
-                    else if (passwd != pass)
-                    {
-                        MessageBox.Show("Your password is incorrect");
-                        return false;
-                    }
+                    // the password is valid...
                     else
                     {
                         return true;
@@ -97,6 +75,34 @@ namespace QuizMaker.Login
                        
                 }
                 
+            
+        }
+
+        internal bool LoginUser(string user, string pass)
+        {
+            if (IsLoggedIn(user, pass)) { 
+                //Using the adapter to validate through queries the login info and also store the Id of the user that logged in
+                MultipleChoiceDataSetTableAdapters.UserTableAdapter userTableAdapter = new MultipleChoiceDataSetTableAdapters.UserTableAdapter();
+
+                try
+                {
+                    int userID = (int)userTableAdapter.ReturnUserId(user, pass);
+               
+                    MessageBox.Show("You logged in succesfully");
+                    return true;
+                    
+                }
+                catch(Exception)
+                {
+                    MessageBox.Show("Your username or password is incorrect");
+                    return false;
+                }
+
+
+            }
+            else
+            {
+                return false;
             }
         }
 

@@ -39,5 +39,27 @@ namespace QuizMaker
             q.Dock = DockStyle.Fill;
             Controls.Add(q);
         }
+
+        private void likeBtn_Click(object sender, EventArgs e)
+        {
+            MultipleChoiceDataSetTableAdapters.QuizTableAdapter quizTableAdapter = new MultipleChoiceDataSetTableAdapters.QuizTableAdapter();
+            int rating =(int)quizTableAdapter.ReturnRating();
+            rating += 1;
+            int quizId = (int)quizTableAdapter.ReturnQuizId();
+            int subjectId = (int)quizTableAdapter.ReturnSubjectOfQuiz();
+
+            quizTableAdapter.UpdateRating(rating, quizId, subjectId);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MultipleChoiceDataSetTableAdapters.QuizTableAdapter quizTableAdapter = new MultipleChoiceDataSetTableAdapters.QuizTableAdapter();
+            int rating = (int)quizTableAdapter.ReturnRating();
+            rating -= 1;
+            int quizId = (int)quizTableAdapter.ReturnQuizId();
+            int subjectId = (int)quizTableAdapter.ReturnSubjectOfQuiz();
+
+            quizTableAdapter.UpdateRating(rating, quizId, subjectId);
+        }
     }
 }

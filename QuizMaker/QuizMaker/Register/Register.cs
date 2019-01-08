@@ -51,15 +51,6 @@ namespace QuizMaker.Register
                 return false;
             }
         }
-        /*private void ClearTexts(string user, string pass, string email, string fn, string ln)
-        {
-            user = String.Empty;
-            pass = String.Empty;
-            email = String.Empty;
-            fn = String.Empty;
-            ln = String.Empty;
-
-        }*/
 
         internal bool IsRegistered(string user, string pass, string email, string fn, string ln)
         {
@@ -143,6 +134,22 @@ namespace QuizMaker.Register
                     }
                 }
             }
+        }
+
+        public void RegisterUser(string user, string pass, string email, string fn, string ln)
+        {
+
+            if (IsRegistered(user, pass, email, fn, ln))
+            {
+                MultipleChoiceDataSetTableAdapters.UserTableAdapter userTableAdapter = new MultipleChoiceDataSetTableAdapters.UserTableAdapter();
+                userTableAdapter.RegisterQuery(user, pass, email, fn, ln);
+                int u = userTableAdapter.Update(new MultipleChoiceDataSet.UserDataTable());
+
+                MailHandler.SendMailController.SendVerificationMail(email);
+
+                
+            }
+
         }
     }
 }

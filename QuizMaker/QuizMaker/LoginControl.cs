@@ -19,28 +19,31 @@ namespace QuizMaker
         }
 
         //prosorina stoixeia gia testing
-        Login.Login login = new Login.Login("admin", "1234");
-       
+        Login.Login login = new Login.Login();
+        
         
         //log in button
         private void loginBtn_Click(object sender, EventArgs e)
         {
             string user = usernameText.Text;
             string pass = passwordText.Text;
-
-            if (login.IsLoggedIn(user, pass))
+            bool a =login.LoginUser(user, pass);
+            if (a)
             {
-                MessageBox.Show("You are logged in succesfully");
+                ProfileControl pr = new ProfileControl();
+                pr.Dock = DockStyle.Fill;
+                this.Controls.Clear();
+                this.Controls.Add(pr);
             }
             else
             {
-                MessageBox.Show("Login Error!");
+                usernameText.Clear();
+                passwordText.Clear();
             }
         }
 
         private void createAccountBtn_Click(object sender, EventArgs e)
         {
-
             RegisterControl re = new RegisterControl();
             re.Dock = DockStyle.Fill;
             this.Controls.Clear();
