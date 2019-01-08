@@ -342,7 +342,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MultipleChoice.accdb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\dislike.png" />
     <None Include="Resources\like.png" />
