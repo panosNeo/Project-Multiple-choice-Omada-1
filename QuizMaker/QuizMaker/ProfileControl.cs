@@ -128,10 +128,12 @@ namespace QuizMaker
             string user= LoginStatusData.username;
             string name= LoginStatusData.name;
             string lname= LoginStatusData.surname;
+            string email = LoginStatusData.email;
             
             usernameText.Text = user;
             firstNameText.Text = name;
             LastNameText.Text = lname;
+            emailText.Text = email;
         }
     }
 }
