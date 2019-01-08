@@ -26,6 +26,10 @@ namespace QuizMaker
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
+            GoToLoginPanel();
+        }
+        private void GoToLoginPanel()
+        {
             //γίνεται clear του mainPanel για να μην μπουκώνει την μνήμη
             mainPanel.Controls.Clear();
             LoginControl l = new LoginControl();
@@ -57,7 +61,6 @@ namespace QuizMaker
                     leftPanelSize.Width = leftPanelSize.Width - 5;
 
                     leftPanel.Size = leftPanelSize;
-
                 }
                 else timer1.Stop();
             }
@@ -87,9 +90,16 @@ namespace QuizMaker
             switch (name)
             {
                 case "createQuiz":
-                    CreateQuizControl c = new CreateQuizControl();
-                    c.Dock = DockStyle.Fill;
-                    mainPanel.Controls.Add(c);
+                    if (Login.Login.userID != -1)
+                    {
+                        CreateQuizControl c = new CreateQuizControl();
+                        c.Dock = DockStyle.Fill;
+                        mainPanel.Controls.Add(c);
+                    }
+                    else
+                    {
+                        GoToLoginPanel();
+                    }
                     break;
                 case "categories":
                     SearchControl d = new SearchControl
