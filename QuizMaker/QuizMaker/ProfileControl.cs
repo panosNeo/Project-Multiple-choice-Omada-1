@@ -128,7 +128,7 @@ namespace QuizMaker
             string name= "null";
             string lname= "null";
             MultipleChoiceDataSetTableAdapters.UserTableAdapter users = new MultipleChoiceDataSetTableAdapters.UserTableAdapter();
-            user = (string)users.ReturnUsername(id);
+            //user = (string)users.ReturnUsername(id);
             testText.Text = "asdasdasdsa";
             MessageBox.Show("Teststst");
 

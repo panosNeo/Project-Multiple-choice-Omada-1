@@ -14,9 +14,18 @@ namespace QuizMaker.QuizHandler
 
         public Quiz GetARandomQuiz(int numOfQuizs)
         {
-            randomQuiz_id = rnd.Next(numOfQuizs);
-            //methodos pou tha psaxnei stin basi me basi to randomQuiz_id kai tha epistrefei to quiz//
-            return randomQuiz;
+            MultipleChoiceDataSetTableAdapters.QuizTableAdapter quizData = new MultipleChoiceDataSetTableAdapters.QuizTableAdapter();
+            randomQuiz_id = rnd.Next((int)quizData.CountQuizes()) + 1;
+
+            if (rnd.Next((int)quizData.CountQuizes()) != 0)
+            {
+                randomQuiz = SearchHandler.SearchController.GetQuizByID(randomQuiz_id);
+                return randomQuiz;
+            }
+            else
+            {
+                return new Quiz();
+            }
         }
     }
 }

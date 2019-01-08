@@ -136,6 +136,45 @@ namespace QuizMaker.SearchHandler
             }
             return quizzes;
         }
+        public static Quiz GetQuizByID(int subID)
+        {
+            QuizTableAdapter quizData = new QuizTableAdapter();
+            QuestionTableAdapter questionData = new QuestionTableAdapter();
+            Quiz_QuestionsTableAdapter quizQuestion = new Quiz_QuestionsTableAdapter();
+            AnswerTableAdapter answerData = new AnswerTableAdapter();
+            List<Quiz> quizzes = new List<Quiz>();
+            List<Question> questions = new List<Question>();
+            List<Answer> answers = new List<Answer>();
+
+            foreach (MultipleChoiceDataSet.QuizRow q in quizData.GetData())
+            {
+                if (q.Subject_id == subID)
+                {
+                    quizzes.Add(new Quiz(q.Title, q.Subject_id, q.By_user));
+                    foreach (MultipleChoiceDataSet.QuestionRow question in questionData.GetDataBy(q.Quiz_id))
+                    {
+                        foreach (MultipleChoiceDataSet.Quiz_QuestionsRow qq in quizQuestion.GetDataBy(q.Quiz_id))
+                        {
+                            if (qq.Quiz_id == q.Quiz_id)
+                            {
+                                Question tempq = new Question(question.Question, question.By_user, question.Subject_id, DateTime.Now);
+                                //questions.Add(new Question(question.Question, question.By_user, question.Subject_id, DateTime.Now));
+                                foreach (MultipleChoiceDataSet.AnswerRow an in answerData.GetDataBy(question.Question_id))
+                                {
+                                    //answers.Add(new Answer(an.Answer,an.Correct));
+                                    tempq.AddAnswer(new Answer(an.Answer, an.Correct));
+                                }
+                                quizzes[quizzes.Count - 1].AddQuestion(tempq, question.Subject_id);
+                            }
+
+                        }
+
+                    }
+                }
+
+            }
+            return quizzes[0];
+        }
         public static void SetSubjects()
         {
             MultipleChoiceDataSetTableAdapters.SubjectTableAdapter subject = new MultipleChoiceDataSetTableAdapters.SubjectTableAdapter();
