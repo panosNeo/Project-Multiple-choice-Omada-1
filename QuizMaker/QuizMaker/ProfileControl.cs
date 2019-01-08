@@ -131,7 +131,7 @@ namespace QuizMaker
             user = (string)users.ReturnUsername(id);
             name = (string)users.ReturnFirstName(id);
             lname = (string)users.ReturnLastName(id);
-            //MessageBox.Show(id.ToString());
+            MessageBox.Show(name);
             usernameText.Text = user;
             firstNameText.Text = name;
             LastNameText.Text = lname;
