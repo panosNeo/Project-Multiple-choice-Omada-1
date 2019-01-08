@@ -79,7 +79,7 @@
             this.AnswerBox.ReadOnly = true;
             this.AnswerBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.AnswerBox.Size = new System.Drawing.Size(267, 70);
-            this.AnswerBox.TabIndex = 10;
+            this.AnswerBox.TabIndex = 6;
             // 
             // qUserIDBox
             // 
@@ -88,7 +88,7 @@
             this.qUserIDBox.Name = "qUserIDBox";
             this.qUserIDBox.ReadOnly = true;
             this.qUserIDBox.Size = new System.Drawing.Size(125, 23);
-            this.qUserIDBox.TabIndex = 7;
+            this.qUserIDBox.TabIndex = 4;
             // 
             // qQuestionBox
             // 
@@ -117,7 +117,7 @@
             this.QuizNameBox.Name = "QuizNameBox";
             this.QuizNameBox.ReadOnly = true;
             this.QuizNameBox.Size = new System.Drawing.Size(125, 23);
-            this.QuizNameBox.TabIndex = 2;
+            this.QuizNameBox.TabIndex = 1;
             // 
             // label6
             // 
@@ -221,7 +221,7 @@
             this.questionIDCombo.Location = new System.Drawing.Point(110, 53);
             this.questionIDCombo.Name = "questionIDCombo";
             this.questionIDCombo.Size = new System.Drawing.Size(125, 24);
-            this.questionIDCombo.TabIndex = 12;
+            this.questionIDCombo.TabIndex = 2;
             // 
             // answerIDCombo
             // 
@@ -229,7 +229,7 @@
             this.answerIDCombo.Location = new System.Drawing.Point(469, 53);
             this.answerIDCombo.Name = "answerIDCombo";
             this.answerIDCombo.Size = new System.Drawing.Size(125, 24);
-            this.answerIDCombo.TabIndex = 13;
+            this.answerIDCombo.TabIndex = 5;
             // 
             // ReportControl
             // 

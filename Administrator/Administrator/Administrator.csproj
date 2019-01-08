@@ -63,6 +63,8 @@
     <Compile Include="FeedbackControl.Designer.cs">
       <DependentUpon>FeedbackControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="FeedbackHandler\Feedback.cs" />
+    <Compile Include="FeedbackHandler\FeedbackController.cs" />
     <Compile Include="LoginControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

@@ -30,12 +30,13 @@
         {
             this.warningLabel = new System.Windows.Forms.Label();
             this.reportPanel = new System.Windows.Forms.Panel();
+            this.UpdateAllCheckbox = new System.Windows.Forms.CheckBox();
             this.UpdateFeedbackButton = new System.Windows.Forms.Button();
             this.deleteFeedbackButton = new System.Windows.Forms.Button();
             this.deleteAllCheckbox = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.showFeedbacksPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.UpdateAllCheckbox = new System.Windows.Forms.CheckBox();
+            this.noFeedback = new System.Windows.Forms.Label();
             this.reportPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,6 +66,17 @@
             this.reportPanel.Size = new System.Drawing.Size(676, 43);
             this.reportPanel.TabIndex = 16;
             // 
+            // UpdateAllCheckbox
+            // 
+            this.UpdateAllCheckbox.AutoSize = true;
+            this.UpdateAllCheckbox.Location = new System.Drawing.Point(453, 14);
+            this.UpdateAllCheckbox.Name = "UpdateAllCheckbox";
+            this.UpdateAllCheckbox.Size = new System.Drawing.Size(15, 14);
+            this.UpdateAllCheckbox.TabIndex = 11;
+            this.UpdateAllCheckbox.Tag = "update";
+            this.UpdateAllCheckbox.UseVisualStyleBackColor = true;
+            this.UpdateAllCheckbox.CheckedChanged += new System.EventHandler(this.Checkbox_CheckedChanged);
+            // 
             // UpdateFeedbackButton
             // 
             this.UpdateFeedbackButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(39)))));
@@ -79,6 +91,7 @@
             this.UpdateFeedbackButton.TabIndex = 10;
             this.UpdateFeedbackButton.Text = "Update";
             this.UpdateFeedbackButton.UseVisualStyleBackColor = false;
+            this.UpdateFeedbackButton.Click += new System.EventHandler(this.UpdateFeedbackButton_Click);
             // 
             // deleteFeedbackButton
             // 
@@ -94,6 +107,7 @@
             this.deleteFeedbackButton.TabIndex = 9;
             this.deleteFeedbackButton.Text = "Delete";
             this.deleteFeedbackButton.UseVisualStyleBackColor = false;
+            this.deleteFeedbackButton.Click += new System.EventHandler(this.deleteFeedbackButton_Click);
             // 
             // deleteAllCheckbox
             // 
@@ -102,7 +116,9 @@
             this.deleteAllCheckbox.Name = "deleteAllCheckbox";
             this.deleteAllCheckbox.Size = new System.Drawing.Size(15, 14);
             this.deleteAllCheckbox.TabIndex = 7;
+            this.deleteAllCheckbox.Tag = "delete";
             this.deleteAllCheckbox.UseVisualStyleBackColor = true;
+            this.deleteAllCheckbox.CheckedChanged += new System.EventHandler(this.Checkbox_CheckedChanged);
             // 
             // label1
             // 
@@ -124,20 +140,28 @@
             this.showFeedbacksPanel.Size = new System.Drawing.Size(630, 233);
             this.showFeedbacksPanel.TabIndex = 17;
             // 
-            // UpdateAllCheckbox
+            // noFeedback
             // 
-            this.UpdateAllCheckbox.AutoSize = true;
-            this.UpdateAllCheckbox.Location = new System.Drawing.Point(453, 14);
-            this.UpdateAllCheckbox.Name = "UpdateAllCheckbox";
-            this.UpdateAllCheckbox.Size = new System.Drawing.Size(15, 14);
-            this.UpdateAllCheckbox.TabIndex = 11;
-            this.UpdateAllCheckbox.UseVisualStyleBackColor = true;
+            this.noFeedback.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.noFeedback.AutoSize = true;
+            this.noFeedback.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
+            this.noFeedback.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            this.noFeedback.Location = new System.Drawing.Point(233, 339);
+            this.noFeedback.Name = "noFeedback";
+            this.noFeedback.Size = new System.Drawing.Size(213, 23);
+            this.noFeedback.TabIndex = 18;
+            this.noFeedback.Tag = "noFeedback";
+            this.noFeedback.Text = "There is no Feedbacks";
+            this.noFeedback.Visible = false;
             // 
             // FeedbackControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(184)))), ((int)(((byte)(185)))));
+            this.Controls.Add(this.noFeedback);
             this.Controls.Add(this.reportPanel);
             this.Controls.Add(this.warningLabel);
             this.Controls.Add(this.showFeedbacksPanel);
@@ -160,5 +184,6 @@
         private System.Windows.Forms.Button UpdateFeedbackButton;
         private System.Windows.Forms.FlowLayoutPanel showFeedbacksPanel;
         private System.Windows.Forms.CheckBox UpdateAllCheckbox;
+        private System.Windows.Forms.Label noFeedback;
     }
 }
