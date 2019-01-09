@@ -48,7 +48,6 @@
             this.QuizDelete = new System.Windows.Forms.Button();
             this.QuizAdd = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
-            this.QuizIDListbox = new System.Windows.Forms.ListBox();
             this.qDateBox = new System.Windows.Forms.TextBox();
             this.qQuizNameBox = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -64,6 +63,8 @@
             this.totalQuizzesBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.showButton = new System.Windows.Forms.Button();
+            this.quizIDCombo = new System.Windows.Forms.ComboBox();
+            this.quizWarning = new System.Windows.Forms.Label();
             this.ChangeSubjectGroup.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -196,6 +197,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.quizWarning);
+            this.groupBox1.Controls.Add(this.quizIDCombo);
             this.groupBox1.Controls.Add(this.totalQuestionBox);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.QuizReset);
@@ -204,7 +207,6 @@
             this.groupBox1.Controls.Add(this.QuizDelete);
             this.groupBox1.Controls.Add(this.QuizAdd);
             this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.QuizIDListbox);
             this.groupBox1.Controls.Add(this.qDateBox);
             this.groupBox1.Controls.Add(this.qQuizNameBox);
             this.groupBox1.Controls.Add(this.label12);
@@ -268,6 +270,7 @@
             this.QuizUpdate.TabIndex = 8;
             this.QuizUpdate.Text = "Update";
             this.QuizUpdate.UseVisualStyleBackColor = false;
+            this.QuizUpdate.Click += new System.EventHandler(this.QuizUpdate_Click);
             // 
             // QuizSettingsButton
             // 
@@ -294,6 +297,7 @@
             this.QuizDelete.TabIndex = 7;
             this.QuizDelete.Text = "Delete";
             this.QuizDelete.UseVisualStyleBackColor = false;
+            this.QuizDelete.Click += new System.EventHandler(this.QuizDelete_Click);
             // 
             // QuizAdd
             // 
@@ -307,31 +311,16 @@
             this.QuizAdd.TabIndex = 6;
             this.QuizAdd.Text = "Add";
             this.QuizAdd.UseVisualStyleBackColor = false;
+            this.QuizAdd.Click += new System.EventHandler(this.QuizAdd_Click);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(10, 32);
+            this.label13.Location = new System.Drawing.Point(42, 25);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(115, 16);
             this.label13.TabIndex = 14;
             this.label13.Text = "Existing Quiz ID :";
-            // 
-            // QuizIDListbox
-            // 
-            this.QuizIDListbox.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.QuizIDListbox.FormattingEnabled = true;
-            this.QuizIDListbox.ItemHeight = 17;
-            this.QuizIDListbox.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.QuizIDListbox.Location = new System.Drawing.Point(164, 27);
-            this.QuizIDListbox.Name = "QuizIDListbox";
-            this.QuizIDListbox.Size = new System.Drawing.Size(83, 21);
-            this.QuizIDListbox.TabIndex = 0;
             // 
             // qDateBox
             // 
@@ -480,6 +469,27 @@
             this.showButton.UseVisualStyleBackColor = false;
             this.showButton.Click += new System.EventHandler(this.showButton_Click);
             // 
+            // quizIDCombo
+            // 
+            this.quizIDCombo.FormattingEnabled = true;
+            this.quizIDCombo.Location = new System.Drawing.Point(163, 22);
+            this.quizIDCombo.Name = "quizIDCombo";
+            this.quizIDCombo.Size = new System.Drawing.Size(121, 24);
+            this.quizIDCombo.TabIndex = 17;
+            this.quizIDCombo.SelectedIndexChanged += new System.EventHandler(this.quizIDCombo_SelectedIndexChanged);
+            // 
+            // quizWarning
+            // 
+            this.quizWarning.AutoSize = true;
+            this.quizWarning.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.quizWarning.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            this.quizWarning.Location = new System.Drawing.Point(320, 19);
+            this.quizWarning.Name = "quizWarning";
+            this.quizWarning.Size = new System.Drawing.Size(38, 16);
+            this.quizWarning.TabIndex = 6;
+            this.quizWarning.Text = "Error";
+            this.quizWarning.Visible = false;
+            // 
             // SubjectControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -526,7 +536,6 @@
         private System.Windows.Forms.TextBox qDateBox;
         private System.Windows.Forms.TextBox qQuizNameBox;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ListBox QuizIDListbox;
         private System.Windows.Forms.Button QuizDelete;
         private System.Windows.Forms.Button QuizAdd;
         private System.Windows.Forms.Button QuizSettingsButton;
@@ -539,5 +548,7 @@
         private System.Windows.Forms.TextBox totalQuizzesBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button showButton;
+        private System.Windows.Forms.ComboBox quizIDCombo;
+        private System.Windows.Forms.Label quizWarning;
     }
 }

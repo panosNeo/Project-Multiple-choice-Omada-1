@@ -52,11 +52,11 @@ namespace Administrator.QuizHandler
             return user_id;
         }
 
-        public override void SetName(string name)
+        public void SetName(string name)
         {
             this.name = name;
         }
-        public override string GetName()
+        public string GetName()
         {
             return name;
         }
