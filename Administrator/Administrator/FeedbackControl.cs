@@ -138,7 +138,7 @@ namespace Administrator
                     {
                         if (control.GetDeleteCheckbox())
                         {
-                            FeedbackHandler.FeedbackController.DeleteCheckbox(Int32.Parse((string)control.Tag));
+                            FeedbackHandler.FeedbackController.DeleteCheckbox(Int32.Parse((String)control.Tag.ToString()));
                         }
                         control = feedbackControls[i];
                     }
@@ -159,16 +159,18 @@ namespace Administrator
                     FeedbackHandler.FeedbackController.UpdateAllCheckboxes(true); // kane update se ola
                 } else if (dialogResult == DialogResult.Yes)
                 {
-                    foreach (var control in feedbackControls)
+                    var control = feedbackControls[0];
+                    for (int i=0; i < feedbackControls.Count; i++)
                     {
                         if (control.GetRateCheckbox())
                         {
-                            FeedbackHandler.FeedbackController.UpdateRateCheckbox(Int32.Parse((string)control.Tag), true);
+                            FeedbackHandler.FeedbackController.UpdateRateCheckbox(Int32.Parse((String)control.Tag.ToString()), true);
                         }
                         else
                         {
-                            FeedbackHandler.FeedbackController.UpdateRateCheckbox(Int32.Parse((string)control.Tag), false);
+                            FeedbackHandler.FeedbackController.UpdateRateCheckbox(Int32.Parse((String)control.Tag.ToString()), false);
                         }
+                        control = feedbackControls[i];
                     }
                 }
             }

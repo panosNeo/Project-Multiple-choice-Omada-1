@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System.Data.OleDb;
+
 namespace Administrator
 {
     public partial class ProfileControl : UserControl
