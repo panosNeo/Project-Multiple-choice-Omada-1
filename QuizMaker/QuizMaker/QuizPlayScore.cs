@@ -63,5 +63,10 @@ namespace QuizMaker
 
             quizTableAdapter.UpdateRating(rating, qid, subjectId);
         }
+
+        private void reportBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

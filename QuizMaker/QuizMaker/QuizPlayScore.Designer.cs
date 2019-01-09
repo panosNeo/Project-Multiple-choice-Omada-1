@@ -129,6 +129,7 @@
             this.reportBtn.TabIndex = 12;
             this.reportBtn.Text = "Report this quiz";
             this.reportBtn.UseVisualStyleBackColor = false;
+            this.reportBtn.Click += new System.EventHandler(this.reportBtn_Click);
             // 
             // button1
             // 
