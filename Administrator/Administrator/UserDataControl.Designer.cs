@@ -1,6 +1,6 @@
 ﻿namespace Administrator
 {
-    partial class UserControl1
+    partial class UserDataControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -33,6 +33,7 @@
             this.SearchIDBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.UserGroupbox = new System.Windows.Forms.GroupBox();
+            this.UserReset = new System.Windows.Forms.Button();
             this.BlockCheckbox = new System.Windows.Forms.CheckBox();
             this.DaysBox = new System.Windows.Forms.TextBox();
             this.ReasonBox = new System.Windows.Forms.TextBox();
@@ -54,7 +55,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.UserIDBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.UserReset = new System.Windows.Forms.Button();
             this.UserGroupbox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,6 +81,7 @@
             this.SearchButton.Size = new System.Drawing.Size(57, 27);
             this.SearchButton.TabIndex = 1;
             this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // SearchIDBox
             // 
@@ -97,9 +98,9 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.label1.Location = new System.Drawing.Point(161, 54);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 19);
+            this.label1.Size = new System.Drawing.Size(106, 19);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Search User ID :";
+            this.label1.Text = "Search User :";
             // 
             // UserGroupbox
             // 
@@ -132,7 +133,21 @@
             this.UserGroupbox.Size = new System.Drawing.Size(654, 219);
             this.UserGroupbox.TabIndex = 10;
             this.UserGroupbox.TabStop = false;
-            this.UserGroupbox.Text = "Question Data";
+            this.UserGroupbox.Text = "User Data";
+            // 
+            // UserReset
+            // 
+            this.UserReset.Enabled = false;
+            this.UserReset.FlatAppearance.BorderSize = 0;
+            this.UserReset.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            this.UserReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UserReset.Image = global::Administrator.Properties.Resources.reset;
+            this.UserReset.Location = new System.Drawing.Point(561, 22);
+            this.UserReset.Name = "UserReset";
+            this.UserReset.Size = new System.Drawing.Size(35, 35);
+            this.UserReset.TabIndex = 15;
+            this.UserReset.UseVisualStyleBackColor = false;
+            this.UserReset.Click += new System.EventHandler(this.UserReset_Click);
             // 
             // BlockCheckbox
             // 
@@ -341,21 +356,7 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "User ID :";
             // 
-            // UserReset
-            // 
-            this.UserReset.Enabled = false;
-            this.UserReset.FlatAppearance.BorderSize = 0;
-            this.UserReset.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            this.UserReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.UserReset.Image = global::Administrator.Properties.Resources.reset;
-            this.UserReset.Location = new System.Drawing.Point(561, 22);
-            this.UserReset.Name = "UserReset";
-            this.UserReset.Size = new System.Drawing.Size(35, 35);
-            this.UserReset.TabIndex = 15;
-            this.UserReset.UseVisualStyleBackColor = false;
-            this.UserReset.Click += new System.EventHandler(this.UserReset_Click);
-            // 
-            // UserControl1
+            // UserDataControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -365,7 +366,7 @@
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.SearchIDBox);
             this.Controls.Add(this.label1);
-            this.Name = "UserControl1";
+            this.Name = "UserDataControl";
             this.Size = new System.Drawing.Size(736, 423);
             this.UserGroupbox.ResumeLayout(false);
             this.UserGroupbox.PerformLayout();

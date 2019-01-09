@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Administrator
 {
-    public partial class UserControl1 : UserControl
+    public partial class UserDataControl : UserControl
     {
-        public UserControl1()
+        public UserDataControl()
         {
             InitializeComponent();
         }
@@ -68,6 +68,36 @@ namespace Administrator
             DaysBox.Text = "";
 
             BlockCheckbox.Checked = false;
+        }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            //MultipleChoiceDataSetTableAdapters.UserTableAdapter userData = new MultipleChoiceDataSetTableAdapters.UserTableAdapter();
+            //MultipleChoiceDataSetTableAdapters.BlockedTableAdapter blockData = new MultipleChoiceDataSetTableAdapters.BlockedTableAdapter();
+            if (!String.IsNullOrWhiteSpace(SearchIDBox.Text))
+            {
+                LoginHandler.User user = DBConnection.SearchAccountData(SearchIDBox.Text);
+                if (user.name != null)
+                {
+                    UserIDBox.Text = ""+user.userID;
+                    RoleBox.Text = user.role;
+                    NameBox.Text = user.name;
+                    LastNameBox.Text = user.surname;
+                    EmailBox.Text = user.email;
+
+                    //foreach(MultipleChoiceDataSet.BlockedRow blo in blockData.GetData())
+                    //{
+                    //    if(s.User_id == blo.User_id)
+                    //    {
+                    //        BlockIDBox.Text = ""+blo.ID;
+                    //        ReasonBox.Text = blo.Reason;
+                    //        DaysBox.Text = ""+blo.Days;
+                    //        BlockCheckbox.Checked = blo.Blocked;
+                    //    }
+                    //}
+                }
+                
+            }
         }
     }
 }

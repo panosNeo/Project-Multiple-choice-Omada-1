@@ -51,6 +51,7 @@
     <Compile Include="AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DBConnection.cs" />
     <Compile Include="Feedback.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -73,6 +74,7 @@
     </Compile>
     <Compile Include="LoginHandler\LoginHandler.cs" />
     <Compile Include="LoginHandler\Profile.cs" />
+    <Compile Include="LoginHandler\User.cs" />
     <Compile Include="LoginHandler\UserDataController.cs" />
     <Compile Include="MultipleChoiceDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -118,11 +120,11 @@
     <Compile Include="SubjectHandler\Subject.cs" />
     <Compile Include="SubjectHandler\SubjectController.cs" />
     <Compile Include="SubjectHandler\SubjectTreeView.cs" />
-    <Compile Include="UserControl1.cs">
+    <Compile Include="UserDataControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <Compile Include="UserDataControl.Designer.cs">
+      <DependentUpon>UserDataControl.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
@@ -156,8 +158,8 @@
     <EmbeddedResource Include="SubjectControl.resx">
       <DependentUpon>SubjectControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl1.resx">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <EmbeddedResource Include="UserDataControl.resx">
+      <DependentUpon>UserDataControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="MultipleChoiceDataSet.xsc">
       <DependentUpon>MultipleChoiceDataSet.xsd</DependentUpon>

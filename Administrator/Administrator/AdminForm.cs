@@ -117,7 +117,7 @@ namespace Administrator
         //User button events
         private void User_Click(object sender, EventArgs e)
         {
-            UserControl1 userControl1 = new UserControl1();
+            UserDataControl userControl1 = new UserDataControl();
             //kalese methodo gia xrwma kai switch Control
             setDesign(User,userControl1);
         }
