@@ -16,6 +16,11 @@ namespace Administrator
         private List<ReportHandler.Report> reportList = new List<ReportHandler.Report>();
         private List<Report> reportControls = new List<Report>();
 
+        private List<int> questionIDs = new List<int>();
+        private List<string> questions = new List<string>();
+        private static List<int> answerIDList = new List<int>();
+        private static List<string> answers = new List<string>();
+
         public ReportControl()
         {
             InitializeComponent();
@@ -87,28 +92,45 @@ namespace Administrator
                 colorCounter++;
             }
         }
-        //?
-        private void loadReports()
-        {
-            reportControls.Clear();
-            Report temp;
-            for(int i = 0; i < 11; i++)
+        //gia na fortothoun ta dedomena sto quiz data
+        private void clicked(object sender, EventArgs e) {           
+            //katharise tis listes prin apo kathe search
+            ReportHandler.ReportController.ClearLists();
+            ReportHandler.ReportController.ClearQuestion_AnswerList();
+            questionIDs.Clear();
+            questions.Clear();
+            answerIDList.Clear();
+            answers.Clear();
+
+            //psaxe an uparxei to quiz pou ekane report
+            ReportHandler.ReportController.SearchReport_Quiz(Int32.Parse(((Report)sender).Tag.ToString()));
+            //pare tis metavlhtes me tis times apo to parapanw search
+            int quizID = ReportHandler.ReportController.GetQuizID();
+            string quiz_title = ReportHandler.ReportController.GetQuizTitle();
+            int by_user = ReportHandler.ReportController.GetByUser();
+            //vale to quiz title kai ton user pou eftiaxe to quiz
+            QuizNameBox.Text = quiz_title;
+            qUserIDBox.Text = by_user.ToString();
+
+
+
+            //kane search gia ta questions tou quiz
+            ReportHandler.ReportController.SearchQuiz_Question(quizID);
+            //pare tis listes
+            questionIDs = ReportHandler.ReportController.GetQuestionIDList();
+            questions = ReportHandler.ReportController.GetQuestionsList();
+            //kane fill ta IDs
+            questionIDCombo.Items.Clear();
+            foreach (var question_id in questionIDs)
             {
-                temp = new Report();
-                if (i % 2 == 0)
-                    temp.BackColor = Color.White;
-                else
-                    temp.BackColor = Color.FromName("GradientActiveCaption");
-                
-                temp.Tag = i;
-
-                reportControls.Add(temp);
-
-                showReportsPanel.Controls.Add(temp);
+                questionIDCombo.Items.Add(question_id);
             }
-        }
-        private void clicked(object sender, EventArgs e) {
-            MessageBox.Show(((Report)sender).Tag.ToString());
+            if (questionIDs.Count > 0)
+            {
+                questionIDCombo.SelectedIndex = 0;
+                qQuestionBox.Text = questions[0];
+            }
+            
         }
 
         //pare th lista me ta reports
@@ -117,8 +139,8 @@ namespace Administrator
             reportList = ReportHandler.Report.GetList();
         }
 
-        //?
-        private void Test()
+        //kane clear kai 3ana gemise to report panel
+        private void ReFillReportPanel()
         {
             showReportsPanel.Controls.Clear();
             foreach (var control in reportControls)
@@ -126,8 +148,7 @@ namespace Administrator
                 showReportsPanel.Controls.Add(control);
             }
         }
-
-
+        
         //design sta buttons
         private void deleteReportButton_MouseEnter(object sender, EventArgs e)
         {
@@ -191,11 +212,46 @@ namespace Administrator
                             }
                             control = reportControls[i];
                         }
-                        Test();
+                        ReFillReportPanel();
                     }
                 }
                 else
                     MessageBox.Show("There is no reports.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        
+        //otan allazei ena id fortwse to antistoixo question kai ta answers pou exei
+        private void questionIDCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int position = questionIDCombo.SelectedIndex;
+            qQuestionBox.Text = questions[position];
+
+            //psaxe gia ta answers tou antistoixou question
+            ReportHandler.ReportController.SearchQuestion_Answer(questionIDs[position]);
+            //gemise tis listes
+            answerIDList = ReportHandler.ReportController.GetAnswerIDList();
+            answers = ReportHandler.ReportController.GetAnswers();
+            //kai kane fill ta IDs 
+            if (answerIDList.Count > 0)
+            {
+                answerIDCombo.Items.Clear();
+                foreach (var answer_id in answerIDList)
+                {
+                    answerIDCombo.Items.Add(answer_id);
+                }
+                answerIDCombo.SelectedIndex = 0;
+                AnswerBox.Text = answers[0];
+            }
+        }
+
+        private void answerIDCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int position = answerIDCombo.SelectedIndex;
+            AnswerBox.Text = answers[position];
+        }
+
+        private void questionButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Tap to any Report to load quiz data.","Message",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
     }
 }

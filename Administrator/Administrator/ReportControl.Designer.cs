@@ -46,6 +46,7 @@
             this.deleteReportButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.noReports = new System.Windows.Forms.Label();
+            this.questionButton = new System.Windows.Forms.Button();
             this.QuestionGroupbox.SuspendLayout();
             this.reportPanel.SuspendLayout();
             this.SuspendLayout();
@@ -78,6 +79,7 @@
             this.answerIDCombo.Name = "answerIDCombo";
             this.answerIDCombo.Size = new System.Drawing.Size(125, 24);
             this.answerIDCombo.TabIndex = 5;
+            this.answerIDCombo.SelectedIndexChanged += new System.EventHandler(this.answerIDCombo_SelectedIndexChanged);
             // 
             // questionIDCombo
             // 
@@ -86,6 +88,7 @@
             this.questionIDCombo.Name = "questionIDCombo";
             this.questionIDCombo.Size = new System.Drawing.Size(125, 24);
             this.questionIDCombo.TabIndex = 2;
+            this.questionIDCombo.SelectedIndexChanged += new System.EventHandler(this.questionIDCombo_SelectedIndexChanged);
             // 
             // AnswerBox
             // 
@@ -167,7 +170,7 @@
             // 
             this.warningLabel.AutoSize = true;
             this.warningLabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.warningLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            this.warningLabel.ForeColor = System.Drawing.Color.Red;
             this.warningLabel.Location = new System.Drawing.Point(50, 12);
             this.warningLabel.Name = "warningLabel";
             this.warningLabel.Size = new System.Drawing.Size(56, 16);
@@ -197,6 +200,7 @@
             // 
             this.reportPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.reportPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.reportPanel.Controls.Add(this.questionButton);
             this.reportPanel.Controls.Add(this.deleteReportButton);
             this.reportPanel.Controls.Add(this.deleteAllCheckbox);
             this.reportPanel.Controls.Add(this.label1);
@@ -250,6 +254,21 @@
             this.noReports.Text = "There is no Reports";
             this.noReports.Visible = false;
             // 
+            // questionButton
+            // 
+            this.questionButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            this.questionButton.FlatAppearance.BorderSize = 0;
+            this.questionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.questionButton.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.questionButton.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.questionButton.Image = global::Administrator.Properties.Resources.question;
+            this.questionButton.Location = new System.Drawing.Point(538, 9);
+            this.questionButton.Name = "questionButton";
+            this.questionButton.Size = new System.Drawing.Size(24, 24);
+            this.questionButton.TabIndex = 20;
+            this.questionButton.UseVisualStyleBackColor = false;
+            this.questionButton.Click += new System.EventHandler(this.questionButton_Click);
+            // 
             // ReportControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -291,5 +310,6 @@
         private System.Windows.Forms.ComboBox questionIDCombo;
         private System.Windows.Forms.ComboBox answerIDCombo;
         private System.Windows.Forms.Label noReports;
+        private System.Windows.Forms.Button questionButton;
     }
 }
