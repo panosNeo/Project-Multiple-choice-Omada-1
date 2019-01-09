@@ -213,6 +213,8 @@
     <Compile Include="SearchControl.Designer.cs">
       <DependentUpon>SearchControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="SearchHandler\LuceneSearcher.cs" />
+    <Compile Include="SearchHandler\RetreivedQuiz.cs" />
     <Compile Include="SearchHandler\SearchController.cs" />
     <Compile Include="SearchHandler\SubjectStack.cs" />
     <Compile Include="TempPrintControl.cs">

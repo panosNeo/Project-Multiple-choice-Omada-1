@@ -34,7 +34,7 @@
             this.searchTagBtn = new System.Windows.Forms.Button();
             this.searchByTagLabel = new System.Windows.Forms.Label();
             this.searchTextBtn = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.searchText = new System.Windows.Forms.TextBox();
             this.searchByTextLabel = new System.Windows.Forms.Label();
             this.resultsPanel = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
@@ -56,7 +56,7 @@
             this.panel2.Controls.Add(this.searchTagBtn);
             this.panel2.Controls.Add(this.searchByTagLabel);
             this.panel2.Controls.Add(this.searchTextBtn);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.searchText);
             this.panel2.Controls.Add(this.searchByTextLabel);
             this.panel2.Location = new System.Drawing.Point(0, 76);
             this.panel2.Name = "panel2";
@@ -110,13 +110,14 @@
             this.searchTextBtn.Size = new System.Drawing.Size(37, 29);
             this.searchTextBtn.TabIndex = 4;
             this.searchTextBtn.UseVisualStyleBackColor = true;
+            this.searchTextBtn.Click += new System.EventHandler(this.searchTextBtn_Click);
             // 
-            // textBox1
+            // searchText
             // 
-            this.textBox1.Location = new System.Drawing.Point(79, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(234, 20);
-            this.textBox1.TabIndex = 3;
+            this.searchText.Location = new System.Drawing.Point(79, 20);
+            this.searchText.Name = "searchText";
+            this.searchText.Size = new System.Drawing.Size(234, 20);
+            this.searchText.TabIndex = 3;
             // 
             // searchByTextLabel
             // 
@@ -160,7 +161,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button searchTextBtn;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox searchText;
         private System.Windows.Forms.Label searchByTextLabel;
         private System.Windows.Forms.Label searchByTagLabel;
         private System.Windows.Forms.Button searchTagBtn;

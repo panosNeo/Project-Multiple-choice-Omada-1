@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuizMaker.QuizHandler;
+using QuizMaker.SearchHandler;
 
 namespace QuizMaker
 {
@@ -42,6 +43,7 @@ namespace QuizMaker
 
         private void searchTagBtn_Click(object sender, EventArgs e)
         {
+            resultsPanel.Controls.Clear();
             List<Quiz> quizzes = SearchHandler.SearchController.GetQuizDataFromSubject(Convert.ToInt32(selectedTreeNodeID));
             ResultQuizControl temp;
             MultipleChoiceDataSetTableAdapters.SubjectTableAdapter subject = new MultipleChoiceDataSetTableAdapters.SubjectTableAdapter();
@@ -70,6 +72,32 @@ namespace QuizMaker
             QuizPanel p = new QuizPanel(new QuizPlayerController(((ResultQuizControl)sender).GetQuiz()));
             p.Dock = DockStyle.Fill;
             Controls.Add(p);
+        }
+
+        private void searchTextBtn_Click(object sender, EventArgs e)
+        {
+            resultsPanel.Controls.Clear();
+            LuceneSearcher searcher = new LuceneSearcher("./index");
+            List<RetreivedQuiz> quizes = searcher.GetQuizzes(searchText.Text);
+            ResultQuizControl temp;
+            int counter = 0;
+            foreach (RetreivedQuiz q in quizes)
+            {
+                temp = new ResultQuizControl(SearchController.GetQuizByID(q.quizID))
+                {
+                    Dock = DockStyle.Top
+                };
+                if (counter % 2 == 0)
+                {
+                    temp.SetColor(Color.FromArgb(37, 46, 69));
+                }
+                counter++;
+                temp.SetQuizNumberOfQuestions(q.questionsCount);
+                temp.SetQuizTitle(q.quizName);
+                temp.SetQuizSubject(q.quizSubject);
+                temp.Click += new EventHandler(ResultQuiz_Click);
+                resultsPanel.Controls.Add(temp);
+            }
         }
     }
 }
