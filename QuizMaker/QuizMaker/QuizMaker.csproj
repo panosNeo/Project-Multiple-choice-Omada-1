@@ -86,6 +86,12 @@
     <Compile Include="FeelLuckyControl.Designer.cs">
       <DependentUpon>FeelLuckyControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ForgotPasswordControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ForgotPasswordControl.Designer.cs">
+      <DependentUpon>ForgotPasswordControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginStatusData.cs" />
     <Compile Include="Login\Login.cs" />
     <Compile Include="MailAuthenticationControl.cs">
@@ -201,6 +207,12 @@
     <Compile Include="QuizPanel.Designer.cs">
       <DependentUpon>QuizPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="ResetPasswordControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ResetPasswordControl.Designer.cs">
+      <DependentUpon>ResetPasswordControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="ResultQuizControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -237,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FeelLuckyControl.resx">
       <DependentUpon>FeelLuckyControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForgotPasswordControl.resx">
+      <DependentUpon>ForgotPasswordControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MailAuthenticationControl.resx">
       <DependentUpon>MailAuthenticationControl.cs</DependentUpon>
@@ -295,6 +310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegisterControl.resx">
       <DependentUpon>RegisterControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResetPasswordControl.resx">
+      <DependentUpon>ResetPasswordControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ResultQuizControl.resx">
       <DependentUpon>ResultQuizControl.cs</DependentUpon>

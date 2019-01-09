@@ -52,5 +52,13 @@ namespace QuizMaker
             this.Controls.Clear();
             this.Controls.Add(re);
         }
+
+        private void forgotPasswordBtn_Click(object sender, EventArgs e)
+        {
+            ForgotPasswordControl f = new ForgotPasswordControl();
+            f.Dock = DockStyle.Fill;
+            Controls.Clear();
+            Controls.Add(f);
+        }
     }
 }

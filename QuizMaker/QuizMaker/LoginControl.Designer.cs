@@ -35,6 +35,7 @@
             this.passwordText = new System.Windows.Forms.TextBox();
             this.loginBtn = new System.Windows.Forms.Button();
             this.createAccountBtn = new System.Windows.Forms.Button();
+            this.forgotPasswordBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // topLabel
@@ -130,11 +131,31 @@
             this.createAccountBtn.UseVisualStyleBackColor = false;
             this.createAccountBtn.Click += new System.EventHandler(this.createAccountBtn_Click);
             // 
+            // forgotPasswordBtn
+            // 
+            this.forgotPasswordBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.forgotPasswordBtn.BackColor = System.Drawing.Color.Transparent;
+            this.forgotPasswordBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.forgotPasswordBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.forgotPasswordBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.forgotPasswordBtn.FlatAppearance.BorderSize = 0;
+            this.forgotPasswordBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.forgotPasswordBtn.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.forgotPasswordBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.forgotPasswordBtn.Location = new System.Drawing.Point(324, 397);
+            this.forgotPasswordBtn.Name = "forgotPasswordBtn";
+            this.forgotPasswordBtn.Size = new System.Drawing.Size(201, 26);
+            this.forgotPasswordBtn.TabIndex = 7;
+            this.forgotPasswordBtn.Text = "Forgot your password?";
+            this.forgotPasswordBtn.UseVisualStyleBackColor = false;
+            this.forgotPasswordBtn.Click += new System.EventHandler(this.forgotPasswordBtn_Click);
+            // 
             // LoginControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.Controls.Add(this.forgotPasswordBtn);
             this.Controls.Add(this.createAccountBtn);
             this.Controls.Add(this.loginBtn);
             this.Controls.Add(this.passwordText);
@@ -143,7 +164,7 @@
             this.Controls.Add(this.usernameLabel);
             this.Controls.Add(this.topLabel);
             this.Name = "LoginControl";
-            this.Size = new System.Drawing.Size(771, 381);
+            this.Size = new System.Drawing.Size(771, 449);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,5 +179,6 @@
         private System.Windows.Forms.TextBox passwordText;
         private System.Windows.Forms.Button loginBtn;
         private System.Windows.Forms.Button createAccountBtn;
+        private System.Windows.Forms.Button forgotPasswordBtn;
     }
 }
