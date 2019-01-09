@@ -51,6 +51,13 @@
     <Compile Include="AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BlockData.cs" />
+    <Compile Include="BlockUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BlockUserForm.Designer.cs">
+      <DependentUpon>BlockUserForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DBConnection.cs" />
     <Compile Include="Feedback.cs">
       <SubType>UserControl</SubType>
@@ -128,6 +135,9 @@
     </Compile>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BlockUserForm.resx">
+      <DependentUpon>BlockUserForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Feedback.resx">
       <DependentUpon>Feedback.cs</DependentUpon>

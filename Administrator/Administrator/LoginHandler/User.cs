@@ -17,6 +17,7 @@ namespace Administrator.LoginHandler
         public int blockedDays { get; set; }
         public bool isBlocked { get; set; }
         public string reason { get; set; }
+        public int blockID { get; set; }
 
 
         public User(string un, string name, string surname, string email, int userID)
