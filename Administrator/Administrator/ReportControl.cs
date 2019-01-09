@@ -248,5 +248,10 @@ namespace Administrator
             int position = answerIDCombo.SelectedIndex;
             AnswerBox.Text = answers[position];
         }
+
+        private void questionButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Tap to any Report to load quiz data.","Message",MessageBoxButtons.OK,MessageBoxIcon.Information);
+        }
     }
 }
