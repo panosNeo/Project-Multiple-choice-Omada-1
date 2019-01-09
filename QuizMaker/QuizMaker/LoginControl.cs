@@ -34,6 +34,9 @@ namespace QuizMaker
                 pr.Dock = DockStyle.Fill;
                 this.Controls.Clear();
                 this.Controls.Add(pr);
+
+                MainForm m = (MainForm)this.FindForm();
+                m.SetLoginButtonText();
             }
             else
             {

@@ -13,5 +13,14 @@ namespace QuizMaker
         public static string name = "";
         public static string surname = "";
         public static string email = "";
+
+        public static void Logout()
+        {
+            username = "";
+            userID = 0;
+            name = "";
+            surname = "";
+            email = "";
+        }
     }
 }

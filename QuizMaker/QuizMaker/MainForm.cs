@@ -27,6 +27,7 @@ namespace QuizMaker
         private void loginBtn_Click(object sender, EventArgs e)
         {
             GoToLoginPanel();
+            LoginStatusData.Logout();
         }
         private void GoToLoginPanel()
         {
@@ -39,7 +40,13 @@ namespace QuizMaker
 
             ChangeButtonColor(loginBtn);
         }
-
+        public void SetLoginButtonText()
+        {
+            if (LoginStatusData.userID != 0)
+            {
+                loginBtn.Text = "Logout";
+            }
+        }
         private void menuVisibleBtn_Click(object sender, EventArgs e)
         {
             // αλλάζουμε την τιμή menuVisible από true σε not true(false) ώστε να ξέρει την κατάσταση του leftMenu
