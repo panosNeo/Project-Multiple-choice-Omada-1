@@ -315,3 +315,4 @@ C:\Users\Vladimiros\Desktop\test2\QuizMaker\QuizMaker\bin\Debug\Lucene.Net.dll
 C:\Users\Vladimiros\Desktop\test2\QuizMaker\QuizMaker\bin\Debug\Lucene.Net.pdb
 C:\Users\Vladimiros\Desktop\test2\QuizMaker\QuizMaker\bin\Debug\Lucene.Net.xml
 C:\Users\Vladimiros\Desktop\test2\QuizMaker\QuizMaker\obj\Debug\QuizMaker.csproj.CopyComplete
+C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.FeedbackControl.resources

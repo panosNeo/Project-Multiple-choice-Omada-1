@@ -17,6 +17,7 @@ namespace QuizMaker
         {
             InitializeComponent();
             setProfile();
+            setUserQuizes();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -61,20 +62,20 @@ namespace QuizMaker
         {
             ResultQuizControl temp;
             int counter = 0;
+            MultipleChoiceDataSetTableAdapters.SubjectTableAdapter subject = new MultipleChoiceDataSetTableAdapters.SubjectTableAdapter();
             foreach (Quiz q in SearchHandler.SearchController.GetQuizByUserID(LoginStatusData.userID))
             {
                 
-                temp = new ResultQuizControl(q)
-                {
-                    Dock = DockStyle.Top
-                };
+                temp = new ResultQuizControl(q);
+                temp.Dock = DockStyle.Top;
                 if(counter%2 == 0)
                 {
-                    temp.BackColor = Color.FromArgb(37, 46, 69);
+                    temp.SetColor(Color.FromArgb(37, 46, 69));
                 }
+                counter++;
                 temp.SetQuizNumberOfQuestions(q.getQuestions().Count);
                 temp.SetQuizTitle(q.GetQuizTitle());
-                temp.SetQuizSubject(q.GetSubject_id().ToString());
+                temp.SetQuizSubject(subject.GetSubjectName(q.GetSubject_id()));
                 temp.Click += new EventHandler(ResultQuiz_Click);
                 quizPanel.Controls.Add(temp);
             }
@@ -83,6 +84,8 @@ namespace QuizMaker
         {
             Controls.Clear();
             QuizPanel p = new QuizPanel(new QuizPlayerController(((ResultQuizControl)sender).GetQuiz()));
+            p.Dock = DockStyle.Fill;
+            Controls.Add(p);
         }
         private void SetAnimation(string panel, bool down)
         {
@@ -173,6 +176,21 @@ namespace QuizMaker
             
             MultipleChoiceDataSetTableAdapters.UserTableAdapter userTable = new MultipleChoiceDataSetTableAdapters.UserTableAdapter();
             userTable.UpdateProfile(user, email, name, lname, userId);
+
+            LoginStatusData.userID = userId;
+            LoginStatusData.username = user;
+            LoginStatusData.name = name;
+            LoginStatusData.surname = lname;
+            LoginStatusData.email = email;
+
+        }
+
+        private void feedbackBtn_Click(object sender, EventArgs e)
+        {
+            Controls.Clear();
+            FeedbackControl f = new FeedbackControl();
+            f.Dock = DockStyle.Fill;
+            Controls.Add(f);
         }
     }
 }

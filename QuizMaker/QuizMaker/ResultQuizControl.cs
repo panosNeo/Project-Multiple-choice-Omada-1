@@ -23,6 +23,16 @@ namespace QuizMaker
         {
             return Quiz;
         }
+
+        public void SetColor(Color c)
+        {
+            this.BackColor = c;
+            quizTitleText.BackColor = c;
+            quizSubjectText.BackColor = c;
+            questionCountText.BackColor = c;
+            likesText.BackColor = c;
+            dislikesText.BackColor = c;
+        }
         public void SetQuizTitle(string title)
         {
             quizTitleText.Text = title;

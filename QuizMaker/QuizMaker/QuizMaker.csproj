@@ -74,6 +74,12 @@
     <Compile Include="CustomTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="FeedbackControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FeedbackControl.Designer.cs">
+      <DependentUpon>FeedbackControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="FeelLuckyControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -224,6 +230,9 @@
     <EmbeddedResource Include="CreateQuizControl.resx">
       <DependentUpon>CreateQuizControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FeedbackControl.resx">
+      <DependentUpon>FeedbackControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FeelLuckyControl.resx">
       <DependentUpon>FeelLuckyControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -344,6 +353,7 @@
     <Content Include="MultipleChoice.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\feedback.png" />
     <None Include="Resources\dislike.png" />
     <None Include="Resources\like.png" />
     <None Include="Resources\Account1.png" />

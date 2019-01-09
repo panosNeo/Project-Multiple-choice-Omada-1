@@ -406,7 +406,7 @@ namespace QuizMaker
             Quiz myQuiz = CreateQuizControlHandler.GetQuiz();
             PrintQuizTemplates.PrintQuizController print = new PrintQuizTemplates.PrintQuizController(CreateQuizControlHandler.GetQuiz());
             MultipleChoiceDataSetTableAdapters.QuizTableAdapter quizTableAdapter = new MultipleChoiceDataSetTableAdapters.QuizTableAdapter();
-            quizTableAdapter.InsertNewQuiz(myQuiz.GetUser_id(), myQuiz.GetCreationDate(), myQuiz.GetQuizTitle(), myQuiz.GetSubject_id());
+            quizTableAdapter.InsertNewQuiz(LoginStatusData.userID, myQuiz.GetCreationDate(), myQuiz.GetQuizTitle(), myQuiz.GetSubject_id());
             //myQuiz.SetQuiz_id((int)quizTableAdapter.ReturnLastQuizId());
             int quiz_id = (int)quizTableAdapter.ReturnLastQuizId();
             MultipleChoiceDataSetTableAdapters.QuestionTableAdapter questionTableAdapter = new MultipleChoiceDataSetTableAdapters.QuestionTableAdapter();

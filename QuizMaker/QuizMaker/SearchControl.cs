@@ -44,15 +44,22 @@ namespace QuizMaker
         {
             List<Quiz> quizzes = SearchHandler.SearchController.GetQuizDataFromSubject(Convert.ToInt32(selectedTreeNodeID));
             ResultQuizControl temp;
+            MultipleChoiceDataSetTableAdapters.SubjectTableAdapter subject = new MultipleChoiceDataSetTableAdapters.SubjectTableAdapter();
+            int counter = 0;
             foreach (Quiz q in quizzes)
             {
                 temp = new ResultQuizControl(q)
                 {
                     Dock = DockStyle.Top
                 };
+                if (counter % 2 == 0)
+                {
+                    temp.SetColor(Color.FromArgb(37, 46, 69));
+                }
+                counter++;
                 temp.SetQuizNumberOfQuestions(q.getQuestions().Count);
                 temp.SetQuizTitle(q.GetQuizTitle());
-                temp.SetQuizSubject(q.GetSubject_id().ToString());
+                temp.SetQuizSubject(subject.GetSubjectName(q.GetSubject_id()));
                 temp.Click += new EventHandler(ResultQuiz_Click);
                 resultsPanel.Controls.Add(temp);
             }
@@ -61,6 +68,8 @@ namespace QuizMaker
         {
             Controls.Clear();
             QuizPanel p = new QuizPanel(new QuizPlayerController(((ResultQuizControl)sender).GetQuiz()));
+            p.Dock = DockStyle.Fill;
+            Controls.Add(p);
         }
     }
 }

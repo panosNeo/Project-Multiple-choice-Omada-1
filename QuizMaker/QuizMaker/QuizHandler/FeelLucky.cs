@@ -17,7 +17,7 @@ namespace QuizMaker.QuizHandler
             MultipleChoiceDataSetTableAdapters.QuizTableAdapter quizData = new MultipleChoiceDataSetTableAdapters.QuizTableAdapter();
             randomQuiz_id = rnd.Next((int)quizData.CountQuizes()) + 1;
 
-            if (rnd.Next((int)quizData.CountQuizes()) != 0)
+            if ((int)quizData.CountQuizes() != 0)
             {
                 randomQuiz = SearchHandler.SearchController.GetQuizByID(randomQuiz_id);
                 return randomQuiz;

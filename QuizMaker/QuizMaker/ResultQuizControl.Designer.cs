@@ -53,8 +53,10 @@
             // 
             // quizTitleText
             // 
-            this.quizTitleText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.quizTitleText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(49)))));
             this.quizTitleText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.quizTitleText.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.quizTitleText.ForeColor = System.Drawing.Color.White;
             this.quizTitleText.Location = new System.Drawing.Point(80, 10);
             this.quizTitleText.Name = "quizTitleText";
             this.quizTitleText.ReadOnly = true;
@@ -63,8 +65,10 @@
             // 
             // quizSubjectText
             // 
-            this.quizSubjectText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.quizSubjectText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(49)))));
             this.quizSubjectText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.quizSubjectText.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.quizSubjectText.ForeColor = System.Drawing.Color.White;
             this.quizSubjectText.Location = new System.Drawing.Point(80, 46);
             this.quizSubjectText.Name = "quizSubjectText";
             this.quizSubjectText.ReadOnly = true;
@@ -97,8 +101,10 @@
             // questionCountText
             // 
             this.questionCountText.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.questionCountText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.questionCountText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(49)))));
             this.questionCountText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.questionCountText.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.questionCountText.ForeColor = System.Drawing.Color.White;
             this.questionCountText.Location = new System.Drawing.Point(351, 33);
             this.questionCountText.Name = "questionCountText";
             this.questionCountText.ReadOnly = true;
@@ -132,8 +138,10 @@
             // likesText
             // 
             this.likesText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.likesText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.likesText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(49)))));
             this.likesText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.likesText.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.likesText.ForeColor = System.Drawing.Color.White;
             this.likesText.Location = new System.Drawing.Point(604, 8);
             this.likesText.Name = "likesText";
             this.likesText.ReadOnly = true;
@@ -143,8 +151,10 @@
             // dislikesText
             // 
             this.dislikesText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dislikesText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.dislikesText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(49)))));
             this.dislikesText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dislikesText.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.dislikesText.ForeColor = System.Drawing.Color.White;
             this.dislikesText.Location = new System.Drawing.Point(604, 38);
             this.dislikesText.Name = "dislikesText";
             this.dislikesText.ReadOnly = true;
@@ -155,7 +165,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(49)))));
             this.Controls.Add(this.dislikesText);
             this.Controls.Add(this.likesText);
             this.Controls.Add(this.dislikesLabel);

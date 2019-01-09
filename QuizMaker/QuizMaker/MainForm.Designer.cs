@@ -30,16 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             this.leftPanel = new System.Windows.Forms.Panel();
+            this.topPanel = new System.Windows.Forms.Panel();
+            this.logoLabel = new System.Windows.Forms.Label();
+            this.mainPanel = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.feebackBtn = new System.Windows.Forms.Button();
             this.profileBtn = new System.Windows.Forms.Button();
             this.menuVisibleBtn = new System.Windows.Forms.Button();
             this.feelLuckyBtn = new System.Windows.Forms.Button();
             this.categoriesBtn = new System.Windows.Forms.Button();
             this.createQuizBtn = new System.Windows.Forms.Button();
-            this.topPanel = new System.Windows.Forms.Panel();
-            this.logoLabel = new System.Windows.Forms.Label();
             this.loginBtn = new System.Windows.Forms.Button();
-            this.mainPanel = new System.Windows.Forms.Panel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.leftPanel.SuspendLayout();
             this.topPanel.SuspendLayout();
             this.SuspendLayout();
@@ -48,6 +49,7 @@
             // 
             this.leftPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.leftPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.leftPanel.Controls.Add(this.feebackBtn);
             this.leftPanel.Controls.Add(this.profileBtn);
             this.leftPanel.Controls.Add(this.menuVisibleBtn);
             this.leftPanel.Controls.Add(this.feelLuckyBtn);
@@ -58,6 +60,63 @@
             this.leftPanel.Name = "leftPanel";
             this.leftPanel.Size = new System.Drawing.Size(165, 486);
             this.leftPanel.TabIndex = 1;
+            // 
+            // topPanel
+            // 
+            this.topPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.topPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.topPanel.Controls.Add(this.logoLabel);
+            this.topPanel.Controls.Add(this.loginBtn);
+            this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.topPanel.Location = new System.Drawing.Point(0, 0);
+            this.topPanel.Name = "topPanel";
+            this.topPanel.Size = new System.Drawing.Size(950, 70);
+            this.topPanel.TabIndex = 0;
+            // 
+            // logoLabel
+            // 
+            this.logoLabel.AutoSize = true;
+            this.logoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoLabel.ForeColor = System.Drawing.Color.White;
+            this.logoLabel.Location = new System.Drawing.Point(3, 14);
+            this.logoLabel.Name = "logoLabel";
+            this.logoLabel.Size = new System.Drawing.Size(152, 31);
+            this.logoLabel.TabIndex = 1;
+            this.logoLabel.Text = "Quiz Maker";
+            // 
+            // mainPanel
+            // 
+            this.mainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.Location = new System.Drawing.Point(0, 0);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(950, 556);
+            this.mainPanel.TabIndex = 4;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // feebackBtn
+            // 
+            this.feebackBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.feebackBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.feebackBtn.FlatAppearance.BorderSize = 0;
+            this.feebackBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(150)))));
+            this.feebackBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.feebackBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.feebackBtn.ForeColor = System.Drawing.Color.White;
+            this.feebackBtn.Image = global::QuizMaker.Properties.Resources.feedback;
+            this.feebackBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.feebackBtn.Location = new System.Drawing.Point(-1, 449);
+            this.feebackBtn.Name = "feebackBtn";
+            this.feebackBtn.Size = new System.Drawing.Size(169, 36);
+            this.feebackBtn.TabIndex = 7;
+            this.feebackBtn.Tag = "feedback";
+            this.feebackBtn.Text = "Feedback";
+            this.feebackBtn.UseVisualStyleBackColor = true;
+            this.feebackBtn.Click += new System.EventHandler(this.LeftMenuButtons_Click);
             // 
             // profileBtn
             // 
@@ -70,7 +129,7 @@
             this.profileBtn.ForeColor = System.Drawing.Color.White;
             this.profileBtn.Image = global::QuizMaker.Properties.Resources.Account1;
             this.profileBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.profileBtn.Location = new System.Drawing.Point(-1, 425);
+            this.profileBtn.Location = new System.Drawing.Point(-1, 407);
             this.profileBtn.Name = "profileBtn";
             this.profileBtn.Size = new System.Drawing.Size(169, 36);
             this.profileBtn.TabIndex = 6;
@@ -151,29 +210,6 @@
             this.createQuizBtn.UseVisualStyleBackColor = true;
             this.createQuizBtn.Click += new System.EventHandler(this.LeftMenuButtons_Click);
             // 
-            // topPanel
-            // 
-            this.topPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.topPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.topPanel.Controls.Add(this.logoLabel);
-            this.topPanel.Controls.Add(this.loginBtn);
-            this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.topPanel.Location = new System.Drawing.Point(0, 0);
-            this.topPanel.Name = "topPanel";
-            this.topPanel.Size = new System.Drawing.Size(950, 70);
-            this.topPanel.TabIndex = 0;
-            // 
-            // logoLabel
-            // 
-            this.logoLabel.AutoSize = true;
-            this.logoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logoLabel.ForeColor = System.Drawing.Color.White;
-            this.logoLabel.Location = new System.Drawing.Point(3, 14);
-            this.logoLabel.Name = "logoLabel";
-            this.logoLabel.Size = new System.Drawing.Size(152, 31);
-            this.logoLabel.TabIndex = 1;
-            this.logoLabel.Text = "Quiz Maker";
-            // 
             // loginBtn
             // 
             this.loginBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -193,20 +229,6 @@
             this.loginBtn.Text = "Login";
             this.loginBtn.UseVisualStyleBackColor = false;
             this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
-            // 
-            // mainPanel
-            // 
-            this.mainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(0, 0);
-            this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(950, 556);
-            this.mainPanel.TabIndex = 4;
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 1;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // MainForm
             // 
@@ -240,6 +262,7 @@
         private System.Windows.Forms.Button menuVisibleBtn;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button profileBtn;
+        private System.Windows.Forms.Button feebackBtn;
     }
 }
 

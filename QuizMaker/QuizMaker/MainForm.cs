@@ -125,6 +125,18 @@ namespace QuizMaker
                         GoToLoginPanel();
                     }
                     break;
+                case "feedback":
+                    if (LoginStatusData.userID != 0)
+                    {
+                        FeedbackControl g = new FeedbackControl();
+                        g.Dock = DockStyle.Fill;
+                        mainPanel.Controls.Add(g);
+                    }
+                    else
+                    {
+                        GoToLoginPanel();
+                    }
+                    break;
                 default:
                     Console.WriteLine("No control selected");
                     break;
@@ -138,7 +150,7 @@ namespace QuizMaker
             feelLuckyBtn.BackColor = Color.FromArgb(26, 32, 40);
             profileBtn.BackColor = Color.FromArgb(26, 32, 40);
             loginBtn.BackColor = Color.FromArgb(0, 64, 64);
-
+            feebackBtn.BackColor = Color.FromArgb(0, 64, 64);
             button.BackColor = Color.FromArgb(0, 64, 64);
         }
     }

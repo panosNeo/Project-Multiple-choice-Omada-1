@@ -139,7 +139,7 @@ namespace QuizMaker.SearchHandler
             QuestionTableAdapter questionData = new QuestionTableAdapter();
             
             AnswerTableAdapter answerData = new AnswerTableAdapter();
-            List<Quiz> quizzes = new List<Quiz>();
+            Quiz quizzes = new Quiz();
             List<Question> questions = new List<Question>();
             List<Answer> answers = new List<Answer>();
 
@@ -147,7 +147,7 @@ namespace QuizMaker.SearchHandler
             {
                 if (q.Subject_id == subID)
                 {
-                    quizzes.Add(new Quiz(q.Title, q.Subject_id, q.By_user));
+                    quizzes = new Quiz(q.Title, q.Subject_id, q.By_user);
                     foreach (MultipleChoiceDataSet.QuestionRow question in questionData.GetDataByQuizID(q.Quiz_id))
                     {
                         
@@ -160,7 +160,7 @@ namespace QuizMaker.SearchHandler
                                 //answers.Add(new Answer(an.Answer,an.Correct));
                                 tempq.AddAnswer(new Answer(an.Answer, an.Correct));
                             }
-                            quizzes[quizzes.Count - 1].AddQuestion(tempq, question.Subject_id);
+                            quizzes.AddQuestion(tempq, question.Subject_id);
                         }
 
                         
@@ -169,7 +169,7 @@ namespace QuizMaker.SearchHandler
                 }
 
             }
-            return quizzes[0];
+            return quizzes;
         }
         public static List<Quiz> GetQuizByUserID(int subID)
         {
