@@ -157,7 +157,7 @@ namespace QuizMaker
             feelLuckyBtn.BackColor = Color.FromArgb(26, 32, 40);
             profileBtn.BackColor = Color.FromArgb(26, 32, 40);
             loginBtn.BackColor = Color.FromArgb(0, 64, 64);
-            feebackBtn.BackColor = Color.FromArgb(0, 64, 64);
+            feebackBtn.BackColor = Color.FromArgb(26, 32, 40);
             button.BackColor = Color.FromArgb(0, 64, 64);
         }
     }
