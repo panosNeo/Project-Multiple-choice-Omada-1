@@ -156,7 +156,7 @@ namespace Administrator
                 DialogResult dialogResult = MessageBox.Show("Do you want to rate feedbacks?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dialogResult == DialogResult.Yes && UpdateAllCheckbox.Checked)
                 {
-                    FeedbackHandler.FeedbackController.UpdateAllCheckboxes(); // kane update se ola
+                    FeedbackHandler.FeedbackController.UpdateAllCheckboxes(true); // kane update se ola
                 } else if (dialogResult == DialogResult.Yes)
                 {
                     foreach (var control in feedbackControls)

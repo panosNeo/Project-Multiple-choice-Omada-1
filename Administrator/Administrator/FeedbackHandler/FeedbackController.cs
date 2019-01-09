@@ -13,7 +13,7 @@ namespace Administrator.FeedbackHandler
     {
         private static string searchForFeedbacks = "Select Feedback_id,User_id,Feedback,Admin_aproval From Feedback;";
         private static string setDeleteBool = "Delete From Feedback Where Feedback_id = ?;";
-        private static string setAllAdminAproval = "Update Feedback Set Admin_aproval = -1";
+        private static string setAllAdminAproval = "Update Feedback Set Admin_aproval = ?;";
         private static string setAdminAproval = "Update Feedback Set Admin_aproval = ? Where Feedback_id = ?;";
         private static string deleteFeedbacks = "Delete From Feedback;";
 
@@ -144,7 +144,7 @@ namespace Administrator.FeedbackHandler
             }
         }
         //kane update se ola ta admin_aproval
-        public static void UpdateAllCheckboxes()
+        public static void UpdateAllCheckboxes(bool check)
         {
             try
             {   //connection string
@@ -153,6 +153,8 @@ namespace Administrator.FeedbackHandler
                     using (OleDbCommand updateCommand = new OleDbCommand(@setAllAdminAproval, conn))
                     {
                         conn.Open();
+
+                        updateCommand.Parameters.AddWithValue("@p1",check);
                         //datareader
                         using (OleDbDataAdapter updateAdapter = new OleDbDataAdapter())
                         {

@@ -15,6 +15,13 @@ namespace Administrator
         //subject list
         private List<SubjectHandler.Subject> subjects;
 
+        //quiz list
+        private List<QuizHandler.Quiz> quizList;
+
+        private string existingSubjects = "";
+        //gia na dw an allaxe to root id prin apo update
+        private int rootID;
+
         //treeNode gia ta subject Nodes pou exoun childs
         private TreeNode childNode;
 
@@ -27,9 +34,10 @@ namespace Administrator
         {
             //kane search gia ta subjects pou uparxoun
             SubjectHandler.SubjectController.SearchForExistingSubjects();
+            //kane sort th lista
+            SubjectHandler.Subject.SortList();
             //gemise th lista
             FillSubjectList();
-
             //gemise to subject treeView me ola ta subjects
             FillExistingSubjectsID();
         }
@@ -72,14 +80,14 @@ namespace Administrator
             qUserIDBox.Text = "";
             qQuizNameBox.Text = "";
             qDateBox.Text = "";
+            totalQuestionBox.Text = "";
         }
 
         //gia na gemisw to subjectID listbox me ta existing subjects id
         private void FillExistingSubjectsID()
         {
             TreeNode node;
-
-            string makaronia = "";
+            existingSubjects = "";
 
             //lista me ta root ID pou ekane mia fora elegxo 
             //etsi wste na mhn ta xana kanei
@@ -90,13 +98,13 @@ namespace Administrator
             //kai gemise nodes me ta subject poy yparxoun
             foreach (var subject in subjects)
             {
-                makaronia += subject.GetSubjectID() + " " + subject.GetRootID() + " " +subject.GetName() + "\n";
+                existingSubjects += "Subject ID : " + subject.GetSubjectID() + "\tRoot ID : " + subject.GetRootID() + "\t Subject name : " +subject.GetSubjectName() + "\n";
                 if (subject.GetRootID() == 0)
                 {
                     //an to root ID == 0 tote ftiaxe ta Nodes - kathgories
                     //
-                    node = new TreeNode(subject.GetName());
-                    node.Name = subject.GetName();
+                    node = new TreeNode(subject.GetSubjectName());
+                    node.Name = subject.GetSubjectName();
                     node.Tag = subject.GetSubjectID();
 
                     //kai kane add
@@ -116,7 +124,7 @@ namespace Administrator
                         {
                             if (subject.GetRootID() == s.GetRootID())
                             {
-                                nameList.Add(s.GetName());
+                                nameList.Add(s.GetSubjectName());
                                 subjectIDList.Add(s.GetSubjectID());
                                 count++;
                             }
@@ -134,7 +142,8 @@ namespace Administrator
                             }
 
                             //checkare an yparxoun child nodes 
-                            SearchChildNodes(tNode, subject.GetRootID());
+                            SubjectHandler.SubjectTreeView.SearchChildNodes(tNode,subject.GetRootID());
+                            childNode = SubjectHandler.SubjectTreeView.GetChildNode();
                             if (childNode != null)
                             {   //an yparxoun tote kane ta add
                                 SubjectHandler.SubjectTreeView.AddNodes(childNode, count, nameList, subjectIDList);
@@ -144,20 +153,8 @@ namespace Administrator
                     }
                 }
             }
-            MessageBox.Show(makaronia + "\n");
         }
-        //methodos gia ton elegxo enos Subject node
-        private void SearchChildNodes(TreeNode parentNode, int id)
-        {
-            //des an to subject node exei childs me id idio gia ena neo subject
-            //an exei tote dwse ta stoixeia toy subject.child node sto childNode
-            foreach (TreeNode node in parentNode.Nodes)
-            {
-                if (node.Tag.Equals(id))
-                    childNode = node;
-                SearchChildNodes(node,id);
-            }
-        }
+        
 
         //gemise to subject list
         private void FillSubjectList()
@@ -209,6 +206,142 @@ namespace Administrator
             FillSubjectList();
             //gemise to subject TreeView me id
             FillExistingSubjectsID();
+        }
+
+        private void showButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(existingSubjects,"Message",MessageBoxButtons.OK,MessageBoxIcon.Information);
+        }
+        //otan kanei click se kapoio Node tou treeView
+        private void SubjectTreeView_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            SubIDBox.Text = e.Node.Tag.ToString();
+
+            if (e.Node.Parent != null)
+            {
+                RootBox.Text = e.Node.Parent.Tag.ToString();
+                totalQuizzesBox.Text = SubjectHandler.SubjectController.QuizzesCounter(Int32.Parse(RootBox.Text)).ToString();
+                rootID = Int32.Parse(RootBox.Text);
+            }
+            else
+            {
+                RootBox.Text = "0";
+                totalQuizzesBox.Text = SubjectHandler.SubjectController.QuizzesCounter(Int32.Parse(RootBox.Text)).ToString();
+                rootID = Int32.Parse(RootBox.Text);
+            }
+            NamBox.Text = e.Node.Name;
+            //des an uparxei o root id
+            SubjectHandler.SubjectTreeView.CheckIfExistNode(e.Node.Parent,Int32.Parse(e.Node.Tag.ToString()));
+            //kane search gia ola ta quiz pou uparxoun sto node pou epilexthike
+            SubjectHandler.SubjectController.SearchForQuizzes(Int32.Parse(e.Node.Tag.ToString()));
+
+            //pare th lista me ta quizzes
+            quizList = QuizHandler.Quiz.GetList();
+            //an uparxoun quizzes
+            if (quizList.Count > 0)
+            {
+                quizWarning.Visible = false;
+                quizIDCombo.Items.Clear();
+                foreach (var quiz in quizList)
+                {
+                    quizIDCombo.Items.Add(quiz.GetQuizID());
+                }
+                quizIDCombo.SelectedIndex = 0;
+            }
+            else
+            {
+                quizWarning.Text = "No existing Quizzes.";
+                quizWarning.Visible = true;
+            }
+        }
+
+        private void UpdateButton_Click(object sender, EventArgs e)
+        {
+            int subject_id = Int32.Parse(SubIDBox.Text);
+            int root_id = Int32.Parse(RootBox.Text);
+            string subject_name = NamBox.Text;
+            //an uparxei to root
+            if (root_id == rootID)
+            {
+                SubjectHandler.SubjectController.UpdateSubject(subject_id, root_id, subject_name);
+                WarningLabel.Visible = false;
+            }
+            else if(root_id != rootID && !SubjectHandler.SubjectTreeView.GetCheckIfExist())
+            {
+                WarningLabel.Text = "The root id does not exist, update failed.";
+                WarningLabel.Visible = true;
+            }
+            //kane search gia ta subjects pou uparxoun
+            SubjectHandler.SubjectController.SearchForExistingSubjects();
+            //kane sort th lista
+            SubjectHandler.Subject.SortList();
+            //gemise th lista
+            FillSubjectList();
+            //gemise to subject treeView me ola ta subjects
+            FillExistingSubjectsID();
+        }
+
+        private void quizIDCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (quizList.Count > 0)
+            {
+                quizWarning.Visible = false;
+                int position = quizIDCombo.SelectedIndex;   //pare to selected item
+
+                qSubIDBox.Text = quizList[position].GetSubjectID().ToString();
+                qQuizIDBox.Text = quizList[position].GetQuizID().ToString();
+                qUserIDBox.Text = quizList[position].GetUserID().ToString();
+                qQuizNameBox.Text = quizList[position].GetName();
+                qDateBox.Text = quizList[position].GetCrDate();
+                totalQuestionBox.Text = SubjectHandler.SubjectController.CountQuestions(Int32.Parse(qQuizIDBox.Text)).ToString();
+            }
+            else
+            {
+                quizWarning.Text = "No existing Quizzes.";
+                quizWarning.Visible = true;
+            }
+        }
+        //kane add ena quiz
+        private void QuizAdd_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(qSubIDBox.Text) || string.IsNullOrEmpty(qQuizIDBox.Text) || string.IsNullOrEmpty(qUserIDBox.Text) || string.IsNullOrEmpty(qQuizNameBox.Text) || string.IsNullOrEmpty(qDateBox.Text))
+            {
+                quizWarning.Text = "Please enter all fields.";
+                quizWarning.Visible = true;
+            }
+            else
+            {
+                quizWarning.Visible = false;
+                SubjectHandler.SubjectController.AddNewQuiz(Int32.Parse(qQuizIDBox.Text), Int32.Parse(qUserIDBox.Text),qDateBox.Text,qQuizNameBox.Text, Int32.Parse(qSubIDBox.Text));
+            }
+        }
+        //delete ena quiz
+        private void QuizDelete_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(qQuizIDBox.Text))
+            {
+                quizWarning.Text = "Please enter Quiz ID.";
+                quizWarning.Visible = true;
+            }
+            else
+            {
+                quizWarning.Visible = true;
+                SubjectHandler.SubjectController.DeleteQuiz(Int32.Parse(qQuizIDBox.Text));
+            }            
+        }
+        //update ena quiz
+        private void QuizUpdate_Click(object sender, EventArgs e)
+        {
+            if (quizList.Count > 0)
+            {
+                quizWarning.Visible = false;
+                SubjectHandler.SubjectController.UpdateQuiz(Int32.Parse(quizIDCombo.GetItemText(quizIDCombo.SelectedItem)), Int32.Parse(qUserIDBox.Text), qDateBox.Text, qQuizNameBox.Text, Int32.Parse(qSubIDBox.Text));
+            }
+            else
+            {
+                quizWarning.Text = "No existing Quizzes.";
+                quizWarning.Visible = true;
+            }
         }
     }
 }

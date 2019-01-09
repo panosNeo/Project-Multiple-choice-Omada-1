@@ -48,11 +48,11 @@ namespace Administrator.SubjectHandler
             return root_id;
         }
 
-        public virtual void SetName(string name)
+        public virtual void SetSubjectName(string name)
         {
             this.name = name;
         }
-        public virtual string GetName()
+        public virtual string GetSubjectName()
         {
             return name;
         }
@@ -115,6 +115,12 @@ namespace Administrator.SubjectHandler
         public static void ClearList()
         {
             subjectList.Clear();
+        }
+
+        //sort th lista 
+        public static void SortList()
+        {
+            subjectList.Sort((x,y) => x.GetRootID().CompareTo(y.GetRootID()));
         }
     }
 }
