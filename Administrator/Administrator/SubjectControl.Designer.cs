@@ -61,6 +61,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.SubjectTreeView = new System.Windows.Forms.TreeView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.totalQuizzesBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.showButton = new System.Windows.Forms.Button();
             this.ChangeSubjectGroup.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -68,6 +71,9 @@
             // 
             // ChangeSubjectGroup
             // 
+            this.ChangeSubjectGroup.Controls.Add(this.showButton);
+            this.ChangeSubjectGroup.Controls.Add(this.totalQuizzesBox);
+            this.ChangeSubjectGroup.Controls.Add(this.label1);
             this.ChangeSubjectGroup.Controls.Add(this.UpdateButton);
             this.ChangeSubjectGroup.Controls.Add(this.DeleteButton);
             this.ChangeSubjectGroup.Controls.Add(this.AddButton);
@@ -81,7 +87,7 @@
             this.ChangeSubjectGroup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.ChangeSubjectGroup.Location = new System.Drawing.Point(343, 19);
             this.ChangeSubjectGroup.Name = "ChangeSubjectGroup";
-            this.ChangeSubjectGroup.Size = new System.Drawing.Size(373, 172);
+            this.ChangeSubjectGroup.Size = new System.Drawing.Size(373, 202);
             this.ChangeSubjectGroup.TabIndex = 1;
             this.ChangeSubjectGroup.TabStop = false;
             this.ChangeSubjectGroup.Text = "Data Settings";
@@ -91,19 +97,20 @@
             this.UpdateButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.UpdateButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.UpdateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.UpdateButton.Location = new System.Drawing.Point(282, 111);
+            this.UpdateButton.Location = new System.Drawing.Point(282, 112);
             this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.Size = new System.Drawing.Size(75, 31);
             this.UpdateButton.TabIndex = 5;
             this.UpdateButton.Text = "Update";
             this.UpdateButton.UseVisualStyleBackColor = false;
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
             // DeleteButton
             // 
             this.DeleteButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.DeleteButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeleteButton.Location = new System.Drawing.Point(282, 74);
+            this.DeleteButton.Location = new System.Drawing.Point(282, 75);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(75, 31);
             this.DeleteButton.TabIndex = 4;
@@ -116,7 +123,7 @@
             this.AddButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.AddButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddButton.Location = new System.Drawing.Point(282, 37);
+            this.AddButton.Location = new System.Drawing.Point(282, 38);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(75, 31);
             this.AddButton.TabIndex = 3;
@@ -151,7 +158,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 103);
+            this.label6.Location = new System.Drawing.Point(15, 99);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(107, 16);
             this.label6.TabIndex = 2;
@@ -160,7 +167,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(52, 74);
+            this.label7.Location = new System.Drawing.Point(61, 70);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(61, 16);
             this.label7.TabIndex = 1;
@@ -169,7 +176,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(32, 45);
+            this.label8.Location = new System.Drawing.Point(41, 44);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(81, 16);
             this.label8.TabIndex = 0;
@@ -180,7 +187,7 @@
             this.WarningLabel.AutoSize = true;
             this.WarningLabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.WarningLabel.ForeColor = System.Drawing.Color.Red;
-            this.WarningLabel.Location = new System.Drawing.Point(340, 194);
+            this.WarningLabel.Location = new System.Drawing.Point(340, 224);
             this.WarningLabel.Name = "WarningLabel";
             this.WarningLabel.Size = new System.Drawing.Size(38, 16);
             this.WarningLabel.TabIndex = 4;
@@ -426,8 +433,9 @@
             this.SubjectTreeView.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.SubjectTreeView.Location = new System.Drawing.Point(3, 19);
             this.SubjectTreeView.Name = "SubjectTreeView";
-            this.SubjectTreeView.Size = new System.Drawing.Size(281, 189);
+            this.SubjectTreeView.Size = new System.Drawing.Size(281, 180);
             this.SubjectTreeView.TabIndex = 1;
+            this.SubjectTreeView.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.SubjectTreeView_NodeMouseClick);
             // 
             // groupBox2
             // 
@@ -436,10 +444,41 @@
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.groupBox2.Location = new System.Drawing.Point(20, 19);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(287, 211);
+            this.groupBox2.Size = new System.Drawing.Size(287, 202);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Existing Subjects";
+            // 
+            // totalQuizzesBox
+            // 
+            this.totalQuizzesBox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.totalQuizzesBox.Location = new System.Drawing.Point(129, 125);
+            this.totalQuizzesBox.Name = "totalQuizzesBox";
+            this.totalQuizzesBox.ReadOnly = true;
+            this.totalQuizzesBox.Size = new System.Drawing.Size(125, 23);
+            this.totalQuizzesBox.TabIndex = 17;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 128);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(116, 16);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Total of Quizzes :";
+            // 
+            // showButton
+            // 
+            this.showButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            this.showButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            this.showButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.showButton.Location = new System.Drawing.Point(251, 165);
+            this.showButton.Name = "showButton";
+            this.showButton.Size = new System.Drawing.Size(116, 31);
+            this.showButton.TabIndex = 19;
+            this.showButton.Text = "Show Subjects";
+            this.showButton.UseVisualStyleBackColor = false;
+            this.showButton.Click += new System.EventHandler(this.showButton_Click);
             // 
             // SubjectControl
             // 
@@ -497,5 +536,8 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TreeView SubjectTreeView;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox totalQuizzesBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button showButton;
     }
 }

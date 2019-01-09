@@ -15,6 +15,10 @@ namespace Administrator
         //subject list
         private List<SubjectHandler.Subject> subjects;
 
+        private string existingSubjects = "";
+        //gia na dw an allaxe to root id prin apo update
+        private int rootID;
+
         //treeNode gia ta subject Nodes pou exoun childs
         private TreeNode childNode;
 
@@ -27,9 +31,10 @@ namespace Administrator
         {
             //kane search gia ta subjects pou uparxoun
             SubjectHandler.SubjectController.SearchForExistingSubjects();
+            //kane sort th lista
+            SubjectHandler.Subject.SortList();
             //gemise th lista
             FillSubjectList();
-
             //gemise to subject treeView me ola ta subjects
             FillExistingSubjectsID();
         }
@@ -78,8 +83,7 @@ namespace Administrator
         private void FillExistingSubjectsID()
         {
             TreeNode node;
-
-            string makaronia = "";
+            existingSubjects = "";
 
             //lista me ta root ID pou ekane mia fora elegxo 
             //etsi wste na mhn ta xana kanei
@@ -90,7 +94,7 @@ namespace Administrator
             //kai gemise nodes me ta subject poy yparxoun
             foreach (var subject in subjects)
             {
-                makaronia += subject.GetSubjectID() + " " + subject.GetRootID() + " " +subject.GetName() + "\n";
+                existingSubjects += "Subject ID : " + subject.GetSubjectID() + "\tRoot ID : " + subject.GetRootID() + "\t Subject name : " +subject.GetName() + "\n";
                 if (subject.GetRootID() == 0)
                 {
                     //an to root ID == 0 tote ftiaxe ta Nodes - kathgories
@@ -134,7 +138,8 @@ namespace Administrator
                             }
 
                             //checkare an yparxoun child nodes 
-                            SearchChildNodes(tNode, subject.GetRootID());
+                            SubjectHandler.SubjectTreeView.SearchChildNodes(tNode,subject.GetRootID());
+                            childNode = SubjectHandler.SubjectTreeView.GetChildNode();
                             if (childNode != null)
                             {   //an yparxoun tote kane ta add
                                 SubjectHandler.SubjectTreeView.AddNodes(childNode, count, nameList, subjectIDList);
@@ -144,20 +149,8 @@ namespace Administrator
                     }
                 }
             }
-            MessageBox.Show(makaronia + "\n");
         }
-        //methodos gia ton elegxo enos Subject node
-        private void SearchChildNodes(TreeNode parentNode, int id)
-        {
-            //des an to subject node exei childs me id idio gia ena neo subject
-            //an exei tote dwse ta stoixeia toy subject.child node sto childNode
-            foreach (TreeNode node in parentNode.Nodes)
-            {
-                if (node.Tag.Equals(id))
-                    childNode = node;
-                SearchChildNodes(node,id);
-            }
-        }
+        
 
         //gemise to subject list
         private void FillSubjectList()
@@ -208,6 +201,58 @@ namespace Administrator
             //gemise th lista
             FillSubjectList();
             //gemise to subject TreeView me id
+            FillExistingSubjectsID();
+        }
+
+        private void showButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(existingSubjects,"Message",MessageBoxButtons.OK,MessageBoxIcon.Information);
+        }
+        //otan kanei click se kapoio Node tou treeView
+        private void SubjectTreeView_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            SubIDBox.Text = e.Node.Tag.ToString();
+
+            if (e.Node.Parent != null)
+            {
+                RootBox.Text = e.Node.Parent.Tag.ToString();
+                totalQuizzesBox.Text = SubjectHandler.SubjectController.QuizzesCounter(Int32.Parse(RootBox.Text)).ToString();
+                rootID = Int32.Parse(RootBox.Text);
+            }
+            else
+            {
+                RootBox.Text = "0";
+                totalQuizzesBox.Text = SubjectHandler.SubjectController.QuizzesCounter(Int32.Parse(RootBox.Text)).ToString();
+                rootID = Int32.Parse(RootBox.Text);
+            }
+            NamBox.Text = e.Node.Name;
+
+            SubjectHandler.SubjectTreeView.CheckIfExistNode(e.Node.Parent,Int32.Parse(e.Node.Tag.ToString()));
+        }
+
+        private void UpdateButton_Click(object sender, EventArgs e)
+        {
+            int subject_id = Int32.Parse(SubIDBox.Text);
+            int root_id = Int32.Parse(RootBox.Text);
+            string subject_name = NamBox.Text;
+            //an uparxei to root
+            if (root_id == rootID)
+            {
+                SubjectHandler.SubjectController.UpdateSubject(subject_id, root_id, subject_name);
+                WarningLabel.Visible = false;
+            }
+            else if(root_id != rootID && !SubjectHandler.SubjectTreeView.GetCheckIfExist())
+            {
+                WarningLabel.Text = "The root id does not exist, update failed.";
+                WarningLabel.Visible = true;
+            }
+            //kane search gia ta subjects pou uparxoun
+            SubjectHandler.SubjectController.SearchForExistingSubjects();
+            //kane sort th lista
+            SubjectHandler.Subject.SortList();
+            //gemise th lista
+            FillSubjectList();
+            //gemise to subject treeView me ola ta subjects
             FillExistingSubjectsID();
         }
     }

@@ -16,6 +16,10 @@ namespace Administrator.SubjectHandler
         private static string countQuizzes = "Select Count(*) From Quiz inner join Subject on Quiz.Subject_id = Subject.Subject_id Where Subject.Root_id = ?";
         private static string addNewSubject = "Insert Into Subject(Root_id,S_name) Values(?,?);";
         private static string deleteSubject = "Delete From Subject Where Subject_id = ? AND Root_id = ?;";
+        private static string updateSubject = "Update Subject Set Root_id = ?, S_name = ? Where Subject_id = ?;";
+
+        private static string searchQuizzes = "Select Quiz.Quiz_id,Quiz.By_user,Quiz.Cr_date,Quiz.Title,Quiz.Subject_id From Subject inner join Quiz on Subject.Subject_id = Quiz.Subject_id Where Subject.Subject_id = ?;";
+
         //object
         private static Subject subject;
 
@@ -109,7 +113,7 @@ namespace Administrator.SubjectHandler
         //Methods gia to Data Settings Groupbox
         //
         //kane add ena neo Subject
-        public static void AddNewSubject(int subjectID,int rootID,string name)
+        public static void AddNewSubject(int subjectID, int rootID, string name)
         {
             try
             {   //connection
@@ -121,8 +125,8 @@ namespace Administrator.SubjectHandler
                         conn.Open();
 
                         //exSubCommand.Parameters.AddWithValue("@p1",subjectID);
-                        exSubCommand.Parameters.AddWithValue("@p1",rootID);
-                        exSubCommand.Parameters.AddWithValue("@p2",name);
+                        exSubCommand.Parameters.AddWithValue("@p1", rootID);
+                        exSubCommand.Parameters.AddWithValue("@p2", name);
 
                         //execute to command
                         using (OleDbDataReader exSubReader = exSubCommand.ExecuteReader())
@@ -144,7 +148,7 @@ namespace Administrator.SubjectHandler
             }
         }
         //kane delete ena subject me vash to subject id kai to root id
-        public static void DeleteSubject(int subjectID,int rootID)
+        public static void DeleteSubject(int subjectID, int rootID)
         {
             try
             {
@@ -163,6 +167,42 @@ namespace Administrator.SubjectHandler
                         using (OleDbDataReader exSubReader = exSubCommand.ExecuteReader())
                         {
                             MessageBox.Show("Subject is deleted successfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            exSubReader.Close();
+                        }
+                        conn.Close();
+                    }
+                }
+            }
+            catch (OleDbException ex)
+            {//exceptions ths vashs
+                MessageBox.Show(ex.ToString(), "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {//upoloipa exceptions
+                MessageBox.Show(ex.ToString(), "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        //kane update ena subject
+        public static void UpdateSubject(int subjectID,int rootID,string name)
+        {
+            try
+            {   //connection
+                using (OleDbConnection conn = new OleDbConnection(Properties.Settings.Default.DatabaseConnectionString))
+                {
+                    //command gia na vrei ta subjects
+                    using (OleDbCommand exSubCommand = new OleDbCommand(@updateSubject, conn))
+                    {
+                        conn.Open();
+
+                        //exSubCommand.Parameters.AddWithValue("@p1",subjectID);
+                        exSubCommand.Parameters.AddWithValue("@p1", rootID);
+                        exSubCommand.Parameters.AddWithValue("@p2", name);
+                        exSubCommand.Parameters.AddWithValue("@p3", subjectID);
+
+                        //execute to command
+                        using (OleDbDataReader exSubReader = exSubCommand.ExecuteReader())
+                        {
+                            MessageBox.Show("Subject is updated successfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             exSubReader.Close();
                         }
                         conn.Close();

@@ -116,5 +116,11 @@ namespace Administrator.SubjectHandler
         {
             subjectList.Clear();
         }
+
+        //sort th lista 
+        public static void SortList()
+        {
+            subjectList.Sort((x,y) => x.GetRootID().CompareTo(y.GetRootID()));
+        }
     }
 }
