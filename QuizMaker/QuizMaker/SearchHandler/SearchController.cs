@@ -111,7 +111,7 @@ namespace QuizMaker.SearchHandler
                 if (q.Subject_id == subID)
                 {
                     quizzes.Add(new Quiz(q.Title, q.Subject_id, q.By_user));
-                    foreach (MultipleChoiceDataSet.QuestionRow question in questionData.GetDataBy(q.Quiz_id))
+                    foreach (MultipleChoiceDataSet.QuestionRow question in questionData.GetDataByQuizID(q.Quiz_id))
                     {
                         
                         if (question.Quiz_id == q.Quiz_id)
@@ -148,7 +148,7 @@ namespace QuizMaker.SearchHandler
                 if (q.Subject_id == subID)
                 {
                     quizzes.Add(new Quiz(q.Title, q.Subject_id, q.By_user));
-                    foreach (MultipleChoiceDataSet.QuestionRow question in questionData.GetDataBy(q.Quiz_id))
+                    foreach (MultipleChoiceDataSet.QuestionRow question in questionData.GetDataByQuizID(q.Quiz_id))
                     {
                         
                         if (question.Quiz_id == q.Quiz_id)
@@ -185,7 +185,7 @@ namespace QuizMaker.SearchHandler
                 if (q.By_user == subID)
                 {
                     quizzes.Add(new Quiz(q.Title, q.Subject_id, q.By_user));
-                    foreach (MultipleChoiceDataSet.QuestionRow question in questionData.GetDataBy(q.Quiz_id))
+                    foreach (MultipleChoiceDataSet.QuestionRow question in questionData.GetDataByQuizID(q.Quiz_id))
                     {
                         
                         if (question.Quiz_id == q.Quiz_id)
