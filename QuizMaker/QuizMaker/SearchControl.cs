@@ -64,6 +64,15 @@ namespace QuizMaker
                 temp.SetQuizSubject(subject.GetSubjectName(q.GetSubject_id()));
                 temp.Click += new EventHandler(ResultQuiz_Click);
                 resultsPanel.Controls.Add(temp);
+                if (counter == 0)
+                {
+                    Label l = new Label()
+                    {
+                        Text = "Found 0 Quizes"
+                    };
+                    l.ForeColor = Color.White;
+                    resultsPanel.Controls.Add(l);
+                }
             }
         }
         private void ResultQuiz_Click(object sender, EventArgs e)
@@ -77,26 +86,39 @@ namespace QuizMaker
         private void searchTextBtn_Click(object sender, EventArgs e)
         {
             resultsPanel.Controls.Clear();
-            LuceneSearcher searcher = new LuceneSearcher("./index");
-            List<RetreivedQuiz> quizes = searcher.GetQuizzes(searchText.Text);
-            ResultQuizControl temp;
             int counter = 0;
-            foreach (RetreivedQuiz q in quizes)
+            LuceneSearcher searcher = new LuceneSearcher("./index");
+            if (!String.IsNullOrWhiteSpace(searchText.Text))
             {
-                temp = new ResultQuizControl(SearchController.GetQuizByID(q.quizID))
+                List<RetreivedQuiz> quizes = searcher.GetQuizzes(searchText.Text);
+                ResultQuizControl temp;
+                
+                foreach (RetreivedQuiz q in quizes)
                 {
-                    Dock = DockStyle.Top
-                };
-                if (counter % 2 == 0)
-                {
-                    temp.SetColor(Color.FromArgb(37, 46, 69));
+                    temp = new ResultQuizControl(SearchController.GetQuizByID(q.quizID))
+                    {
+                        Dock = DockStyle.Top
+                    };
+                    if (counter % 2 == 0)
+                    {
+                        temp.SetColor(Color.FromArgb(37, 46, 69));
+                    }
+                    counter++;
+                    temp.SetQuizNumberOfQuestions(q.questionsCount);
+                    temp.SetQuizTitle(q.quizName);
+                    temp.SetQuizSubject(q.quizSubject);
+                    temp.Click += new EventHandler(ResultQuiz_Click);
+                    resultsPanel.Controls.Add(temp);
                 }
-                counter++;
-                temp.SetQuizNumberOfQuestions(q.questionsCount);
-                temp.SetQuizTitle(q.quizName);
-                temp.SetQuizSubject(q.quizSubject);
-                temp.Click += new EventHandler(ResultQuiz_Click);
-                resultsPanel.Controls.Add(temp);
+            }
+            if (counter == 0)
+            {
+                Label l = new Label()
+                {
+                    Text = "Found 0 Quizes"
+                };
+                l.ForeColor = Color.White;
+                resultsPanel.Controls.Add(l);
             }
         }
     }
