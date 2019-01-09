@@ -78,6 +78,7 @@
             this.answerIDCombo.Name = "answerIDCombo";
             this.answerIDCombo.Size = new System.Drawing.Size(125, 24);
             this.answerIDCombo.TabIndex = 5;
+            this.answerIDCombo.SelectedIndexChanged += new System.EventHandler(this.answerIDCombo_SelectedIndexChanged);
             // 
             // questionIDCombo
             // 
@@ -86,6 +87,7 @@
             this.questionIDCombo.Name = "questionIDCombo";
             this.questionIDCombo.Size = new System.Drawing.Size(125, 24);
             this.questionIDCombo.TabIndex = 2;
+            this.questionIDCombo.SelectedIndexChanged += new System.EventHandler(this.questionIDCombo_SelectedIndexChanged);
             // 
             // AnswerBox
             // 
