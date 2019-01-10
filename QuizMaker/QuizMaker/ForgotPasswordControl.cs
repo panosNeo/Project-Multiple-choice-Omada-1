@@ -19,6 +19,11 @@ namespace QuizMaker
 
         private void verificationBtn_Click(object sender, EventArgs e)
         {
+            VerifyEmail();
+
+        }
+        private void VerifyEmail()
+        {
             MultipleChoiceDataSetTableAdapters.UserTableAdapter u = new MultipleChoiceDataSetTableAdapters.UserTableAdapter();
             int exists = (int)u.searchEmail(EmailBox.Text);
             if (exists > 0)
@@ -30,7 +35,13 @@ namespace QuizMaker
                 Controls.Add(r);
             }
             else MessageBox.Show("Email does not belong into any account");
-
+        }
+        private void EmailBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyData == Keys.Enter)
+            {
+                VerifyEmail();
+            }
         }
     }
 }

@@ -53,7 +53,11 @@ namespace QuizMaker
         }
         private void verificationBtn_Click(object sender, EventArgs e)
         {
-            if(countTry <= 3)
+            VerifyCode();
+        }
+        private void VerifyCode()
+        {
+            if (countTry <= 3)
             {
                 if (CodeBox.Text == code.ToString())
                 {
@@ -70,12 +74,19 @@ namespace QuizMaker
                 MessageBox.Show("You tried too many times! Is this your email?");
             }
         }
-
         private void firstNewPassText_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyData == Keys.Enter)
             {
                 SubmitPassword();
+            }
+        }
+
+        private void CodeBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                VerifyCode();
             }
         }
     }

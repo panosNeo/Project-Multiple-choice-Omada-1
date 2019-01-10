@@ -56,6 +56,7 @@
             this.EmailBox.Name = "EmailBox";
             this.EmailBox.Size = new System.Drawing.Size(282, 20);
             this.EmailBox.TabIndex = 10;
+            this.EmailBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EmailBox_KeyDown);
             // 
             // verificationBtn
             // 

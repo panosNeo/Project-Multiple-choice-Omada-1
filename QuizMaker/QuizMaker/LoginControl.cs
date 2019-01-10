@@ -25,9 +25,13 @@ namespace QuizMaker
         //log in button
         private void loginBtn_Click(object sender, EventArgs e)
         {
+            LoginTry();
+        }
+        private void LoginTry()
+        {
             string user = usernameText.Text;
             string pass = passwordText.Text;
-            bool a =login.LoginUser(user, pass);
+            bool a = login.LoginUser(user, pass);
             if (a)
             {
                 ProfileControl pr = new ProfileControl();
@@ -44,7 +48,6 @@ namespace QuizMaker
                 passwordText.Clear();
             }
         }
-
         private void createAccountBtn_Click(object sender, EventArgs e)
         {
             RegisterControl re = new RegisterControl();
@@ -59,6 +62,14 @@ namespace QuizMaker
             f.Dock = DockStyle.Fill;
             Controls.Clear();
             Controls.Add(f);
+        }
+
+        private void usernameText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                LoginTry();
+            }
         }
     }
 }

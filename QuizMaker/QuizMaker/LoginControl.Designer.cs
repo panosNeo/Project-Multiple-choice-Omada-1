@@ -82,6 +82,7 @@
             this.usernameText.Name = "usernameText";
             this.usernameText.Size = new System.Drawing.Size(201, 26);
             this.usernameText.TabIndex = 3;
+            this.usernameText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.usernameText_KeyDown);
             // 
             // passwordText
             // 
@@ -92,6 +93,7 @@
             this.passwordText.PasswordChar = '*';
             this.passwordText.Size = new System.Drawing.Size(201, 26);
             this.passwordText.TabIndex = 4;
+            this.passwordText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.usernameText_KeyDown);
             // 
             // loginBtn
             // 

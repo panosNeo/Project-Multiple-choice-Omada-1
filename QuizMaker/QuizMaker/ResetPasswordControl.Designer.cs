@@ -32,11 +32,11 @@
             this.CodeBox = new QuizMaker.CustomTextBox();
             this.messageLabel = new System.Windows.Forms.Label();
             this.resetPanel = new System.Windows.Forms.Panel();
+            this.secondNewPassText = new QuizMaker.CustomTextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.submitBtn = new System.Windows.Forms.Button();
             this.firstNewPassText = new QuizMaker.CustomTextBox();
             this.messagePanelLabel = new System.Windows.Forms.Label();
-            this.secondNewPassText = new QuizMaker.CustomTextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.resetPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,6 +70,7 @@
             this.CodeBox.Name = "CodeBox";
             this.CodeBox.Size = new System.Drawing.Size(202, 24);
             this.CodeBox.TabIndex = 13;
+            this.CodeBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CodeBox_KeyDown);
             // 
             // messageLabel
             // 
@@ -91,11 +92,37 @@
             this.resetPanel.Controls.Add(this.submitBtn);
             this.resetPanel.Controls.Add(this.firstNewPassText);
             this.resetPanel.Controls.Add(this.messagePanelLabel);
-            this.resetPanel.Location = new System.Drawing.Point(107, 50);
+            this.resetPanel.Location = new System.Drawing.Point(109, 51);
             this.resetPanel.Name = "resetPanel";
             this.resetPanel.Size = new System.Drawing.Size(529, 307);
             this.resetPanel.TabIndex = 15;
             this.resetPanel.Visible = false;
+            // 
+            // secondNewPassText
+            // 
+            this.secondNewPassText.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.secondNewPassText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.secondNewPassText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.secondNewPassText.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.secondNewPassText.ForeColor = System.Drawing.Color.White;
+            this.secondNewPassText.Location = new System.Drawing.Point(163, 156);
+            this.secondNewPassText.Name = "secondNewPassText";
+            this.secondNewPassText.PasswordChar = '*';
+            this.secondNewPassText.Size = new System.Drawing.Size(202, 24);
+            this.secondNewPassText.TabIndex = 17;
+            this.secondNewPassText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.firstNewPassText_KeyDown);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(171, 127);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(174, 24);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Repeat password";
             // 
             // submitBtn
             // 
@@ -141,32 +168,6 @@
             this.messagePanelLabel.Size = new System.Drawing.Size(182, 24);
             this.messagePanelLabel.TabIndex = 15;
             this.messagePanelLabel.Text = "Set new password";
-            // 
-            // secondNewPassText
-            // 
-            this.secondNewPassText.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.secondNewPassText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.secondNewPassText.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.secondNewPassText.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.secondNewPassText.ForeColor = System.Drawing.Color.White;
-            this.secondNewPassText.Location = new System.Drawing.Point(163, 156);
-            this.secondNewPassText.Name = "secondNewPassText";
-            this.secondNewPassText.PasswordChar = '*';
-            this.secondNewPassText.Size = new System.Drawing.Size(202, 24);
-            this.secondNewPassText.TabIndex = 17;
-            this.secondNewPassText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.firstNewPassText_KeyDown);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(171, 127);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(174, 24);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Repeat password";
             // 
             // ResetPasswordControl
             // 
