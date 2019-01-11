@@ -115,12 +115,10 @@ namespace Administrator
 
         private void SaveAdminData_keyDown(object sender, KeyEventArgs e)
         {
-            
             if (e.KeyData == Keys.Enter)
             {
                 SetProfileSettings();
             }
-            
         }
     }
 }

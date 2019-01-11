@@ -49,11 +49,11 @@ namespace Administrator
             //des an vrhke feedbacks
             hasFeedbacks = FeedbackHandler.FeedbackController.GetHasFeedbacks();
 
+            showFeedbacksPanel.Controls.Clear();
             //an yparxoun feedbacks tote gemise 
             //to ShowFeedback panel
             if (hasFeedbacks)
             {
-                showFeedbacksPanel.Controls.Clear();
                 FillFeedbackList();
                 SearchFeedbacks();
 
@@ -61,7 +61,6 @@ namespace Administrator
             }
             else
             {
-                showFeedbacksPanel.Controls.Clear();
                 showFeedbacksPanel.Controls.Add(noFeedback);
                 noFeedback.Visible = true;
             }
@@ -128,23 +127,24 @@ namespace Administrator
                 if (dialogResult == DialogResult.Yes && deleteAllCheckbox.Checked)
                 {
                     FeedbackHandler.FeedbackController.DeleteFeedbacks();   //svhse ola ta feedbacks
-                    feedbackControls.Clear();                               //kane clear ola ta object ths listas
-                    CheckForFeedbacks();                                    //kai tsekare an yparxei allo feedback
+                    FeedbackHandler.Feedback.ClearList();
+                    feedbackList.Clear();
                 }
                 else if (dialogResult == DialogResult.Yes)
                 {
-                    var control = feedbackControls[0];
+                    Feedback control;
                     for(int i=0; i < feedbackControls.Count; i++)
                     {
+                        control = feedbackControls[i];
                         if (control.GetDeleteCheckbox())
                         {
                             FeedbackHandler.FeedbackController.DeleteCheckbox(Int32.Parse((String)control.Tag.ToString()));
                         }
-                        control = feedbackControls[i];
                     }
-                    CheckForFeedbacks();
                 }
-            }else
+                Load_Feedbacks();
+            }
+            else
                 MessageBox.Show("There is no Feedbacks", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
@@ -159,9 +159,10 @@ namespace Administrator
                     FeedbackHandler.FeedbackController.UpdateAllCheckboxes(true); // kane update se ola
                 } else if (dialogResult == DialogResult.Yes)
                 {
-                    var control = feedbackControls[0];
+                    Feedback control;
                     for (int i=0; i < feedbackControls.Count; i++)
                     {
+                        control = feedbackControls[i];
                         if (control.GetRateCheckbox())
                         {
                             FeedbackHandler.FeedbackController.UpdateRateCheckbox(Int32.Parse((String)control.Tag.ToString()), true);
@@ -170,7 +171,6 @@ namespace Administrator
                         {
                             FeedbackHandler.FeedbackController.UpdateRateCheckbox(Int32.Parse((String)control.Tag.ToString()), false);
                         }
-                        control = feedbackControls[i];
                     }
                 }
             }

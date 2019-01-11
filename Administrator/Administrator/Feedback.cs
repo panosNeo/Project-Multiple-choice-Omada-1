@@ -54,6 +54,5 @@ namespace Administrator
             else
                 return false;
         }
-
     }
 }

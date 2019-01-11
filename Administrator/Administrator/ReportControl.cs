@@ -46,12 +46,11 @@ namespace Administrator
             //des an vrhke report
             hasReports = ReportHandler.ReportController.GetHasReports();
 
+            showReportsPanel.Controls.Clear();
             //an uparxoun reports
             //tote gemise to report panel
             if (hasReports)
             {
-                showReportsPanel.Controls.Clear();
-
                 FillReportList();
                 SearchReports();
 
@@ -59,7 +58,6 @@ namespace Administrator
             }
             else
             {
-                showReportsPanel.Controls.Clear();
                 showReportsPanel.Controls.Add(noReports);
                 noReports.Visible = true;
             }
@@ -113,40 +111,35 @@ namespace Administrator
             qUserIDBox.Text = by_user.ToString();
 
 
-
-            //kane search gia ta questions tou quiz
-            ReportHandler.ReportController.SearchQuiz_Question(quizID);
-            //pare tis listes
-            questionIDs = ReportHandler.ReportController.GetQuestionIDList();
-            questions = ReportHandler.ReportController.GetQuestionsList();
-            //kane fill ta IDs
-            questionIDCombo.Items.Clear();
-            foreach (var question_id in questionIDs)
+            if (quizID != -1)
             {
-                questionIDCombo.Items.Add(question_id);
+                //kane search gia ta questions tou quiz
+                ReportHandler.ReportController.SearchQuiz_Question(quizID);
+                //pare tis listes
+                questionIDs = ReportHandler.ReportController.GetQuestionIDList();
+                questions = ReportHandler.ReportController.GetQuestionsList();
+                //kane fill ta IDs
+                questionIDCombo.Items.Clear();
+                foreach (var question_id in questionIDs)
+                {
+                    questionIDCombo.Items.Add(question_id);
+                }
+                if (questionIDs.Count > 0)
+                {
+                    questionIDCombo.SelectedIndex = 0;
+                    qQuestionBox.Text = questions[0];
+                }
             }
-            if (questionIDs.Count > 0)
+            else
             {
-                questionIDCombo.SelectedIndex = 0;
-                qQuestionBox.Text = questions[0];
+                questionIDCombo.Items.Clear();
             }
-            
         }
 
         //pare th lista me ta reports
         private void FillReportList()
         {
             reportList = ReportHandler.Report.GetList();
-        }
-
-        //kane clear kai 3ana gemise to report panel
-        private void ReFillReportPanel()
-        {
-            showReportsPanel.Controls.Clear();
-            foreach (var control in reportControls)
-            {
-                showReportsPanel.Controls.Add(control);
-            }
         }
         
         //design sta buttons
@@ -168,8 +161,6 @@ namespace Administrator
                 {
                     control.SetDeleteCheckbox(true);
                 }
-                //kane update kai sthn database to field delete
-                ReportHandler.ReportController.UpdateAllDeleteCheckboxes(true);
             }
             else if (reportControls.Count > 0 && !deleteAllCheckbox.Checked)
             {
@@ -177,46 +168,42 @@ namespace Administrator
                 {
                     control.SetDeleteCheckbox(false);
                 }
-                ReportHandler.ReportController.UpdateAllDeleteCheckboxes(false);
             }
             else
             {
-                showReportsPanel.Controls.Add(noReports);
-                noReports.Visible = true;
                 MessageBox.Show("There is no Reports.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void deleteReportButton_Click(object sender, EventArgs e)
         {
-                if (reportControls.Count > 0)
+            if (reportControls.Count > 0)
+            {
+                //rwthse gia delete
+                DialogResult dialogResult = MessageBox.Show("Do you want to delete reports?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                //ean nai tote
+                if (dialogResult == DialogResult.Yes && deleteAllCheckbox.Checked)
                 {
-                    //rwthse gia delete
-                    DialogResult dialogResult = MessageBox.Show("Do you want to delete reports?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                    //ean nai tote
-                    if (dialogResult == DialogResult.Yes && deleteAllCheckbox.Checked)
+                    ReportHandler.ReportController.DeleteAllReports();
+                    ReportHandler.Report.ClearList();
+                    reportControls.Clear();
+                }
+                else if (dialogResult == DialogResult.Yes)
+                {
+                    Report control;
+                    for (int i = 0; i < reportControls.Count; i++)
                     {
-                        //FeedbackHandler.FeedbackController.DeleteFeedbacks();   //svhse ola ta feedbacks
-                        //feedbackControls.Clear();                               //kane clear ola ta object ths listas
-                        reportControls.Clear();
-                        showReportsPanel.Controls.Clear();
-                    }
-                    else if (dialogResult == DialogResult.Yes)
-                    {
-                        var control = reportControls[0];
-                        for (int i=0; i < reportControls.Count; i++)
+                        control = reportControls[i];
+                        if (control.GetDeleteCheckbox())
                         {
-                            if (control.GetDeleteCheckbox())
-                            {
-                                reportControls.Remove(control);
-                            }
-                            control = reportControls[i];
+                            ReportHandler.ReportController.DeleteOneReport(Int32.Parse((String)control.Tag.ToString()));
                         }
-                        ReFillReportPanel();
                     }
                 }
-                else
-                    MessageBox.Show("There is no reports.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Load_Reports();
+            }
+            else
+                MessageBox.Show("There is no reports.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         
         //otan allazei ena id fortwse to antistoixo question kai ta answers pou exei

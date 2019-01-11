@@ -12,11 +12,9 @@ namespace Administrator.ReportHandler
     static class ReportController
     {
         //gia to search kai to update twn reports
-        private static string searchForReports = "Select Report_id,User_id,Quiz_id,Question_id,Report,Delete From Report;";
+        private static string searchForReports = "Select Report_id,User_id,Quiz_id,Question_id,Report From Report;";
         private static string deleteOne = "Delete From Report Where Report_id = ?;";
         private static string deleteAll = "Delete From Report;";
-        private static string updateAlldel = "Update Report Set Delete = ?;";
-        private static string updateOneDel = "Update Report Set Delete = ? Where Report_id = ?;";
 
         //gia to quiz data
         private static string report_quiz = "Select Quiz.Quiz_id,Quiz.Title,Quiz.By_user From Report inner join Quiz on Report.Quiz_id = Quiz.Quiz_id Where Report.Report_id = ?;";
@@ -100,17 +98,12 @@ namespace Administrator.ReportHandler
                                 while (searchReader.Read())
                                 {
                                     countRows++;
-                                }
 
-                                //kai an einai = 1
-                                //tote kane set to data pou vre8hke stis metavlhtes
-                                if (countRows == 1)
-                                {
                                     quizID = searchReader.GetInt32(0);
                                     quizTitle = searchReader.GetString(1);
                                     by_user = searchReader.GetInt32(2);
                                 }
-                                else
+                                if (countRows != 1)
                                 {
                                     quizID = -1;
                                     quizTitle = "Nothing";
@@ -226,7 +219,7 @@ namespace Administrator.ReportHandler
                                 hasReports = true;
                                 while (searchReader.Read())
                                 {   //ftiaxe to report
-                                    report = new Report(searchReader.GetInt32(0),searchReader.GetInt32(1),searchReader.GetInt32(2),searchReader.GetInt32(3),searchReader.GetString(4),searchReader.GetBoolean(5));
+                                    report = new Report(searchReader.GetInt32(0),searchReader.GetInt32(1),searchReader.GetInt32(2),searchReader.GetInt32(3),searchReader.GetString(4));
                                     //kai kane to add sth lista
                                     Report.Add(report);
                                 }
@@ -255,7 +248,7 @@ namespace Administrator.ReportHandler
             return hasReports;
         }
         //kane delete ola osa einai true
-        public static void DeleteOneReport()
+        public static void DeleteOneReport(int report_id)
         {
             try
             {   //connection string
@@ -265,7 +258,7 @@ namespace Administrator.ReportHandler
                     {
                         conn.Open();
 
-                        updateCommand.Parameters.AddWithValue("@p1",true);
+                        updateCommand.Parameters.AddWithValue("@p1",report_id);
                         //datareader
                         using (OleDbDataAdapter updateAdapter = new OleDbDataAdapter())
                         {
@@ -301,70 +294,6 @@ namespace Administrator.ReportHandler
                             updateAdapter.UpdateCommand = updateCommand;    //update to query ston adapter
                             updateAdapter.UpdateCommand.ExecuteNonQuery();  //ektelese to query 
                             Report.ClearList();   //adeiase th lista
-                        }
-                        conn.Close();
-                    }
-                }
-            }
-            catch (OleDbException ex)
-            {
-                MessageBox.Show(ex.ToString(), "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString(), "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        //update se ola ta delete checkboxes se true-false
-        public static void UpdateAllDeleteCheckboxes(bool check)
-        {
-            try
-            {   //connection string
-                using (OleDbConnection conn = new OleDbConnection(Properties.Settings.Default.DatabaseConnectionString))
-                {   //dhmiourgia command kai command text
-                    using (OleDbCommand updateCommand = new OleDbCommand(@updateAlldel, conn))
-                    {
-                        conn.Open();
-
-                        updateCommand.Parameters.AddWithValue("@p1",check);
-                        //dataAdapter
-                        using (OleDbDataAdapter updateAdapter = new OleDbDataAdapter())
-                        {
-                            updateAdapter.UpdateCommand = updateCommand;    //update to query ston adapter
-                            updateAdapter.UpdateCommand.ExecuteNonQuery();  //ektelese to query 
-                        }
-                        conn.Close();
-                    }
-                }
-            }
-            catch (OleDbException ex)
-            {
-                MessageBox.Show(ex.ToString(), "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString(), "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        //update ena delete checkbox me true-false
-        public static void UpdateOneDeleteCheckbox(int report_id,bool check)
-        {
-            try
-            {   //connection string
-                using (OleDbConnection conn = new OleDbConnection(Properties.Settings.Default.DatabaseConnectionString))
-                {   //dhmiourgia command kai command text
-                    using (OleDbCommand updateCommand = new OleDbCommand(@updateOneDel, conn))
-                    {
-                        conn.Open();
-
-                        updateCommand.Parameters.AddWithValue("@p1", check);
-                        updateCommand.Parameters.AddWithValue("@p2", report_id);
-
-                        //dataAdapter
-                        using (OleDbDataAdapter updateAdapter = new OleDbDataAdapter())
-                        {
-                            updateAdapter.UpdateCommand = updateCommand;    //update to query ston adapter
-                            updateAdapter.UpdateCommand.ExecuteNonQuery();  //ektelese to query 
                         }
                         conn.Close();
                     }

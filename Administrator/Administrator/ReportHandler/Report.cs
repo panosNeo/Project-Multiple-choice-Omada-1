@@ -15,18 +15,16 @@ namespace Administrator.ReportHandler
         private int quiz_id;
         private int question_id;
         private string report;
-        private bool forDelete;
 
         private static List<Report> reportList = new List<Report>();
 
-        public Report(int report_id,int user_id,int quiz_id,int question_id,string report,bool forDelete)
+        public Report(int report_id,int user_id,int quiz_id,int question_id,string report)
         {
             this.report_id = report_id;
             this.user_id = user_id;
             this.quiz_id = quiz_id;
             this.question_id = question_id;
             this.report = report;
-            this.forDelete = forDelete;
         }
 
         public void SetReportID(int report_id)
@@ -73,19 +71,10 @@ namespace Administrator.ReportHandler
         {
             return report;
         }
-
-        public void SetForDelete(bool forDelete)
-        {
-            this.forDelete = forDelete;
-        }
-        public bool GetForDelete()
-        {
-            return forDelete;
-        }
-
+        
         public string PrintData()
         {
-            return report_id + " " + user_id + " " + quiz_id + " " + question_id + " " +report + " " + forDelete;
+            return report_id + " " + user_id + " " + quiz_id + " " + question_id + " " +report;
         }
 
 
