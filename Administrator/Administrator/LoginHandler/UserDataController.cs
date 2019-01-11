@@ -9,48 +9,46 @@ using System.Windows.Forms;
 
 namespace Administrator.LoginHandler
 {
-    class UserDataController
+    static class UserDataController
     {
-        public UserDataController()
-        {
-        }
+        private static OleDbConnection conn = new OleDbConnection(Properties.Settings.Default.DatabaseConnectionString);
+        private static OleDbCommand command;
+        private static OleDbDataReader reader;
+
+        public static int feedbacks { set; get; }
+        public static int reports { set; get; }
 
         //update to data se periptwsh allaghs dedomenwn
         public static void UpdateUserData(string name, string lastname, string email, string username, string password)
         {
             try
             {
-                //connection string
-                using (OleDbConnection conn = new OleDbConnection(Properties.Settings.Default.DatabaseConnectionString))
+                //dhmiourgia command kai command text
+                using (command = new OleDbCommand(@"Update [User] Set [Username] = ?,[Password] = ?,Email = ?,First_name = ?,Last_name = ? Where User_id = ?;", conn))
                 {
-                    //dhmiourgia command kai command text
-                    using (OleDbCommand updateCommand = new OleDbCommand(@"Update [User] Set [Username] = ?,[Password] = ?,Email = ?,First_name = ?,Last_name = ? Where User_id = ?;", conn))
+                    conn.Open();
+
+                    //parametroi sto query
+                    command.Parameters.AddWithValue("@p1", username);
+                    command.Parameters.AddWithValue("@p2", password);
+                    command.Parameters.AddWithValue("@p3", email);
+                    command.Parameters.AddWithValue("@p4", name);
+                    command.Parameters.AddWithValue("@p5", lastname);
+                    command.Parameters.AddWithValue("@p6", Profile.GetUserID());
+                    //data reader
+                    using (reader = command.ExecuteReader())
                     {
-                        conn.Open();
+                        Profile.SetUsername(username);
+                        Profile.SetPassword(password);
+                        Profile.SetEmail(email);
+                        Profile.SetName(name);
+                        Profile.SetLastname(lastname);
 
-                        //parametroi sto query
-                        updateCommand.Parameters.AddWithValue("@p1", username);
-                        updateCommand.Parameters.AddWithValue("@p2", password);
-                        updateCommand.Parameters.AddWithValue("@p3", email);
-                        updateCommand.Parameters.AddWithValue("@p4", name);
-                        updateCommand.Parameters.AddWithValue("@p5", lastname);
-                        updateCommand.Parameters.AddWithValue("@p6", Profile.GetUserID());
-
-                        //data reader
-                        using (OleDbDataReader updateReader = updateCommand.ExecuteReader())
-                        {
-                            Profile.SetUsername(username);
-                            Profile.SetPassword(password);
-                            Profile.SetEmail(email);
-                            Profile.SetName(name);
-                            Profile.SetLastname(lastname);
-
-                            MessageBox.Show("Successful update.");
-                        }
-
-                        conn.Close();
+                        MessageBox.Show("Successful update.");
+                        reader.Close();
                     }
-                }
+                 conn.Close();
+                } 
             }
             catch (OleDbException ex)
             {
@@ -62,10 +60,55 @@ namespace Administrator.LoginHandler
             }
         }
 
-        public void CheckForNotes()
+        public static void CheckForNotes()
         {
-            //Under construction
-            //tha elegxei gia notes
+            try
+            {
+                conn.Open();
+                //dhmiourgia command kai command text
+                using (command = new OleDbCommand(@"Select Count(*) From Feedback;", conn))
+                {
+                    using (reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            while(reader.Read())
+                                feedbacks = reader.GetInt32(0);
+                        }
+                        else
+                        {
+                            feedbacks = 0;
+                        }
+                        reader.Close();
+                    }
+                }
+                //dhmiourgia command kai command text
+                using (command = new OleDbCommand(@"Select Count(*) From Report;", conn))
+                {
+                    using (reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                                reports = reader.GetInt32(0);
+                        }
+                        else
+                        {
+                            reports = 0;
+                        }
+                        reader.Close();
+                    }
+                }
+                conn.Close();
+            }
+            catch (OleDbException ex)
+            {
+                MessageBox.Show(ex.ToString(), "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
     }

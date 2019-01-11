@@ -22,17 +22,14 @@ namespace Administrator
         private void ProfileControl_Load(object sender, EventArgs e)
         {
             //kalese th methodo gia na elegxei 
-            //kai na emfanisei ta notes an uparxoun
+            //kai na emfanisei ta notes
             CheckForNotes();
-
 
             //tha travaei apo th vash ta dedomena
             //tou user kai tha ta fortwnei sta textboxes
             FillProfileData();
         }
-
-
-
+        
         private void profileSettingsButton_Click(object sender, EventArgs e)
         {
             SetProfileSettings();
@@ -79,8 +76,7 @@ namespace Administrator
             AdminForm adminForm = (AdminForm)this.FindForm();
             adminForm.LogoutDesign();
         }
-
-
+        
         //show password in passwordBox
         private void ShowPassword_CheckedChanged(object sender, EventArgs e)
         {
@@ -90,13 +86,26 @@ namespace Administrator
                 PasswordBox.PasswordChar = '*';
         }
 
-        //
+        //tsekare an uparxei doyleia gia ton admin
         private void CheckForNotes()
         {
-            //under construction
-            //tha elegxei an uparxoun reports
-            //tha elegxei an uparxoun feedbacks 
-            //kai tha ftiaxnei labels sto Notes group box
+            NotesflowLayoutPanel.Controls.Clear();
+            //des an yparxoun reports kai feedbacks
+            LoginHandler.UserDataController.CheckForNotes();
+
+            int feedbacks = LoginHandler.UserDataController.feedbacks;
+            int reports = LoginHandler.UserDataController.reports;
+
+            ProfileNote prof;
+            prof = new ProfileNote();
+            prof.SetData("Feedbacks to check out : ", feedbacks);
+            prof.BackColor = Color.White;
+            NotesflowLayoutPanel.Controls.Add(prof);
+
+            prof = new ProfileNote();
+            prof.SetData("Reports to check out : ", reports);
+            prof.BackColor = Color.FromName("GradientActiveCaption");
+            NotesflowLayoutPanel.Controls.Add(prof);
         }
 
         //kanei fill ta textboxes me ta data tou admin

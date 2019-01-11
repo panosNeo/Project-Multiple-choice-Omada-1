@@ -240,7 +240,6 @@
             // 
             this.NotesflowLayoutPanel.AutoScroll = true;
             this.NotesflowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.NotesflowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.NotesflowLayoutPanel.Location = new System.Drawing.Point(3, 19);
             this.NotesflowLayoutPanel.Name = "NotesflowLayoutPanel";
             this.NotesflowLayoutPanel.Size = new System.Drawing.Size(532, 78);
