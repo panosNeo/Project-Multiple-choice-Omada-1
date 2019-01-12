@@ -32,6 +32,8 @@
             this.SearchIDBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.UserGroupbox = new System.Windows.Forms.GroupBox();
+            this.BlockButton = new System.Windows.Forms.Button();
+            this.UserReset = new System.Windows.Forms.Button();
             this.EmailBox = new System.Windows.Forms.TextBox();
             this.LastNameBox = new System.Windows.Forms.TextBox();
             this.NameBox = new System.Windows.Forms.TextBox();
@@ -40,14 +42,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.UpdateButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
+            this.UserSettingsButton = new System.Windows.Forms.Button();
             this.RoleBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.UserIDBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.UserReset = new System.Windows.Forms.Button();
-            this.UserSettingsButton = new System.Windows.Forms.Button();
             this.SearchButton = new System.Windows.Forms.Button();
-            this.BlockButton = new System.Windows.Forms.Button();
             this.UserGroupbox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,6 +109,34 @@
             this.UserGroupbox.TabStop = false;
             this.UserGroupbox.Text = "User Data";
             // 
+            // BlockButton
+            // 
+            this.BlockButton.Enabled = false;
+            this.BlockButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            this.BlockButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            this.BlockButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BlockButton.Location = new System.Drawing.Point(561, 95);
+            this.BlockButton.Name = "BlockButton";
+            this.BlockButton.Size = new System.Drawing.Size(75, 31);
+            this.BlockButton.TabIndex = 16;
+            this.BlockButton.Text = "Block";
+            this.BlockButton.UseVisualStyleBackColor = false;
+            this.BlockButton.Click += new System.EventHandler(this.BlockButton_Click);
+            // 
+            // UserReset
+            // 
+            this.UserReset.Enabled = false;
+            this.UserReset.FlatAppearance.BorderSize = 0;
+            this.UserReset.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            this.UserReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UserReset.Image = global::Administrator.Properties.Resources.reset;
+            this.UserReset.Location = new System.Drawing.Point(561, 22);
+            this.UserReset.Name = "UserReset";
+            this.UserReset.Size = new System.Drawing.Size(35, 35);
+            this.UserReset.TabIndex = 15;
+            this.UserReset.UseVisualStyleBackColor = false;
+            this.UserReset.Click += new System.EventHandler(this.UserReset_Click);
+            // 
             // EmailBox
             // 
             this.EmailBox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
@@ -165,10 +193,11 @@
             // 
             // UpdateButton
             // 
+            this.UpdateButton.Enabled = false;
             this.UpdateButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.UpdateButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.UpdateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.UpdateButton.Location = new System.Drawing.Point(562, 167);
+            this.UpdateButton.Location = new System.Drawing.Point(561, 167);
             this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.Size = new System.Drawing.Size(75, 31);
             this.UpdateButton.TabIndex = 13;
@@ -178,6 +207,7 @@
             // 
             // DeleteButton
             // 
+            this.DeleteButton.Enabled = false;
             this.DeleteButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.DeleteButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -188,6 +218,19 @@
             this.DeleteButton.Text = "Delete";
             this.DeleteButton.UseVisualStyleBackColor = false;
             this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
+            // 
+            // UserSettingsButton
+            // 
+            this.UserSettingsButton.FlatAppearance.BorderSize = 0;
+            this.UserSettingsButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            this.UserSettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UserSettingsButton.Image = global::Administrator.Properties.Resources.settings;
+            this.UserSettingsButton.Location = new System.Drawing.Point(602, 22);
+            this.UserSettingsButton.Name = "UserSettingsButton";
+            this.UserSettingsButton.Size = new System.Drawing.Size(35, 35);
+            this.UserSettingsButton.TabIndex = 14;
+            this.UserSettingsButton.UseVisualStyleBackColor = false;
+            this.UserSettingsButton.Click += new System.EventHandler(this.UserSettingsButton_Click);
             // 
             // RoleBox
             // 
@@ -225,33 +268,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "User ID :";
             // 
-            // UserReset
-            // 
-            this.UserReset.Enabled = false;
-            this.UserReset.FlatAppearance.BorderSize = 0;
-            this.UserReset.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            this.UserReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.UserReset.Image = global::Administrator.Properties.Resources.reset;
-            this.UserReset.Location = new System.Drawing.Point(561, 22);
-            this.UserReset.Name = "UserReset";
-            this.UserReset.Size = new System.Drawing.Size(35, 35);
-            this.UserReset.TabIndex = 15;
-            this.UserReset.UseVisualStyleBackColor = false;
-            this.UserReset.Click += new System.EventHandler(this.UserReset_Click);
-            // 
-            // UserSettingsButton
-            // 
-            this.UserSettingsButton.FlatAppearance.BorderSize = 0;
-            this.UserSettingsButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            this.UserSettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.UserSettingsButton.Image = global::Administrator.Properties.Resources.settings;
-            this.UserSettingsButton.Location = new System.Drawing.Point(602, 22);
-            this.UserSettingsButton.Name = "UserSettingsButton";
-            this.UserSettingsButton.Size = new System.Drawing.Size(35, 35);
-            this.UserSettingsButton.TabIndex = 14;
-            this.UserSettingsButton.UseVisualStyleBackColor = false;
-            this.UserSettingsButton.Click += new System.EventHandler(this.UserSettingsButton_Click);
-            // 
             // SearchButton
             // 
             this.SearchButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
@@ -264,19 +280,6 @@
             this.SearchButton.TabIndex = 1;
             this.SearchButton.UseVisualStyleBackColor = true;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
-            // 
-            // BlockButton
-            // 
-            this.BlockButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            this.BlockButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            this.BlockButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BlockButton.Location = new System.Drawing.Point(561, 94);
-            this.BlockButton.Name = "BlockButton";
-            this.BlockButton.Size = new System.Drawing.Size(75, 31);
-            this.BlockButton.TabIndex = 16;
-            this.BlockButton.Text = "Block";
-            this.BlockButton.UseVisualStyleBackColor = false;
-            this.BlockButton.Click += new System.EventHandler(this.BlockButton_Click);
             // 
             // UserDataControl
             // 

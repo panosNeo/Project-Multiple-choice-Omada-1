@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Data.OleDb;
 using Administrator.LoginHandler;
 
+using System.Windows.Forms;
+
 namespace Administrator
 {
     class DBConnection
@@ -57,7 +59,7 @@ namespace Administrator
                 searchCommand = new OleDbCommand(@"SELECT * FROM [Blocked] WHERE User_id=?", conn);
                 searchCommand.Parameters.AddWithValue("@p1", user.userID);
                 searchReader = searchCommand.ExecuteReader();
-                int countRow = 0;
+
                 while (searchReader.Read())
                 {
                     //set profile data
@@ -65,10 +67,7 @@ namespace Administrator
                     user.reason = searchReader.GetString(2);
                     user.blockedDays = searchReader.GetInt32(3);
                     user.isBlocked = searchReader.GetBoolean(4);
-                    
-                    countRow++;
                 }
-                Console.WriteLine("Records found: " + countRow);
                 searchReader.Close();
                 conn.Close();
                 return user;
@@ -118,8 +117,7 @@ namespace Administrator
             {
                 conn.Open();
                 //parametroi sto query
-                searchCommand = new OleDbCommand(@"Delete from [User] Where User_id = ?;", conn);
-                //searchCommand.Parameters.AddWithValue("@p1", user.username);
+                searchCommand = new OleDbCommand(@"Delete from [User] Where User_id = ? AND NOT Role = 'Admin';", conn);
                 searchCommand.Parameters.AddWithValue("@p1", id);
                 
                 searchReader = searchCommand.ExecuteReader();
@@ -146,20 +144,14 @@ namespace Administrator
             {
                 conn.Open();
                 //parametroi sto query
-                searchCommand = new OleDbCommand(@"Update [Blocked] set Reason=?, Days=?,Blocked=? Where Block_id = ?;", conn);
-                //searchCommand.Parameters.AddWithValue("@p1", user.username);
+                searchCommand = new OleDbCommand(@"Update [Blocked] set Reason=?, Days=?,Blocked=? Where [ID] = ?;", conn);
                 searchCommand.Parameters.AddWithValue("@p1", reason);
                 searchCommand.Parameters.AddWithValue("@p2", days);
                 searchCommand.Parameters.AddWithValue("@p3", blocked);
                 searchCommand.Parameters.AddWithValue("@p4", id);
 
                 searchReader = searchCommand.ExecuteReader();
-                int countRow = 0;
-                while (searchReader.Read())
-                {
-                    countRow++;
-                }
-                Console.WriteLine("Records found: " + countRow);
+
                 searchReader.Close();
                 conn.Close();
                 return true;
@@ -185,12 +177,34 @@ namespace Administrator
                 searchCommand.Parameters.AddWithValue("@p3", blocked);
 
                 searchReader = searchCommand.ExecuteReader();
-                int countRow = 0;
-                while (searchReader.Read())
-                {
-                    countRow++;
-                }
-                Console.WriteLine("Records found: " + countRow);
+
+                searchReader.Close();
+                conn.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                conn.Close();
+                return false;
+            }
+        }
+        public static bool DeleteBlock(int user_id)
+        {
+            try
+            {
+                conn.Open();
+                //parametroi sto query
+                searchCommand = new OleDbCommand(@"Delete From [Blocked] Where [User_id] = ?;", conn);
+                searchCommand.Parameters.AddWithValue("@p1", user_id);
+
+                BlockData.blocked = false;
+                BlockData.blockID = 0;
+                BlockData.days = 0;
+                BlockData.reason = "";
+
+                searchReader = searchCommand.ExecuteReader();
+
                 searchReader.Close();
                 conn.Close();
                 return true;

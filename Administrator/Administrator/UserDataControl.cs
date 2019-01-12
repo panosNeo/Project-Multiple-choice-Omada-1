@@ -20,28 +20,26 @@ namespace Administrator
         //settings button gia energopoihsh - apenergopoihsh sta components
         private void UserSettingsButton_Click(object sender, EventArgs e)
         {
-            if (UserIDBox.ReadOnly)
+            if (RoleBox.ReadOnly)
             {
-                UserIDBox.ReadOnly = true;
                 RoleBox.ReadOnly = false;
                 NameBox.ReadOnly = false;
                 LastNameBox.ReadOnly = false;
                 EmailBox.ReadOnly = false;
-                
-                
+
+                BlockButton.Enabled = true;
                 DeleteButton.Enabled = true;
                 UpdateButton.Enabled = true;
                 UserReset.Enabled = true;
             }
             else
             {
-                UserIDBox.ReadOnly = true;
                 RoleBox.ReadOnly = true;
                 NameBox.ReadOnly = true;
                 LastNameBox.ReadOnly = true;
                 EmailBox.ReadOnly = true;
                 
-                
+                BlockButton.Enabled = false;
                 DeleteButton.Enabled = false;
                 UpdateButton.Enabled = false;
                 UserReset.Enabled = false;
@@ -54,8 +52,7 @@ namespace Administrator
             RoleBox.Text = "";
             NameBox.Text = "";
             LastNameBox.Text = "";
-            EmailBox.Text = "";
-            
+            EmailBox.Text = "";            
         }
 
         private void SearchButton_Click(object sender, EventArgs e)
@@ -66,9 +63,12 @@ namespace Administrator
         {
             if (!String.IsNullOrWhiteSpace(SearchIDBox.Text))
             {
+                warningLabel.Visible = false;
                 LoginHandler.User user = DBConnection.SearchAccountData(SearchIDBox.Text);
                 if (user.name != null)
                 {
+                    warningLabel.Visible = false;
+
                     UserIDBox.Text = "" + user.userID;
                     RoleBox.Text = user.role;
                     NameBox.Text = user.name;
@@ -94,8 +94,16 @@ namespace Administrator
                         BlockButton.Text = "Block";
                     }
                 }
-
-
+                else
+                {
+                    warningLabel.Text = "This user does not exist.";
+                    warningLabel.Visible = true;
+                }
+            }
+            else
+            {
+                warningLabel.Text = "Please input a username.";
+                warningLabel.Visible = true;
             }
         }
 
@@ -111,7 +119,7 @@ namespace Administrator
         {
             if (UserTextIsFilled())
             {
-                DialogResult res = MessageBox.Show("Confirm update user data", "Confirm", MessageBoxButtons.OKCancel);
+                DialogResult res = MessageBox.Show("Confirm update user data.", "Confirm", MessageBoxButtons.OKCancel);
                 if(res == DialogResult.OK)
                 {
                     bool updated = DBConnection.UpdateUserData(new LoginHandler.User()
@@ -124,7 +132,7 @@ namespace Administrator
                     });
                     if (updated)
                     {
-                        MessageBox.Show("User Updated succesfully");
+                        MessageBox.Show("User Updated succesfully.");
                     }
                     else
                     {
@@ -133,6 +141,7 @@ namespace Administrator
                 }
             }
         }
+
         private bool UserTextIsFilled()
         {
             return !String.IsNullOrWhiteSpace(UserIDBox.Text) &&
@@ -141,9 +150,7 @@ namespace Administrator
                 !String.IsNullOrWhiteSpace(LastNameBox.Text) &&
                 !String.IsNullOrWhiteSpace(EmailBox.Text);
         }
-
         
-
         private void DeleteButton_Click(object sender, EventArgs e)
         {
             DialogResult res = MessageBox.Show(@"Do you really want to delete user '"+UserIDBox.Text+"'?", "Confirm", MessageBoxButtons.OKCancel);
@@ -159,25 +166,27 @@ namespace Administrator
         {
             if (String.IsNullOrWhiteSpace(UserIDBox.Text))
             {
-                MessageBox.Show("You did not select any user");
+                warningLabel.Text = "You did not select any user";
+                warningLabel.Visible = true;
             }
             else if (BlockData.blocked)
             {
-                DBConnection.UpdateBlock(BlockData.blockID, BlockData.days, BlockData.reason, false);
+                bool check = DBConnection.DeleteBlock(Int32.Parse(UserIDBox.Text));
+                if (check)
+                {
+                    MessageBox.Show("User is unblocked successfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    BlockButton.Text = "Block";
+                }
             }
             else
             {
+                warningLabel.Visible = false;
                 DialogResult res = new BlockUserForm().ShowDialog();
-                if(res == DialogResult.OK)
+                if (res == DialogResult.OK)
                 {
-                    if(BlockData.reason != null)
-                    {
-                        DBConnection.UpdateBlock(BlockData.blockID, BlockData.days, BlockData.reason, true);
-                    }
-                    else
-                    {
-                        DBConnection.InsertBlock(Convert.ToInt32(UserIDBox.Text), BlockData.reason, BlockData.days, true);
-                    }
+                    bool check = DBConnection.InsertBlock(Convert.ToInt32(UserIDBox.Text), BlockData.reason, BlockData.days, true);
+                    if (check)
+                        MessageBox.Show("User is blocked successfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }

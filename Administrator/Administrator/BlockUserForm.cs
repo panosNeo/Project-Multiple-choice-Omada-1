@@ -35,7 +35,7 @@ namespace Administrator
             else
             {
                 BlockData.reason = ReasonBox.Text;
-                BlockData.days = Convert.ToInt32(DaysBox.Text);
+                BlockData.days = Int32.Parse(DaysBox.Text);
             }
         }
     }
