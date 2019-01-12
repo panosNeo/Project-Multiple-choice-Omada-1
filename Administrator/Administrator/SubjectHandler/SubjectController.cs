@@ -23,7 +23,7 @@ namespace Administrator.SubjectHandler
 
         private static string addNewQuiz = "Insert Into Quiz(Quiz_id,By_user,Cr_date,Title,Subject_id) Values(?,?,?,?,?);";
         private static string deleteQuiz = "Delete from Quiz Where Quiz_id = ?;";
-        private static string updateQuiz = "Update Quiz Set By_user = ?, Cr_date = ?, Title = ? , Subject_id = ? Where Quiz_d = ?;";
+        private static string updateQuiz = "Update Quiz Set By_user = ?, Cr_date = ?, Title = ? , Subject_id = ? Where Quiz_id = ?;";
 
         //objects
         private static Subject subject;

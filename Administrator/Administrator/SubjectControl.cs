@@ -332,7 +332,7 @@ namespace Administrator
         //update ena quiz
         private void QuizUpdate_Click(object sender, EventArgs e)
         {
-            if (quizList.Count > 0)
+            if (Int32.Parse(totalQuizzesBox.Text) > 0)
             {
                 quizWarning.Visible = false;
                 SubjectHandler.SubjectController.UpdateQuiz(Int32.Parse(quizIDCombo.GetItemText(quizIDCombo.SelectedItem)), Int32.Parse(qUserIDBox.Text), qDateBox.Text, qQuizNameBox.Text, Int32.Parse(qSubIDBox.Text));
