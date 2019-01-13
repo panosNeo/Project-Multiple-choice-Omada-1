@@ -13,6 +13,7 @@ namespace QuizMaker
     public partial class ReportPanel : UserControl
     {
         private int q_id;
+        int userId = Login.Login.userID;
         public ReportPanel(int quiz_id)
         {
             InitializeComponent();
@@ -22,7 +23,8 @@ namespace QuizMaker
         private void sendBtn_Click(object sender, EventArgs e)
         {
             string report = reportText.Text;
-
+            MultipleChoiceDataSetTableAdapters.ReportTableAdapter reportTableAdapter = new MultipleChoiceDataSetTableAdapters.ReportTableAdapter();
+            //reportTableAdapter.InsertReport(userId, report, q_id);
         }
     }
 }

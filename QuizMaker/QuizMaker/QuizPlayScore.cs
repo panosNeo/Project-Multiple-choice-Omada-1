@@ -72,9 +72,11 @@ namespace QuizMaker
         {
             if(Login.Login.userID>0)
             {
-                int quiz_id = 0;
+                MultipleChoiceDataSetTableAdapters.QuizTableAdapter quizTableAdapter = new MultipleChoiceDataSetTableAdapters.QuizTableAdapter();
+                string qTittle = QuizPanel.qTittle;
+                int quizId = (int)quizTableAdapter.ReturnIdFromTitle(qTittle);
                 Controls.Clear();
-                ReportPanel qp = new ReportPanel(quiz_id);
+                ReportPanel qp = new ReportPanel(quizId);
                 qp.Dock = DockStyle.Fill;
                 Controls.Add(qp);
             }
