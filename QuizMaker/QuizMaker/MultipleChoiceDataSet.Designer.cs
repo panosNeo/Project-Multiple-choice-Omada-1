@@ -6400,12 +6400,10 @@ namespace QuizMaker.MultipleChoiceDataSetTableAdapters {
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[7] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[7].Connection = this.Connection;
-            this._commandCollection[7].CommandText = "UPDATE       Quiz\r\nSET                Rating = ?\r\nWHERE        (Quiz_id = ?) AND " +
-                "(Subject_id IS NULL OR\r\n                         Subject_id = ?)";
+            this._commandCollection[7].CommandText = "UPDATE       Quiz\r\nSET                Rating = ?\r\nWHERE        (Title = ?)";
             this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Rating", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Rating", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Quiz_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Quiz_id", global::System.Data.DataRowVersion.Original, false, null));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Subject_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Subject_id", global::System.Data.DataRowVersion.Original, false, null));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Title", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Title", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6827,7 +6825,7 @@ namespace QuizMaker.MultipleChoiceDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdateRating(global::System.Nullable<int> Rating, int Original_Quiz_id, global::System.Nullable<int> Original_Subject_id) {
+        public virtual int UpdateRating(global::System.Nullable<int> Rating, string Original_Title) {
             global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[7];
             if ((Rating.HasValue == true)) {
                 command.Parameters[0].Value = ((int)(Rating.Value));
@@ -6835,12 +6833,11 @@ namespace QuizMaker.MultipleChoiceDataSetTableAdapters {
             else {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
-            command.Parameters[1].Value = ((int)(Original_Quiz_id));
-            if ((Original_Subject_id.HasValue == true)) {
-                command.Parameters[2].Value = ((int)(Original_Subject_id.Value));
+            if ((Original_Title == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[2].Value = global::System.DBNull.Value;
+                command.Parameters[1].Value = ((string)(Original_Title));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

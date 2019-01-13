@@ -25,7 +25,9 @@ namespace QuizMaker
             userAnswers = new List<QuizAnswers>();
             SetInitialQuizPanel();
         }
-        
+
+        public static string qTittle;
+
         private void SetInitialQuizPanel()
         {
             string title = quiz.GetQuizTitle();
@@ -43,10 +45,10 @@ namespace QuizMaker
                 p.X += 50;
             }
             quizTitleLabel.Text = title;
+            qTittle = title;
             SetNextQuestion(0);
             SetFocusSwapComponent(0);
         }
-
         private void SetNextQuestion(int pos)
         {
             answersHolder.Controls.Clear();
