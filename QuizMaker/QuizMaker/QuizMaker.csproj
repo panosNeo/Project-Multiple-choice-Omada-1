@@ -380,7 +380,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MultipleChoice.accdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\feedback.png" />
     <None Include="Resources\dislike.png" />
