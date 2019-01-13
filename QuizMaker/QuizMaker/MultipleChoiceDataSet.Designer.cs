@@ -6379,8 +6379,8 @@ namespace QuizMaker.MultipleChoiceDataSetTableAdapters {
             this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Quiz_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Quiz_id", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[3] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "INSERT INTO `Quiz` (`By_user`, `Cr_date`, `Title`, `Subject_id`) VALUES (?, ?, ?," +
-                " ?)";
+            this._commandCollection[3].CommandText = "INSERT INTO Quiz\r\n                         (By_user, Cr_date, Title, Subject_id, " +
+                "Rating)\r\nVALUES        (?, ?, ?, ?, 0)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("By_user", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "By_user", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Cr_date", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Cr_date", global::System.Data.DataRowVersion.Current, false, null));
