@@ -325,3 +325,9 @@ C:\Users\Vladimiros\Desktop\test2\QuizMaker\QuizMaker\obj\Debug\QuizMaker.Feedba
 C:\Users\Vladimiros\Desktop\test2\QuizMaker\QuizMaker\obj\Debug\QuizMaker.ForgotPasswordControl.resources
 C:\Users\Vladimiros\Desktop\test2\QuizMaker\QuizMaker\obj\Debug\QuizMaker.ReportPanel.resources
 C:\Users\Vladimiros\Desktop\test2\QuizMaker\QuizMaker\obj\Debug\QuizMaker.ResetPasswordControl.resources
+C:\Users\Giorgos\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.ReportPanel.resources
+C:\Users\Giorgos\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\bin\Debug\MultipleChoiceDataSet.cs
+C:\Users\Giorgos\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\bin\Debug\MultipleChoiceDataSet.Designer.cs
+C:\Users\Giorgos\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\bin\Debug\MultipleChoiceDataSet.xsc
+C:\Users\Giorgos\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\bin\Debug\MultipleChoiceDataSet.xsd
+C:\Users\Giorgos\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\bin\Debug\MultipleChoiceDataSet.xss

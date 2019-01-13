@@ -110,11 +110,13 @@
     </Compile>
     <Compile Include="MultipleChoiceDataSet.cs">
       <DependentUpon>MultipleChoiceDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="MultipleChoiceDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MultipleChoiceDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="PlayQuizTemplates\QuizAnswers.cs">
       <SubType>UserControl</SubType>
@@ -331,6 +333,7 @@
     </EmbeddedResource>
     <None Include="MultipleChoiceDataSet.xsc">
       <DependentUpon>MultipleChoiceDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <EmbeddedResource Include="TempPrintControl.resx">
       <DependentUpon>TempPrintControl.cs</DependentUpon>
@@ -339,9 +342,11 @@
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>MultipleChoiceDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="MultipleChoiceDataSet.xss">
       <DependentUpon>MultipleChoiceDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

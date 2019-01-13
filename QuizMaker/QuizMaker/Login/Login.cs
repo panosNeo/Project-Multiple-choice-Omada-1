@@ -84,27 +84,37 @@ namespace QuizMaker.Login
             if (IsLoggedIn(user, pass)) { 
                 //Using the adapter to validate through queries the login info and also store the Id of the user that logged in
                 MultipleChoiceDataSetTableAdapters.UserTableAdapter userTableAdapter = new MultipleChoiceDataSetTableAdapters.UserTableAdapter();
+                
+                MultipleChoiceDataSetTableAdapters.BlockedTableAdapter blocked = new MultipleChoiceDataSetTableAdapters.BlockedTableAdapter();
+
 
                 try
                 {
                     userID = (int)userTableAdapter.ReturnUserId(user, pass);
-                    LoginStatusData.userID = userID;
-                    LoginStatusData.username = userTableAdapter.ReturnUsername(userID);
-                    LoginStatusData.name = userTableAdapter.ReturnFirstName(userID);
-                    LoginStatusData.surname = userTableAdapter.ReturnLastName(userID);
-                    LoginStatusData.email = userTableAdapter.ReturnEmail(userID);
-                    MessageBox.Show("You logged in succesfully");
-                    
-                    return true;
+                    if (blocked.isBlocked(userID) == null)
+                    {
+                        LoginStatusData.userID = userID;
+                        LoginStatusData.username = userTableAdapter.ReturnUsername(userID);
+                        LoginStatusData.name = userTableAdapter.ReturnFirstName(userID);
+                        LoginStatusData.surname = userTableAdapter.ReturnLastName(userID);
+                        LoginStatusData.email = userTableAdapter.ReturnEmail(userID);
+                        MessageBox.Show("You logged in succesfully");
 
-                    
+                        return true;
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("This account is blocked");
+                        return false;
+                    }
                 }
-                catch(Exception)
+                catch (Exception)
                 {
                     MessageBox.Show("Your username or password is incorrect");
                     return false;
                 }
-
+                
 
             }
             else
