@@ -47,8 +47,11 @@ namespace QuizMaker
             rating += 1;
             string qTittle = QuizPanel.qTittle;
             int subjectId = (int)quizTableAdapter.ReturnSubjectOfQuiz();
-
+            MultipleChoiceDataSetTableAdapters.RatingTableAdapter ratingTable = new MultipleChoiceDataSetTableAdapters.RatingTableAdapter();
+            int userId = Login.Login.userID;
             quizTableAdapter.UpdateRating(rating, qTittle);
+            int quizId = (int)quizTableAdapter.ReturnIdFromTitle(qTittle);
+            ratingTable.InsertLiked(userId, quizId);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -58,8 +61,11 @@ namespace QuizMaker
             rating -= 1;
             string qTittle = QuizPanel.qTittle;
             int subjectId = (int)quizTableAdapter.ReturnSubjectOfQuiz();
-
+            MultipleChoiceDataSetTableAdapters.RatingTableAdapter ratingTable = new MultipleChoiceDataSetTableAdapters.RatingTableAdapter();
+            int userId = Login.Login.userID;
             quizTableAdapter.UpdateRating(rating, qTittle);
+            int quizId = (int)quizTableAdapter.ReturnIdFromTitle(qTittle);
+            ratingTable.RemoveLiked(userId, quizId);
         }
 
         private void reportBtn_Click(object sender, EventArgs e)
