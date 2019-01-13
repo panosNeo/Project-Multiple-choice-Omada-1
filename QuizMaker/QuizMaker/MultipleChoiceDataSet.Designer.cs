@@ -9448,12 +9448,11 @@ namespace QuizMaker.MultipleChoiceDataSetTableAdapters {
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "INSERT INTO Report\r\n                         (User_id, Report, Question_id, Quiz_" +
-                "id, Report_id)\r\nVALUES        (?, ?, NULL, ?, ?)";
+                "id)\r\nVALUES        (?, ?, NULL, ?)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("User_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "User_id", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Report", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Report", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Quiz_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Quiz_id", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Report_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Report_id", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9674,7 +9673,7 @@ namespace QuizMaker.MultipleChoiceDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertReport(int User_id, string Report, global::System.Nullable<int> Quiz_id, int Report_id) {
+        public virtual int InsertReport(int User_id, string Report, global::System.Nullable<int> Quiz_id) {
             global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[1];
             command.Parameters[0].Value = ((int)(User_id));
             if ((Report == null)) {
@@ -9689,7 +9688,6 @@ namespace QuizMaker.MultipleChoiceDataSetTableAdapters {
             else {
                 command.Parameters[2].Value = global::System.DBNull.Value;
             }
-            command.Parameters[3].Value = ((int)(Report_id));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
