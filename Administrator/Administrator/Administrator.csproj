@@ -109,6 +109,7 @@
       <DependentUpon>QuestionControl.cs</DependentUpon>
     </Compile>
     <Compile Include="QuestionHandler\Question.cs" />
+    <Compile Include="QuestionHandler\QuestionController.cs" />
     <Compile Include="QuizHandler\Quiz.cs" />
     <Compile Include="Report.cs">
       <SubType>UserControl</SubType>

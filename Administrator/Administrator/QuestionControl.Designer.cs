@@ -31,6 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.SearchIDBox = new System.Windows.Forms.TextBox();
             this.QuestionGroupbox = new System.Windows.Forms.GroupBox();
+            this.QuestionReset = new System.Windows.Forms.Button();
             this.QuestionIDBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.UpdateButton = new System.Windows.Forms.Button();
@@ -38,7 +39,6 @@
             this.AddButton = new System.Windows.Forms.Button();
             this.QuestionSettingsButton = new System.Windows.Forms.Button();
             this.CorrectCheckbox = new System.Windows.Forms.CheckBox();
-            this.AnswerIDList = new System.Windows.Forms.ListBox();
             this.label7 = new System.Windows.Forms.Label();
             this.AnswerBox = new System.Windows.Forms.TextBox();
             this.DateBox = new System.Windows.Forms.TextBox();
@@ -53,7 +53,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.warningLabel = new System.Windows.Forms.Label();
             this.SearchBox = new System.Windows.Forms.Button();
-            this.QuestionReset = new System.Windows.Forms.Button();
+            this.AnswerIDCombo = new System.Windows.Forms.ComboBox();
+            this.noAnswers = new System.Windows.Forms.Label();
             this.QuestionGroupbox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,6 +79,8 @@
             // 
             // QuestionGroupbox
             // 
+            this.QuestionGroupbox.Controls.Add(this.noAnswers);
+            this.QuestionGroupbox.Controls.Add(this.AnswerIDCombo);
             this.QuestionGroupbox.Controls.Add(this.QuestionReset);
             this.QuestionGroupbox.Controls.Add(this.QuestionIDBox);
             this.QuestionGroupbox.Controls.Add(this.label8);
@@ -86,7 +89,6 @@
             this.QuestionGroupbox.Controls.Add(this.AddButton);
             this.QuestionGroupbox.Controls.Add(this.QuestionSettingsButton);
             this.QuestionGroupbox.Controls.Add(this.CorrectCheckbox);
-            this.QuestionGroupbox.Controls.Add(this.AnswerIDList);
             this.QuestionGroupbox.Controls.Add(this.label7);
             this.QuestionGroupbox.Controls.Add(this.AnswerBox);
             this.QuestionGroupbox.Controls.Add(this.DateBox);
@@ -107,6 +109,20 @@
             this.QuestionGroupbox.TabIndex = 4;
             this.QuestionGroupbox.TabStop = false;
             this.QuestionGroupbox.Text = "Question Data";
+            // 
+            // QuestionReset
+            // 
+            this.QuestionReset.Enabled = false;
+            this.QuestionReset.FlatAppearance.BorderSize = 0;
+            this.QuestionReset.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            this.QuestionReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.QuestionReset.Image = global::Administrator.Properties.Resources.reset;
+            this.QuestionReset.Location = new System.Drawing.Point(613, 60);
+            this.QuestionReset.Name = "QuestionReset";
+            this.QuestionReset.Size = new System.Drawing.Size(35, 35);
+            this.QuestionReset.TabIndex = 16;
+            this.QuestionReset.UseVisualStyleBackColor = false;
+            this.QuestionReset.Click += new System.EventHandler(this.QuestionReset_Click);
             // 
             // QuestionIDBox
             // 
@@ -182,28 +198,12 @@
             // 
             this.CorrectCheckbox.AutoSize = true;
             this.CorrectCheckbox.Enabled = false;
-            this.CorrectCheckbox.Location = new System.Drawing.Point(493, 142);
+            this.CorrectCheckbox.Location = new System.Drawing.Point(515, 141);
             this.CorrectCheckbox.Name = "CorrectCheckbox";
             this.CorrectCheckbox.Size = new System.Drawing.Size(75, 20);
             this.CorrectCheckbox.TabIndex = 11;
             this.CorrectCheckbox.Text = "Correct";
             this.CorrectCheckbox.UseVisualStyleBackColor = true;
-            // 
-            // AnswerIDList
-            // 
-            this.AnswerIDList.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.AnswerIDList.FormattingEnabled = true;
-            this.AnswerIDList.ItemHeight = 17;
-            this.AnswerIDList.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.AnswerIDList.Location = new System.Drawing.Point(404, 142);
-            this.AnswerIDList.Name = "AnswerIDList";
-            this.AnswerIDList.Size = new System.Drawing.Size(65, 21);
-            this.AnswerIDList.TabIndex = 7;
             // 
             // label7
             // 
@@ -293,7 +293,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 100);
+            this.label3.Location = new System.Drawing.Point(15, 100);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 16);
             this.label3.TabIndex = 2;
@@ -311,11 +311,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(36, 71);
+            this.label2.Location = new System.Drawing.Point(33, 71);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 16);
+            this.label2.Size = new System.Drawing.Size(63, 16);
             this.label2.TabIndex = 0;
-            this.label2.Text = "User ID :";
+            this.label2.Text = "By user :";
             // 
             // warningLabel
             // 
@@ -340,20 +340,28 @@
             this.SearchBox.Size = new System.Drawing.Size(57, 27);
             this.SearchBox.TabIndex = 1;
             this.SearchBox.UseVisualStyleBackColor = true;
+            this.SearchBox.Click += new System.EventHandler(this.SearchBox_Click);
             // 
-            // QuestionReset
+            // AnswerIDCombo
             // 
-            this.QuestionReset.Enabled = false;
-            this.QuestionReset.FlatAppearance.BorderSize = 0;
-            this.QuestionReset.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            this.QuestionReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.QuestionReset.Image = global::Administrator.Properties.Resources.reset;
-            this.QuestionReset.Location = new System.Drawing.Point(613, 60);
-            this.QuestionReset.Name = "QuestionReset";
-            this.QuestionReset.Size = new System.Drawing.Size(35, 35);
-            this.QuestionReset.TabIndex = 16;
-            this.QuestionReset.UseVisualStyleBackColor = false;
-            this.QuestionReset.Click += new System.EventHandler(this.QuestionReset_Click);
+            this.AnswerIDCombo.FormattingEnabled = true;
+            this.AnswerIDCombo.Location = new System.Drawing.Point(399, 139);
+            this.AnswerIDCombo.Name = "AnswerIDCombo";
+            this.AnswerIDCombo.Size = new System.Drawing.Size(110, 24);
+            this.AnswerIDCombo.TabIndex = 17;
+            this.AnswerIDCombo.SelectedIndexChanged += new System.EventHandler(this.AnswerIDCombo_SelectedIndexChanged);
+            // 
+            // noAnswers
+            // 
+            this.noAnswers.AutoSize = true;
+            this.noAnswers.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.noAnswers.ForeColor = System.Drawing.Color.Red;
+            this.noAnswers.Location = new System.Drawing.Point(353, 112);
+            this.noAnswers.Name = "noAnswers";
+            this.noAnswers.Size = new System.Drawing.Size(64, 16);
+            this.noAnswers.TabIndex = 18;
+            this.noAnswers.Text = "Warning *";
+            this.noAnswers.Visible = false;
             // 
             // QuestionControl
             // 
@@ -393,7 +401,6 @@
         private System.Windows.Forms.TextBox DateBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox AnswerBox;
-        private System.Windows.Forms.ListBox AnswerIDList;
         private System.Windows.Forms.CheckBox CorrectCheckbox;
         private System.Windows.Forms.Button QuestionSettingsButton;
         private System.Windows.Forms.Button UpdateButton;
@@ -402,5 +409,7 @@
         private System.Windows.Forms.TextBox QuestionIDBox;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button QuestionReset;
+        private System.Windows.Forms.ComboBox AnswerIDCombo;
+        private System.Windows.Forms.Label noAnswers;
     }
 }
