@@ -24,7 +24,9 @@ namespace QuizMaker
         {
             string report = reportText.Text;
             MultipleChoiceDataSetTableAdapters.ReportTableAdapter reportTableAdapter = new MultipleChoiceDataSetTableAdapters.ReportTableAdapter();
-            //reportTableAdapter.InsertReport(userId, report, q_id);
+            reportTableAdapter.InsertReport(userId, report, q_id);
+            MessageBox.Show("Thanks you for your Report");
+            Controls.Clear();
         }
     }
 }

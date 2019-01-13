@@ -331,3 +331,8 @@ C:\Users\Giorgos\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\Quiz
 C:\Users\Giorgos\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\bin\Debug\MultipleChoiceDataSet.xsc
 C:\Users\Giorgos\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\bin\Debug\MultipleChoiceDataSet.xsd
 C:\Users\Giorgos\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\bin\Debug\MultipleChoiceDataSet.xss
+C:\Users\Vladimiros\Desktop\test2\QuizMaker\QuizMaker\bin\Debug\MultipleChoiceDataSet.cs
+C:\Users\Vladimiros\Desktop\test2\QuizMaker\QuizMaker\bin\Debug\MultipleChoiceDataSet.Designer.cs
+C:\Users\Vladimiros\Desktop\test2\QuizMaker\QuizMaker\bin\Debug\MultipleChoiceDataSet.xsc
+C:\Users\Vladimiros\Desktop\test2\QuizMaker\QuizMaker\bin\Debug\MultipleChoiceDataSet.xsd
+C:\Users\Vladimiros\Desktop\test2\QuizMaker\QuizMaker\bin\Debug\MultipleChoiceDataSet.xss
