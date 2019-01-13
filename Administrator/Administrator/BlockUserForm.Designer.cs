@@ -57,28 +57,29 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            this.label9.Location = new System.Drawing.Point(30, 113);
+            this.label9.Location = new System.Drawing.Point(30, 115);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(52, 18);
+            this.label9.Size = new System.Drawing.Size(48, 16);
             this.label9.TabIndex = 25;
             this.label9.Text = "Days :";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            this.label8.Location = new System.Drawing.Point(12, 21);
+            this.label8.Location = new System.Drawing.Point(15, 24);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 18);
+            this.label8.Size = new System.Drawing.Size(63, 16);
             this.label8.TabIndex = 24;
             this.label8.Text = "Reason :";
             // 
             // blockBtn
             // 
-            this.blockBtn.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.blockBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.blockBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.blockBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.blockBtn.Location = new System.Drawing.Point(88, 141);
             this.blockBtn.Name = "blockBtn";
@@ -90,7 +91,8 @@
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancelBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold);
             this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.cancelBtn.Location = new System.Drawing.Point(182, 141);
             this.cancelBtn.Name = "cancelBtn";
@@ -102,11 +104,11 @@
             // errorLabel
             // 
             this.errorLabel.AutoSize = true;
-            this.errorLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.errorLabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.errorLabel.ForeColor = System.Drawing.Color.Red;
-            this.errorLabel.Location = new System.Drawing.Point(85, 0);
+            this.errorLabel.Location = new System.Drawing.Point(85, 2);
             this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(118, 18);
+            this.errorLabel.Size = new System.Drawing.Size(114, 16);
             this.errorLabel.TabIndex = 28;
             this.errorLabel.Text = "Fill all the fields!";
             this.errorLabel.Visible = false;
@@ -116,7 +118,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(184)))), ((int)(((byte)(185)))));
-            this.ClientSize = new System.Drawing.Size(350, 176);
+            this.ClientSize = new System.Drawing.Size(350, 177);
             this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.blockBtn);

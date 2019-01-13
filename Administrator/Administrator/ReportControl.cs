@@ -16,8 +16,8 @@ namespace Administrator
         private List<ReportHandler.Report> reportList = new List<ReportHandler.Report>();
         private List<Report> reportControls = new List<Report>();
 
-        private List<int> questionIDs = new List<int>();
-        private List<string> questions = new List<string>();
+        private static List<int> questionIDs = new List<int>();
+        private static List<string> questions = new List<string>();
         private static List<int> answerIDList = new List<int>();
         private static List<string> answers = new List<string>();
 
@@ -91,49 +91,81 @@ namespace Administrator
             }
         }
         //gia na fortothoun ta dedomena sto quiz data
-        private void clicked(object sender, EventArgs e) {           
-            //katharise tis listes prin apo kathe search
-            ReportHandler.ReportController.ClearLists();
-            ReportHandler.ReportController.ClearQuestion_AnswerList();
-            questionIDs.Clear();
-            questions.Clear();
-            answerIDList.Clear();
-            answers.Clear();
-
+        private void clicked(object sender, EventArgs e)
+        { 
             //psaxe an uparxei to quiz pou ekane report
-            ReportHandler.ReportController.SearchReport_Quiz(Int32.Parse(((Report)sender).Tag.ToString()));
-            //pare tis metavlhtes me tis times apo to parapanw search
-            int quizID = ReportHandler.ReportController.GetQuizID();
-            string quiz_title = ReportHandler.ReportController.GetQuizTitle();
-            int by_user = ReportHandler.ReportController.GetByUser();
-            //vale to quiz title kai ton user pou eftiaxe to quiz
-            QuizNameBox.Text = quiz_title;
-            qUserIDBox.Text = by_user.ToString();
-
-
-            if (quizID != -1)
+            if (ReportHandler.ReportController.SearchReport_Quiz(Int32.Parse(((Report)sender).Tag.ToString())))
             {
-                //kane search gia ta questions tou quiz
-                ReportHandler.ReportController.SearchQuiz_Question(quizID);
-                //pare tis listes
-                questionIDs = ReportHandler.ReportController.GetQuestionIDList();
-                questions = ReportHandler.ReportController.GetQuestionsList();
-                //kane fill ta IDs
+                warningLabel.Visible = false;
+
+                //gemise ta pedia tou quiz
+                fillQuiz();
+                
+                answerIDCombo.Items.Clear();
                 questionIDCombo.Items.Clear();
-                foreach (var question_id in questionIDs)
+                //kane search gia ta questions tou quiz
+                if (ReportHandler.ReportController.SearchQuiz_Question())
                 {
-                    questionIDCombo.Items.Add(question_id);
+                    //pare tis listes quiz - question
+                    FillQuestionIDs();
                 }
-                if (questionIDs.Count > 0)
-                {
-                    questionIDCombo.SelectedIndex = 0;
-                    qQuestionBox.Text = questions[0];
-                }
+                
             }
             else
             {
-                questionIDCombo.Items.Clear();
+                warningLabel.Text = "Quiz does not exist.";
+                warningLabel.Visible = true;
+            }           
+        }
+        //pare tis listes me ta questions
+        private void FillQuestionIDs()
+        {
+            questionIDs.Clear();
+            questions.Clear();
+            questionIDs = ReportHandler.ReportController.GetQuestionIDList();
+            questions = ReportHandler.ReportController.GetQuestionsList();
+            
+            if (questionIDs.Count > 0)
+            {
+                int id;
+                for(int i = 0; i < questionIDs.Count; i++)
+                {
+                    id = questionIDs[i];
+                    questionIDCombo.Items.Add(id);
+                }
+                questionIDCombo.SelectedIndex = 0;
+                QuestionBox.Text = questions[0];
             }
+        }
+
+        //pare tis listes me ta answers an yparxoun
+        private void FillAnswers(int question_id)
+        {   //psaxe gia answers
+            ReportHandler.ReportController.SearchQuestion_Answer(question_id);
+
+            answerIDList.Clear();
+            answers.Clear();
+            //pare tis listes
+            answerIDList = ReportHandler.ReportController.GetAnswerIDList();
+            answers = ReportHandler.ReportController.GetAnswers();
+
+            if (answerIDList.Count > 0)
+            {
+                foreach (var id in answerIDList)
+                {
+                    answerIDCombo.Items.Add(id);
+                }
+                answerIDCombo.SelectedIndex = 0;
+                AnswerBox.Text = answers[0];
+            }
+        }
+
+        //gemise ta pedia tou quiz
+        private void fillQuiz()
+        {
+            QuizNameBox.Text = ReportHandler.ReportController.GetQuizTitle();
+            SubjectNameBox.Text = ReportHandler.ReportController.GetSubjectName();
+            UsernameBox.Text = ReportHandler.ReportController.GetUsername();
         }
 
         //pare th lista me ta reports
@@ -174,7 +206,6 @@ namespace Administrator
                 MessageBox.Show("There is no Reports.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void deleteReportButton_Click(object sender, EventArgs e)
         {
             if (reportControls.Count > 0)
@@ -209,31 +240,24 @@ namespace Administrator
         //otan allazei ena id fortwse to antistoixo question kai ta answers pou exei
         private void questionIDCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int position = questionIDCombo.SelectedIndex;
-            qQuestionBox.Text = questions[position];
-
-            //psaxe gia ta answers tou antistoixou question
-            ReportHandler.ReportController.SearchQuestion_Answer(questionIDs[position]);
-            //gemise tis listes
-            answerIDList = ReportHandler.ReportController.GetAnswerIDList();
-            answers = ReportHandler.ReportController.GetAnswers();
-            //kai kane fill ta IDs 
-            if (answerIDList.Count > 0)
+            if (questionIDCombo.Items.Count > 0)
             {
-                answerIDCombo.Items.Clear();
-                foreach (var answer_id in answerIDList)
-                {
-                    answerIDCombo.Items.Add(answer_id);
-                }
-                answerIDCombo.SelectedIndex = 0;
-                AnswerBox.Text = answers[0];
+                int position = questionIDCombo.SelectedIndex;
+                QuestionBox.Text = questions[position];
+
+                //psaxe gia ta answers tou antistoixou question
+                FillAnswers(questionIDs[position]);
             }
         }
 
         private void answerIDCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int position = answerIDCombo.SelectedIndex;
-            AnswerBox.Text = answers[position];
+            if (answerIDCombo.Items.Count > 0)
+            {
+                int position = answerIDCombo.SelectedIndex;
+                MessageBox.Show(position.ToString());
+                AnswerBox.Text = answers[position];
+            }
         }
 
         private void questionButton_Click(object sender, EventArgs e)

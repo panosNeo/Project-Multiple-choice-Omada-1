@@ -29,11 +29,13 @@
         private void InitializeComponent()
         {
             this.QuestionGroupbox = new System.Windows.Forms.GroupBox();
+            this.SubjectNameBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.answerIDCombo = new System.Windows.Forms.ComboBox();
             this.questionIDCombo = new System.Windows.Forms.ComboBox();
             this.AnswerBox = new System.Windows.Forms.TextBox();
-            this.qUserIDBox = new System.Windows.Forms.TextBox();
-            this.qQuestionBox = new System.Windows.Forms.TextBox();
+            this.UsernameBox = new System.Windows.Forms.TextBox();
+            this.QuestionBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.QuizNameBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -43,21 +45,23 @@
             this.showReportsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.deleteAllCheckbox = new System.Windows.Forms.CheckBox();
             this.reportPanel = new System.Windows.Forms.Panel();
+            this.questionButton = new System.Windows.Forms.Button();
             this.deleteReportButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.noReports = new System.Windows.Forms.Label();
-            this.questionButton = new System.Windows.Forms.Button();
             this.QuestionGroupbox.SuspendLayout();
             this.reportPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // QuestionGroupbox
             // 
+            this.QuestionGroupbox.Controls.Add(this.SubjectNameBox);
+            this.QuestionGroupbox.Controls.Add(this.label2);
             this.QuestionGroupbox.Controls.Add(this.answerIDCombo);
             this.QuestionGroupbox.Controls.Add(this.questionIDCombo);
             this.QuestionGroupbox.Controls.Add(this.AnswerBox);
-            this.QuestionGroupbox.Controls.Add(this.qUserIDBox);
-            this.QuestionGroupbox.Controls.Add(this.qQuestionBox);
+            this.QuestionGroupbox.Controls.Add(this.UsernameBox);
+            this.QuestionGroupbox.Controls.Add(this.QuestionBox);
             this.QuestionGroupbox.Controls.Add(this.label5);
             this.QuestionGroupbox.Controls.Add(this.QuizNameBox);
             this.QuestionGroupbox.Controls.Add(this.label6);
@@ -72,10 +76,27 @@
             this.QuestionGroupbox.TabStop = false;
             this.QuestionGroupbox.Text = "Quiz Data";
             // 
+            // SubjectNameBox
+            // 
+            this.SubjectNameBox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.SubjectNameBox.Location = new System.Drawing.Point(123, 46);
+            this.SubjectNameBox.Name = "SubjectNameBox";
+            this.SubjectNameBox.ReadOnly = true;
+            this.SubjectNameBox.Size = new System.Drawing.Size(125, 23);
+            this.SubjectNameBox.TabIndex = 11;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(10, 49);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(107, 16);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Subject Name :";
+            // 
             // answerIDCombo
             // 
-            this.answerIDCombo.FormattingEnabled = true;
-            this.answerIDCombo.Location = new System.Drawing.Point(469, 53);
+            this.answerIDCombo.Location = new System.Drawing.Point(469, 75);
             this.answerIDCombo.Name = "answerIDCombo";
             this.answerIDCombo.Size = new System.Drawing.Size(125, 24);
             this.answerIDCombo.TabIndex = 5;
@@ -83,8 +104,7 @@
             // 
             // questionIDCombo
             // 
-            this.questionIDCombo.FormattingEnabled = true;
-            this.questionIDCombo.Location = new System.Drawing.Point(110, 53);
+            this.questionIDCombo.Location = new System.Drawing.Point(123, 75);
             this.questionIDCombo.Name = "questionIDCombo";
             this.questionIDCombo.Size = new System.Drawing.Size(125, 24);
             this.questionIDCombo.TabIndex = 2;
@@ -93,38 +113,38 @@
             // AnswerBox
             // 
             this.AnswerBox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.AnswerBox.Location = new System.Drawing.Point(369, 80);
+            this.AnswerBox.Location = new System.Drawing.Point(371, 100);
             this.AnswerBox.Multiline = true;
             this.AnswerBox.Name = "AnswerBox";
             this.AnswerBox.ReadOnly = true;
             this.AnswerBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.AnswerBox.Size = new System.Drawing.Size(267, 70);
+            this.AnswerBox.Size = new System.Drawing.Size(267, 50);
             this.AnswerBox.TabIndex = 6;
             // 
-            // qUserIDBox
+            // UsernameBox
             // 
-            this.qUserIDBox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.qUserIDBox.Location = new System.Drawing.Point(469, 22);
-            this.qUserIDBox.Name = "qUserIDBox";
-            this.qUserIDBox.ReadOnly = true;
-            this.qUserIDBox.Size = new System.Drawing.Size(125, 23);
-            this.qUserIDBox.TabIndex = 4;
+            this.UsernameBox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.UsernameBox.Location = new System.Drawing.Point(469, 46);
+            this.UsernameBox.Name = "UsernameBox";
+            this.UsernameBox.ReadOnly = true;
+            this.UsernameBox.Size = new System.Drawing.Size(125, 23);
+            this.UsernameBox.TabIndex = 4;
             // 
-            // qQuestionBox
+            // QuestionBox
             // 
-            this.qQuestionBox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.qQuestionBox.Location = new System.Drawing.Point(34, 80);
-            this.qQuestionBox.Multiline = true;
-            this.qQuestionBox.Name = "qQuestionBox";
-            this.qQuestionBox.ReadOnly = true;
-            this.qQuestionBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.qQuestionBox.Size = new System.Drawing.Size(267, 70);
-            this.qQuestionBox.TabIndex = 3;
+            this.QuestionBox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.QuestionBox.Location = new System.Drawing.Point(34, 100);
+            this.QuestionBox.Multiline = true;
+            this.QuestionBox.Name = "QuestionBox";
+            this.QuestionBox.ReadOnly = true;
+            this.QuestionBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.QuestionBox.Size = new System.Drawing.Size(267, 50);
+            this.QuestionBox.TabIndex = 3;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(368, 56);
+            this.label5.Location = new System.Drawing.Point(368, 80);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 16);
             this.label5.TabIndex = 9;
@@ -133,7 +153,7 @@
             // QuizNameBox
             // 
             this.QuizNameBox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.QuizNameBox.Location = new System.Drawing.Point(110, 22);
+            this.QuizNameBox.Location = new System.Drawing.Point(123, 17);
             this.QuizNameBox.Name = "QuizNameBox";
             this.QuizNameBox.ReadOnly = true;
             this.QuizNameBox.Size = new System.Drawing.Size(125, 23);
@@ -142,7 +162,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(31, 61);
+            this.label6.Location = new System.Drawing.Point(44, 80);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 16);
             this.label6.TabIndex = 4;
@@ -151,7 +171,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(29, 25);
+            this.label7.Location = new System.Drawing.Point(42, 20);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(75, 16);
             this.label7.TabIndex = 2;
@@ -160,7 +180,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(385, 25);
+            this.label8.Location = new System.Drawing.Point(385, 49);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(63, 16);
             this.label8.TabIndex = 0;
@@ -209,6 +229,21 @@
             this.reportPanel.Size = new System.Drawing.Size(676, 43);
             this.reportPanel.TabIndex = 8;
             // 
+            // questionButton
+            // 
+            this.questionButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            this.questionButton.FlatAppearance.BorderSize = 0;
+            this.questionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.questionButton.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.questionButton.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.questionButton.Image = global::Administrator.Properties.Resources.question;
+            this.questionButton.Location = new System.Drawing.Point(538, 9);
+            this.questionButton.Name = "questionButton";
+            this.questionButton.Size = new System.Drawing.Size(24, 24);
+            this.questionButton.TabIndex = 20;
+            this.questionButton.UseVisualStyleBackColor = false;
+            this.questionButton.Click += new System.EventHandler(this.questionButton_Click);
+            // 
             // deleteReportButton
             // 
             this.deleteReportButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(39)))));
@@ -254,21 +289,6 @@
             this.noReports.Text = "There is no Reports";
             this.noReports.Visible = false;
             // 
-            // questionButton
-            // 
-            this.questionButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            this.questionButton.FlatAppearance.BorderSize = 0;
-            this.questionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.questionButton.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.questionButton.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.questionButton.Image = global::Administrator.Properties.Resources.question;
-            this.questionButton.Location = new System.Drawing.Point(538, 9);
-            this.questionButton.Name = "questionButton";
-            this.questionButton.Size = new System.Drawing.Size(24, 24);
-            this.questionButton.TabIndex = 20;
-            this.questionButton.UseVisualStyleBackColor = false;
-            this.questionButton.Click += new System.EventHandler(this.questionButton_Click);
-            // 
             // ReportControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -293,12 +313,12 @@
 
         #endregion
         private System.Windows.Forms.GroupBox QuestionGroupbox;
-        private System.Windows.Forms.TextBox qQuestionBox;
+        private System.Windows.Forms.TextBox QuestionBox;
         private System.Windows.Forms.TextBox QuizNameBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox qUserIDBox;
+        private System.Windows.Forms.TextBox UsernameBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox AnswerBox;
         private System.Windows.Forms.Label warningLabel;
@@ -311,5 +331,7 @@
         private System.Windows.Forms.ComboBox answerIDCombo;
         private System.Windows.Forms.Label noReports;
         private System.Windows.Forms.Button questionButton;
+        private System.Windows.Forms.TextBox SubjectNameBox;
+        private System.Windows.Forms.Label label2;
     }
 }

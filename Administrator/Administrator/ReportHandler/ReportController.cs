@@ -17,15 +17,16 @@ namespace Administrator.ReportHandler
         private static string deleteAll = "Delete From Report;";
 
         //gia to quiz data
-        private static string report_quiz = "Select Quiz.Quiz_id,Quiz.Title,Quiz.By_user From Report inner join Quiz on Report.Quiz_id = Quiz.Quiz_id Where Report.Report_id = ?;";
+        private static string report_quiz = "Select Quiz.Quiz_id,Quiz.Title,[User].[Username],Subject.S_name From (((Report inner join Quiz on Report.Quiz_id = Quiz.Quiz_id) inner join [User] on Quiz.By_user = [User].User_id) inner join Subject on Quiz.Subject_id = Subject.Subject_id) Where Report.Report_id = ?;";
         private static string quiz_question = "Select Question.Question_id,Question.Question From Quiz inner join Question on Quiz.Quiz_id = Question.Quiz_id Where Quiz.Quiz_id = ?;";
         private static string question_answer = "Select Answer.Answer_id,Answer.Answer From Question inner join Answer on Question.Question_id = Answer.Question_id Where Question.Question_id = ?;";
 
         //methods-objects-variables gia to quiz data
         //      metavlhtes gia to report - quiz
-        private static string quizTitle = "Nothing";
+        private static string quizTitle = "Not found";
         private static int quizID = -1;
-        private static int by_user = -1;
+        private static string username = "Not found";
+        private static string subject_name = "Not found";
         //      metavlhtes gia to quiz - question
         private static List<int> questionIDList = new List<int>();
         private static List<string> questionsList = new List<string>();
@@ -42,7 +43,7 @@ namespace Administrator.ReportHandler
         {
             return questionsList;
         }
-        public static void ClearLists()
+        public static void ClearQuiz_Question()
         {
             questionsList.Clear();
             questionIDList.Clear();
@@ -72,13 +73,17 @@ namespace Administrator.ReportHandler
         {
             return quizID;
         }
-        public static int GetByUser()
+        public static string GetUsername()
         {
-            return by_user;
+            return username;
+        }
+        public static string GetSubjectName()
+        {
+            return subject_name;
         }
         
-        //vres ta quiz_title,quiz_id,by_user
-        public static void SearchReport_Quiz(int report_id)
+        //vres ta report - quiz
+        public static bool SearchReport_Quiz(int report_id)
         {
             try
             {   //connection string
@@ -86,6 +91,7 @@ namespace Administrator.ReportHandler
                 {   //dhmiourgia command kai command text
                     using (OleDbCommand searchCommand = new OleDbCommand(@report_quiz, conn))
                     {
+                        bool check = false;
                         conn.Open();
                         searchCommand.Parameters.AddWithValue("@p1",report_id);
                         //datareader
@@ -93,7 +99,6 @@ namespace Administrator.ReportHandler
                         {
                             if (searchReader.HasRows)
                             {
-                                //metra ta records pou vre8hkan
                                 int countRows = 0;
                                 while (searchReader.Read())
                                 {
@@ -101,42 +106,49 @@ namespace Administrator.ReportHandler
 
                                     quizID = searchReader.GetInt32(0);
                                     quizTitle = searchReader.GetString(1);
-                                    by_user = searchReader.GetInt32(2);
+                                    username = searchReader.GetString(2);
+                                    subject_name = searchReader.GetString(3);
+                                    check = true;
                                 }
                                 if (countRows != 1)
                                 {
                                     quizID = -1;
-                                    quizTitle = "Nothing";
-                                    by_user = -1;
+                                    quizTitle = "Not found";
+                                    username = "Not found";
+                                    subject_name = "Not found";
                                 }
                             }
                             searchReader.Close();
                         }
                         conn.Close();
+                        return check;
                     }
                 }
             }
             catch (OleDbException ex)
             {
-                MessageBox.Show(ex.ToString(), "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), "Database error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString(), "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
         }
         //vres to question kai to question_id
-        public static void SearchQuiz_Question(int quiz_id)
+        public static bool SearchQuiz_Question()
         {
-            ClearLists();
+            ClearQuiz_Question();   //katharise tis listes prin apo kathe search
             try
             {   //connection string
                 using (OleDbConnection conn = new OleDbConnection(Properties.Settings.Default.DatabaseConnectionString))
                 {   //dhmiourgia command kai command text
                     using (OleDbCommand searchCommand = new OleDbCommand(@quiz_question, conn))
                     {
+                        bool check = false;
                         conn.Open();
-                        searchCommand.Parameters.AddWithValue("@p1", quiz_id);
+                        searchCommand.Parameters.AddWithValue("@p1", quizID);
                         //datareader
                         using (OleDbDataReader searchReader = searchCommand.ExecuteReader())
                         {
@@ -144,20 +156,24 @@ namespace Administrator.ReportHandler
                             {
                                 questionIDList.Add(searchReader.GetInt32(0));
                                 questionsList.Add(searchReader.GetString(1));
+                                check = true;
                             }
                             searchReader.Close();
                         }
                         conn.Close();
+                        return check;
                     }
                 }
             }
             catch (OleDbException ex)
             {
                 MessageBox.Show(ex.ToString(), "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString(), "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
         }
         //vres to answer id kai to answer ths erwthshs
