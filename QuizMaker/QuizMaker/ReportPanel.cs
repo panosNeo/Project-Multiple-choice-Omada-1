@@ -12,9 +12,11 @@ namespace QuizMaker
 {
     public partial class ReportPanel : UserControl
     {
-        public ReportPanel()
+        private int q_id;
+        public ReportPanel(int quiz_id)
         {
             InitializeComponent();
+            q_id = quiz_id;
         }
 
         private void sendBtn_Click(object sender, EventArgs e)

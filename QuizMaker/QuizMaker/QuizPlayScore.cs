@@ -64,10 +64,22 @@ namespace QuizMaker
 
         private void reportBtn_Click(object sender, EventArgs e)
         {
-            Controls.Clear();
-            ReportPanel qp = new ReportPanel();
-            qp.Dock = DockStyle.Fill;
-            Controls.Add(qp);
+            if(Login.Login.userID>0)
+            {
+                int quiz_id = 0;
+                Controls.Clear();
+                ReportPanel qp = new ReportPanel(quiz_id);
+                qp.Dock = DockStyle.Fill;
+                Controls.Add(qp);
+            }
+            else
+            {
+                Controls.Clear();
+                LoginControl qp = new LoginControl();
+                qp.Dock = DockStyle.Fill;
+                Controls.Add(qp);
+            }
+            
         }
     }
 }
