@@ -49,12 +49,14 @@
             this.deleteReportButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.noReports = new System.Windows.Forms.Label();
+            this.noQuestionsLabel = new System.Windows.Forms.Label();
             this.QuestionGroupbox.SuspendLayout();
             this.reportPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // QuestionGroupbox
             // 
+            this.QuestionGroupbox.Controls.Add(this.noQuestionsLabel);
             this.QuestionGroupbox.Controls.Add(this.SubjectNameBox);
             this.QuestionGroupbox.Controls.Add(this.label2);
             this.QuestionGroupbox.Controls.Add(this.answerIDCombo);
@@ -283,11 +285,23 @@
             this.noReports.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.noReports.Location = new System.Drawing.Point(256, 239);
             this.noReports.Name = "noReports";
-            this.noReports.Size = new System.Drawing.Size(178, 23);
+            this.noReports.Size = new System.Drawing.Size(196, 23);
             this.noReports.TabIndex = 19;
             this.noReports.Tag = "noReports";
-            this.noReports.Text = "There is no Reports";
+            this.noReports.Text = "There are no Reports";
             this.noReports.Visible = false;
+            // 
+            // noQuestionsLabel
+            // 
+            this.noQuestionsLabel.AutoSize = true;
+            this.noQuestionsLabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.noQuestionsLabel.ForeColor = System.Drawing.Color.Red;
+            this.noQuestionsLabel.Location = new System.Drawing.Point(303, 20);
+            this.noQuestionsLabel.Name = "noQuestionsLabel";
+            this.noQuestionsLabel.Size = new System.Drawing.Size(145, 16);
+            this.noQuestionsLabel.TabIndex = 12;
+            this.noQuestionsLabel.Text = "No existing questions";
+            this.noQuestionsLabel.Visible = false;
             // 
             // ReportControl
             // 
@@ -333,5 +347,6 @@
         private System.Windows.Forms.Button questionButton;
         private System.Windows.Forms.TextBox SubjectNameBox;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label noQuestionsLabel;
     }
 }

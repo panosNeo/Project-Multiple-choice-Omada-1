@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.warningLabel = new System.Windows.Forms.Label();
             this.reportPanel = new System.Windows.Forms.Panel();
             this.UpdateAllCheckbox = new System.Windows.Forms.CheckBox();
             this.UpdateFeedbackButton = new System.Windows.Forms.Button();
@@ -39,18 +38,6 @@
             this.noFeedback = new System.Windows.Forms.Label();
             this.reportPanel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // warningLabel
-            // 
-            this.warningLabel.AutoSize = true;
-            this.warningLabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.warningLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            this.warningLabel.Location = new System.Drawing.Point(50, 392);
-            this.warningLabel.Name = "warningLabel";
-            this.warningLabel.Size = new System.Drawing.Size(56, 16);
-            this.warningLabel.TabIndex = 6;
-            this.warningLabel.Text = "*Report";
-            this.warningLabel.Visible = false;
             // 
             // reportPanel
             // 
@@ -150,10 +137,10 @@
             this.noFeedback.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.noFeedback.Location = new System.Drawing.Point(233, 339);
             this.noFeedback.Name = "noFeedback";
-            this.noFeedback.Size = new System.Drawing.Size(213, 23);
+            this.noFeedback.Size = new System.Drawing.Size(231, 23);
             this.noFeedback.TabIndex = 18;
             this.noFeedback.Tag = "noFeedback";
-            this.noFeedback.Text = "There is no Feedbacks";
+            this.noFeedback.Text = "There are no Feedbacks";
             this.noFeedback.Visible = false;
             // 
             // FeedbackControl
@@ -163,7 +150,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(184)))), ((int)(((byte)(185)))));
             this.Controls.Add(this.noFeedback);
             this.Controls.Add(this.reportPanel);
-            this.Controls.Add(this.warningLabel);
             this.Controls.Add(this.showFeedbacksPanel);
             this.Name = "FeedbackControl";
             this.Size = new System.Drawing.Size(736, 423);
@@ -176,7 +162,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label warningLabel;
         private System.Windows.Forms.Panel reportPanel;
         private System.Windows.Forms.Button deleteFeedbackButton;
         private System.Windows.Forms.CheckBox deleteAllCheckbox;

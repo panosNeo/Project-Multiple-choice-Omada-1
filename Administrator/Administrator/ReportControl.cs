@@ -16,10 +16,10 @@ namespace Administrator
         private List<ReportHandler.Report> reportList = new List<ReportHandler.Report>();
         private List<Report> reportControls = new List<Report>();
 
-        private static List<int> questionIDs = new List<int>();
-        private static List<string> questions = new List<string>();
-        private static List<int> answerIDList = new List<int>();
-        private static List<string> answers = new List<string>();
+        private List<int> questionIDs;
+        private List<string> questions;
+        private List<int> answerIDList;
+        private List<string> answers;
 
         public ReportControl()
         {
@@ -100,16 +100,26 @@ namespace Administrator
 
                 //gemise ta pedia tou quiz
                 fillQuiz();
-                
-                answerIDCombo.Items.Clear();
-                questionIDCombo.Items.Clear();
+
                 //kane search gia ta questions tou quiz
                 if (ReportHandler.ReportController.SearchQuiz_Question())
                 {
+                    noQuestionsLabel.Visible = false;
                     //pare tis listes quiz - question
                     FillQuestionIDs();
                 }
-                
+                else
+                {
+                    questionIDCombo.Text = "";
+                    questionIDCombo.Items.Clear();
+
+                    answerIDCombo.Text = "";
+                    answerIDCombo.Items.Clear();
+
+                    QuestionBox.Text = "";
+                    AnswerBox.Text = "";
+                    noQuestionsLabel.Visible = true;
+                }
             }
             else
             {
@@ -120,17 +130,16 @@ namespace Administrator
         //pare tis listes me ta questions
         private void FillQuestionIDs()
         {
-            questionIDs.Clear();
-            questions.Clear();
+            questionIDs = new List<int>();
+            questions = new List<string>();
             questionIDs = ReportHandler.ReportController.GetQuestionIDList();
             questions = ReportHandler.ReportController.GetQuestionsList();
-            
+
+            questionIDCombo.Items.Clear();
             if (questionIDs.Count > 0)
-            {
-                int id;
-                for(int i = 0; i < questionIDs.Count; i++)
+            { 
+                foreach(var id in questionIDs)
                 {
-                    id = questionIDs[i];
                     questionIDCombo.Items.Add(id);
                 }
                 questionIDCombo.SelectedIndex = 0;
@@ -139,16 +148,16 @@ namespace Administrator
         }
 
         //pare tis listes me ta answers an yparxoun
-        private void FillAnswers(int question_id)
-        {   //psaxe gia answers
-            ReportHandler.ReportController.SearchQuestion_Answer(question_id);
+        private void FillAnswers()
+        {
+            answerIDList = new List<int>();
+            answers = new List<string>();
 
-            answerIDList.Clear();
-            answers.Clear();
             //pare tis listes
             answerIDList = ReportHandler.ReportController.GetAnswerIDList();
             answers = ReportHandler.ReportController.GetAnswers();
 
+            answerIDCombo.Items.Clear();
             if (answerIDList.Count > 0)
             {
                 foreach (var id in answerIDList)
@@ -240,22 +249,23 @@ namespace Administrator
         //otan allazei ena id fortwse to antistoixo question kai ta answers pou exei
         private void questionIDCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (questionIDCombo.Items.Count > 0)
+            if (questionIDs.Count > 0)
             {
                 int position = questionIDCombo.SelectedIndex;
                 QuestionBox.Text = questions[position];
 
                 //psaxe gia ta answers tou antistoixou question
-                FillAnswers(questionIDs[position]);
+                ReportHandler.ReportController.SearchQuestion_Answer(questionIDs[position]);
+                FillAnswers();
             }
         }
 
         private void answerIDCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (answerIDCombo.Items.Count > 0)
+            if (answerIDList.Count > 0)
             {
                 int position = answerIDCombo.SelectedIndex;
-                MessageBox.Show(position.ToString());
+
                 AnswerBox.Text = answers[position];
             }
         }

@@ -31,7 +31,7 @@ namespace Administrator
             if (string.IsNullOrEmpty(UsernameBox.Text) || string.IsNullOrEmpty(PasswordBox.Text))
             {
                 warningLabel.Visible = true;
-                warningLabel.Text = "Please enter your username and your password.";
+                warningLabel.Text = "Please enter your username and password.";
                 return;
             }
 
@@ -39,7 +39,7 @@ namespace Administrator
             if (InputFilter(UsernameBox.Text) || InputFilter(PasswordBox.Text))
             {
                 warningLabel.Visible = true;
-                warningLabel.Text = "Please enter your username and your password.";
+                warningLabel.Text = "Please enter your username and password.";
                 return;
             }
 
