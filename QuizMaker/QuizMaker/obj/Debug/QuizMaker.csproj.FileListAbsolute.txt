@@ -321,3 +321,7 @@ C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMak
 C:\Users\Giorgos\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.FeedbackControl.resources
 C:\Users\Giorgos\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.ForgotPasswordControl.resources
 C:\Users\Giorgos\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.ResetPasswordControl.resources
+C:\Users\Vladimiros\Desktop\test2\QuizMaker\QuizMaker\obj\Debug\QuizMaker.FeedbackControl.resources
+C:\Users\Vladimiros\Desktop\test2\QuizMaker\QuizMaker\obj\Debug\QuizMaker.ForgotPasswordControl.resources
+C:\Users\Vladimiros\Desktop\test2\QuizMaker\QuizMaker\obj\Debug\QuizMaker.ReportPanel.resources
+C:\Users\Vladimiros\Desktop\test2\QuizMaker\QuizMaker\obj\Debug\QuizMaker.ResetPasswordControl.resources

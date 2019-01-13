@@ -207,6 +207,12 @@
     <Compile Include="QuizPanel.Designer.cs">
       <DependentUpon>QuizPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReportPanel.Designer.cs">
+      <DependentUpon>ReportPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="ResetPasswordControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -310,6 +316,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegisterControl.resx">
       <DependentUpon>RegisterControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportPanel.resx">
+      <DependentUpon>ReportPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ResetPasswordControl.resx">
       <DependentUpon>ResetPasswordControl.cs</DependentUpon>

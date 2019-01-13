@@ -64,7 +64,10 @@ namespace QuizMaker
 
         private void reportBtn_Click(object sender, EventArgs e)
         {
-
+            Controls.Clear();
+            ReportPanel qp = new ReportPanel();
+            qp.Dock = DockStyle.Fill;
+            Controls.Add(qp);
         }
     }
 }
