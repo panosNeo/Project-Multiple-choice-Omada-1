@@ -34,7 +34,7 @@
             this.printQuizBtn = new System.Windows.Forms.Button();
             this.playAgainBtn = new System.Windows.Forms.Button();
             this.reportBtn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.dislikeBtn = new System.Windows.Forms.Button();
             this.likeBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -131,26 +131,26 @@
             this.reportBtn.UseVisualStyleBackColor = false;
             this.reportBtn.Click += new System.EventHandler(this.reportBtn_Click);
             // 
-            // button1
+            // dislikeBtn
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = global::QuizMaker.Properties.Resources.dislike;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.Red;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.Location = new System.Drawing.Point(554, 230);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(50, 56);
-            this.button1.TabIndex = 13;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.dislikeBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dislikeBtn.BackColor = System.Drawing.Color.Transparent;
+            this.dislikeBtn.BackgroundImage = global::QuizMaker.Properties.Resources.dislike;
+            this.dislikeBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.dislikeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dislikeBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.dislikeBtn.FlatAppearance.BorderSize = 0;
+            this.dislikeBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Red;
+            this.dislikeBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.dislikeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dislikeBtn.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.dislikeBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dislikeBtn.Location = new System.Drawing.Point(554, 230);
+            this.dislikeBtn.Name = "dislikeBtn";
+            this.dislikeBtn.Size = new System.Drawing.Size(50, 56);
+            this.dislikeBtn.TabIndex = 13;
+            this.dislikeBtn.UseVisualStyleBackColor = false;
+            this.dislikeBtn.Click += new System.EventHandler(this.button1_Click);
             // 
             // likeBtn
             // 
@@ -179,7 +179,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dislikeBtn);
             this.Controls.Add(this.reportBtn);
             this.Controls.Add(this.playAgainBtn);
             this.Controls.Add(this.printQuizBtn);
@@ -203,6 +203,6 @@
         private System.Windows.Forms.Button printQuizBtn;
         private System.Windows.Forms.Button playAgainBtn;
         private System.Windows.Forms.Button reportBtn;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button dislikeBtn;
     }
 }

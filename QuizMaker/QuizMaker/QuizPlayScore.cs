@@ -45,11 +45,13 @@ namespace QuizMaker
             MultipleChoiceDataSetTableAdapters.QuizTableAdapter quizTableAdapter = new MultipleChoiceDataSetTableAdapters.QuizTableAdapter();
             int rating =(int)quizTableAdapter.ReturnRating();
             rating += 1;
-            Quiz quiz = new Quiz();
-            int qid =quiz.GetQuiz_id();
+            string qTittle = QuizPanel.qTittle;
             int subjectId = (int)quizTableAdapter.ReturnSubjectOfQuiz();
-
-            quizTableAdapter.UpdateRating(rating, qid, subjectId);
+            MultipleChoiceDataSetTableAdapters.RatingTableAdapter ratingTable = new MultipleChoiceDataSetTableAdapters.RatingTableAdapter();
+            int userId = Login.Login.userID;
+            quizTableAdapter.UpdateRating(rating, qTittle);
+            int quizId = (int)quizTableAdapter.ReturnIdFromTitle(qTittle);
+            ratingTable.InsertLiked(userId, quizId);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -57,16 +59,35 @@ namespace QuizMaker
             MultipleChoiceDataSetTableAdapters.QuizTableAdapter quizTableAdapter = new MultipleChoiceDataSetTableAdapters.QuizTableAdapter();
             int rating = (int)quizTableAdapter.ReturnRating();
             rating -= 1;
-            Quiz quiz = new Quiz();
-            int qid = quiz.GetQuiz_id();
+            string qTittle = QuizPanel.qTittle;
             int subjectId = (int)quizTableAdapter.ReturnSubjectOfQuiz();
-
-            quizTableAdapter.UpdateRating(rating, qid, subjectId);
+            MultipleChoiceDataSetTableAdapters.RatingTableAdapter ratingTable = new MultipleChoiceDataSetTableAdapters.RatingTableAdapter();
+            int userId = Login.Login.userID;
+            quizTableAdapter.UpdateRating(rating, qTittle);
+            int quizId = (int)quizTableAdapter.ReturnIdFromTitle(qTittle);
+            ratingTable.RemoveLiked(userId, quizId);
         }
 
         private void reportBtn_Click(object sender, EventArgs e)
         {
-
+            if(Login.Login.userID>0)
+            {
+                MultipleChoiceDataSetTableAdapters.QuizTableAdapter quizTableAdapter = new MultipleChoiceDataSetTableAdapters.QuizTableAdapter();
+                string qTittle = QuizPanel.qTittle;
+                int quizId = (int)quizTableAdapter.ReturnIdFromTitle(qTittle);
+                Controls.Clear();
+                ReportPanel qp = new ReportPanel(quizId);
+                qp.Dock = DockStyle.Fill;
+                Controls.Add(qp);
+            }
+            else
+            {
+                Controls.Clear();
+                LoginControl qp = new LoginControl();
+                qp.Dock = DockStyle.Fill;
+                Controls.Add(qp);
+            }
+            
         }
     }
 }

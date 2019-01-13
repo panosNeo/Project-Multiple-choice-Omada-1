@@ -110,11 +110,13 @@
     </Compile>
     <Compile Include="MultipleChoiceDataSet.cs">
       <DependentUpon>MultipleChoiceDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="MultipleChoiceDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MultipleChoiceDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="PlayQuizTemplates\QuizAnswers.cs">
       <SubType>UserControl</SubType>
@@ -206,6 +208,12 @@
     </Compile>
     <Compile Include="QuizPanel.Designer.cs">
       <DependentUpon>QuizPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReportPanel.Designer.cs">
+      <DependentUpon>ReportPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="ResetPasswordControl.cs">
       <SubType>UserControl</SubType>
@@ -311,6 +319,9 @@
     <EmbeddedResource Include="RegisterControl.resx">
       <DependentUpon>RegisterControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportPanel.resx">
+      <DependentUpon>ReportPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ResetPasswordControl.resx">
       <DependentUpon>ResetPasswordControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -322,6 +333,7 @@
     </EmbeddedResource>
     <None Include="MultipleChoiceDataSet.xsc">
       <DependentUpon>MultipleChoiceDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <EmbeddedResource Include="TempPrintControl.resx">
       <DependentUpon>TempPrintControl.cs</DependentUpon>
@@ -330,9 +342,11 @@
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>MultipleChoiceDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="MultipleChoiceDataSet.xss">
       <DependentUpon>MultipleChoiceDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -371,7 +385,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MultipleChoice.accdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\feedback.png" />
     <None Include="Resources\dislike.png" />

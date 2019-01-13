@@ -423,7 +423,7 @@ namespace QuizMaker
                 }
 
             }
-
+            Controls.Clear();
         }
     }
 }
