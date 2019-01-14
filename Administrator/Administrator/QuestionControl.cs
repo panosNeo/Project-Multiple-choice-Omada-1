@@ -17,6 +17,8 @@ namespace Administrator
         private static List<string> answers;
         private static List<bool> correctList;
 
+        private string question = "";
+
         public QuestionControl()
         {
             InitializeComponent();
@@ -25,34 +27,22 @@ namespace Administrator
         //settings button gia energopoihsh - apenergopoihsh sta components 
         private void QuestionSettingsButton_Click(object sender, EventArgs e)
         {
-            if (UserIDBox.ReadOnly)
+            if (QuestionBox.ReadOnly)
             {
-                UserIDBox.ReadOnly = false;
-                SubjectIDBox.ReadOnly = false;
                 QuestionBox.ReadOnly = false;
-                RatingBox.ReadOnly = false;
-                DateBox.ReadOnly = false;
                 AnswerBox.ReadOnly = false;
-                QuestionIDBox.ReadOnly = false;
 
                 CorrectCheckbox.Enabled = true;
-                AddButton.Enabled = true;
                 DeleteButton.Enabled = true;
                 UpdateButton.Enabled = true;
                 QuestionReset.Enabled = true;
             }
             else
             {
-                UserIDBox.ReadOnly = true;
-                SubjectIDBox.ReadOnly = true;
-                QuestionBox.ReadOnly = true;
-                RatingBox.ReadOnly = true;
-                DateBox.ReadOnly = true;
                 AnswerBox.ReadOnly = true;
-                QuestionIDBox.ReadOnly = true;
+                QuestionBox.ReadOnly = true;
 
                 CorrectCheckbox.Enabled = false;
-                AddButton.Enabled = false;
                 DeleteButton.Enabled = false;
                 UpdateButton.Enabled = false;
                 QuestionReset.Enabled = false;
@@ -106,8 +96,7 @@ namespace Administrator
                 noAnswers.Visible = true;
             }
         }
-
-
+        
         private void SearchBox_Click(object sender, EventArgs e)
         {
             try
@@ -129,6 +118,8 @@ namespace Administrator
                         UserIDBox.Text = QuestionHandler.QuestionController.username;
                         RatingBox.Text = QuestionHandler.QuestionController.rating.ToString();
 
+                        question = QuestionHandler.QuestionController.question;
+
                         SearchAnswers(); //psaxe gia answers 
                     }
                     else
@@ -140,7 +131,7 @@ namespace Administrator
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 warningLabel.Text = "Wrong input.";
                 warningLabel.Visible = true;
@@ -154,6 +145,66 @@ namespace Administrator
                 int position = AnswerIDCombo.SelectedIndex;
                 AnswerBox.Text = answers[position];
                 CorrectCheckbox.Checked = correctList[position];
+            }
+        }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            try {
+                if (string.IsNullOrWhiteSpace(SearchIDBox.Text))
+                {
+                    warningLabel.Text = "Please input question id.";
+                    warningLabel.Visible = true;
+                }
+                else
+                {
+                    warningLabel.Visible = false;
+                    DialogResult check = MessageBox.Show("Do you want to delete this question?","Delete",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+                    if (check == DialogResult.Yes)
+                    {
+                        QuestionHandler.QuestionController.DeleteQuestion(Int32.Parse(SearchIDBox.Text));
+                    }
+                }
+            } catch (Exception)
+            {
+                warningLabel.Text = "Wrong input.";
+                warningLabel.Visible = true;
+            }
+        }
+
+        private void UpdateButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(SearchIDBox.Text))
+                {
+                    warningLabel.Text = "Please input question id.";
+                    warningLabel.Visible = true;
+                }
+                else
+                {
+                    if (!question.Equals(QuestionBox.Text))
+                    {
+                        DialogResult check = MessageBox.Show("Do you want to update question?", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        if (check == DialogResult.Yes)
+                        {
+                            QuestionHandler.QuestionController.UpdateQuestion(Int32.Parse(SearchIDBox.Text), QuestionBox.Text);
+                        }
+                    }
+                    if (!AnswerBox.Text.Equals(answers[AnswerIDCombo.SelectedIndex]) || CorrectCheckbox.Checked != correctList[AnswerIDCombo.SelectedIndex])
+                    {
+                        DialogResult check = MessageBox.Show("Do you want to update answer?", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        if (check == DialogResult.Yes)
+                        {
+                            QuestionHandler.QuestionController.UpdateAnswer(answerIDList[AnswerIDCombo.SelectedIndex],AnswerBox.Text,CorrectCheckbox.Checked);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                warningLabel.Text = "Wrong input.";
+                warningLabel.Visible = true;
             }
         }
     }

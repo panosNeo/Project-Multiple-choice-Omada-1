@@ -18,6 +18,10 @@ namespace Administrator.QuestionHandler
 
         private static string searchQuestionID = "Select Question.Question_id,Question.Question,Question.Cr_date,Question.Subject_id,[User].[Username],Quiz.Rating From ((Question inner join [User] on Question.By_user = [User].User_id) inner join Quiz on Question.Quiz_id = Quiz.Quiz_id) Where Question.Question_id = ?;";
         private static string question_answer = "Select Answer.Answer_id,Answer.Answer,Answer.Correct From Question inner join Answer on Question.Question_id = Answer.Question_id Where Question.Question_id = ?;";
+        private static string deleteQuestion = "Delete From Question Where Question_id = ?;";
+        private static string deleteAnswers = "Delete From Answer Where Question_id = ?;";
+        private static string updateQuestion = "Update Question Set Question = ? Where Question_id = ?;";
+        private static string updateAnswer = "Update Answer Set Answer = ?, Correct = ? Where Answer_id = ?;";
 
         public static int question_id { get; set; }
         public static string question { get; set; }
@@ -140,6 +144,104 @@ namespace Administrator.QuestionHandler
                 conn.Close();
             }
         }
-
+        //kane delete ena question
+        public static void DeleteQuestion(int questionID)
+        {
+            try
+            {
+                conn.Open();
+                using (command = new OleDbCommand(@deleteQuestion, conn))
+                {
+                    command.Parameters.AddWithValue("@p1", questionID);
+                    using (adapter = new OleDbDataAdapter())
+                    {
+                        adapter.UpdateCommand = command;
+                        adapter.UpdateCommand.ExecuteNonQuery();
+                    }
+                }
+                using (command = new OleDbCommand(@deleteAnswers, conn))
+                { 
+                    command.Parameters.AddWithValue("@p1", questionID);
+                    using (adapter = new OleDbDataAdapter())
+                    {
+                        adapter.UpdateCommand = command;
+                        adapter.UpdateCommand.ExecuteNonQuery();
+                    }
+                }
+                MessageBox.Show("Question deleted successfully.","Message",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                conn.Close();
+            }
+            catch (OleDbException ex)
+            {
+                MessageBox.Show(ex.ToString(), "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                conn.Close();
+            }
+        }
+        //kane update ena question
+        public static void UpdateQuestion(int questionID,string ques)
+        {
+            try
+            {
+                conn.Open();
+                using (command = new OleDbCommand(@updateQuestion, conn))
+                {
+                    command.Parameters.AddWithValue("@p1", ques);
+                    command.Parameters.AddWithValue("@p2",questionID);
+                    using (adapter = new OleDbDataAdapter())
+                    {
+                        adapter.UpdateCommand = command;
+                        adapter.UpdateCommand.ExecuteNonQuery();
+                    }
+                }
+                MessageBox.Show("Question updated successfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conn.Close();
+            }
+            catch (OleDbException ex)
+            {
+                MessageBox.Show(ex.ToString(), "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                conn.Close();
+            }
+        }
+        //kane update ena answer
+        public static void UpdateAnswer(int answerID,string answr,bool corr)
+        {
+            try
+            {
+                conn.Open();
+                using (command = new OleDbCommand(@updateQuestion, conn))
+                {
+                    command.Parameters.AddWithValue("@p1", answr);
+                    command.Parameters.AddWithValue("@p2", corr);
+                    command.Parameters.AddWithValue("@p3",answerID);
+                    using (adapter = new OleDbDataAdapter())
+                    {
+                        adapter.UpdateCommand = command;
+                        adapter.UpdateCommand.ExecuteNonQuery();
+                    }
+                }
+                MessageBox.Show("Answer updated successfully.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conn.Close();
+            }
+            catch (OleDbException ex)
+            {
+                MessageBox.Show(ex.ToString(), "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                conn.Close();
+            }
+        }
     }
 }

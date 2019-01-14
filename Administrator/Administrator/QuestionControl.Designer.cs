@@ -36,7 +36,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.UpdateButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
-            this.AddButton = new System.Windows.Forms.Button();
             this.QuestionSettingsButton = new System.Windows.Forms.Button();
             this.CorrectCheckbox = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -86,7 +85,6 @@
             this.QuestionGroupbox.Controls.Add(this.label8);
             this.QuestionGroupbox.Controls.Add(this.UpdateButton);
             this.QuestionGroupbox.Controls.Add(this.DeleteButton);
-            this.QuestionGroupbox.Controls.Add(this.AddButton);
             this.QuestionGroupbox.Controls.Add(this.QuestionSettingsButton);
             this.QuestionGroupbox.Controls.Add(this.CorrectCheckbox);
             this.QuestionGroupbox.Controls.Add(this.label7);
@@ -148,12 +146,13 @@
             this.UpdateButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.UpdateButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.UpdateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.UpdateButton.Location = new System.Drawing.Point(515, 97);
+            this.UpdateButton.Location = new System.Drawing.Point(515, 79);
             this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.Size = new System.Drawing.Size(75, 31);
             this.UpdateButton.TabIndex = 11;
             this.UpdateButton.Text = "Update";
             this.UpdateButton.UseVisualStyleBackColor = false;
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
             // DeleteButton
             // 
@@ -161,25 +160,13 @@
             this.DeleteButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.DeleteButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeleteButton.Location = new System.Drawing.Point(515, 60);
+            this.DeleteButton.Location = new System.Drawing.Point(515, 42);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(75, 31);
             this.DeleteButton.TabIndex = 10;
             this.DeleteButton.Text = "Delete";
             this.DeleteButton.UseVisualStyleBackColor = false;
-            // 
-            // AddButton
-            // 
-            this.AddButton.Enabled = false;
-            this.AddButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            this.AddButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddButton.Location = new System.Drawing.Point(515, 23);
-            this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(75, 31);
-            this.AddButton.TabIndex = 9;
-            this.AddButton.Text = "Add";
-            this.AddButton.UseVisualStyleBackColor = false;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // QuestionSettingsButton
             // 
@@ -348,7 +335,7 @@
             this.AnswerIDCombo.Location = new System.Drawing.Point(399, 139);
             this.AnswerIDCombo.Name = "AnswerIDCombo";
             this.AnswerIDCombo.Size = new System.Drawing.Size(110, 24);
-            this.AnswerIDCombo.TabIndex = 17;
+            this.AnswerIDCombo.TabIndex = 7;
             this.AnswerIDCombo.SelectedIndexChanged += new System.EventHandler(this.AnswerIDCombo_SelectedIndexChanged);
             // 
             // noAnswers
@@ -405,7 +392,6 @@
         private System.Windows.Forms.Button QuestionSettingsButton;
         private System.Windows.Forms.Button UpdateButton;
         private System.Windows.Forms.Button DeleteButton;
-        private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.TextBox QuestionIDBox;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button QuestionReset;
