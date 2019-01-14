@@ -120,7 +120,23 @@ namespace Administrator.SubjectHandler
         //sort th lista 
         public static void SortList()
         {
-            subjectList.Sort((x,y) => x.GetRootID().CompareTo(y.GetRootID()));
+            //subjectList.Sort((x,y) => x.GetRootID().CompareTo(y.GetRootID()));
+            Subject temp;
+
+            for (int write = 0; write < subjectList.Count; write++)
+            {
+                for (int sort = 0; sort < subjectList.Count - 1; sort++)
+                {
+                    if (subjectList[sort].root_id > subjectList[sort + 1].root_id)
+                    {
+                        temp = subjectList[sort + 1];
+                        subjectList[sort + 1] = subjectList[sort];
+                        subjectList[sort] = temp;
+                    }
+                }
+            }
+
+            
         }
     }
 }
