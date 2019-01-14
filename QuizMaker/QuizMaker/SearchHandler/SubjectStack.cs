@@ -12,7 +12,7 @@ namespace QuizMaker.SearchHandler
     */
     class SubjectStack
     {
-        public SubjectStack before { get; set; }
+        //public SubjectStack before { get; set; }
         public List<SubjectStack> after { get; set; }
         public int rootId { get; set; }
         public int subId { get; set; }

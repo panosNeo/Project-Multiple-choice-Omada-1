@@ -211,8 +211,8 @@ namespace QuizMaker.SearchHandler
         public static void SetSubjects()
         {
             MultipleChoiceDataSetTableAdapters.SubjectTableAdapter subject = new MultipleChoiceDataSetTableAdapters.SubjectTableAdapter();
-            
-            //subject.InsertQueryWithID(13,7, "HTML");//13
+
+            //subject.InsertQueryWithID(13, 7, "HTML");//13
             //subject.InsertQueryWithID(14, 7, "Java");//14
             //subject.InsertQueryWithID(15, 7, "C#");//13
             //subject.InsertQueryWithID(16, 7, "Python");//13
