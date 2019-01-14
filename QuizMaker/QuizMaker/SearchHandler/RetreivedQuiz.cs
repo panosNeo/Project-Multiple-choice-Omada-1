@@ -21,6 +21,11 @@ namespace QuizMaker.SearchHandler
             quizSubject = subject;
             questionsCount = questions;
         }
+        override
+        public String ToString()
+        {
+            return quizID + " " + quizName;
+        }
 
         
     }

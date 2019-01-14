@@ -16,12 +16,14 @@ namespace QuizMaker
     {
         private string selectedTreeNodeID = "0";
         private MultipleChoiceDataSetTableAdapters.SubjectTableAdapter s;
+        private LuceneSearcher searcher;
         public SearchControl()
         {
             
             InitializeComponent();
             //SearchHandler.SearchController.SetSubjects();
             setElementAtTreeView();
+            searcher = MainForm.luceneLoad;
         }
 
         private void SearchControl_SizeChanged(object sender, EventArgs e)
@@ -87,7 +89,7 @@ namespace QuizMaker
         {
             resultsPanel.Controls.Clear();
             int counter = 0;
-            LuceneSearcher searcher = new LuceneSearcher("./index");
+            //LuceneSearcher searcher = new LuceneSearcher("./index");
             if (!String.IsNullOrWhiteSpace(searchText.Text))
             {
                 List<RetreivedQuiz> quizes = searcher.GetQuizzes(searchText.Text);

@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.personalPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.personalBtn = new System.Windows.Forms.Button();
-            this.UpdateBtn = new System.Windows.Forms.Button();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.usernameText = new QuizMaker.CustomTextBox();
             this.emailLabel = new System.Windows.Forms.Label();
@@ -40,13 +39,13 @@
             this.firstNameText = new QuizMaker.CustomTextBox();
             this.lastNameLabel = new System.Windows.Forms.Label();
             this.LastNameText = new QuizMaker.CustomTextBox();
-            this.quizPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.UpdateBtn = new System.Windows.Forms.Button();
             this.quizBtn = new System.Windows.Forms.Button();
             this.personalAnimationTimer = new System.Windows.Forms.Timer(this.components);
             this.quizAnimtionTimer = new System.Windows.Forms.Timer(this.components);
             this.feedbackBtn = new System.Windows.Forms.Button();
+            this.quizPanel = new System.Windows.Forms.Panel();
             this.personalPanel.SuspendLayout();
-            this.quizPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // personalPanel
@@ -83,25 +82,6 @@
             this.personalBtn.UseCompatibleTextRendering = true;
             this.personalBtn.UseVisualStyleBackColor = true;
             this.personalBtn.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // UpdateBtn
-            // 
-            this.UpdateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.UpdateBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.UpdateBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.UpdateBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.UpdateBtn.FlatAppearance.BorderSize = 0;
-            this.UpdateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.UpdateBtn.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.UpdateBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.UpdateBtn.Location = new System.Drawing.Point(1572, 3);
-            this.UpdateBtn.Name = "UpdateBtn";
-            this.UpdateBtn.Size = new System.Drawing.Size(166, 38);
-            this.UpdateBtn.TabIndex = 17;
-            this.UpdateBtn.Tag = "-5";
-            this.UpdateBtn.Text = "Update";
-            this.UpdateBtn.UseVisualStyleBackColor = false;
-            this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
             // 
             // usernameLabel
             // 
@@ -192,25 +172,34 @@
             this.LastNameText.Size = new System.Drawing.Size(231, 23);
             this.LastNameText.TabIndex = 16;
             // 
-            // quizPanel
+            // UpdateBtn
             // 
-            this.quizPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.quizPanel.AutoScroll = true;
-            this.quizPanel.Controls.Add(this.quizBtn);
-            this.quizPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.quizPanel.Location = new System.Drawing.Point(150, 186);
-            this.quizPanel.Name = "quizPanel";
-            this.quizPanel.Size = new System.Drawing.Size(628, 53);
-            this.quizPanel.TabIndex = 1;
+            this.UpdateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.UpdateBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.UpdateBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.UpdateBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.UpdateBtn.FlatAppearance.BorderSize = 0;
+            this.UpdateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UpdateBtn.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.UpdateBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.UpdateBtn.Location = new System.Drawing.Point(1572, 3);
+            this.UpdateBtn.Name = "UpdateBtn";
+            this.UpdateBtn.Size = new System.Drawing.Size(166, 38);
+            this.UpdateBtn.TabIndex = 17;
+            this.UpdateBtn.Tag = "-5";
+            this.UpdateBtn.Text = "Update";
+            this.UpdateBtn.UseVisualStyleBackColor = false;
+            this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
             // 
             // quizBtn
             // 
+            this.quizBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.quizBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.quizBtn.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.quizBtn.ForeColor = System.Drawing.Color.White;
-            this.quizBtn.Location = new System.Drawing.Point(3, 3);
+            this.quizBtn.Location = new System.Drawing.Point(153, 177);
             this.quizBtn.Name = "quizBtn";
-            this.quizBtn.Size = new System.Drawing.Size(615, 43);
+            this.quizBtn.Size = new System.Drawing.Size(615, 45);
             this.quizBtn.TabIndex = 9;
             this.quizBtn.Tag = "+";
             this.quizBtn.Text = "+ My quizes";
@@ -248,20 +237,28 @@
             this.feedbackBtn.UseVisualStyleBackColor = false;
             this.feedbackBtn.Click += new System.EventHandler(this.feedbackBtn_Click);
             // 
+            // quizPanel
+            // 
+            this.quizPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.quizPanel.Location = new System.Drawing.Point(150, 228);
+            this.quizPanel.Name = "quizPanel";
+            this.quizPanel.Size = new System.Drawing.Size(618, 1);
+            this.quizPanel.TabIndex = 10;
+            // 
             // ProfileControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.Controls.Add(this.quizBtn);
+            this.Controls.Add(this.quizPanel);
             this.Controls.Add(this.feedbackBtn);
             this.Controls.Add(this.personalPanel);
-            this.Controls.Add(this.quizPanel);
             this.Name = "ProfileControl";
             this.Size = new System.Drawing.Size(917, 547);
             this.personalPanel.ResumeLayout(false);
             this.personalPanel.PerformLayout();
-            this.quizPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -269,7 +266,6 @@
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel personalPanel;
-        private System.Windows.Forms.FlowLayoutPanel quizPanel;
         private System.Windows.Forms.Button personalBtn;
         private System.Windows.Forms.Label usernameLabel;
         private CustomTextBox usernameText;
@@ -284,5 +280,6 @@
         private System.Windows.Forms.Timer quizAnimtionTimer;
         private System.Windows.Forms.Button UpdateBtn;
         private System.Windows.Forms.Button feedbackBtn;
+        private System.Windows.Forms.Panel quizPanel;
     }
 }

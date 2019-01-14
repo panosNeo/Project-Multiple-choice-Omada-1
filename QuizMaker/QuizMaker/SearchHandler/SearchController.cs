@@ -145,7 +145,7 @@ namespace QuizMaker.SearchHandler
 
             foreach (MultipleChoiceDataSet.QuizRow q in quizData.GetData())
             {
-                if (q.Subject_id == subID)
+                if (q.Quiz_id == subID)
                 {
                     quizzes = new Quiz(q.Title, q.Subject_id, q.By_user);
                     foreach (MultipleChoiceDataSet.QuestionRow question in questionData.GetDataByQuizID(q.Quiz_id))

@@ -95,11 +95,13 @@ namespace QuizMaker
                 {
                     personalPanel.Size = new Size(personalPanel.Size.Width, personalPanel.Size.Height + 10);
                     quizPanel.Location = new Point(quizPanel.Location.X, quizPanel.Location.Y + 10);
+                    quizBtn.Location = new Point(quizBtn.Location.X, quizBtn.Location.Y + 10);
                 }
                 else
                 {
                     personalPanel.Size = new Size(personalPanel.Size.Width, personalPanel.Size.Height - 10);
                     quizPanel.Location = new Point(quizPanel.Location.X, quizPanel.Location.Y - 10);
+                    quizBtn.Location = new Point(quizBtn.Location.X, quizBtn.Location.Y - 10);
                 }
             }else if(panel == "quiz")
             {
@@ -121,11 +123,13 @@ namespace QuizMaker
             if (((Button)sender).Tag.ToString() == "+")
             {
                 quizDown = true;
+                quizPanel.AutoScroll = true;
                 ((Button)sender).Tag = "-";
             }
             else
             {
                 quizDown = false;
+                quizPanel.AutoScroll = false;
                 ((Button)sender).Tag = "+";
             }
             ((Button)sender).Text = ((Button)sender).Tag.ToString() + " My quizes";
@@ -144,7 +148,7 @@ namespace QuizMaker
             }
             else
             {
-                if (quizPanel.Size.Height > 60)
+                if (quizPanel.Size.Height > 0)
                 {
                     SetAnimation(quiz, quizDown);
                 }

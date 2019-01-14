@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Lucene.Net;
 using Lucene.Net.Analysis;
+using Lucene.Net.Analysis.Standard;
 using Lucene.Net.Documents;
 using Lucene.Net.Index;
 using Lucene.Net.QueryParsers;
@@ -26,7 +27,7 @@ namespace QuizMaker.SearchHandler
         public LuceneSearcher(string path)
         {
             directory = FSDirectory.Open(path);
-            analyser = new SimpleAnalyzer();
+            analyser = new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_CURRENT);
             indexWriter = new IndexWriter(directory,analyser, true, new IndexWriter.MaxFieldLength(100));
             GetAllQuizes();
             BuildIndex(quiz);
@@ -41,6 +42,7 @@ namespace QuizMaker.SearchHandler
             foreach(MultipleChoiceDataSet.QuizRow row in q.GetData())
             {
                 quiz.Add(new RetreivedQuiz(row.Quiz_id,row.Title, sub.GetSubjectName(row.Subject_id),(int)ques.countQuestions(row.Quiz_id)));
+                Console.WriteLine(quiz.Last<RetreivedQuiz>().ToString());
             }
         }
         public void BuildIndex(IEnumerable<RetreivedQuiz> dataToIndex)
@@ -50,7 +52,7 @@ namespace QuizMaker.SearchHandler
                 Document doc = new Document();
                 doc.Add(new Field("Quiz_id",q.quizID.ToString(),
                 Field.Store.YES,
-                Field.Index.NOT_ANALYZED));
+                Field.Index.NO));
                 doc.Add(new Field("Title",
                 q.quizName,
                 Field.Store.YES,
@@ -63,31 +65,39 @@ namespace QuizMaker.SearchHandler
                 q.questionsCount.ToString(),
                 Field.Store.YES,
                 Field.Index.ANALYZED));
+                Console.WriteLine(doc.ToString());
                 indexWriter.AddDocument(doc);
             }
+            
             indexWriter.Optimize();
-            indexWriter.Flush(true,true,true);
+            //indexWriter.Flush(true,true,true);
+            indexWriter.Commit();
             indexWriter.Dispose();
-            parser = new QueryParser(Lucene.Net.Util.Version.LUCENE_CURRENT, "Title", analyser);
+            parser = new QueryParser(Lucene.Net.Util.Version.LUCENE_CURRENT, "", analyser);
             
         }
 
         public List<RetreivedQuiz> GetQuizzes(string q)
         {
             List<RetreivedQuiz> ret = new List<RetreivedQuiz>();
-            query = parser.Parse(q);
-            //Setup searcher
-            IndexSearcher searcher = new IndexSearcher(directory);
             
-            //Do the search
-            TopDocs top = searcher.Search(query, 20);
-            
-            int results = top.TotalHits;
-            Console.WriteLine("Found {0} results", results);
-            for (int i = 0; i < results; i++)
+            using (Analyzer analyzerStandard = new Lucene.Net.Analysis.Standard.StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_29))
             {
-                Document doc = searcher.Doc(i);
-                ret.Add(new RetreivedQuiz(Convert.ToInt32(doc.Get("Quiz_id")),doc.Get("Title"),doc.Get("Subject"),Convert.ToInt32(doc.Get("Questions"))));
+                QueryParser parser = new QueryParser(Lucene.Net.Util.Version.LUCENE_CURRENT,"", analyzerStandard);
+                using (IndexSearcher indexSearcher = new IndexSearcher(directory, true))
+                {
+                    var query = parser.Parse("Title:"+q+"*");
+                    TopDocs result = indexSearcher.Search(query, 20);
+                    Console.WriteLine("N° results in index:" + result.TotalHits);
+                    for (int i = 0; i < result.ScoreDocs.Length; i++)
+                    {
+                        var score = result.ScoreDocs[i].Score;
+                        Document doc = indexSearcher.Doc(result.ScoreDocs[i].Doc);
+                        var Id = doc.Get("Id");
+                        Console.WriteLine("Match id " + Id + " score " + score);
+                        ret.Add(new RetreivedQuiz(Convert.ToInt32(doc.Get("Quiz_id")), doc.Get("Title"), doc.Get("Subject"), Convert.ToInt32(doc.Get("Questions"))));
+                    }
+                }
             }
             return ret;
         }

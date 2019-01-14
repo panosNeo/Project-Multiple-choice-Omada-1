@@ -16,6 +16,8 @@ namespace QuizMaker
 
         //Η μεταβλητή menuVisible ελέγχεται για το αν το leftPanel είναι σε κατάσταση κλειστή ή ανοιχτή(false/true αντίστοιχα)
         private bool menuVisible;
+        //Να φτιαχνεται νεο αντικειμενο καθε φορα που γινεται εισαγωγη quiz ωστε να το βαζει κ αυτο στην αναζητηση
+        public static SearchHandler.LuceneSearcher luceneLoad = new SearchHandler.LuceneSearcher("./index");
         public MainForm()
         {
             InitializeComponent();

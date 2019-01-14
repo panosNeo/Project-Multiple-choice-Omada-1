@@ -336,3 +336,9 @@ C:\Users\Vladimiros\Desktop\test2\QuizMaker\QuizMaker\bin\Debug\MultipleChoiceDa
 C:\Users\Vladimiros\Desktop\test2\QuizMaker\QuizMaker\bin\Debug\MultipleChoiceDataSet.xsc
 C:\Users\Vladimiros\Desktop\test2\QuizMaker\QuizMaker\bin\Debug\MultipleChoiceDataSet.xsd
 C:\Users\Vladimiros\Desktop\test2\QuizMaker\QuizMaker\bin\Debug\MultipleChoiceDataSet.xss
+C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\bin\Debug\MultipleChoiceDataSet.cs
+C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\bin\Debug\MultipleChoiceDataSet.Designer.cs
+C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\bin\Debug\MultipleChoiceDataSet.xsc
+C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\bin\Debug\MultipleChoiceDataSet.xsd
+C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\bin\Debug\MultipleChoiceDataSet.xss
+C:\Users\Veteran Slayer\Documents\GitHub\Project-Multiple-choice-Omada-1\QuizMaker\QuizMaker\obj\Debug\QuizMaker.ReportPanel.resources
