@@ -218,7 +218,7 @@ namespace Administrator.QuestionHandler
             try
             {
                 conn.Open();
-                using (command = new OleDbCommand(@updateQuestion, conn))
+                using (command = new OleDbCommand(@updateAnswer, conn))
                 {
                     command.Parameters.AddWithValue("@p1", answr);
                     command.Parameters.AddWithValue("@p2", corr);
